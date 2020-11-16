@@ -1,0 +1,116 @@
+<style>
+p {margin-top:0em;}
+p {margin-bottom:1em;}
+h1 { font-family: Tahoma, Geneva, sans-serif, serif }
+body { font-family: Tahoma, Geneva, sans-serif, serif }
+nav {text-align:left}
+nav>ul>li>a {font-family: Tahoma, Geneva, sans-serif, serif; color:blue}	
+</style> 
+
+<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.4/MathJax.js?config=default'></script>
+
+<body>
+
+<div id="column1" style="float:left; margin:0px; width:20%;">
+<div class="container">
+<div class="blurb">
+<p style='line-height: 0px;'><font size="7" style="color:white"><b> <br> </b></font></p>	
+<div class="nospace" align="center"> </div>				
+</div><!-- /.blurb -->
+</div><!-- /.container -->
+</div>
+<div id="column2" style="float:left; margin:25px; width:60%;">
+
+<p align="justify" style="margin-bottom:.5cm;">This page is part of an effort to integrate replication and updates of results into research in economic history, economics, and the social sciences more broadly. 
+I will periodically post new results for my own papers and other papers in the the economic history literature. 
+New results will primarily be due to the availability of new data, empirical methodologies, and quantitative tools that warrant revisiting my own or other findings, although I will also endeavor to discuss narrower replication exercises and the resulting findings as appropriate. </p> 
+
+<p align="justify" style="margin-bottom:.75cm;"> Please contact me with any questions at <a href = "mailto: tjaworski@nber.org">tjaworski@nber.org</a>. </p> 
+
+<p style="margin-bottom:.25cm;"> <b> Update: November 15, 2020 </b> </p> 
+<p style="margin-bottom:.25cm;"> <b> Did the Tennessee Valley Authority or World War II Fuel Southern Industrialization? </b> </p> 
+<p style="margin-bottom:.5cm;"> <i> Taylor Jaworski and Carl Kitchens </i> </p> 
+
+<p align="justify"> Research by Jaworski (2017), Kitchens (2014), and Kline and Moretti (2013) examines the impact of large-scale government spending associated with the 1930s New Deal and 1940s mobilization for World War II.
+In particular, Kitchens (2014) and Kline and Moretti (2013) quantify the effect of Tennessee Valley Authority (TVA), while Jaworski (2017) quantifies the effect of war-related financing of capital investment and procurement contracts.
+We revisit the findings in this literature by incorporating new information on US transportation infrastructure into the estimation and interpretation of these effects. </p>
+
+<p align="justify"> The key insight that we draw on is that market access (via the US highway network) may be an important omitted variable that leads to biased estimates that may overstate or understate the effects of the TVA and war-related mobilization. 
+For example, total income for a given location <i>c</i> (i.e., county) can be derived from the standard version of the Eaton and Kortum (2002) model applied to interregional trade in the United States. In this framework, the effects of the TVA and World War II can be written as effects on productivity and the role of transportation infrastructure is captured by the effect of market access (<i>MA<sub>c</sub></i>), which can be written as: </p>
+
+$$ MA_c = \sum_d \tau_{cd}^{-\theta} {MA_d}^{\frac{-(1+\theta)}{\theta}} N_d $$
+
+<p align="justify"> In addition to the potential omitted variable bias, the existence of trade linkages across counties may also have important implications for the spillovers of productivity shocks from government policies between counties. </p> 
+
+<p align="justify"> Jaworski and Kitchens (2020) provide new data on the US highway network that can be used to construct trade costs and, as a result, market access from 1920 to the present. 
+Using this data we present a modified version of the empirical analysis in Jaworski (2017), Kitchens (2014), and Kline and Moretti (2013), to examine the robustness of these earlier findings to proper measurement of the previously omitted effects of changes in US transportation infrastructure over the twentieth century. </p> 
+
+<p align="justify"> This may carry particular significance because Jaworski (2017) and Kitchens (2014), respectively, find little or no effect of World War II and the TVA on industrialization in the American South. 
+If market access is an omitted variable in these analyses then this warrants revision. 
+Furthermore, if there are revisions to estimates of the direct effect of these government interventions this have may important implications for aggregate effects that are diffused to the rest of the country via trade linkages.
+In this case, contrary to the conclusions in Jaworski (2017) and Kitchens (2014), these government interventions together with the expansion of the US highway network may have played an critical role in the industrialization of the American South. </p> 
+
+<p align="justify"> The data for this exercise are described in detail in Jaworski (2017) and are similar to the data used by Kitchens (2014) and Kline and Moretti (2013).
+In brief, the data consist of county-level manufacturing data for roughly 1,000 counties in the American South from 1920 to 1990. 
+These data are combined with information on counties in the service area of the Tennessee Valley Authority, war-related investment and contract spending, and changes in market access. 
+The main estimating equation is given by: </p> 
+
+$$ \log Y_{ct} = \alpha_t TVA_c + \beta_t WWII_c + \eta \log MA_{ct} + \delta_t X_c + \gamma_c + \phi_{st} + \epsilon_{ct} $$
+
+<p align="justify"> where <i>Y<sub>ct</sub></i> is the manufacturing outcome for county <i>c</i>. 
+The key independent variables of interest are an indicator if county <i>c</i> was in the TVA service area (<i>TVA<sub>c</sub></i>), the log of the value of investment (<i>invest<sub>c</sub></i>) and contracts (<i>contracts<sub>c</sub></i>), and an indicator if the county <i>c</i> received a new plant during the war years. 
+These variable are each interacted with a year fixed effect (relative to the excluded year in 1940) to trace out the time-varying effects of these government interventions. 
+We include time-varying market access in each year as well as additional controls (<i>X<sub>c</sub></i>) for population density, urban population, foreign-born population, Black population in 1940 interacted with year effects and county (<i>&gamma;<sub>c</sub></i>) and state-year (<i>&phi;<sub>st</sub></i>) fixed effects. 
+The results are reported in the figures below using the log of manufacturing establishments, employment, wages, and value-added as dependent variables. </p>
+
+<p align="justify"> The effect of the Tennessee Valley Authority after 1940 with (in red) and without (in gray) including market access is shown in Figure 1. 
+The estimates reported by Kitchens (2014) used data up to 1954 to circumvent challenges associated with the end of TVA's expansionary period in 1959.
+The TVA was subsequently altered to increase Authority's debt ceiling and to end further expansions of territory to placate private utilities in adjacent markets.
+The estimates in Figure 1 up to 1960 are consistent with the results in Kitchens (2014): counties within the TVA service area grew at a similar rate to other Southern counties.
+After 1960 the estimates suggest that the TVA service territory grew at a rate faster than other southern counties, which is consistent with the results in Kline and Moretti (2013). </p> 
+
+<p> <img src="../ww2-tva/results/TVA_area.pdf" width="100%"> </p> 
+
+<p align="justify"> The effects of different aspects of mobilization for World War II during the 1940s with (in blue) and without (in gray) including market access are shown in figures 2, 3, and 4.
+As with the TVA, the estimated coefficients are very similar regardless of whether the specification includes market access.
+This suggests little relationship between the location of war-related mobilization and the expansion of the highway system. 
+This is consistent with the identification assumption in Jaworski (2017), although there may still be a role for other aspects of World War II to explain postwar technological change (e.g., Gross and Sampat, 2020a, 2020b) or the economic performance of particular firms or cities within the South. </p> 
+
+<p> <img src="../ww2-tva/results/WW2_invest.pdf" width="100%"> </p> 
+
+<p> <img src="../ww2-tva/results/WW2_contracts.pdf" width="100%"> </p> 
+
+<p> <img src="../ww2-tva/results/WW2_plant.pdf" width="100%"> </p> 
+
+<p align="justify"> Finally, the coefficient on market access is positive and statistically significant.
+This suggests at least a partial alternative to emphasis placed on large mid-century government interventions for understanding the growth of manufacturing in the South after 1950. 
+The South was a relative beneficiary of the expansion of the US highway system and this may have combined with changes in the business environment emphasized by Cobb (1993) and Holmes (1998) to alter the economic trajectory of the region.
+In addition, the postwar growth of the defense sector emphasized by Markusen, Hall, Campbell, and Deitrick (1991) and Draca (2013) as well as the space race (Kantor and Whalley, 2019) may have also played a role. </p> 
+
+<p align="justify"> <b> References </b> </p>
+
+<p align="justify"> Cobb, James C. <i> The Selling of the South: The Southern Crusade for Industrial Development, 1936–1990. </i> 2nd edition. Urbana: University of Illinois Press, 1993. </p>
+
+<p align="justify"> Draca, Mirko. "Reagan’s Innovation Dividend? Technological Impacts of the 1980s US Defense Build-Up," Working Paper, 2013. </p>
+
+<p align="justify"> Gross, Daniel, and Bhaven Sampat. "Inventing the Endless Frontier: The Effects of the World War II Research Effort on Post-war Innovation," NBER Working Paper 27375, 2020a. </p>
+
+<p align="justify"> Gross, Daniel, and Bhaven Sampat. "Organizing Crisis Innovation: Lessons from World War II," NBER working Paper 27909, 2020b. </p>
+
+<p align="justify"> Holmes, Thomas. "The Effect of State Policies on the Location of Manufacturing: Evidence from State Borders," <i> Journal of Political Economy</i>, 1998. </p>
+
+<p align="justify"> Jaworski, Taylor. "World War II and the Industrialization of the American South," <i> Journal of Economic History</i>, 2017. </p>
+
+<p align="justify"> Jaworski, Taylor, and Carl T. Kitchens. "A Database of US Highways, 1920-1990" Working Paper, 2020. </p>
+
+<p align="justify"> Kantor, Shawn, and Alex Whalley. "Space Race: Automation Innovation and Labor’s Share," Working Paper, 2019. </p>
+
+<p align="justify"> Kitchens, Carl T. "The Role of Publicly Provided Electricity in Economic Development: The Experience of the Tennessee Valley Authority, 1929–1955," <i> Journal of Economic History</i>, 2014. </p>
+
+<p align="justify"> Kline, Patrick, and Enrico Moretti. "Local Economic Development, Agglomeration Economies, and the Big Push: 100 Years of Evidence from the Tennessee Valley Authority," <i> Quarterly Journal of Economics</i>, 2013. </p>
+
+<p align="justify"> Markusen, Ann, and Peter Hall, Scott Campbell, Sabina Deitrick. <i> The Rise of the Gunbelt: The Military Remapping of Industrial America</i> Oxford: Oxford University Press, 1991.</p>
+
+</div>	
+
+</body>
