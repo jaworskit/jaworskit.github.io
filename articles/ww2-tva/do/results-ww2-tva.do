@@ -4,8 +4,7 @@ set more off
 
 ********************************************************************************
 
-global project "/Users/taylorjaworski/Dropbox/Papers/EH/RegionalDevelopment/transportation/LongRunMarketAccess"
-global github "/Users/taylorjaworski/Documents/GitHub/jaworskit.github/articles/ww2-tva"
+global github "/Users/taylorjaworski/Documents/GitHub/jaworskit.github.io/articles/ww2-tva"
 
 ********************************************************************************
 
