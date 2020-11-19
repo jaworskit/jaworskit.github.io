@@ -36,7 +36,8 @@ In particular, Kitchens (2014) and Kline and Moretti (2013) quantify the effect 
 We revisit the findings in this literature by incorporating new information on US transportation infrastructure into the estimation and interpretation of these effects. </p>
 
 <p align="justify"> The key insight that we draw on is that market access (via the US highway network) may be an important omitted variable that leads to biased estimates that may overstate or understate the effects of the TVA and war-related mobilization. 
-For example, total income for a given location <i>c</i> (i.e., county) can be derived from the standard version of the Eaton and Kortum (2002) model applied to interregional trade in the United States. In this framework, the effects of the TVA and World War II can be written as effects on productivity and the role of transportation infrastructure is captured by the effect of market access (<i>MA<sub>c</sub></i>), which can be written as: </p>
+For example, total income for a given location <i>c</i> (i.e., county) can be derived from the standard version of the Eaton and Kortum (2002) model applied to interregional trade in the United States. 
+  In this framework, the effects of the TVA and World War II can be written as effects on productivity and the role of transportation infrastructure is captured by the effect of market access (<i>MA<sub>c</sub></i>), which can be written as: </p>
 
 $$ MA_c = \sum_d \tau_{cd}^{-\theta} {MA_d}^{\frac{-(1+\theta)}{\theta}} N_d $$
 
@@ -55,12 +56,12 @@ In brief, the data consist of county-level manufacturing data for roughly 1,000 
 These data are combined with information on counties in the service area of the Tennessee Valley Authority, war-related investment and contract spending, and changes in market access. 
 The main estimating equation is given by: </p> 
 
-$$ \log Y_{ct} = \alpha_t TVA_c + \beta_t WWII_c + \eta \log MA_{ct} + \delta_t X_c + \gamma_c + \phi_{st} + \epsilon_{ct} $$
+$$ \log Y_{ct} = \beta_t Policy_c + \eta \log MA_{ct} + \gamma_c + \phi_t + \epsilon_{ct} $$
 
 <p align="justify"> where <i>Y<sub>ct</sub></i> is the manufacturing outcome for county <i>c</i>. 
-The key independent variables of interest are an indicator if county <i>c</i> was in the TVA service area (<i>TVA<sub>c</sub></i>), the log of the value of investment (<i>invest<sub>c</sub></i>) and contracts (<i>contracts<sub>c</sub></i>), and an indicator if the county <i>c</i> received a new plant during the war years. 
-These variable are each interacted with a year fixed effect (relative to the excluded year in 1940) to trace out the time-varying effects of these government interventions. 
-We include time-varying market access in each year as well as additional controls (<i>X<sub>c</sub></i>) for population density, urban population, foreign-born population, Black population in 1940 interacted with year effects and county (<i>&gamma;<sub>c</sub></i>) and state-year (<i>&phi;<sub>st</sub></i>) fixed effects. 
+The key independent variable is a measure of government policy (<i>Policy<sub>c</sub></i>), including an indicator if county <i>c</i> was in the TVA service area (<i>TVA<sub>c</sub></i>), the log of the value of investment (<i>invest<sub>c</sub></i>) and contracts (<i>contracts<sub>c</sub></i>), or an indicator if the county <i>c</i> received a new plant during the war years. 
+These variables are interacted with a year fixed effect (relative to the excluded year in 1940) to trace out the time-varying effects of these interventions. 
+We include time-varying market access (<i>MA<sub>ct</sub></i>) as well as county (<i>&gamma;<sub>c</sub></i>) and year (<i>&phi;<sub>t</sub></i>) fixed effects. 
 The results are reported in the figures below using the log of manufacturing establishments, employment, wages, and value-added as dependent variables. </p>
 
 <p align="justify"> The effect of the Tennessee Valley Authority after 1940 with (in red) and without (in gray) including market access is shown in Figure 1. 
@@ -93,6 +94,8 @@ In addition, the postwar growth of the defense sector emphasized by Markusen, Ha
 
 <p align="justify"> Draca, Mirko. "Reagan’s Innovation Dividend? Technological Impacts of the 1980s US Defense Build-Up," Working Paper, 2013. </p>
 
+<p align="justify"> Eaton, Jonthan, and Samuel Kortum. "Technology, Geography, and Trade," <i> Econometrica</i>, 2002. </p>
+  
 <p align="justify"> Gross, Daniel, and Bhaven Sampat. "Inventing the Endless Frontier: The Effects of the World War II Research Effort on Post-war Innovation," NBER Working Paper 27375, 2020a. </p>
 
 <p align="justify"> Gross, Daniel, and Bhaven Sampat. "Organizing Crisis Innovation: Lessons from World War II," NBER working Paper 27909, 2020b. </p>
