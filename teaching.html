@@ -19,6 +19,30 @@
 	
 		
 	</head>
+	
+<style>
+  .collapsible-content {
+    display: none;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var collapsibleButtons = document.querySelectorAll('.collapsible');
+    collapsibleButtons.forEach(function(button) {
+      button.addEventListener('click', function() {
+        this.classList.toggle('active');
+        var content = this.nextElementSibling;
+        if (content.style.display === 'block') {
+          content.style.display = 'none';
+        } else {
+          content.style.display = 'block';
+        }
+      });
+    });
+  });
+</script>
+
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
 	 <span class="navbar-toggler-icon"></span>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -57,7 +81,7 @@
 			<div class="year" id="courses">
 			<font size="4">Courses</font>
 			</div>
-			<h5 id="econ373" style="margin-top: -50px; padding-top: 50px;"></h5>
+			<h5 class="collapsible-header" id="econ373" style="margin-top: -50px; padding-top: 50px;"></h5>
 			<div class="year" id="econ373">
 			<ul style="list-style-type: none; padding-left: 0;">
 			<li style="padding-left: 20px;">
@@ -66,7 +90,8 @@
 			<font size="3" color="gray">US Economic History (Econ 373)</font>
 			</a>
 			</p>
-			<ol style="list-style-type: decimal; padding-left: 40px; font-size: 15px;">
+			<button class="collapsible">+</button>
+			<ol class="collapsible-content" style="list-style-type: decimal; padding-left: 40px; font-size: 15px;">
 			<li style="margin-bottom: 10px; font-family: 'Courier New', Courier, monospace;"><font size="3px">US Economic Growth in the Long Run</font></li>
 				<ul style="list-style-type: none; padding-left: 0;">
 				<li style="margin-bottom: 10px;">
