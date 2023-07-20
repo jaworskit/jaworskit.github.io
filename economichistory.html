@@ -6,22 +6,10 @@
 		p {margin-bottom:1em;}
 		h1 { font-family: Tahoma, Geneva, sans-serif, serif }
 		body { font-family: Tahoma, Geneva, sans-serif, serif }
-		nav {text-align:left}
+		nav {text-align:center}
 		nav>ul>li>a {font-family: Tahoma, Geneva, sans-serif, serif; color:blue}	
 		.navbar {position: fixed;top:0;left:0;width: 100%;background-color: #f1f1f1;padding: 0px;}
-
-		.container {
-			display: flex;
-			margin: 25px 25px;
-		}
-		.column1 {
-			width: 300px;
-			margin-right: 10px;
-		}
-		.column2 {
-			width: 300px;
-			margin-left: 10px;
-		}
+		
 		
 	</style> 
 	<head>
@@ -74,376 +62,36 @@
 </script>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
-  <span class="navbar-toggler-icon"></span>
-  <div style="margin: 0px 0px 0px 25px" align="left" class="collapse navbar-collapse" id="navbarSupportedContent">
+	 <span class="navbar-toggler-icon"></span>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <span class="navbar-brand" style="color: black;"><font size="5">Taylor Jaworski</font></span>
-      </li>
-      <li class="nav-item active" data-toggle="collapse" data-target=".navbar-collapse.show">
+	<a class="navbar-brand" href="https://jaworskit.github.io/" style="color: black;"><font size="5">Taylor Jaworski</font></a>
+      	</li><li class="nav-item active" data-toggle="collapse" data-target=".navbar-collapse.show">
         <a class="nav-link" target="_blank" href="https://jaworskit.github.io/CV/CV.pdf">CV</a>
-      </li>
-      <li class="nav-item active" data-toggle="collapse" data-target=".navbar-collapse.show">
-        <a class="nav-link" href="https://jaworskit.github.io/">Research</a>
-      </li>
-      <li class="nav-item active" data-toggle="collapse" data-target=".navbar-collapse.show">
-        <a class="nav-link" href="teaching.html">Teaching</a>
-      </li>
-      <li class="nav-item active" data-toggle="collapse" data-target=".navbar-collapse.show">
-        <a class="nav-link" href="economichistory.html">Economic History</a>
-      </li>
+      	</li><li class="nav-item active" data-toggle="collapse" data-target=".navbar-collapse.show">
+        <a class="nav-link" href="https://jaworskit.github.io/" >Research</a>
+      	</li><li class="nav-item active" data-toggle="collapse" data-target=".navbar-collapse.show">
+ 	<a class="nav-link" href="teaching.html">Teaching</a>
+       	</li><li class="nav-item active" data-toggle="collapse" data-target=".navbar-collapse.show">
+ 	<a class="nav-link" href="economichistory.html">Economic History</a>
     </ul>
   </div>
 </nav>
 	
 	<body>
-		<div class="container" align="left" style="margin: 25px 0px 0px -25px">
-		<div id="column1" style="float:left; margin:0px; width:300px;">
-		<nav>
-    		<ul>
-		</nav>	
-			<h5 id="courses" style="margin-top: -50px; padding-top: 50px;"></h5>
-			<div class="year" id="courses">
-			<p align="left" style="margin-bottom: -10px;"><font size="4">Courses</font></p>
-			</div>
-			<h5 class="collapsible-header" id="econ373" style="margin-top: -50px; padding-top: 50px;"></h5>
-			<div class="year" id="econ373">
-			<ul style="list-style-type: none; padding-left: 0;">
-			<li style="padding-left: 20px;">
-			<p align="justify" style='line-height: 14px; margin-bottom: 10px;'>
-			<font size="3" color="gray">
-			</font>
-			</p>
-
-			<button class="collapsible" onclick="toggleCollapsible(this.nextElementSibling)">Econ 373: US Economic History</button>
-			<ol class="collapsible-content" style="list-style-type: decimal; margin-top: 10px; padding-left: 40px; font-size: 15px;">
-			<p align="justify" style='line-height: 14px; margin-bottom: 20px; margin-left: -25px;'>
-			<span style="font-size: 16px;"><a class="nav-link" target="_blank" href="https://jaworskit.github.io/Courses/Econ 373 Syllabus.pdf">Syllabus</a></span>
-			<span style="font-size: 16px; margin-left: 10px;"><a class="nav-link" target="_blank" href="https://jaworskit.github.io/Courses/Econ 373 Paper Handout.pdf">Paper Assignment</a></span>
-			</p>
-			<li style="margin-bottom: 10px; font-family: 'Courier New', Courier, monospace;"><font size="3px">US Economic Growth in the Long Run</font></li>
-				<ul style="list-style-type: none; padding-left: 0;">
-				<li style="margin-bottom: 10px;">
-				<font size="2">Lectures:</font>
-				<a target="_blank" href="https://jaworskit.github.io/Courses/01a_IntroToEH.pdf">
-				<font size="2" color="gray">Introduction to US Economic History</font>,
-				</a>
-				<a target="_blank" href="https://jaworskit.github.io/Courses/01b_GrowthAndEquality.pdf">	
-				<font size="2" color="gray">Growth and Equality</font>
-				</a>
-				</li>
-				<li style="margin-bottom: 10px;">
-				<a target="_blank" href="https://www.jstor.org/stable/25098716">
-				<font size="2" color="gray">Davis, "An Annual Index of US Industrial Production," <em>QJE</em>, pp. 1177-1180, 1187-1205.</font>
-				</a>
-				</li>
-				<li style="margin-bottom: 20px;">
-				<a target="_blank" href="https://oll.libertyfund.org/title/democracy-in-america-english-edition-vol-1#lf1593-01_head_033">
-				<font size="2" color="gray">Tocqueville, <em>Democracy in America</em>, "Introduction." </font>
-				</a>
-				</li>	
-				</ul>
-			<li style="margin-bottom: 10px; font-family: 'Courier New', Courier, monospace;"><font size="3px">The Colonial Economy</font></li>
-			<ul style="list-style-type: none; padding-left: 0;">
-				<li style="margin-bottom: 10px;">
-				<font size="2">Lectures:</font>
-				<a target="_blank" href="https://jaworskit.github.io/Courses/02a_ColonialOrigins.pdf">
-				<font size="2" color="gray">Colonial Origins</font>,
-				</a>
-				<a target="_blank" href="https://jaworskit.github.io/Courses/02b_IndenturedServitude.pdf">	
-				<font size="2" color="gray">Indentured Servitude</font>
-				</a>
-				</li>
-				<li style="margin-bottom: 10px;">
-				<a target="_blank" href="https://www.jstor.org/stable/24550629">
-				<font size="2" color="gray">Lindert & Williamson, "American Incomes Before and After the Revolution," <em>JEH</em>.</font>
-				</a>
-				</li>
-				<li style="margin-bottom: 10px;">
-				<a target="_blank" href="https://doi.org/10.1017/S0022050722000080">
-				<font size="2" color="gray">Carlos, Feir, & Redish, "Indigenous Nations and the Development of the US Economy," <em>JEH</em>.</font>
-				</a>
-				</li>
-				<li style="margin-bottom: 20px;">
-				<a target="_blank" href="https://www.jstor.org/stable/2120553">
-				<font size="2" color="gray">Galenson, "The Rise and Fall of Indentured Servitude in the Americas," <em>JEH</em>.</font>
-				</a>
-				</li>
-				</ul>	
-			<li style="margin-bottom: 10px; font-family: 'Courier New', Courier, monospace;"><font size="3px">Revolution and American Institutions</font></li>
-			<ul style="list-style-type: none; padding-left: 0;">
-				<li style="margin-bottom: 10px;">
-				<font size="2">Lectures:</font>
-				<a target="_blank" href="https://jaworskit.github.io/Courses/03a_Revolution.pdf">
-				<font size="2" color="gray">The Causes of the Revolution</font>,
-				</a>
-				<a target="_blank" href="https://jaworskit.github.io/Courses/03b_Constitutions.pdf">	
-				<font size="2" color="gray">Constitutions</font>
-				</a>
-				</li>	
-				<li style="margin-bottom: 10px;">
-				<a target="_blank" href="https://www.jstor.org/stable/10.1086/665415">
-				<font size="2" color="gray">Sargent, "United States Then, Europe Now," <em>JPE</em>.</font>
-				</a>
-				</li>
-				<li style="margin-bottom: 10px;">
-				<a target="_blank" href="https://www.archives.gov/founding-docs/declaration-transcript">
-				<font size="2" color="gray">Declaration of Independence,</font>
-				</a>
-				<a target="_blank" href="https://www.archives.gov/founding-docs/constitution">
-				<font size="2" color="gray">Constitution,</font>
-				</a>	
-				<a target="_blank" href="https://www.archives.gov/founding-docs/bill-of-rights">
-				<font size="2" color="gray">Bill of Rights</font>
-				</a>		
-				</li>
-				<li style="margin-bottom: 20px;">
-				<a target="_blank" href="https://muse.jhu.edu/article/803780">
-				<font size="2" color="gray">Lamoreaux & Wallis, "Economic Crisis, General Laws, and the Mid-Nineteenth-Century Transformation of American Political Economy," <em>JER</em>.</font>
-				</a>
-				</li>	
-				</ul>	
-			<li style="margin-bottom: 10px; font-family: 'Courier New', Courier, monospace;"><font size="3px">Slavery and the Civil War</font></li>
-			<ul style="list-style-type: none; padding-left: 0;">
-				<li style="margin-bottom: 10px;">
-				<font size="2">Lectures:</font>
-				<a target="_blank" href="https://jaworskit.github.io/Courses/04a_Slavery.pdf">
-				<font size="2" color="gray">Slavery</font>,
-				</a>
-				<a target="_blank" href="https://jaworskit.github.io/Courses/04b_CivilWar.pdf">
-				<font size="2" color="gray">The Civil War</font>,
-				</a>
-				<a target="_blank" href="https://jaworskit.github.io/Courses/04c_Reconstruction.pdf">
-				<font size="2" color="gray">Reconstruction</font>
-				</a>
-				</li>	
-				<li style="margin-bottom: 10px;">
-				<a target="_blank" href="https://jaworskit.github.io/Courses/HornbeckLogan.pdf">
-				<font size="2" color="gray">Hornbeck & Logan, “One Giant Leap: Emancipation and Aggregate Productivity Growth”</font>
-				</a>
-				</li>
-				<li style="margin-bottom: 10px;">
-				<a target="_blank" href="https://jaworskit.github.io/Courses/BleakleyRhodeBorder.pdf">
-				<font size="2" color="gray">Bleakley & Rhode, “The Economic Effects of American Slavery”</font>
-				</a>
-				</li>
-				<li style="margin-bottom: 10px;">
-				<a target="_blank" href="https://www.jstor.org/stable/40056471">
-				<font size="2" color="gray">Hilt, "Revisiting <em>Time on the Cross</em> After 45 Years," <em>Capitalism</em>.</font>
-				</a>
-				</li>
-				<li style="margin-bottom: 10px;">
-				<a target="_blank" href="https://www.jstor.org/stable/43821395">
-				<font size="2" color="gray">Calomiris & Pritchett, "Betting on Secession," <em>AER</em>.</font>
-				</a>
-				</li>	
-				<li style="margin-bottom: 10px;">
-				<a target="_blank" href="https://doi.org/10.1017/S0022050719000755">
-				<font size="2" color="gray">Logan, "Do Black Politicians Matter," <em>JEH</em>.</font>
-				</a>
-				</li>	
-				<li style="margin-bottom: 20px;">
-				<a target="_blank" href="https://jaworskit.github.io/Courses/DKKS.pdf">
-				<font size="2" color="gray">Derenoncourt, Kim, Kuhn, & Schularick, "Wealth of Two Nations."</font>
-				</a>
-				</li>	
-				</ul>	
-			<li style="margin-bottom: 10px; font-family: 'Courier New', Courier, monospace;"><font size="3px">Agricultural Development</font></li>
-				<ul style="list-style-type: none; padding-left: 0;">
-				<li style="margin-bottom: 10px;">
-				<font size="2">Lectures:</font>
-				<a target="_blank" href="https://jaworskit.github.io/Courses/05a_Mechanization.pdf">
-				<font size="2" color="gray">Mechanization</font>,
-				</a>
-				<a target="_blank" href="https://jaworskit.github.io/Courses/05b_BiologicalInnovation.pdf">	
-				<font size="2" color="gray">Biological Innovation</font>
-				</a>
-				</li>	
-				<li style="margin-bottom: 10px;">
-				<a target="_blank" href="https://www.jstor.org/stable/3132397">
-				<font size="2" color="gray">Olmstead & Rhode, "The Red Queen and the Hard Reds," <em>JEH</em>.</font>
-				</a>
-				</li>
-				<li style="margin-bottom: 10px;">
-				<a target="_blank" href="https://www.jstor.org/stable/40056471">
-				<font size="2" color="gray">Olmstead & Rhode, "Biological Innovation and Productivity Growth in the Antebellum Cotton Economy," <em>JEH</em>.</font>
-				</a>
-				</li>		
-				<li style="margin-bottom: 20px;">
-				<a target="_blank" href="https://www.jstor.org/stable/2698132">
-				<font size="2" color="gray">Olmstead & Rhode, "Reshaping the Landscape," <em>JEH</em>.</font>
-				</a>
-				</li>	
-				</ul>	
-			<li style="margin-bottom: 10px; font-family: 'Courier New', Courier, monospace;"><font size="3px">Market Revolution</font></li>
-				<ul style="list-style-type: none; padding-left: 0;">
-				<li style="margin-bottom: 10px;">
-				<font size="2">Lectures:</font>
-				<a target="_blank" href="https://jaworskit.github.io/Courses/06a_MarketSize.pdf">
-				<font size="2" color="gray">Market Size and Transportation</font>,
-				</a>
-				<a target="_blank" href="https://jaworskit.github.io/Courses/06b_Railroads.pdf">	
-				<font size="2" color="gray">The Railroad Debate</font>
-				</a>
-				</li>	
-				<li style="margin-bottom: 10px;">
-				<a target="_blank" href="">
-				<font size="2" color="gray">Bleakley & Lin, "Portage and Path Dependence," <em>QJE</em>.</font>
-				</a>
-				</li>
-				<li style="margin-bottom: 20px;">
-				<a target="_blank" href="https://www.jstor.org/stable/26372653">
-				<font size="2" color="gray">Donaldson & Hornbeck, "Railroads and American Economic Growth," <em>QJE</em>.</font>
-				</a>
-				</li>	
-				</ul>	
-			<li style="margin-bottom: 10px; font-family: 'Courier New', Courier, monospace;"><font size="3px">Week of Exam #1</font></li>
-			<li style="margin-bottom: 10px; font-family: 'Courier New', Courier, monospace;"><font size="3px">Globalization: Immigration and Trade</font></li>
-				<ul style="list-style-type: none; padding-left: 0;">
-				<li style="margin-bottom: 10px;">
-				<font size="2">Lectures:</font>
-				<a target="_blank" href="https://jaworskit.github.io/Courses/08a_AgeOfMassMigration.pdf">
-				<font size="2" color="gray">The Age of Mass Migration</font>,
-				</a>
-				<a target="_blank" href="https://jaworskit.github.io/Courses/08b_FirstEra.pdf">	
-				<font size="2" color="gray">The First Era of Globalization</font>
-				</a>
-				</li>	
-				<li style="margin-bottom: 10px;">
-				<a target="_blank" href="https://www.nber.org/papers/w26414">
-				<font size="2" color="gray">Collins & Zimran, "Working Their Way Up?"</font>
-				</a>
-				</li>	
-				<li style="margin-bottom: 20px;">
-				<a target="_blank" href="https://www.nber.org/papers/w26256">
-				<font size="2" color="gray">Irwin, "US Trade Policy in Historical Perspective." </font>
-				</a>
-				</li>	
-				</ul>	
-			<li style="margin-bottom: 10px; font-family: 'Courier New', Courier, monospace;"><font size="3px">Industrialization and Entrepreneurship</font></li>
-				<ul style="list-style-type: none; padding-left: 0;">
-				<li style="margin-bottom: 10px;">
-				<font size="2">Lectures:</font>
-				<a target="_blank" href="https://jaworskit.github.io/Courses/10a_StructuralChange.pdf">
-				<font size="2" color="gray">Structural Change</font>,
-				</a>
-				<a target="_blank" href="https://jaworskit.github.io/Courses/10c_Innovation.pdf">	
-				<font size="2" color="gray">Innovation and Economic Growth</font>
-				</a>
-				</li>	
-				<li style="margin-bottom: 10px;">
-				<a target="_blank" href="https://www.jstor.org/stable/2566435">
-				<font size="2" color="gray">Lamoreaux & Sokoloff, "The Geography of Invention in the American Glass Industry," <em>JEH</em>.</font>
-				</a>
-				</li>					
-				<li style="margin-bottom: 20px;">
-				<a target="_blank" href="https://www.jstor.org/stable/3132364">
-				<font size="2" color="gray">Nicholas, "Why Schumpeter Was Right," <em>JEH</em>.</font>
-				</a>
-				</li>	
-				</ul>	
-			<li style="margin-bottom: 10px; font-family: 'Courier New', Courier, monospace;"><font size="3px">Financial Crises</font></li>
-				<ul style="list-style-type: none; padding-left: 0;">
-				<li style="margin-bottom: 10px;">
-				<font size="2">Lectures:</font>
-				<a target="_blank" href="https://jaworskit.github.io/Courses/11a_BanksPanics.pdf.pdf">
-				<font size="2" color="gray">Banks and Financial Panics</font>,
-				</a>
-				<a target="_blank" href="https://jaworskit.github.io/Courses/11b_GreatDepression">	
-				<font size="2" color="gray">The Great Depression</font>
-				</a>
-				</li>	
-				<li style="margin-bottom: 10px;">
-				<a target="_blank" href="https://www.aeaweb.org/articles?id=10.1257/jep.7.2.19">
-				<font size="2" color="gray">Romer, "The Nation in Depression," <em>JEP</em>.</font>
-				</a>
-				</li>	
-				<li style="margin-bottom: 20px;">
-				<a target="_blank" href="https://www.jstor.org/stable/3875111">
-				<font size="2" color="gray">Olney, "Avoiding Default," <em>QJE</em>.</font>
-				</a>
-				</li>	
-				</ul>	
-			<li style="margin-bottom: 10px; font-family: 'Courier New', Courier, monospace;"><font size="3px">The Rise of Big Government</font></li>
-				<ul style="list-style-type: none; padding-left: 0;">
-				<li style="margin-bottom: 10px;">
-				<font size="2">Lectures:</font>
-				<a target="_blank" href="https://jaworskit.github.io/Courses/12c_WorldWarII.pdf">
-				<font size="2" color="gray">World War II</font>,
-				</a>
-				<a target="_blank" href="https://jaworskit.github.io/Courses/12b_StateCapacity.pdf">	
-				<font size="2" color="gray">State Capacity</font>
-				</a>
-				</li>	
-				<li style="margin-bottom: 10px;">
-				<a target="_blank" href="https://doi.org/10.1017/S0022050700010251">
-				<font size="2" color="gray">Higgs, "Wartime Prosperity?" <em>JEH</em>.</font>
-				</a>
-				</li>	
-				<li style="margin-bottom: 20px;">
-				<a target="_blank" href="https://www.nber.org/papers/w30067">
-				<font size="2" color="gray">Fishback, "Safety Nets and Social Welfare Expenditures in World Economic History."</font>
-				</a>
-				</li>	
-				</ul>	
-			<li style="margin-bottom: 10px; font-family: 'Courier New', Courier, monospace;"><font size="3px">Education and Human Capital</font></li>
-				<ul style="list-style-type: none; padding-left: 0;">
-				<li style="margin-bottom: 10px;">
-				<font size="2">Lectures:</font>
-				<a target="_blank" href="https://jaworskit.github.io/Courses/13a_Skills.pdf">
-				<font size="2" color="gray">Skills</font>,
-				</a>
-				<a target="_blank" href="https://jaworskit.github.io/Courses/13b_Inequality.pdf">	
-				<font size="2" color="gray">Inequality</font>
-				</a>
-				</li>	
-				<li style="margin-bottom: 10px;">
-				<a target="_blank" href="https://www.aeaweb.org/articles?id=10.1257/pandp.20201061">
-				<font size="2" color="gray">Autor, Goldin, & Katz, "Extending the Race between Education and Technology," <em>AEA P&P</em>.</font>
-				</a>
-				</li>	
-				<li style="margin-bottom: 10px;">
-				<a target="_blank" href="https://www.jstor.org/stable/26553271">
-				<font size="2" color="gray">Carruthers & Wanamaker, "Separate and Unequal in the Labor Market," <em>JOLE</em>.</font>
-				</a>
-				</li>
-				<li style="margin-bottom: 20px;">
-				<a target="_blank" href="https://www.jstor.org/stable/41812144">
-				<font size="2" color="gray">Philippon & Reshef, "Wages and Human Capital in the US Finance Industry," <em>QJE</em>.</font>
-				</a>
-				</li>	
-				</ul>	
-			<li style="margin-bottom: 10px; font-family: 'Courier New', Courier, monospace;"><font size="3px">Week of Exam #2</font></li>
-			<li style="margin-bottom: 10px; font-family: 'Courier New', Courier, monospace;"><font size="3px">Economic Opportunity in the United States</font></li>
-				<ul style="list-style-type: none; padding-left: 0;">
-				<li style="margin-bottom: 10px;">
-				<font size="2">Lectures:</font>
-				<a target="_blank" href="https://jaworskit.github.io/Courses/14a_SocialMobility.pdf">
-				<font size="2" color="gray">Social Mobility</font>,
-				</a>
-				<a target="_blank" href="https://jaworskit.github.io/Courses/14b_GrowthFuture.pdf">	
-				<font size="2" color="gray">The Future of Economic Growth</font>
-				</a>
-				</li>	
-				<li style="margin-bottom: 10px;">
-				<a target="_blank" href="https://www.nber.org/papers/w29289">
-				<font size="2" color="gray">Jacome, Kuziemko, & Naidu, "Mobility for All."</font>
-				</a>
-				</li>	
-				<li style="margin-bottom: 10px;">
-				<a target="_blank" href="https://www.nber.org/papers/w29289">
-				<font size="2" color="gray">Tocqueville, <em>Democracy in America</em>, "How, in Times of Equality and Doubt, It Is Important to
-Set Distant Goals for Human Actions." </font>
-				</a>
-				</li>		
-				</ul>	
-			</ol>
-			</li>
-			</ul>
-		</div>
-		<div id="column2" style="float:left; margin:25px; width:300px;">
+		<div id="column1" style="float:left; margin:0px; width:20%;">
 		<div class="container">
-    		<div class="blurb">	
+    		<div class="blurb">
+			<p style='line-height: 0px;'><font size="7" style="color:white"><b> <br> </b></font></p>	
+			<div class="nospace" align="center"> 
+			<!-- <img border="0" src="https://www.archives.gov/files/research/military/ww2/photos/images/ww2-31-m.jpg" width="75%"  /> 
+			<!-- <img border="0" src="https://www.archives.gov/files/research/military/ww2/photos/images/ww2-35.jpg" width="75%" />
+			<!-- <img border="0" src="https://www.archives.gov/files/research/military/ww2/photos/images/ww2-13.jpg" width="75%"  /> --> </div>				
+    		</div><!-- /.blurb -->
+		</div><!-- /.container -->
+		</div>
+		<div id="column2" style="float:left; margin:25px; width:70%;">
 		<nav>
     		<ul>
 		</nav>	
@@ -528,7 +176,7 @@ Set Distant Goals for Human Actions." </font>
 			</ul>
 			</li>
 			</ul>
-		</div>	
+
 		</div>	
 	</body>
 </html>
