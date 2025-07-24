@@ -11,16 +11,26 @@
       padding: 0;
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
+    
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+  padding: 0;
+}
 
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #f1f1f1;
-      padding: 0px;
-    }
+.navbar-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px 10px 25px;
+}
 
+    
     .container {
       display: flex;
       justify-content: center;
@@ -91,14 +101,12 @@
 </head>
 <body>
 
-<nav class="navbar" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 40px 10px 25px; max-width: 1200px; margin: 0 auto;">
-  <div>
+<nav class="navbar">
+  <div class="navbar-content">
     <a href="index.html" style="text-decoration: none; font-size: 24px; font-weight: bold; color: black; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
       Taylor Jaworski
     </a>
-  </div>
-  <div style="font-size: 16px; font-weight: normal; color: black; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
-    American Economic Growth and Inequality
+    <span style="font-size: 16px; color: black;">American Economic Growth and Inequality</span>
   </div>
 </nav>
 
