@@ -41,19 +41,16 @@
     .three-column .column:nth-child(1) {
       flex: 1;
       padding-left: 20px;
-      flex: 1;
     }
 
     .three-column .column:nth-child(2) {
-      flex: 1.5; /* Wider middle column */
+      flex: 1;
       text-align: justify;
-      flex: 1.5; /* Wider middle column */
     }
 
     .three-column .column:nth-child(3) {
-      flex: 0.8;
+      flex: 1;
       padding-right: 20px;
-      flex: 0.8; /* Narrower right column */
     }
 
     .column-title {
@@ -89,18 +86,25 @@
     }
 
     .topic-title {
-      font-style: italic;
-      display: block;
-    }
+  font-style: italic;
+  display: block;
+  margin-bottom: 6px;
+}
 
     $1
   padding: 0 15px;
   text-align: justify;
 }
 
-    .reading em {
-      font-style: italic;
-    }
+    .reading {
+  padding-left: 20px;
+  padding-right: 20px;
+  text-align: justify;
+}
+
+.reading em {
+  font-style: italic;
+}
   </style>
 </head>
 <body>
@@ -162,4 +166,3 @@
 
 </body>
 </html>
-
