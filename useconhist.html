@@ -5,9 +5,12 @@
   <title>Taylor Jaworski</title>
   <link rel="stylesheet" type="text/css" href="/css/main.css">
   <style>
-    body, h1, h2, h3, h4, h5, h6, p {
+    body {
+      margin: 0;
+      padding: 0;
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
+
     .navbar {
       position: fixed;
       top: 0;
@@ -16,29 +19,49 @@
       background-color: #f1f1f1;
       padding: 0px;
     }
+
     .container {
       display: flex;
       justify-content: center;
       margin-top: 100px;
     }
-    .column {
-      margin: 0 10px;
-      width: 30%;
+
+    .three-column {
+      display: flex;
+      justify-content: center;
+      padding: 0 10px;
     }
+
+    .column {
+      width: 33.33%;
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+
     .column-title {
       text-align: right;
-      font-size: 18px;
+      font-size: 16px;
       font-weight: bold;
       margin-bottom: 10px;
     }
+
     .full-width-img {
       width: 100%;
       height: auto;
-      margin-bottom: 20px;
+      display: block;
+      margin: 0;
+      padding: 0;
+    }
+
+    p {
+      line-height: 20px;
+      font-size: 14px;
+      text-align: justify;
     }
   </style>
 </head>
 <body>
+
   <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
     <span class="navbar-toggler-icon"></span>
     <div style="margin: 0px 0px 0px 25px" align="left" class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -50,55 +73,33 @@
     </div>
   </nav>
 
-  <div class="container">
-    <img class="full-width-img" src="https://jaworskit.github.io/usbanner.jpg" >
+  <div>
+    <img class="full-width-img" src="https://jaworskit.github.io/usbanner.jpg" alt="Course Banner">
   </div>
 
-  <div class="container" align="left" style="margin: 25px 0px 0px -25px">
-		<div id="column1" style="margin: 0px 20px 0px 0px; width:325px;">
-						
-			
-			<div class="year">
-			<p style="margin: 25px 0px -15px 0px;" align="right"><font size="3"><b>Description </b></font></p>
-			</div>	
-			<p align="justify" style="line-height: 20px; font-size: 14px;">
-			In his travels to the United States in the 1830s, Alexis de Tocqueville noted the equality of conditions that existed relative to the Old World. 
-The historical record suggests that equality of conditions has not always been a feature of the American economic landscape.
-This contrasts with the experience with economic growth, which has been sustained (with a few exceptions) over the last more than 200 years.
-This course will follow the trajectory of the American economy from Colonial times to the present. 
-The primary goal is to understand the sources and consequences of economic change over time. 
-In the context of Tocqueville's \emph{Democracy in America}, we will consider the evidence for his observations through the middle of the nineteenth century and whether his projections survived the advent of industrial capitalism and structural changes in the American and global economies.
-We will cover the application of economic methodologies -- including theories of growth and analysis of data -- to understand economic and institutional change from the American Revolution through the Civil War, the emergence of the modern economy, and periods of crisis in American history (e.g., the Great Depression and World War II). 
-We will consider the benefits and consequences of economic growth for different social groups as well as reasons for optimism or pessimism about the prospects for future of equality and growth.
-			</p>
-			
-		
-		</div>
-		
-		<div id="column2" style="margin:0px 20px 0px 0px; width:375px;">	
-		<nav></nav>				
+  <div class="three-column">
+    <div class="column">
+      <div class="column-title">Description</div>
+      <p>
+        In his travels to the United States in the 1830s, Alexis de Tocqueville noted the equality of conditions that existed relative to the Old World.
+        The historical record suggests that equality of conditions has not always been a feature of the American economic landscape.
+        This contrasts with the experience with economic growth, which has been sustained (with a few exceptions) over the last more than 200 years.
+        This course will follow the trajectory of the American economy from Colonial times to the present.
+        The primary goal is to understand the sources and consequences of economic change over time.
+        In the context of Tocqueville's <em>Democracy in America</em>, we will consider the evidence for his observations through the middle of the nineteenth century and whether his projections survived the advent of industrial capitalism and structural changes in the American and global economies.
+      </p>
+    </div>
 
-			<h5 id="pubs" style="margin-top: -50px; padding-top: 50px;"></h5>
-			<div class="year" id="pubs">
-			<p style="margin: 5px 0px -5px 0px;" align="right"><font size="3"><b>Outline</b></font></p>
-			</div>
-			
-			
+    <div class="column">
+      <div class="column-title">Outline</div>
+      <p>[Insert outline here]</p>
+    </div>
 
-		
-		</div>
+    <div class="column">
+      <div class="column-title">Assignments</div>
+      <p>[Insert assignments here]</p>
+    </div>
+  </div>
 
-		<div id="column3" style="margin:0px 20px 0px 0px; width:350px;">	
-		<nav>
-		</nav>				
-
-			<h5 id="working" style="margin-top: -50px; padding-top: 50px;"></h5>
-			<div class="year" id="working">
-			<p style="margin: 5px 0px -5px 0px;" align="right"><font size="3"><b> Assignments</b></font></p>
-			</div>	
-			
-		
-			
-		</div>		
 </body>
 </html>
