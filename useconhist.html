@@ -29,14 +29,25 @@
     .three-column {
       display: flex;
       justify-content: space-between;
-      gap: 40px; /* Increased spacing between columns */
+      gap: 40px;
       padding: 0 10px;
       margin-top: 40px;
     }
 
     .column {
-      flex: 1;
       box-sizing: border-box;
+    }
+
+    .three-column .column:nth-child(1) {
+      flex: 1;
+    }
+
+    .three-column .column:nth-child(2) {
+      flex: 1.5; /* Wider middle column */
+    }
+
+    .three-column .column:nth-child(3) {
+      flex: 0.8; /* Narrower right column */
     }
 
     .column-title {
@@ -79,7 +90,7 @@
     .reading {
       font-size: 13px;
       display: block;
-      margin-left: 10px;
+      margin-left: 0;
     }
 
     .reading em {
@@ -122,19 +133,19 @@
     <div class="column">
       <div class="column-title">Outline</div>
       <ul class="topic-list">
-        <li><span class="topic-title">Can Capitalism and Democracy Coexist?</span><span class="reading">⋆ Naomi Lamoreaux and John Wallis, “Democracy, Capitalism, and Equality”</span></li>
-        <li><span class="topic-title">The Americas Before and After Columbus</span><span class="reading">⋆ Ann Carlos, Feir, and Angela Redish, “Indigenous Nations and the Development of the U.S. Economy,” <em>Journal of Economic History</em> (2022)</span></li>
-        <li><span class="topic-title">The Colonial Economy</span><span class="reading">⋆ David Galenson, “The Settlement and Growth of the Colonies,” <em>Cambridge Economic History of the United States</em> (1996)</span></li>
-        <li><span class="topic-title">The American Revolution</span><span class="reading">⋆ Douglas Irwin, Clashing Over Commerce, chapters 1 and 2</span><br><span class="reading">⋆ Declaration of Independence, US Constitution, Bill of Rights</span></li>
-        <li><span class="topic-title">The Early Republic</span><span class="reading">⋆ Andrew Jalil, “A New History of Banking Panics in the United States, 1825-1929,” <em>American Economic Journal: Macroeconomics</em> (2015)</span></li>
-        <li><span class="topic-title">Slavery and the Civil War</span><span class="reading">⋆ Richard Hornbeck and Trevon Logan, “One Giant Leap: Emancipation and Aggregate Economic Gains”</span></li>
-        <li><span class="topic-title">The Development of American Agriculture</span><span class="reading">⋆ Olmstead and Rhode, “Induced Innovation in American Agriculture,” <em>Journal of Political Economy</em> (1993)</span></li>
-        <li><span class="topic-title">The Market Revolution</span><span class="reading">⋆ Donaldson and Hornbeck, “Railroads and American Economic Growth,” <em>Quarterly Journal of Economics</em> (2016)</span></li>
-        <li><span class="topic-title">From Industrialization to Big Business</span><span class="reading">⋆ Atack, Rhode, and Margo, “Automation of Manufacturing in the Late 19th Century,” <em>Journal of Economic Perspectives</em> (2019)</span></li>
-        <li><span class="topic-title">The Age of Mass Migration</span><span class="reading">⋆ Abramitzky, Boustan, and Eriksson, “A Nation of Immigrants,” <em>Journal of Political Economy</em> (2014)</span></li>
-        <li><span class="topic-title">The Great Depression and World War II</span><span class="reading">⋆ Christina Romer, “The Nation in Depression,” <em>Journal of Economic Perspectives</em> (1993)</span></li>
-        <li><span class="topic-title">Education, Skills, and the Evolution of Work</span><span class="reading">⋆ Claudia Goldin, “Egalitarianism and the Returns to Education,” <em>Journal of Political Economy</em> (1999)</span></li>
-        <li><span class="topic-title">The Future of US Growth and Inequality</span><span class="reading">⋆ Mokyr, Vickers, and Ziebarth, “The History of Technological Anxiety,” <em>Journal of Economic Perspectives</em> (2015)</span></li>
+        <li><span class="topic-title">Can Capitalism and Democracy Coexist?</span><span class="reading">Naomi Lamoreaux and John Wallis, “Democracy, Capitalism, and Equality”</span></li>
+        <li><span class="topic-title">The Americas Before and After Columbus</span><span class="reading">Ann Carlos, Feir, and Angela Redish, “Indigenous Nations and the Development of the U.S. Economy,” <em>Journal of Economic History</em> (2022)</span></li>
+        <li><span class="topic-title">The Colonial Economy</span><span class="reading">David Galenson, “The Settlement and Growth of the Colonies,” <em>Cambridge Economic History of the United States</em> (1996)</span></li>
+        <li><span class="topic-title">The American Revolution</span><span class="reading">Douglas Irwin, <em>Clashing Over Commerce</em>, chapters 1 and 2</span><br><span class="reading">Declaration of Independence, US Constitution, Bill of Rights</span></li>
+        <li><span class="topic-title">The Early Republic</span><span class="reading">Andrew Jalil, “A New History of Banking Panics in the United States, 1825-1929,” <em>American Economic Journal: Macroeconomics</em> (2015)</span></li>
+        <li><span class="topic-title">Slavery and the Civil War</span><span class="reading">Richard Hornbeck and Trevon Logan, “One Giant Leap: Emancipation and Aggregate Economic Gains”</span></li>
+        <li><span class="topic-title">The Development of American Agriculture</span><span class="reading">Olmstead and Rhode, “Induced Innovation in American Agriculture,” <em>Journal of Political Economy</em> (1993)</span></li>
+        <li><span class="topic-title">The Market Revolution</span><span class="reading">Donaldson and Hornbeck, “Railroads and American Economic Growth,” <em>Quarterly Journal of Economics</em> (2016)</span></li>
+        <li><span class="topic-title">From Industrialization to Big Business</span><span class="reading">Atack, Rhode, and Margo, “Automation of Manufacturing in the Late 19th Century,” <em>Journal of Economic Perspectives</em> (2019)</span></li>
+        <li><span class="topic-title">The Age of Mass Migration</span><span class="reading">Abramitzky, Boustan, and Eriksson, “A Nation of Immigrants,” <em>Journal of Political Economy</em> (2014)</span></li>
+        <li><span class="topic-title">The Great Depression and World War II</span><span class="reading">Christina Romer, “The Nation in Depression,” <em>Journal of Economic Perspectives</em> (1993)</span></li>
+        <li><span class="topic-title">Education, Skills, and the Evolution of Work</span><span class="reading">Claudia Goldin, “Egalitarianism and the Returns to Education,” <em>Journal of Political Economy</em> (1999)</span></li>
+        <li><span class="topic-title">The Future of US Growth and Inequality</span><span class="reading">Mokyr, Vickers, and Ziebarth, “The History of Technological Anxiety,” <em>Journal of Economic Perspectives</em> (2015)</span></li>
       </ul>
     </div>
 
