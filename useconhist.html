@@ -1,55 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Taylor Jaworski</title>
-  <link rel="stylesheet" type="text/css" href="/css/main.css" />
+  <link rel="stylesheet" type="text/css" href="/css/main.css">
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
+    
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+  padding: 0;
+}
 
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: #f1f1f1;
-      padding: 0;
-    }
+.navbar-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px 10px 25px;
+}
 
-    .navbar-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 40px 10px 25px;
-    }
-
+    
     .container {
       display: flex;
       justify-content: center;
       margin-top: 100px;
     }
 
-    .three-column {
-      display: flex;
-      justify-content: space-between;
-      gap: 0px;
-      padding: 0 0px 0 50px;
-      margin-top: 40px;
-    }
+.three-column {
+  display: flex;
+  justify-content: space-between;
+  gap: 0px;
+  padding: 0 0px 0 50px;  
+  margin-top: 40px;
+}
 
-    .column1, .column2, .column3 {
-      flex: 1;
-      box-sizing: border-box;
-      padding-left: 20px;
-      padding-right: 20px;
-    }
+
+.column1 {
+  flex: 1;
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.column2 {
+  flex: 1;
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.column3 {
+  flex: 1;
+  box-sizing: border-box;
+  padding-left: 20px;
+  padding-right: 20px;
+}
 
     .column-title {
       text-align: left;
@@ -94,151 +108,211 @@
       font-size: 13px;
     }
 
-    .reading-item.star::before {
-      content: "★ ";
-      color: black;
-      font-size: 80%;
-      margin-right: 4px;
-    }
-
     .reading-item em {
       font-style: italic;
     }
 
     .course-title {
-      margin-top: 60px;
-      margin-bottom: 0px;
-      margin-left: 25px;
-      font-size: 18px;
-      color: blue;
-      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    }
-
+  margin-top: 60px;              /* Pushes it down below fixed navbar */
+      margin-bottom: 0px;  
+  margin-left: 25px;             /* Aligns with nav text */
+  font-size: 18px;
+  color: blue;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
     html, body {
-      max-width: 95%;
-      overflow-x: hidden;
-    }
+  max-width: 95%;
+  overflow-x: hidden;
+}
   </style>
 </head>
 <body>
 
-  <nav class="navbar">
-    <div style="margin-left: 25px; padding: 10px 0;">
-      <a href="index.html" style="text-decoration: none; font-size: 24px; font-weight: bold; color: black;">
-        Taylor Jaworski
-      </a>
-    </div>
-  </nav>
-
-  <div class="course-title">
-    <a href="https://jaworskit.github.io/us_example.pdf" target="_blank" style="color: blue; font-weight: bold; text-decoration: none;">
-      American Economic Growth and Inequality
+<nav class="navbar">
+  <div style="margin-left: 25px; padding: 10px 0;">
+    <a href="index.html" style="text-decoration: none; font-size: 24px; font-weight: bold; color: black; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+      Taylor Jaworski
     </a>
   </div>
+</nav>
 
+<div class="course-title">
+  <a href="https://jaworskit.github.io/us_example.pdf" target="_blank" style="color: blue; font-weight: bold; text-decoration: none;">American Economic Growth and Inequality</a>
+</div>  
   <div style="padding-top: 15px;">
-    <img class="full-width-img" src="https://jaworskit.github.io/usbanner.jpg" alt="Course Banner" />
+    <img class="full-width-img" src="https://jaworskit.github.io/usbanner.jpg" alt="Course Banner">
   </div>
 
   <div class="three-column">
     <div class="column1">
-      <!-- Description, Goals, Materials (unchanged) -->
-      <!-- ... same as before ... -->
+      <div class="column-title">Description</div>
+      <p>
+        In his travels to the United States in the 1830s, Alexis de Tocqueville noted the equality of conditions that existed relative to the Old World.
+        The historical record suggests that equality of conditions has not always been a feature of the American economic landscape.
+        This contrasts with the experience with economic growth, which has been sustained (with a few exceptions) over the last more than 200 years.
+      </p>
+      <p>
+        In the context of Tocqueville's <em>Democracy in America</em>, we will consider the evidence for his observations through the middle of the nineteenth century and whether his projections survived the advent of industrial capitalism and structural changes in the American and global economies.
+        We will cover the application of economic methodologies — including theories of growth and analysis of data — to understand economic and institutional change from the American Revolution through the Civil War, the emergence of the modern economy, and periods of crisis in American history (e.g., the Great Depression and World War II).
+        We will consider the benefits and consequences of growth for different social groups as well as reasons for optimism or pessimism about the future of equality and growth.
+      </p>
+
+      <div class="column-title">Goals</div>
+      <p>
+        Students will (i) apply economic theory to analyze historical events, (ii) use historical data to evaluate causal arguments, (iii) analyze the relationship between economic growth and inequality, and (iv) put current policy issues in historical context.
+        At the of the course, students will have a better understanding of the development of the American economy, determinants of economic growth and distribution, and challenges facing the US economy.
+      </p> 
+      
+      <div class="column-title">Materials</div>
+      <p>
+        All materials (lectures, required readings, etc) will be available on this page. 
+        You should complete readings before we cover the topic in class. 
+        I recommend <em>A New Economic View of American History from Colonial Times to 1940</em> by Jeremy Atack and Peter Passell to learn more about US economic history.
+      </p>  
     </div>
 
     <div class="column2">
-      <div class="column-title">Outline</div>
-      <ul class="topic-list">
-        <li>
-          <span class="topic-title">Can Capitalism and Democracy Coexist?</span>
-          <div class="reading-item star">
-            <a href="https://www.nber.org/papers/w32930" target="_blank">Lamoreaux & Wallis, “Democracy, Capitalism, and Equality”</a>
-          </div>
-        </li>
-        <li>
-          <span class="topic-title">The Americas Before and After Columbus</span>
-          <div class="reading-item star">
-            <a href="https://doi.org/10.1017/S0022050722000080" target="_blank">Carlos, Feir, & Redish, “Indigenous Nations and the Development of the US Economy”</a>
-          </div>
-        </li>
-        <li>
-          <span class="topic-title">The Colonial Economy</span>
-          <div class="reading-item star">
-            <a href="https://doi.org/10.1017/CHOL9780521394420.005" target="_blank">Galenson, “The Settlement and Growth of the Colonies”</a>
-          </div>
-        </li>
-        <li>
-          <span class="topic-title">The American Revolution</span>
-          <div class="reading-item star">Irwin, <em>Clashing Over Commerce</em>, chapters 1 and 2</div>
-          <div class="reading-item star">
-            <a href="https://www.archives.gov/founding-docs/declaration-transcript" target="_blank">Declaration of Independence</a>
-          </div>
-          <div class="reading-item star">
-            <a href="https://www.archives.gov/founding-docs/constitution-transcript" target="_blank">US Constitution</a> and
-            <a href="https://www.archives.gov/founding-docs/bill-of-rights-transcript" target="_blank">Bill of Rights</a>
-          </div>
-        </li>
-        <!-- Add "star" to remaining reading-item divs -->
-        <li>
-          <span class="topic-title">The Early Republic</span>
-          <div class="reading-item star">
-            <a href="https://www.jstor.org/stable/24739337" target="_blank">Jalil, “A New History of Banking Panics in the United States, 1825–1929”</a>
-          </div>
-        </li>
-        <li>
-          <span class="topic-title">Slavery and the Civil War</span>
-          <div class="reading-item star">
-            <a href="https://www.nber.org/papers/w31758" target="_blank">Hornbeck & Logan, “One Giant Leap”</a>
-          </div>
-        </li>
-        <li>
-          <span class="topic-title">The Development of American Agriculture</span>
-          <div class="reading-item star">
-            <a href="https://www.jstor.org/stable/2138675" target="_blank">Olmstead & Rhode, “Induced Innovation in American Agriculture”</a>
-          </div>
-        </li>
-        <li>
-          <span class="topic-title">The Market Revolution</span>
-          <div class="reading-item star">
-            <a href="https://doi.org/10.1093/qje/qjw002" target="_blank">Donaldson & Hornbeck, “Railroads and American Economic Growth”</a>
-          </div>
-        </li>
-        <li>
-          <span class="topic-title">From Industrialization to Big Business</span>
-          <div class="reading-item star">
-            <a href="https://www.aeaweb.org/articles?id=10.1257/jep.33.2.51" target="_blank">Atack, Rhode, & Margo, “Automation of Manufacturing in the Late Nineteenth Century”</a>
-          </div>
-        </li>
-        <li>
-          <span class="topic-title">The Age of Mass Migration</span>
-          <div class="reading-item star">
-            <a href="https://doi.org/10.1086/675805" target="_blank">Abramitzky, Boustan, & Eriksson, “A Nation of Immigrants”</a>
-          </div>
-        </li>
-        <li>
-          <span class="topic-title">The Great Depression and World War II</span>
-          <div class="reading-item star">
-            <a href="https://www.aeaweb.org/articles?id=10.1257/jep.7.2.19" target="_blank">Romer, “The Nation in Depression”</a>
-          </div>
-        </li>
-        <li>
-          <span class="topic-title">Education, Skills, and the Evolution of Work</span>
-          <div class="reading-item star">
-            <a href="https://doi.org/10.1086/250104" target="_blank">Goldin, “Egalitarianism and the Returns to Education”</a>
-          </div>
-        </li>
-        <li>
-          <span class="topic-title">The Future of US Growth and Inequality</span>
-          <div class="reading-item star">
-            <a href="https://doi.org/10.1257/jep.29.3.31" target="_blank">Mokyr, Vickers, & Ziebarth, “The History of Technological Anxiety”</a>
-          </div>
-        </li>
-      </ul>
-    </div>
+  <div class="column-title">Outline</div>
+  <ul class="topic-list">
+    <li>
+      <span class="topic-title">Can Capitalism and Democracy Coexist?</span>
+      <div class="reading-item">
+        <span class="highlight-star" title="Recommended reading">★</span>
+        <a href="https://www.nber.org/papers/w32930" target="_blank" style="color: blue;">Lamoreaux & Wallis, “Democracy, Capitalism, and Equality”</a>
+      </div>
+    </li>
+    <li>
+      <span class="topic-title">The Americas Before and After Columbus</span>
+      <div class="reading-item">
+        <span class="highlight-star" title="Recommended reading">★</span>
+        <a href="https://doi.org/10.1017/S0022050722000080" target="_blank" style="color: blue;">Carlos, Feir, & Redish, “Indigenous Nations and the Development of the US Economy”</a>
+      </div>
+    </li>
+    <li>
+      <span class="topic-title">The Colonial Economy</span>
+      <div class="reading-item">
+        <span class="highlight-star" title="Recommended reading">★</span>
+        <a href="https://doi.org/10.1017/CHOL9780521394420.005" target="_blank" style="color: blue;">Galenson, “The Settlement and Growth of the Colonies”</a>
+      </div>
+    </li>
+    <li>
+      <span class="topic-title">The American Revolution</span>
+      <div class="reading-item">
+        <span class="highlight-star" title="Recommended reading">★</span>
+        Irwin, <em>Clashing Over Commerce</em>, chapters 1 and 2
+      </div>
+      <div class="reading-item">
+        <span class="highlight-star" title="Recommended reading">★</span>
+        <a href="https://www.archives.gov/founding-docs/declaration-transcript" target="_blank" style="color: blue;">Declaration of Independence</a>
+      </div>
+      <div class="reading-item">
+        <span class="highlight-star" title="Recommended reading">★</span>
+        <a href="https://www.archives.gov/founding-docs/constitution-transcript" target="_blank" style="color: blue;">US Constitution</a> and <a href="https://www.archives.gov/founding-docs/bill-of-rights-transcript" target="_blank" style="color: blue;">Bill of Rights</a>
+      </div>
+    </li>
+    <li>
+      <span class="topic-title">The Early Republic</span>
+      <div class="reading-item">
+        <span class="highlight-star" title="Recommended reading">★</span>
+        <a href="https://www.jstor.org/stable/24739337" target="_blank" style="color: blue;">Jalil, “A New History of Banking Panics in the United States, 1825–1929” </a>
+      </div>
+    </li>
+    <li>
+      <span class="topic-title">Slavery and the Civil War</span>
+      <div class="reading-item">
+        <span class="highlight-star" title="Recommended reading">★</span>
+        <a href="https://www.nber.org/papers/w31758" target="_blank" style="color: blue;">Hornbeck & Logan, “One Giant Leap”</a>
+      </div>
+    </li>
+    <li>
+      <span class="topic-title">The Development of American Agriculture</span>
+      <div class="reading-item">
+        <span class="highlight-star" title="Recommended reading">★</span>
+        <a href="https://www.jstor.org/stable/2138675" target="_blank" style="color: blue;">Olmstead & Rhode, “Induced Innovation in American Agriculture” </a>
+      </div>
+    </li>
+    <li>
+      
+      <div class="reading-item">
+        <span class="highlight-star" title="Recommended reading">★</span>
+        <a href="https://doi.org/10.1093/qje/qjw002" target="_blank" style="color: blue;">Donaldson & Hornbeck, “Railroads and American Economic Growth”</a>
+      </div>
+    </li>
+    <li>
+      <span class="topic-title">From Industrialization to Big Business</span>
+      <div class="reading-item">
+        <span class="highlight-star" title="Recommended reading">★</span>
+        <a href="https://www.aeaweb.org/articles?id=10.1257/jep.33.2.51" target="_blank" style="color: blue;">Atack, Rhode, & Margo, “Automation of Manufacturing in the Late Nineteenth Century”</a>
+      </div>
+    </li>
+    <li>
+      <span class="topic-title">The Age of Mass Migration</span>
+      <div class="reading-item">
+        <span class="highlight-star" title="Recommended reading">★</span>
+        <a href="https://doi.org/10.1086/675805" target="_blank" style="color: blue;">Abramitzky, Boustan, & Eriksson, “A Nation of Immigrants”</a>
+      </div>
+    </li>
+    <li>
+      <span class="topic-title">The Great Depression and World War II</span>
+      <div class="reading-item">
+        <span class="highlight-star" title="Recommended reading">★</span>
+        <a href="https://www.aeaweb.org/articles?id=10.1257/jep.7.2.19" target="_blank" style="color: blue;">Romer, “The Nation in Depression”</a>
+      </div>
+    </li>
+    <li>
+      <span class="topic-title">Education, Skills, and the Evolution of Work</span>
+      <div class="reading-item">
+        <span class="highlight-star" title="Recommended reading">★</span>
+        <a href="https://doi.org/10.1086/250104" target="_blank" style="color: blue;">Goldin, “Egalitarianism and the Returns to Education”</a>
+      </div>
+    </li>
+    <li>
+      <span class="topic-title">The Future of US Growth and Inequality</span>
+      <div class="reading-item">
+        <span class="highlight-star" title="Recommended reading">★</span>
+        <a href="https://doi.org/10.1257/jep.29.3.31" target="_blank" style="color: blue;">Mokyr, Vickers, & Ziebarth, “The History of Technological Anxiety”</a>
+      </div>
+    </li>
+  </ul>
+</div>
+
 
     <div class="column3">
-      <!-- Grading and Office Hours (unchanged) -->
-      <!-- ... same as before ... -->
+
+      <div class="column-title">Grading</div>
+      <p>
+        <em>Attendance</em>: Attendance is required. Missing more than three classes will result in a full letter grade reduction of your final grade (e.g., an "A" becomes a "B"). 
+        Each additional three classes missed will result in a further letter grade reduction of your final grade.
+
+      </p>
+      <p>
+        <em>Literature Review</em> (10%): Students are required to find a research article published in the <em>Journal of Economic History</em>, <em>Explorations in Economic History</em>, or <em>Economic History Review</em> for each topic.
+        Students must identify table or figure from the article, give a brief description of the table or figure, and provide a proper citation.
+      </p>
+
+      <p>
+        <em>US Government Library Document</em> (15%): Students are required to find and describe a government document related in Norlin Library. 
+        Students must provide provide evidence that they came into physical contact with the document in the library, describe the document, and discuss why it is useful for understanding an aspect of US economic history.
+      </p>
+
+      <p>
+        <em>Data Analysis</em> (15%): Students to propose a question or hypothesis and use the <a href="https://hsus.cambridge.org/HSUSWeb/toc/showTable.do?id=Ba652-1032" target="_blank" style="color: blue;">Historical Statistics of the United States</a> to answer the question or test a hypothesis.
+        Students must download a data series, construct a figure or table, and discuss how it is useful for addressing their question or hypothesis.
+      </p>
+
+      <p>
+        <em>Exams</em> (60% total = 25% midterm + 35% final): There will be one in-class midterm exam and a final exam onathe date and time set by the University.
+        All exams are cumulative.
+      </p>
+      
+      <div class="column-title">Office Hours and Email</div>
+      <p>
+        I encourage you to attend office hours or to setup a time to meet outside of office hours. 
+        You should come to office hours prepared with questions or ready to discuss course material. 
+        Office hours are the appropriate forum for addressing questions about course material or policies. 
+        Use email to setup a time to meet outside of office hours, if necessary.
+      </p> 
+      
     </div>
   </div>
 
