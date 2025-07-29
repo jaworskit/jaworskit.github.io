@@ -11,6 +11,35 @@
       padding: 0;
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
+
+.custom-list {
+  list-style: none;
+  padding-left: 1.5em;
+  margin-top: 4px;
+  margin-bottom: 16px;
+}
+
+.custom-list li {
+  text-indent: -1.2em;
+  padding-left: 1.2em;
+  font-size: 13px;
+  line-height: 1.4em;
+  text-align: justify;
+}
+
+.custom-list li.star::before {
+  content: "★ ";
+  color: black;
+  font-size: 90%;
+  margin-right: 0.4em;
+}
+
+.custom-list li.note::before {
+  content: "♪ ";
+  color: black;
+  font-size: 90%;
+  margin-right: 0.4em;
+}
     
 .navbar {
   position: fixed;
@@ -196,20 +225,25 @@
       </div>
     </li>
     <li>
-      <span class="topic-title">The American Revolution</span>
-      <div class="reading-item">
-        <span class="highlight-star" title="Recommended reading">★</span>
-        Irwin, <em>Clashing Over Commerce</em>, chapters 1 and 2
-      </div>
-      <div class="reading-item">
-        <span class="highlight-star" title="Recommended reading">★</span>
-        <a href="https://www.archives.gov/founding-docs/declaration-transcript" target="_blank" style="color: blue;">Declaration of Independence</a>
-      </div>
-      <div class="reading-item">
-        <span class="highlight-star" title="Recommended reading">★</span>
-        <a href="https://www.archives.gov/founding-docs/constitution-transcript" target="_blank" style="color: blue;">US Constitution</a> and <a href="https://www.archives.gov/founding-docs/bill-of-rights-transcript" target="_blank" style="color: blue;">Bill of Rights</a>
-      </div>
-    </li>
+     <span class="topic-title">The American Revolution</span>
+<ul class="custom-list">
+  <li class="star">
+    Irwin, <em>Clashing Over Commerce</em>, chapters 1 and 2
+  </li>
+  <li class="note">
+    <a href="https://www.archives.gov/founding-docs/declaration-transcript" target="_blank" style="color: blue;">
+      Declaration of Independence
+    </a>
+  </li>
+  <li class="star">
+    <a href="https://www.archives.gov/founding-docs/constitution-transcript" target="_blank" style="color: blue;">
+      US Constitution
+    </a> and 
+    <a href="https://www.archives.gov/founding-docs/bill-of-rights-transcript" target="_blank" style="color: blue;">
+      Bill of Rights
+    </a>
+  </li>
+</ul>
     <li>
       <span class="topic-title">The Early Republic</span>
       <div class="reading-item">
