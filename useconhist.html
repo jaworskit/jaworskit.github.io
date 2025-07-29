@@ -14,32 +14,37 @@
 
 .custom-list {
   list-style: none;
-  padding-left: 0em;
-  margin-top: 2px;
-  margin-bottom: 0px;
+  padding-left: 0;
+  margin: 0;
 }
 
 .custom-list li {
-  text-indent: 0em;
-  padding-left: 0em;
+  position: relative;
+  padding-left: 1.5em;     /* creates space for the symbol */
+  margin-bottom: 4px;
   font-size: 13px;
   line-height: 1.2em;
   text-align: justify;
-  margin-bottom: 0px;  
 }
 
 .custom-list li.star::before {
   content: "★";
-  color: black;
+  position: absolute;
+  left: 0;
+  top: 0;
   font-size: 90%;
-  margin-right: 0em;
+  line-height: 1.2em;
+  color: black;
 }
 
 .custom-list li.note::before {
   content: "♪";
-  color: black;
+  position: absolute;
+  left: 0;
+  top: 0;
   font-size: 90%;
-  margin-right: 0em;
+  line-height: 1.2em;
+  color: black;
 }
     
 .navbar {
