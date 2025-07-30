@@ -48,6 +48,17 @@
   color: black;
   line-height: 1.25em;
 }
+
+.custom-list li.bullet::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin-bottom: 0em;   
+  font-size: 90%;
+  color: black;
+  line-height: 1.25em;
+}
     
 .navbar {
   position: fixed;
@@ -323,6 +334,11 @@
         <li class="star">
           <a href="https://doi.org/10.1093/qje/qjw002" target="_blank" style="color: blue;">
             Donaldson & Hornbeck, "Railroads and American Economic Growth"
+          </a>
+        </li>
+        <li class="bullet">
+          <a href="https://www.newyorker.com/magazine/2007/10/29/vast-designs" target="_blank" style="color: blue;">
+            Jill Lepore, "Vast Designs," <em>The New Yorker</em>
           </a>
         </li>
       </ul>
