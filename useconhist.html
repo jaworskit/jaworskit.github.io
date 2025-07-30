@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Taylor Jaworski</title>
+  <title>Taylor Jaworski: Growth and Inequality</title>
   <link rel="stylesheet" type="text/css" href="/css/main.css">
   <style>
     body {
@@ -27,37 +27,57 @@
   text-align: left;
 }
 
+.custom-list li.star,
+.custom-list li.note {
+  position: relative;
+  padding-left: 1.4em;     
+  font-size: 13px;
+  line-height: 1.1em;
+  margin-bottom: 0;
+  text-align: left;
+}
+    
 .custom-list li.star::before {
   content: "★";
   position: absolute;
-  left: 0;
-  top: 0;
-  margin-bottom: 0em;   
+  left: 0.1em;              
+  top: 50%;
+  transform: translateY(-50%);
   font-size: 85%;
   color: black;
-  line-height: 1.25em;
+  line-height: 1;
 }
 
 .custom-list li.note::before {
   content: "🎶";
   position: absolute;
-  left: 0;
-  top: 0;
-  margin-bottom: 0em;   
+  left: 0.1em;              
+  top: 50%;
+  transform: translateY(-50%);
   font-size: 85%;
   color: black;
-  line-height: 1.25em;
+  line-height: 1;
+}
+
+
+.custom-list li.bullet {
+  position: relative;
+  padding-left: 1.4em; 
+  font-size: 13px;
+  line-height: 1.1em;
+  margin-bottom: 0;
+  text-align: left;
 }
 
 .custom-list li.bullet::before {
   content: "⬤";
   position: absolute;
-  left: 0;
-  top: 0;
-  margin-bottom: 0em;   
-  font-size: 25%;
+  left: 0.1em;                     /* Fine-tunes horizontal position */
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 60%;                 /* Matches size to line height */
   color: black;
-  line-height: 1.25em;
+  line-height: 1;
 }
     
 .navbar {
