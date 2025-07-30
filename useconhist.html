@@ -20,65 +20,39 @@
 
 .custom-list li {
   position: relative;
-  padding-left: 1.25em;    
-  margin-bottom: 0em;      
+  padding-left: 1.4em;         
   font-size: 13px;
-  line-height: 1.25em;      
+  line-height: 1.25em;
+  margin-bottom: 0.25em;
   text-align: left;
 }
 
-.custom-list li.star,
-.custom-list li.note {
-  position: relative;
-  padding-left: 1.4em;     
-  font-size: 13px;
-  line-height: 1.1em;
-  margin-bottom: 0;
-  text-align: left;
-}
-    
-.custom-list li.star::before {
-  content: "★";
+/* Shared pseudo-element base for all symbol types */
+.custom-list li.star::before,
+.custom-list li.note::before,
+.custom-list li.bullet::before {
   position: absolute;
-  left: 0.1em;              
-  top: 50%;
-  transform: translateY(-50%);
+  left: 0;                     
+  top: 0.15em;                 
+  line-height: 1.25em;
   font-size: 85%;
   color: black;
-  line-height: 1.1;
+}
+
+/* Customize each symbol */
+.custom-list li.star::before {
+  content: "★";
 }
 
 .custom-list li.note::before {
   content: "🎶";
-  position: absolute;
-  left: 0.1em;              
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 85%;
-  color: black;
-  line-height: 1.1;
-}
-
-
-.custom-list li.bullet {
-  position: relative;
-  padding-left: 1.4em; 
-  font-size: 13px;
-  line-height: 1.1em;
-  margin-bottom: 0;
-  text-align: left;
 }
 
 .custom-list li.bullet::before {
   content: "⬤";
-  position: absolute;
-  left: 0.1em;                     
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 40%;               
-  color: black;
-  line-height: 1.1;
+  font-size: 50%;              
 }
+
     
 .navbar {
   position: fixed;
