@@ -27,13 +27,21 @@
   text-align: left;
 }
 
-/* Shared pseudo-element base for all symbol types */
+
 .custom-list li.star::before,
-.custom-list li.note::before,
-.custom-list li.bullet::before {
+.custom-list li.note::before {
   position: absolute;
   left: 0;                     
   top: 0.15em;                 
+  line-height: 1.25em;
+  font-size: 85%;
+  color: black;
+}
+
+.custom-list li.bullet::before {
+  position: absolute;
+  left: 0;                     
+  top: 0.25em;                 
   line-height: 1.25em;
   font-size: 85%;
   color: black;
@@ -154,13 +162,13 @@
       font-style: italic;
     }
 
-    .course-title {
-  margin-top: 60px;              /* Pushes it down below fixed navbar */
-      margin-bottom: 0px;  
-  margin-left: 25px;             /* Aligns with nav text */
-  font-size: 18px;
-  color: blue;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+.course-title {
+    margin-top: 60px;              
+    margin-bottom: 0px;  
+    margin-left: 25px;             
+    font-size: 18px;
+    color: blue;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
     html, body {
   max-width: 95%;
