@@ -18,6 +18,19 @@
   margin-bottom: 0em;   
 }
 
+@media (max-width: 768px) {
+  .three-column {
+    flex-direction: column;
+    padding: 0 20px;
+    gap: 20px;
+  }
+
+  .column {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+    
 .custom-list li {
   position: relative;
   padding-left: 1.4em;         
@@ -99,25 +112,13 @@
 .three-column {
   display: flex;
   justify-content: space-between;
-  gap: 0px;
-  padding: 0 0px 0 50px;  
+  flex-wrap: nowrap;
+  gap: 40px;
+  padding: 0 40px;
   margin-top: 40px;
 }
 
-
-.column1 {
-  flex: 1;
-  box-sizing: border-box;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-.column2 {
-  flex: 1;
-  box-sizing: border-box;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-.column3 {
+.column {
   flex: 1;
   box-sizing: border-box;
   padding-left: 20px;
@@ -203,7 +204,7 @@
   </div>
 
   <div class="three-column">
-    <div class="column1">
+    <div class="column">
       <div class="column-title">Description</div>
       <p>
         In his travels to the United States in the 1830s, Alexis de Tocqueville noted the equality of conditions that existed relative to the Old World.
@@ -230,7 +231,7 @@
       </p>  
     </div>
 
-<div class="column2">
+<div class="column">
   <div class="column-title">Outline</div>
   <ul class="topic-list">
     <li>
@@ -469,7 +470,7 @@
 
 
 
-    <div class="column3">
+    <div class="column">
 
       <div class="column-title">Grading</div>
       <p>
