@@ -20,16 +20,37 @@
   nav > ul > li > a { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: blue;
                     } 
 
-.navbar { position: fixed; top: 0; left: 0; width: 100%; background-color: #f1f1f1; padding: 0px;
-        }
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f1f1f1;
+  padding: 0;
+}
 
+.navbar-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px 10px 25px;
+}
+
+.container {
+ display: flex;
+ justify-content: center;
+ margin-top: 100px;
+}
+  
 .three-column {
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
-  gap: 40px;
+  gap: 20px;
   padding: 0 20px;
-  margin-top: 40px;
+  margin-top: 20px;
 }
 
 @media (max-width: 768px) { 
@@ -42,6 +63,7 @@
 } html, body { max-width: 95%; overflow-x: hidden;
 }
  </style>
+ 
  <head>
   <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
   <title>
@@ -50,6 +72,7 @@
   <!-- link to main stylesheet -->
   <link href="/css/main.css" rel="stylesheet" type="text/css"/>
  </head>
+
  <nav class="navbar">
   <div style="margin-left: 25px; padding: 10px 0;">
    <a href="index.html" style="text-decoration: none; font-size: 24px; font-weight: bold; color: black; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
@@ -57,6 +80,7 @@
    </a>
   </div>
  </nav>
+ 
  <body>
   <div class="three-column">
    <div class="column">
