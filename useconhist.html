@@ -1,190 +1,191 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Taylor Jaworski: Growth and Inequality</title>
-  <link rel="stylesheet" type="text/css" href="/css/main.css">
-  <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taylor Jaworski: Growth and Inequality</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<style>
+    
     body {
       margin: 0;
       padding: 0;
       font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     }
-.custom-list {
-  list-style: none;
-  padding-left: 0;
-  margin: .5em;
-  margin-bottom: 0em;   
-}
-
-@media (max-width: 768px) {
-  .three-column {
-    flex-direction: column;
-    padding: 0 20px;
-    gap: 20px;
-  }
-
-  .column {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
+  
+    .custom-list {
+      list-style: none;
+      padding-left: 0;
+      margin: .5em;
+      margin-bottom: 0em;   
+    }
     
-.custom-list li {
-  position: relative;
-  padding-left: 1.4em;         
-  font-size: 13px;
-  line-height: 1.25em;
-  margin-bottom: 0.25em;
-  text-align: left;
-}
-
-
-.custom-list li.star::before {
-  position: absolute;
-  left: .15em;                     
-  top: 0;                 
-  line-height: 1.25em;
-  font-size: 85%;
-  color: black;
-}
-
-
-.custom-list li.note::before {
-  position: absolute;
-  left: 0;                     
-  top: 0.15em;                 
-  line-height: 1.25em;
-  font-size: 85%;
-  color: black;
-}
-
-.custom-list li.bullet::before {
-  position: absolute;
-  left: .2em;                     
-  top: 1em;                 
-  line-height: 1.25em;
-  font-size: 85%;
-  color: black;
-}
-
-/* Customize each symbol */
-.custom-list li.star::before {
-  content: "★";
-}
-
-.custom-list li.note::before {
-  content: "🎶";
-}
-
-.custom-list li.bullet::before {
-  content: "⬤";
-  font-size: 40%;              
-}
-
+    @media (max-width: 768px) {
+        .three-column {
+        flex-direction: column;
+        padding: 0 20px;
+        gap: 20px;
+      }
+      
+      .column {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
     
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #f1f1f1;
-  padding: 0;
-}
-
-.navbar-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 40px 10px 25px;
-}
-
+    .custom-list li {
+      position: relative;
+      padding-left: 1.4em;         
+      font-size: 13px;
+      line-height: 1.25em;
+      margin-bottom: 0.25em;
+      text-align: left;
+    }
     
+    .custom-list li.star::before {
+      position: absolute;
+      left: .15em;                     
+      top: 0;                 
+      line-height: 1.25em;
+      font-size: 85%;
+      color: black;
+    }
+    
+    .custom-list li.note::before {
+      position: absolute;
+      left: 0;                     
+      top: 0.15em;                 
+      line-height: 1.25em;
+      font-size: 85%;
+      color: black;
+    }
+    
+    .custom-list li.bullet::before {
+      position: absolute;
+      left: .2em;                     
+      top: 1em;                 
+      line-height: 1.25em;
+      font-size: 85%;
+      color: black;
+    }
+    
+    .custom-list li.star::before {
+      content: "★";
+    }
+    
+    .custom-list li.note::before {
+      content: "🎶";
+    }
+    
+    .custom-list li.bullet::before {
+      content: "⬤";
+      font-size: 40%;              
+    }
+    
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f1f1f1;
+      padding: 0;
+    }
+    
+    .navbar-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px 10px 25px;
+    }
+    
+
     .container {
       display: flex;
       justify-content: center;
       margin-top: 100px;
     }
-
-.three-column {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  gap: 20px;
-  padding: 0 20px;
-  margin-top: 20px;
-}
-
-.column {
-  flex: 1;
-  box-sizing: border-box;
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
+    
+    .three-column {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 20px;
+    padding: 0 20px;
+    margin-top: 20px;
+    }
+    
+    .column {
+    flex: 1;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;
+    }
+    
     .column-title {
       text-align: left;
       font-size: 16px;
       font-weight: bold;
       margin-bottom: 10px;
     }
-
+    
     .full-width-img {
       width: 100%;
       height: auto;
       display: block;
       margin-bottom: 40px;
     }
-
+    
     p {
       line-height: 20px;
       font-size: 13px;
       text-align: justify;
     }
-
+    
     .topic-list {
       list-style-type: none;
       padding-left: 0;
       font-size: 14px;
     }
-
+    
     .topic-list li {
       margin-bottom: 15px;
     }
-
+    
     .topic-title {
       font-style: italic;
       display: block;
       margin-bottom: 6px;
     }
-
+    
     .reading-item {
       padding-left: 20px;
       margin-bottom: 4px;
       text-align: justify;
       font-size: 13px;
     }
-
+    
     .reading-item em {
       font-style: italic;
     }
-
-.course-title {
+    
+    .course-title {
     margin-top: 60px;              
     margin-bottom: 0px;  
     margin-left: 25px;             
     font-size: 18px;
     color: blue;
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-}
+    }
+  
     html, body {
-  max-width: 95%;
-  overflow-x: hidden;
-}
-  </style>
+    max-width: 95%;
+    overflow-x: hidden;
+    }
+
+</style>
+
 </head>
 <body>
 
