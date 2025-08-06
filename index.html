@@ -1,116 +1,227 @@
 <!DOCTYPE html>
-<html>
- <style>
-  p {margin-top:20px;}
-
-  p {margin-bottom:20px;}
-
-  p {margin-left:0px;} 
-
-  h1 { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
-   } 
-
-  body { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; 
-   } 
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Taylor Jaworski: Home</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<style>
+    
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
   
-  nav { text-align:left 
-   } 
+    .custom-list {
+      list-style: none;
+      padding-left: 0;
+      margin: .5em;
+      margin-bottom: 0em;   
+    }
+    
+    @media (max-width: 768px) {
+        .three-column {
+        flex-direction: column;
+        padding: 0 20px;
+        gap: 20px;
+      }
+      
+      .column {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+    
+    .custom-list li {
+      position: relative;
+      padding-left: 1.4em;         
+      font-size: 13px;
+      line-height: 1.25em;
+      margin-bottom: 0.25em;
+      text-align: left;
+    }
+    
+    .custom-list li.star::before {
+      position: absolute;
+      left: .15em;                     
+      top: 0;                 
+      line-height: 1.25em;
+      font-size: 85%;
+      color: black;
+    }
+    
+    .custom-list li.note::before {
+      position: absolute;
+      left: 0;                     
+      top: 0.15em;                 
+      line-height: 1.25em;
+      font-size: 85%;
+      color: black;
+    }
+    
+    .custom-list li.bullet::before {
+      position: absolute;
+      left: .2em;                     
+      top: 1em;                 
+      line-height: 1.25em;
+      font-size: 85%;
+      color: black;
+    }
+    
+    .custom-list li.star::before {
+      content: "★";
+    }
+    
+    .custom-list li.note::before {
+      content: "🎶";
+    }
+    
+    .custom-list li.bullet::before {
+      content: "⬤";
+      font-size: 40%;              
+    }
+    
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #f1f1f1;
+      padding: 0;
+    }
+    
+    .navbar-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 40px 10px 25px;
+    }
+    
 
-  nav > ul > li > a { font-family: "Helvetica Neue", Helvetica, Arial, sans-serif; color: blue;
-                    } 
-
-.navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  background-color: #f1f1f1;
-  padding: 0;
-}
+    .container {
+      display: flex;
+      justify-content: center;
+      margin-top: 100px;
+    }
+    
+    .three-column {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 20px;
+    padding: 0 20px;
+    margin-top: 20px;
+    }
+    
+    .column {
+    flex: 1;
+    box-sizing: border-box;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 40px;
+    }
+    
+    .column-title {
+      text-align: left;
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+    
+    .full-width-img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 40px;
+    }
+    
+    p {
+      line-height: 20px;
+      font-size: 13px;
+      text-align: justify;
+    }
+    
+    .topic-list {
+      list-style-type: none;
+      padding-left: 0;
+      font-size: 14px;
+    }
+    
+    .topic-list li {
+      margin-bottom: 15px;
+    }
+    
+    .topic-title {
+      font-style: italic;
+      display: block;
+      margin-bottom: 6px;
+    }
+    
+    .reading-item {
+      padding-left: 20px;
+      margin-bottom: 4px;
+      text-align: justify;
+      font-size: 13px;
+    }
+    
+    .reading-item em {
+      font-style: italic;
+    }
+    
+    .course-title {
+    margin-top: 60px;              
+    margin-bottom: 0px;  
+    margin-left: 25px;             
+    font-size: 18px;
+    color: blue;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
   
-.container {
- display: flex;
- justify-content: center;
- margin-top: 100px;
-}
-  
-.three-column {
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  gap: 20px;
-  padding: 0 20px;
-  margin-top: 20px;
-}
+    html, body {
+    max-width: 95%;
+    overflow-x: hidden;
+    }
 
-@media (max-width: 768px) { 
+</style>
 
- .three-column { flex-direction: column; padding: 0 20px; gap: 20px; } 
- .column { padding-left: 0; padding-right: 0; }
-                          }
+</head>
+<body>
 
-.column { flex: 1; box-sizing: border-box; padding-left: 10px; padding-right: 10px;
-
-html, body {
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-         
- </style>
- <head>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-  <title>
-   Taylor Jaworski: Home
-  </title>
-  <!-- link to main stylesheet -->
-  <link href="/css/main.css" rel="stylesheet" type="text/css"/>
- </head>
- <nav class="navbar">
-  <div style="padding: 10px 0 10px 25px;">
-   <a href="index.html" style="text-decoration: none; font-size: 24px; font-weight: bold; color: black; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
-    Taylor Jaworski
-   </a>
+<nav class="navbar">
+  <div style="margin-left: 25px; padding: 10px 0;">
+    <a href="index.html" style="text-decoration: none; font-size: 24px; font-weight: bold; color: black; font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;">
+      Taylor Jaworski
+    </a>
   </div>
- </nav>
- <body>
+</nav>
+
+
+
+
   <div class="three-column">
-   <div class="column">
+    <div class="column">
+
     <div class="blurb" style="text-align: center;">
-     <img src="https://jaworskit.github.io/profile.jpg" style="border-radius: 2.5%;margin-top: -25px; margin-bottom: -10px; " width="65%"/>
+     <img src="https://jaworskit.github.io/profile.jpg" style="border-radius: 2.5%;margin-top: 10px; margin-bottom: 10px; " width="65%"/>
     </div>
-    <div class="year">
-     <p align="left" style="margin: 25px 0px -15px 0px;">
-      <font size="3">
-       <b>
-        About Me
-       </b>
-      </font>
-     </p>
+        
+      <div class="column-title">About Me</div>
+      <p>
+        I am an economic historian at the University of Colorado, Boulder. 
+        My research focuses on regional development, regulation, and infrastructure in the United States. 
+        My curriculum vitae is <a href="https://jaworskit.github.io/CV.pdf" style="color: blue;" target="_blank"> available here.</a>
+      </p>
+
+     
     </div>
-    <p align="justify" style="line-height: 20px; font-size: 13px;">
-     I am an economic historian at the University of Colorado, Boulder. My research focuses on regional development, regulation, and infrastructure in the United States. My curriculum vitae is
-     <a href="https://jaworskit.github.io/CV.pdf" style="color: blue;" target="_blank">
-      available here.
-     </a>
-    </p>
-   </div>
-   <div class="column">
-    <nav>
-    </nav>
-    <h5 id="pubs" style="margin-top: -50px; padding-top: 50px;">
-    </h5>
-    <div class="year" id="pubs">
-     <p align="left" style="margin: 5px 0px -5px 0px;">
-      <font size="3">
-       <b>
-        Publications
-       </b>
-      </font>
-     </p>
-    </div>
+
+<div class="column">
+  <div class="column-title">Publications</div>
     <div style="height:600px;overflow-x:hidden;overflow-y:scroll;background-color:white;scrollbar-base-color:gold;margin-top:0px;padding-top:0px;padding-right: 15px;font-size: 14px;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
-     <ul style="list-style-type: none; padding-left: 0;font-size: 12px;">
+    <ul style="list-style-type: none; padding-left: 0;font-size: 12px;">
       <li style="padding-left: 0px; margin-bottom: -5px;">
        <p align="justify" style="line-height: 20px; font-size: 13px;">
         "Economic Geography and Air Pollution Regulation in the United States," with Alex Hollingsworth, Carl Kitchens, and Ivan Rudik,
@@ -260,78 +371,55 @@ html, body {
       </li>
      </ul>
     </div>
-   </div>
-   <div class="column">
-    <nav>
-    </nav>
-    <h5 id="working" style="margin-top: -50px; padding-top: 50px;">
-    </h5>
-    <div class="year" id="working">
-     <p align="left" style="margin: 5px 0px -5px 0px;">
-      <font size="3">
-       <b>
-        Work in Progress
-       </b>
-      </font>
-     </p>
-    </div>
-    <div style="height:310px;overflow-x:hidden;overflow-y:scroll;background-color:white;scrollbar-base-color:gold;margin-top:0px;padding-top:0px;padding-right: 15px;font-size: 14px;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
-     <ul style="list-style-type: none; padding-left: 0;">
-      <li style="padding-left: 0px; margin-bottom: -5px;">
-       <p align="justify" style="line-height: 20px; font-size: 13px;">
-        "How Important Are Cultural Frictions for Internal Migration? Evidence from the Nineteenth Century United States," with Erik Kimbrough and Nicole Saito. 
-        [<a href="https://www.nber.org/papers/w33192" target="_blank"><font color="blue">link</font></a>]
-       </p>
-      </li>
-      <li style="padding-left: 0px; margin-bottom: -5px;">
-       <p align="justify" style="line-height: 20px; font-size: 13px;">
-        "The Urban Wage Premium in Historical Perspective," with Kyle Butts and Carl Kitchens. 
-        [<a href="https://www.nber.org/papers/w31387" style="color: blue;" target="_blank">link</a>]
-       </p>
-      </li>
-      <li style="padding-left: 0px; margin-bottom: -5px">
-       <p align="justify" style="line-height: 20px; font-size: 13px;">
-        "Subsidizing Entry in Retail Electricity: Evidence from the Rural Electrification Administration," with Carl Kitchens and Andrew Smyth.
-       </p>
-      </li>
-      <li style="padding-left: 0px; margin-bottom: -5px;">
-       <p align="justify" style="line-height: 20px; font-size: 13px;">
-        "Human Capital Investment in Resource Booms: Evidence for Dynamic Complementarities," with Carl Kitchens and Luke Rodgers.
-       </p>
-      </li>
-     </ul>
-    </div>
-    <div class="year">
-     <p align="left" style="margin: 5px 0px -5px 0px;">
-      <font size="3">
-       <b>
-        Teaching
-       </b>
-      </font>
-     </p>
-    </div>
-    <div style="height:215px;overflow-x:hidden;overflow-y:scroll;background-color:white;scrollbar-base-color:gold;margin-top:0px;padding-top:0px;padding-right: 15px;font-size: 14px;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">
-     <ul style="list-style-type: none; padding-left: 0;">
-      <li style="padding-left: 0px; margin-bottom: -5px;">
-       <p align="justify" style="line-height: 20px; font-size: 13px;">
+</div>
+
+
+
+    <div class="column">
+
+      <div class="column-title">Work in Progress</div>
+      <div style="height:310px;overflow-x:hidden;overflow-y:scroll;background-color:white;scrollbar-base-color:gold;margin-top:0px;padding-top:0px;padding-right: 15px;font-size: 14px;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">  
+        <ul style="list-style-type: none; padding-left: 0;">
+          <li style="padding-left: 0px; margin-bottom: -5px;">
+           <p align="justify" style="line-height: 20px; font-size: 13px;">
+            "How Important Are Cultural Frictions for Internal Migration? Evidence from the Nineteenth Century United States," with Erik Kimbrough and Nicole Saito. 
+            [<a href="https://www.nber.org/papers/w33192" target="_blank"><font color="blue">link</font></a>]
+           </p>
+          </li>
+          <li style="padding-left: 0px; margin-bottom: -5px;">
+           <p align="justify" style="line-height: 20px; font-size: 13px;">
+            "The Urban Wage Premium in Historical Perspective," with Kyle Butts and Carl Kitchens. 
+            [<a href="https://www.nber.org/papers/w31387" style="color: blue;" target="_blank">link</a>]
+           </p>
+          </li>
+          <li style="padding-left: 0px; margin-bottom: -5px">
+           <p align="justify" style="line-height: 20px; font-size: 13px;">
+            "Subsidizing Entry in Retail Electricity: Evidence from the Rural Electrification Administration," with Carl Kitchens and Andrew Smyth.
+           </p>
+          </li>
+          <li style="padding-left: 0px; margin-bottom: -5px;">
+           <p align="justify" style="line-height: 20px; font-size: 13px;">
+            "Human Capital Investment in Resource Booms: Evidence for Dynamic Complementarities," with Carl Kitchens and Luke Rodgers.
+           </p>
+          </li>
+         </ul>
+        </div>
+      
+      <div class="column-title">Teaching</div>
+        <div style="height:215px;overflow-x:hidden;overflow-y:scroll;background-color:white;scrollbar-base-color:gold;margin-top:0px;padding-top:0px;padding-right: 15px;font-size: 14px;font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif">  
+        <p>
         I teach undergraduate courses on the economic history of the <a href="useconhist.html"><font color="blue">United States</font></a> and <a href="https://jaworskit.github.io/europe_example.pdf" target="_blank"><font color="blue">Europe.</font></a> For the United States, the focus is on the interaction between economic growth and changes in inequality; for Europe, the emphasis is on the emergence of the modern economy in the context of institutional and technological change.
-       </p>
-       <p align="justify" style="line-height: 20px; font-size: 13px;">
+        </p> 
+        <p>
         I plan to teach a new undergraduate course on <a href="https://jaworskit.github.io/ppe_example.pdf" target="_blank"><font color="blue">Markets and Morality.</font></a> Students are exposed to game theory, experimental economics, the history of economic ideas, economic history, and moral philosophy to better understand when to think <em>positively</em> and how to think <em>normatively</em> about economic issues.
-       </p>
-       <p align="justify" style="line-height: 20px; font-size: 13px;">
-        I also teach a
-        <a href="https://jaworskit.github.io/grad_example.pdf" target="_blank">
-         <font color="blue">
-          graduate course
-         </font>
-        </a>
-        on US economic history. This course provides an introduction to the key debates in US economic history and prepares PhD students to conduct original research.
-       </p>
-      </li>
-     </ul>
+        </p> 
+        <p>
+        I also teach a <a href="https://jaworskit.github.io/grad_example.pdf" target="_blank"><font color="blue">graduate course</font></a> on US economic history. This course provides an introduction to the key debates in US economic history and prepares PhD students to conduct original research.
+        </p> 
+        </div>    
+        
     </div>
-   </div>
   </div>
- </body>
+
+</body>
 </html>
