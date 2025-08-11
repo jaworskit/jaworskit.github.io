@@ -41,3 +41,18 @@ ul.posts {
 ul.posts li {
     list-style: none;
 }
+
+@media (max-width: 768px) {
+  .three-column { gap: 12px; }                /* was 20px */
+  .column { padding-top: 12px; padding-bottom: 0; }
+
+  /* Kill default UL margins inside columns */
+  .column ul { margin: 0; }
+
+  /* Remove extra space after the scroller */
+  .scroll-panel { margin-bottom: 0 !important; height: auto; max-height: none; }
+
+  /* Don’t let the last element in a column add extra gap */
+  .column > :last-child { margin-bottom: 0 !important; }
+}
+
