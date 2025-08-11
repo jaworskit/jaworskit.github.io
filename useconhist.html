@@ -6,184 +6,150 @@
 <title>American Growth and Inequality</title>
 <link rel="stylesheet" type="text/css" href="/css/main.css">
 <style>
-    
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: Garamond, Baskerville, Baskerville Old Face, Hoefler Text, Times New Roman, serif;
-    }
-  
-    .custom-list {
-      list-style: none;
-      padding-left: 0;
-      margin: .5em;
-      margin-bottom: 0em;   
-    }
-    
-    @media (max-width: 768px) {
-        .three-column {
-        flex-direction: column;
-        padding: 0 20px;
-        gap: 20px;
-      }
-      
-      .column {
-        padding-left: 0;
-        padding-right: 0;
-      }
-    }
-    
-    .custom-list li {
-      position: relative;
-      padding-left: 1.4em;         
-      font-size: 13px;
-      line-height: 1.2em;
-      margin-bottom: 0.25em;
-      text-align: left;
-    }
-    
-    .custom-list li.star::before {
-      position: absolute;
-      left: .15em;                     
-      top: 0;                 
-      line-height: 1.2em;
-      font-size: 85%;
-      color: black;
-    }
-    
-    .custom-list li.note::before {
-      position: absolute;
-      left: 0;                     
-      top: 0.15em;                 
-      line-height: 1.2em;
-      font-size: 85%;
-      color: black;
-    }
-    
-    .custom-list li.bullet::before {
-      position: absolute;
-      left: .2em;                     
-      top: 1em;                 
-      line-height: 1.2em;
-      font-size: 85%;
-      color: black;
-    }
-    
-    .custom-list li.star::before {
-      content: "★";
-    }
-    
-    .custom-list li.note::before {
-      content: "🎶";
-    }
-    
-    .custom-list li.bullet::before {
-      content: "⬤";
-      font-size: 40%;              
-    }
-    
-    .navbar {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      background-color: white;
-      padding: 0;
-    }
-    
-    .navbar-content {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 40px 10px 25px;
-    }
-    
+  :root{
+    --page-max: 1200px;
+    --pad-x: 20px;
+    --nav-h: 56px;        /* adjust if your navbar is taller */
+  }
 
-    .container {
-      display: flex;
-      justify-content: center;
-      margin-top: 100px;
-    }
-    
-    .three-column {
+  /* Base */
+  html, body { height: 100%; }
+  body{
+    margin: 0;
+    padding: 0;
+    font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+    overflow-x: hidden;   /* no horizontal scroll */
+  }
+  a{ color: blue; text-decoration: none; }
+
+  /* Navbar (sticky for simpler layout) */
+  .navbar{
+    position: sticky;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    z-index: 100;
+  }
+  .navbar-content{
+    max-width: var(--page-max);
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 10px var(--pad-x);
+  }
+  .navbar a{
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+    font-family: inherit;
+  }
+
+  /* Page wrapper */
+  .page{
+    max-width: var(--page-max);
+    margin: 0 auto;
+    padding: 10px var(--pad-x);
+  }
+
+  /* Title + banner */
+  .course-title{
+    margin: 60px 0 8px 0;
+    font-size: 18px;
+    color: blue;
+    font-family: inherit;
+    font-weight: bold;
+  }
+  .full-width-img{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 8px 0 12px 0;
+  }
+
+  /* Columns */
+  .three-column{
     display: flex;
     justify-content: space-between;
     flex-wrap: nowrap;
     gap: 20px;
-    padding: 0 20px;
     margin-top: 20px;
-    }
-    
-    .column {
+  }
+  .column{
     flex: 1;
     box-sizing: border-box;
-    padding-left: 10px;
-    padding-right: 10px;
-    }
-    
-    .column-title {
-      text-align: left;
-      font-size: 16px;
-      font-weight: bold;
-      margin-bottom: 5px;
-    }
-    
-    .full-width-img {
-      width: 97.5%;
-      height: auto;
-      display: block;
-      margin-bottom: 0px;
-    }
-    
-    p {
-      line-height: 18px;
-      font-size: 13px;
-      text-align: justify;
-    }
-    
-    .topic-list {
-      list-style-type: none;
-      padding-left: 0;
-      font-size: 14px;
-    }
-    
-    .topic-list li {
-      margin-bottom: 15px;
-    }
-    
-    .topic-title {
-      font-style: italic;
-      display: block;
-      margin-bottom: 6px;
-    }
-    
-    .reading-item {
-      padding-left: 20px;
-      margin-bottom: 4px;
-      text-align: justify;
-      font-size: 13px;
-    }
-    
-    .reading-item em {
-      font-style: italic;
-    }
-    
-    .course-title {
-    margin-top: 60px;              
-    margin-bottom: 0px;  
-    margin-left: 25px;             
-    font-size: 18px;
-    color: blue;
-    font-family: Garamond, Baskerville, Baskerville Old Face, Hoefler Text, Times New Roman, serif;
-    }
-  
-    html, body {
-    max-width: 95%;
-    overflow-x: hidden;
-    }
+    padding: 24px 10px 0 10px;  /* slightly smaller top pad than home */
+  }
 
+  /* Headings & text */
+  .column-title{
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 6px 0;
+  }
+  p{
+    line-height: 18px;
+    font-size: 13px;
+    text-align: justify;
+    margin: 0 0 12px 0;
+  }
+
+  /* Topic lists */
+  .topic-list{ list-style: none; padding-left: 0; font-size: 14px; margin: 0; }
+  .topic-list li{ margin-bottom: 15px; }
+  .topic-title{ font-style: italic; display: block; margin-bottom: 6px; }
+  .reading-item{ padding-left: 20px; margin-bottom: 4px; text-align: justify; font-size: 13px; }
+  .reading-item em{ font-style: italic; }
+
+  /* Custom bullets: align baseline consistently */
+  .custom-list{
+    list-style: none;
+    padding-left: 0;
+    margin: .5em 0 0 0;
+  }
+  .custom-list li{
+    position: relative;
+    padding-left: 1.4em;
+    font-size: 13px;
+    line-height: 1.25em;
+    margin-bottom: 0.25em;
+    text-align: left;
+  }
+  .custom-list li::before{
+    position: absolute;
+    left: .2em;
+    top: .15em;        /* stable baseline */
+    line-height: 1;
+    font-size: 85%;
+    color: black;
+    content: "";
+  }
+  .custom-list li.star::before   { content: "★"; }
+  .custom-list li.note::before   { content: "🎶"; left: 0; }
+  .custom-list li.bullet::before { content: "•"; font-size: 80%; }
+
+  /* Scrollable panel that adapts to viewport (use for big outlines) */
+  .scroll-panel{
+    height: calc(100svh - var(--nav-h) - 140px); /* navbar + title/banner spacing */
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #fff;
+    padding-right: 15px;
+    font-size: 14px;
+    font-family: inherit;
+  }
+
+  /* Mobile trims to remove stacked gaps */
+  @media (max-width: 768px){
+    .three-column{ flex-direction: column; gap: 12px; }
+    .column{ padding: 12px 0 0 0; }
+    .page{ padding-left: var(--pad-x); padding-right: var(--pad-x); }
+    .scroll-panel{ height: auto; max-height: none; }
+    .column > :last-child{ margin-bottom: 0 !important; }
+    .column ul{ margin: 0; }
+  }
 </style>
 
 </head>
