@@ -140,15 +140,31 @@
     font-family: inherit;
   }
 
-  /* Mobile trims to remove stacked gaps */
-  @media (max-width: 768px){
-    .three-column{ flex-direction: column; gap: 12px; }
-    .column{ padding: 12px 0 0 0; }
-    .page{ padding-left: var(--pad-x); padding-right: var(--pad-x); }
-    .scroll-panel{ height: auto; max-height: none; }
-    .column > :last-child{ margin-bottom: 0 !important; }
-    .column ul{ margin: 0; }
+@media (max-width: 768px) {
+  .three-column {
+    flex-direction: column;
+    gap: 5px; /* matches section title spacing */
   }
+
+  .column {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 5px; /* matches .column-title margin-bottom */
+  }
+
+  .column-title {
+    margin-bottom: 5px; /* keep consistent with column gap */
+  }
+
+  .profile-img {
+    width: 55%;
+  }
+
+  .scroll-panel {
+    height: auto;
+    max-height: none;
+  }
+}
 </style>
 
 </head>
