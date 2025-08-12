@@ -147,12 +147,31 @@
   a { color: blue; }
 
   /* Mobile */
-  @media (max-width: 768px) {
-    .three-column { flex-direction: column; gap: 20px; }
-    .column { padding-left: 0; padding-right: 0; }
-    .profile-img { width: 55%; }
-    .scroll-panel { height: auto; max-height: none; }
+@media (max-width: 768px) {
+  .three-column {
+    flex-direction: column;
+    gap: 5px; /* matches section title spacing */
   }
+
+  .column {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 5px; /* matches .column-title margin-bottom */
+  }
+
+  .column-title {
+    margin-bottom: 5px; /* keep consistent with column gap */
+  }
+
+  .profile-img {
+    width: 55%;
+  }
+
+  .scroll-panel {
+    height: auto;
+    max-height: none;
+  }
+}
 </style>
 
 </head>
