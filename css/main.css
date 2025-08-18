@@ -55,3 +55,24 @@ ul.posts li {
   /* Don’t let the last element in a column add extra gap */
   .column > :last-child { margin-bottom: 0 !important; }
 }
+
+.navbar {
+  display: flex;
+  justify-content: space-between; /* pushes left & right apart */
+  align-items: center;
+  background: white;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.navbar a {
+  font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 1.2em;
+  color: #999;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
