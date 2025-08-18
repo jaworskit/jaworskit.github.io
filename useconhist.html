@@ -23,27 +23,26 @@
   a{ color: blue; text-decoration: none; }
 
   /* Navbar (sticky for simpler layout) */
-  .navbar{
-    position: sticky;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background: #fff;
-    z-index: 100;
-  }
-  .navbar-content{
-    max-width: var(--page-max);
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    padding: 10px var(--pad-x);
-  }
-  .navbar a{
-    font-size: 24px;
-    font-weight: bold;
-    color: black;
-    font-family: inherit;
-  }
+.navbar {
+  display: flex;
+  justify-content: space-between; /* pushes left & right apart */
+  align-items: center;
+  background: white;
+  padding: 10px 20px;
+  border-bottom: 1px solid #ddd;
+}
+
+.navbar a {
+  font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+  font-weight: 700;
+  font-size: 1.2em;
+  color: #999;
+  text-decoration: none;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
 
   /* Page wrapper */
   .page{
