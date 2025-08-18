@@ -60,25 +60,15 @@ ul.posts li {
 .dropdown {
   position: relative;
   display: inline-block;
-  margin-right: 20px; /* matches spacing of nav ul li */
 }
 
-.dropbtn {
-  background: none;
-  border: none;
-  cursor: pointer;
+.dropdown a {
   font-family:'Helvetica', 'Arial', 'Sans-Serif';
-  font-size: 1em;          /* match nav ul li links */
   font-weight: bold;
-  color: #999;             /* same as your <a> color */
-  padding: 0;
+  font-size: 1em;
+  color: #999;
 }
 
-.dropbtn:hover {
-  text-decoration: underline;
-}
-
-/* Dropdown menu */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -89,18 +79,16 @@ ul.posts li {
 }
 
 .dropdown-content a {
-  font-family:'Helvetica', 'Arial', 'Sans-Serif';
-  color: #999;
-  padding: 10px 14px;
-  text-decoration: none;
   display: block;
-  font-size: 1em;
+  padding: 10px 14px;
   font-weight: bold;
+  color: #999;
+  text-decoration: none;
 }
 
 .dropdown-content a:hover {
   text-decoration: underline;
-  background-color: #f9f9f9; /* subtle hover */
+  background-color: #f9f9f9;
 }
 
 /* Show dropdown on hover */
