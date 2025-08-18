@@ -24,20 +24,32 @@
 
   /* Navbar (sticky for simpler layout) */
 .navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 100;
+
+  /* new for horizontal layout */
   display: flex;
-  justify-content: space-between; /* pushes left & right apart */
+  justify-content: space-between;
   align-items: center;
-  background: white;
-  padding: 10px 20px;
-  border-bottom: 1px solid #ddd;
+  padding: 10px 20px; /* adjust padding as needed */
+}
+
+.navbar-content {
+  /* no longer needs max-width/margin auto for this layout */
+  display: flex;
+  align-items: center;
 }
 
 .navbar a {
-  font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
-  font-weight: 700;
-  font-size: 1.2em;
-  color: #999;
   text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+  color: #999;
 }
 
 .navbar a:hover {
