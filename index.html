@@ -23,29 +23,38 @@
   }
 
   /* Navbar (sticky instead of fixed) */
-  .navbar {
-    position: sticky;         /* key change */
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: white;
-    padding: 0;
-    z-index: 100;
-  }
-  .navbar-content {
-    max-width: var(--page-max);
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    padding: 10px var(--pad-x);
-  }
-  .navbar a {
-    text-decoration: none;
-    font-size: 24px;
-    font-weight: bold;
-    color: black;
-    font-family: inherit;
-  }
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 100;
+
+  /* new for horizontal layout */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px; /* adjust padding as needed */
+}
+
+.navbar-content {
+  /* no longer needs max-width/margin auto for this layout */
+  display: flex;
+  align-items: center;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+  color: #999;
+}
+
+.navbar a:hover {
+  text-decoration: underline;
+}
 
   /* Page wrapper */
  .page {
