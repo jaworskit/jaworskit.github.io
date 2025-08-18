@@ -1,158 +1,57 @@
-/* Base layout */
 body {
-  margin: 60px 60px 60px 60px;
-  width: 100%;
+    margin: 60px 60px 60px 60px;
+    width: 100%;
 }
-
-/* Nav + footer lists (font, weight) */
 nav ul, footer ul {
-  font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
-  padding: 0;
-  list-style: none;
-  font-weight: bold;
-  margin: 0; /* ensure no default margin pushes layout */
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
+    padding: 0px;
+    list-style: none;
+    font-weight: bold;
 }
-
-/* Default list items */
 nav ul li, footer ul li {
-  display: inline;
-  margin-right: 20px;
+    display: inline;
+    margin-right: 20px;
 }
-
-/* Links */
 a {
-  text-decoration: none;
-  color: #999;
+    text-decoration: none;
+    color: #999;
 }
-a:hover,
-a:focus {
-  text-decoration: underline;
+a:hover {
+    text-decoration: underline;
 }
-
-/* Headings & text */
 h1 {
-  font-size: 3em;
-  font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+    font-size: 3em;
+    font-family:'Helvetica', 'Arial', 'Sans-Serif';
 }
 p {
-  font-size: 1.5em;
-  line-height: 1.4em;
-  color: #333;
+    font-size: 1.5em;
+    line-height: 1.4em;
+    color: #333;
 }
-
-/* Footer */
 footer {
-  border-top: 1px solid #d5d5d5;
-  font-size: .8em;
+    border-top: 1px solid #d5d5d5;
+    font-size: .8em;
 }
 
-/* Posts list */
 ul.posts { 
-  margin: 20px auto 40px; 
-  font-size: 1.5em;
-}
-ul.posts li { list-style: none; }
-
-/* ---------- Horizontal navbar with dropdown ---------- */
-
-/* Top-level nav arranged horizontally */
-nav ul.nav {
-  display: flex;
-  align-items: center;
-  gap: 20px;           /* space between “taylor jaworski” and “teaching” */
-  margin: 0;
-  padding: 0;
+    margin: 20px auto 40px; 
+    font-size: 1.5em;
 }
 
-/* Each top-level item; relative for dropdown positioning */
-nav ul.nav > li {
-  position: relative;
-  display: inline-block; /* works fine with flex parent */
-  margin-right: 0;       /* spacing handled by gap */
+ul.posts li {
+    list-style: none;
 }
 
-/* “teaching” trigger uses the same <a> styling as other links */
-nav ul.nav > li > a.drop-link {
-  font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
-  font-weight: bold;
-  font-size: 1em;
-  color: #999;
-}
-
-/* Dropdown panel */
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%;              /* sits directly below the “teaching” link */
-  left: 0;
-  background: #fff;
-  list-style: none;
-  margin: 6px 0 0 0;
-  padding: 6px 0;
-  min-width: 260px;
-  box-shadow: 0 8px 16px rgba(0,0,0,.2);
-  z-index: 101;
-}
-
-/* Dropdown items (inherit your link look) */
-.dropdown-menu a {
-  display: block;
-  padding: 10px 14px;
-  font-weight: bold;
-  color: #999;
-  text-decoration: none;
-  font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
-  font-size: 1em;
-}
-
-/* Hover/focus states for dropdown items */
-.dropdown-menu a:hover,
-nav ul.nav > li:focus-within .dropdown-menu a:focus {
-  text-decoration: underline;
-  background: #f9f9f9;
-}
-
-/* Reveal dropdown on hover or keyboard focus */
-nav ul.nav > li.dropdown:hover .dropdown-menu,
-nav ul.nav > li.dropdown:focus-within .dropdown-menu {
-  display: block;
-}
-
-/* Optional: focus ring for accessibility on the trigger link */
-nav ul.nav > li > a:focus {
-  outline: 2px solid #999;
-  outline-offset: 2px;
-}
-
-/* ---------- Mobile tweaks ---------- */
 @media (max-width: 768px) {
-  /* Keep your existing column tweaks, if used elsewhere */
-  .three-column { gap: 12px; }
+  .three-column { gap: 12px; }                /* was 20px */
   .column { padding-top: 12px; padding-bottom: 0; }
+
+  /* Kill default UL margins inside columns */
   .column ul { margin: 0; }
+
+  /* Remove extra space after the scroller */
   .scroll-panel { margin-bottom: 0 !important; height: auto; max-height: none; }
+
+  /* Don’t let the last element in a column add extra gap */
   .column > :last-child { margin-bottom: 0 !important; }
-
-  /* Nav: stack items vertically on small screens */
-  nav ul.nav {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 10px;
-  }
-
-  /* Make dropdown menu position naturally below the trigger */
-  .dropdown-menu {
-    position: static;
-    box-shadow: none;
-    margin: 0;
-    padding: 0;
-    min-width: 0;
-    display: none; /* still hidden until hover/focus */
-  }
-
-  /* Show on hover/focus in mobile as well */
-  nav ul.nav > li.dropdown:hover .dropdown-menu,
-  nav ul.nav > li.dropdown:focus-within .dropdown-menu {
-    display: block;
-  }
 }
