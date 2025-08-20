@@ -55,6 +55,59 @@
   text-decoration: underline;
 }
 
+.dropdown {
+  position: relative;
+}
+
+/* The trigger inherits your .navbar a styles (24px, bold, black, serif) */
+.drop-link {
+  display: inline-block;          /* improves focus/hover hit area */
+}
+
+/* The panel */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;                      /* sit below “teaching” */
+  right: 0;                       /* align to the right edge of trigger */
+  margin: 6px 0 0 0;
+  padding: 6px 0;
+  list-style: none;
+  background: #fff;
+  min-width: 320px;               /* roomy for long titles */
+  box-shadow: 0 8px 16px rgba(0,0,0,.2);
+  z-index: 101;
+}
+
+/* Items inside the panel — same font family & color; slightly smaller size for hierarchy */
+.dropdown-menu a {
+  display: block;
+  padding: 10px 14px;
+  text-decoration: none;
+  font-family: inherit;           /* Garamond/Baskerville stack from <body> */
+  font-weight: bold;
+  font-size: 18px;                /* smaller than 24px brand/trigger */
+  color: black;
+}
+
+.dropdown-menu a:hover {
+  text-decoration: underline;
+  background: #f9f9f9;
+}
+
+/* Open on hover (desktop) and via keyboard focus */
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+  display: block;
+}
+
+/* Optional: visible focus ring for accessibility */
+.drop-link:focus,
+.dropdown-menu a:focus {
+  outline: 2px solid #999;
+  outline-offset: 2px;
+}
+  
   /* Page wrapper */
  .page {
   max-width: var(--page-max);
@@ -193,8 +246,14 @@
   <div class="navbar-content left">
     <a href="index.html">taylor jaworski</a>
   </div>
+
   <div class="navbar-content right">
-    <a href="useconhist.html">teaching</a>
+    <div class="dropdown">
+      <a href="#" class="drop-link" aria-haspopup="true" aria-expanded="false">teaching</a>
+      <ul class="dropdown-menu" role="menu" aria-label="Teaching menu">
+        <li><a href="useconhist.html" role="menuitem">Undergraduate US Economic History</a></li>
+      </ul>
+    </div>
   </div>
 </nav>
 
