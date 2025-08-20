@@ -68,13 +68,16 @@
 .dropdown-menu {
   display: none;
   position: absolute;
-  top: 100%;                      /* sit below “teaching” */
-  right: 0;                       /* align to the right edge of trigger */
+  top: 100%;
+  right: 0;
   margin: 6px 0 0 0;
   padding: 6px 0;
   list-style: none;
   background: #fff;
-  min-width: 320px;               /* roomy for long titles */
+
+  min-width: 480px;  /* wider default */
+  white-space: nowrap; /* prevent wrapping of long text */
+
   box-shadow: 0 8px 16px rgba(0,0,0,.2);
   z-index: 101;
 }
