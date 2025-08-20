@@ -51,10 +51,58 @@
   color: black;
 }
 
-.navbar a:hover {
-  text-decoration: underline;
+
+/* Dropdown wrapper */
+.dropdown {
+  position: relative;
 }
 
+/* Trigger link inherits .navbar a */
+.drop-link {
+  display: inline-block;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;                 /* anchor midpoint */
+  transform: translateX(-50%); /* center under trigger */
+  margin-top: 6px;
+  padding: 6px 0;
+  list-style: none;
+  background: #fff;
+
+  min-width: 320px;  /* adjust so text fits nicely */
+  white-space: nowrap;
+
+  box-shadow: 0 8px 16px rgba(0,0,0,.2);
+  z-index: 101;
+}
+
+/* Dropdown items */
+.dropdown-menu a {
+  display: block;
+  padding: 10px 14px;
+  text-decoration: none;
+  font-family: inherit;
+  font-weight: bold;
+  font-size: 18px;
+  color: black;
+}
+
+.dropdown-menu a:hover {
+  text-decoration: underline;
+  background: #f9f9f9;
+}
+
+/* Show on hover/focus */
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+  display: block;
+}
+  
   /* Page wrapper */
   .page{
     max-width: var(--page-max);
@@ -185,7 +233,12 @@
     <a href="index.html">taylor jaworski</a>
   </div>
   <div class="navbar-content right">
-    <a href="useconhist.html">teaching</a>
+    <div class="dropdown">
+      <a href="#" class="drop-link" aria-haspopup="true" aria-expanded="false">teaching</a>
+      <ul class="dropdown-menu" role="menu" aria-label="Teaching menu">
+        <li><a href="useconhist.html" role="menuitem">Undergraduate US Economic History</a></li>
+      </ul>
+    </div>
   </div>
 </nav>
 
