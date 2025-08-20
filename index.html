@@ -213,6 +213,76 @@
 
   /* Mobile */
 @media (max-width: 768px) {
+
+@media (max-width: 768px) {
+  /* Keep your serif font & bold look everywhere in the navbar */
+  .navbar,
+  .navbar a,
+  .dropdown .drop-link,
+  .dropdown-menu a {
+    font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+  }
+
+  /* Stack the navbar content */
+  .navbar {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px 16px;
+  }
+  .navbar-content.left,
+  .navbar-content.right {
+    width: 100%;
+    align-items: center;
+  }
+  .navbar-content.left {
+    justify-content: flex-start;  /* brand on its own line */
+  }
+  .navbar-content.right {
+    justify-content: flex-start;  /* dropdown sits just below brand */
+  }
+
+  /* Make the trigger easy to tap */
+  .drop-link {
+    display: inline-block;
+    font-size: 22px;       /* slightly smaller than desktop 24px */
+    line-height: 1.2;
+    padding: 4px 0;
+  }
+
+  /* Turn the dropdown into a full-width panel under the trigger */
+  .dropdown-menu {
+    position: static;      /* no absolute positioning on mobile */
+    transform: none;       /* cancel desktop centering */
+    margin-top: 6px;
+    padding: 0;
+    width: 100%;
+    min-width: 0;          /* let it fill the container */
+    box-shadow: none;      /* flatter look on mobile */
+    border: 1px solid #eee;
+    border-radius: 6px;
+    white-space: normal;   /* allow wrap if screen is very narrow */
+  }
+
+  .dropdown-menu a {
+    display: block;
+    font-size: 18px;
+    padding: 12px 14px;    /* bigger tap target */
+  }
+
+  .dropdown-menu a:hover {
+    text-decoration: underline;
+    background: #f9f9f9;
+  }
+
+  /* Still open on tap/focus (no hover on touch) */
+  .dropdown:focus-within .dropdown-menu {
+    display: block;
+  }
+}
+  
   .three-column {
     flex-direction: column;
     gap: 5px; /* matches section title spacing */
