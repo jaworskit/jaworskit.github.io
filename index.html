@@ -254,16 +254,18 @@
 
   /* Turn the dropdown into a full-width panel under the trigger */
   .dropdown-menu {
-    position: static;      /* no absolute positioning on mobile */
-    transform: none;       /* cancel desktop centering */
+    position: static;
+    transform: none;
     margin-top: 6px;
     padding: 0;
     width: 100%;
-    min-width: 0;          /* let it fill the container */
-    box-shadow: none;      /* flatter look on mobile */
+    min-width: 320px;       /* ensures "Undergraduate US Economic History" fits */
+    box-shadow: none;
     border: 1px solid #eee;
     border-radius: 6px;
-    white-space: normal;   /* allow wrap if screen is very narrow */
+
+    white-space: nowrap;    /* force one line */
+    overflow-x: auto;       /* scroll sideways if screen is very narrow */
   }
 
   .dropdown-menu a {
