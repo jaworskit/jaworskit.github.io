@@ -239,20 +239,19 @@
   }
 
   /* Turn the dropdown into a full-width panel under the trigger */
-  .dropdown-menu {
-    position: static;
-    transform: none;
-    margin-top: 6px;
-    padding: 0;
-    width: 100%;
-    min-width: 320px;       /* ensures "Undergraduate US Economic History" fits */
-    box-shadow: none;
-    border: 1px solid #eee;
-    border-radius: 6px;
+.dropdown-menu {
+  position: static;
+  transform: none;
+  margin-top: 6px;
+  padding: 0;
+  width: 100vw;            /* full viewport width */
+  box-shadow: none;
+  border: 1px solid #eee;
+  border-radius: 0;        /* flush edges for full-width look */
 
-    white-space: nowrap;    /* force one line */
-    overflow-x: auto;       /* scroll sideways if screen is very narrow */
-  }
+  white-space: nowrap;     /* keep text on one line */
+  overflow-x: auto;        /* allow sideways scroll if text > screen width */
+}
 
   .dropdown-menu a {
     display: block;
