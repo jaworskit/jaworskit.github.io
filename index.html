@@ -132,6 +132,7 @@
   flex: 1;
   box-sizing: border-box;
   padding: 10px 10px 0 10px; /* was 40px 10px 0 10px */
+  min-width: 0;
 }
 
   /* Headings and text */
@@ -214,105 +215,73 @@
 
   /* Mobile */
 @media (max-width: 768px) {
-
-@media (max-width: 768px) {
-  /* Keep your serif font & bold look everywhere in the navbar */
-  .navbar,
-  .navbar a,
-  .dropdown .drop-link,
-  .dropdown-menu a {
-    font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
-    font-weight: bold;
-    color: black;
-    text-decoration: none;
-  }
-
-  /* Stack the navbar content */
+  /* Navbar adjustments */
   .navbar {
-    flex-wrap: wrap;
-    gap: 10px;
-    padding: 12px 16px;
-  }
-  .navbar-content.left,
-  .navbar-content.right {
-    width: 100%;
-    align-items: center;
-  }
-  .navbar-content.left {
-    justify-content: flex-start;  /* brand on its own line */
+    flex-direction: column;
+    align-items: flex-start;
   }
   .navbar-content.right {
-    justify-content: flex-start;  /* dropdown sits just below brand */
+    margin-left: 0;
+    margin-top: 10px;
+  }
+  .navbar a {
+    font-size: 20px; /* smaller text on mobile */
   }
 
-  /* Make the trigger easy to tap */
-  .drop-link {
-    display: inline-block;
-    font-size: 22px;       /* slightly smaller than desktop 24px */
-    line-height: 1.2;
-    padding: 4px 0;
+  /* Dropdown adjustments */
+  .dropdown-menu {
+    position: static;
+    transform: none;
+    margin-top: 6px;
+    padding: 0;
+    width: 100%;        /* full width of screen */
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    margin-bottom: 0;
+    white-space: nowrap;
+    overflow-x: auto;
   }
-
-  /* Turn the dropdown into a full-width panel under the trigger */
-.dropdown-menu {
-  position: static;
-  transform: none;
-  margin-top: 6px;
-  padding: 0;
-  width: 100%;            /* full viewport width */
-  box-shadow: none;
-  border: none;
-  border-radius: 0;        /* flush edges for full-width look */
-   margin-bottom: 0;
-  white-space: nowrap;     /* keep text on one line */
-  overflow-x: auto;        /* allow sideways scroll if text > screen width */
-}
-
+  .dropdown-menu li {
+    margin: 0;
+    padding: 0;
+  }
   .dropdown-menu a {
     display: block;
-    font-size: 14px;
-    padding: 12px 14px;    /* bigger tap target */
+    font-size: 14px;   /* smaller text so it fits one line */
+    padding: 12px 14px;
   }
-
-  .dropdown-menu a:hover {
-    text-decoration: underline;
-    background: #f9f9f9;
-  }
-
-  /* Still open on tap/focus (no hover on touch) */
   .dropdown:focus-within .dropdown-menu {
     display: block;
   }
-}
-  
+
+  /* Mobile-only layout for content columns */
   .three-column {
     flex-direction: column;
-    gap: 5px; /* matches section title spacing */
+    gap: 5px;
   }
-
-.column-title:nth-of-type(2) {
-    margin-top: 25px; /* adjust this to taste */
-  } 
   .column {
     padding-left: 0;
     padding-right: 0;
-    margin-bottom: 5px; /* matches .column-title margin-bottom */
+    margin-bottom: 5px;
   }
-
   .column-title {
-    margin-bottom: 5px; /* keep consistent with column gap */
+    margin-bottom: 5px;
   }
-
+  .column-title:nth-of-type(2) {
+    margin-top: 25px;
+  }
   .profile-img {
     width: 55%;
   }
-
   .scroll-panel {
     height: auto;
     max-height: none;
     margin-bottom: 5px;
   }
 }
+  
+ 
 </style>
 
 </head>
