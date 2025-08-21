@@ -22,7 +22,6 @@
   }
   a{ color: blue; text-decoration: none; }
 
-  /* Navbar (sticky for simpler layout) */
 .navbar {
   position: sticky;
   top: 0;
@@ -33,12 +32,11 @@
   display: flex;
   justify-content: flex-start;
   align-items: center;
-  padding: 10px 20px; 
+  padding: 10px 20px;
   gap: 30px;
 }
 
 .navbar-content {
-  /* no longer needs max-width/margin auto for this layout */
   display: flex;
   align-items: center;
 }
@@ -51,37 +49,31 @@
   color: black;
 }
 
+.navbar a:hover { text-decoration: underline; }
 
-/* Dropdown wrapper */
-.dropdown {
-  position: relative;
-}
+/* Dropdown */
+.dropdown { position: relative; }
+.drop-link { display: inline-block; }
 
-/* Trigger link inherits .navbar a */
-.drop-link {
-  display: inline-block;
-}
-
-/* Dropdown menu */
+/* Centered dropdown under “teaching” */
 .dropdown-menu {
   display: none;
   position: absolute;
   top: 100%;
-  left: 50%;                  
+  left: 50%;
   transform: translateX(-50%);
   margin-top: 6px;
-  padding: 6px 0;
+  padding: 6px 0;        /* keep; this matches your working page */
   list-style: none;
   background: #fff;
-   margin-bottom: 0;
-  min-width: 0;           
+  margin-bottom: 0;
+  min-width: 0;          /* or 320px if you prefer a fixed width */
   white-space: nowrap;
-
   box-shadow: none;
   z-index: 101;
 }
 
-/* Dropdown items */
+/* Menu item */
 .dropdown-menu a {
   display: block;
   padding: 6px 12px;
@@ -98,7 +90,7 @@
   background: #f9f9f9;
 }
 
-/* Show on hover/focus */
+/* Show on hover and keyboard focus */
 .dropdown:hover .dropdown-menu,
 .dropdown:focus-within .dropdown-menu {
   display: block;
