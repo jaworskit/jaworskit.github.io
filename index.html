@@ -79,7 +79,7 @@
   min-width: 0;           /* or 320px; just use the same on both pages */
   white-space: nowrap;
 
-  box-shadow: none;
+  box-shadow: 0 8px 16px rgba(0,0,0,.2);
   z-index: 101;
 }
 
@@ -90,7 +90,7 @@
   text-decoration: none;
   font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
   font-weight: bold;
-  font-size: 14px;                /* smaller than 24px brand/trigger */
+  font-size: 18px;                /* smaller than 24px brand/trigger */
   color: black;
   margin: 0;
 }
@@ -213,6 +213,7 @@
   a { color: blue; }
 
   /* Mobile */
+@media (max-width: 768px) {
 
 @media (max-width: 768px) {
   /* Keep your serif font & bold look everywhere in the navbar */
@@ -269,7 +270,7 @@
 
   .dropdown-menu a {
     display: block;
-    font-size: 14px;
+    font-size: 18px;
     padding: 12px 14px;    /* bigger tap target */
   }
 
