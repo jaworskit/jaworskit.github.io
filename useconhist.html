@@ -73,6 +73,10 @@
   z-index: 101;
 }
 
+.dropdown-menu li {
+  margin: 0;
+  padding: 0;
+}
 /* Menu item */
 .dropdown-menu a {
   display: block;
@@ -193,7 +197,8 @@
 
 @media (max-width: 768px) {
 
-  /* Keep your serif font & bold look everywhere in the navbar */
+  .dropdown-menu { margin: 6px 0 0 0; }
+  
   .navbar,
   .navbar a,
   .dropdown .drop-link,
@@ -215,75 +220,55 @@
     width: 100%;
     align-items: center;
   }
-  .navbar-content.left {
-    justify-content: flex-start;  /* brand on its own line */
-  }
-  .navbar-content.right {
-    justify-content: flex-start;  /* dropdown sits just below brand */
-  }
+  .navbar-content.left { justify-content: flex-start; }
+  .navbar-content.right { justify-content: flex-start; }
 
-  /* Make the trigger easy to tap */
+  /* Tap-friendly trigger */
   .drop-link {
     display: inline-block;
-    font-size: 22px;       /* slightly smaller than desktop 24px */
+    font-size: 22px;
     line-height: 1.2;
     padding: 4px 0;
   }
 
-  /* Turn the dropdown into a full-width panel under the trigger */
-.dropdown-menu {
-  position: static;
-  transform: none;
-  margin-top: 6px;
-  padding: 0;
-  width: 100vw;            /* full viewport width */
-  box-shadow: none;
-  border: 1px solid #eee;
-  border-radius: 0;        /* flush edges for full-width look */
-   margin-bottom: 0;
-  white-space: nowrap;     /* keep text on one line */
-  overflow-x: auto;        /* allow sideways scroll if text > screen width */
-}
-
+  /* Full-width dropdown on mobile */
+  .dropdown-menu {
+    position: static;
+    transform: none;
+    margin-top: 6px;
+    padding: 0;
+    width: 100%;
+    box-shadow: none;
+    border: 1px solid #eee;
+    border-radius: 0;
+    margin: 6px 0 0 0;
+    white-space: nowrap;  /* keep text on one line */
+    overflow-x: auto;     /* allow sideways scroll if needed */
+  }
   .dropdown-menu a {
     display: block;
     font-size: 16px;
-    padding: 12px 14px;    /* bigger tap target */
+    padding: 12px 14px;
   }
+  .dropdown:focus-within .dropdown-menu { display: block; }
 
-  .dropdown-menu a:hover {
-    text-decoration: underline;
-    background: #f9f9f9;
-  }
-
-  /* Still open on tap/focus (no hover on touch) */
-  .dropdown:focus-within .dropdown-menu {
-    display: block;
-  }
-}
-  
+  /* MOBILE LAYOUT: stack columns only on small screens */
   .three-column {
     flex-direction: column;
-    gap: 5px; /* matches section title spacing */
+    gap: 5px;
   }
-
   .column {
     padding-left: 0;
     padding-right: 0;
-    margin-bottom: 5px; /* matches .column-title margin-bottom */
+    margin-bottom: 5px;
   }
-
-  .column-title {
-    margin-bottom: 5px; /* keep consistent with column gap */
-  }
-
-  .profile-img {
-    width: 55%;
-  }
+  .column-title { margin-bottom: 5px; }
+  .profile-img { width: 55%; }
 
   .scroll-panel {
     height: auto;
     max-height: none;
+
   }
 }
 </style>
