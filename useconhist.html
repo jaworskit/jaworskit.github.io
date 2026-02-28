@@ -1,24 +1,314 @@
----
-layout: default
-title: "American Growth and Inequality"
-description: "Undergraduate US Economic History course taught by Taylor Jaworski at the University of Colorado Boulder."
-body_class: course-page
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>American Growth and Inequality</title>
+<link rel="stylesheet" type="text/css" href="/css/main.css">
+<style>
+  :root{
+    --page-max: 1200px;
+    --pad-x: 20px;
+    --nav-h: 56px;        /* adjust if your navbar is taller */
+  }
+
+  /* Base */
+  html, body { height: 100%; }
+  body{
+    margin: 0;
+    padding: 0;
+    font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+    overflow-x: hidden;   /* no horizontal scroll */
+  }
+  a{ color: blue; text-decoration: none; }
+
+.navbar {
+  position: sticky;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: white;
+  z-index: 100;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 10px 20px;
+  gap: 30px;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+}
+
+.navbar a {
+  text-decoration: none;
+  font-size: 24px;
+  font-weight: bold;
+  font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+  color: black;
+}
+
+.navbar a:hover { text-decoration: underline; }
+
+/* Dropdown */
+.dropdown { position: relative; }
+.drop-link { display: inline-block; }
+
+/* Centered dropdown under “teaching” */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 6px;
+  padding: 6px 0;        /* keep; this matches your working page */
+  list-style: none;
+  background: #fff;
+  margin-bottom: 0;
+  min-width: 0;          /* or 320px if you prefer a fixed width */
+  white-space: nowrap;
+  box-shadow: none;
+  z-index: 101;
+}
+
+.dropdown-menu li {
+  margin: 0;
+  padding: 0;
+}
+/* Menu item */
+.dropdown-menu a {
+  display: block;
+  padding: 6px 12px;
+  text-decoration: none;
+  font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+  font-size: 16px;
+  color: black;
+  margin: 0;
+}
+
+.dropdown-menu a:hover {
+  text-decoration: underline;
+  background: #f9f9f9;
+}
+
+/* Show on hover and keyboard focus */
+.dropdown:hover .dropdown-menu,
+.dropdown:focus-within .dropdown-menu {
+  display: block;
+}
+  
+  /* Page wrapper */
+  .page{
+    max-width: var(--page-max);
+    margin: 0 auto;
+    padding: 10px var(--pad-x);
+  }
+
+  /* Title + banner */
+  .course-title{
+    margin: 0px 0 8px 0;
+    font-size: 18px;
+    color: blue;
+    font-family: inherit;
+    font-weight: bold;
+  }
+  .full-width-img{
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0px 0 12px 0;
+  }
+
+  /* Columns */
+  .three-column{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+    gap: 20px;
+    margin-top: 0px;
+  }
+  .column{
+    flex: 1;
+    box-sizing: border-box;
+    padding: 10px 10px 0 10px;  /* slightly smaller top pad than home */
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* Headings & text */
+  .column-title{
+    text-align: left;
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0 0 6px 0;
+  }
+  p{
+    line-height: 18px;
+    font-size: 13px;
+    text-align: justify;
+    margin: 0 0 12px 0;
+  }
+
+  /* Topic lists */
+  .topic-list{ list-style: none; padding-left: 0; font-size: 14px; margin: 0; }
+  .topic-list li{ margin-bottom: 15px; }
+  .topic-title{ font-style: italic; display: block; margin-bottom: 6px; }
+  .reading-item{ padding-left: 20px; margin-bottom: 4px; text-align: justify; font-size: 13px; }
+  .reading-item em{ font-style: italic; }
+
+  /* Custom bullets: align baseline consistently */
+  .custom-list{
+    list-style: none;
+    padding-left: 0;
+    margin: .5em 0 0 0;
+  }
+  .custom-list li{
+    position: relative;
+    padding-left: 1.4em;
+    font-size: 13px;
+    line-height: 1.25em;
+    margin-bottom: 0.25em;
+    text-align: left;
+  }
+  .custom-list li::before{
+    position: absolute;
+    left: .2em;
+    top: .15em;        /* stable baseline */
+    line-height: 1;
+    font-size: 85%;
+    color: black;
+    content: "";
+  }
+  .custom-list li.star::before   { content: "★"; }
+  .custom-list li.note::before   { content: "🎶"; left: 0; }
+  .custom-list li.bullet::before { content: "•"; font-size: 125%; }
+
+  /* Scrollable panel that adapts to viewport (use for big outlines) */
+  .scroll-panel{
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #fff;
+    padding-right: 15px;
+    font-size: 14px;
+    font-family: inherit;
+  }
+
+@media (max-width: 768px) {
+
+  .dropdown-menu { margin: 6px 0 0 0; }
+  
+  .navbar,
+  .navbar a,
+  .dropdown .drop-link,
+  .dropdown-menu a {
+    font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
+    color: black;
+    text-decoration: none;
+  }
+
+  /* Stack the navbar content */
+  .navbar {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 12px 16px;
+  }
+  .navbar-content.left,
+  .navbar-content.right {
+    width: 100%;
+    align-items: center;
+  }
+  .navbar-content.left { justify-content: flex-start; }
+  .navbar-content.right { justify-content: flex-start; }
+
+  /* Tap-friendly trigger */
+  .drop-link {
+    display: inline-block;
+    font-size: 22px;
+    line-height: 1.2;
+    padding: 4px 0;
+  }
+
+  /* Full-width dropdown on mobile */
+  .dropdown-menu {
+    position: static;
+    transform: none;
+    margin-top: 6px;
+    padding: 0;
+    width: 100%;
+    box-shadow: none;
+    border: none;
+    border-radius: 0;
+    margin: 6px 0 0 0;
+    white-space: nowrap;  /* keep text on one line */
+    overflow-x: auto;     /* allow sideways scroll if needed */
+  }
+  .dropdown-menu a {
+    display: block;
+    font-size: 14px;
+    padding: 12px 14px;
+  }
+  .dropdown:focus-within .dropdown-menu { display: block; }
+
+  /* MOBILE LAYOUT: stack columns only on small screens */
+  .three-column {
+    flex-direction: column;
+    gap: 5px;
+  }
+  .column {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: 5px;
+  }
+  .column-title { margin-bottom: 5px; }
+  .profile-img { width: 55%; }
+
+  .scroll-panel {
+    flex: none;
+    height: auto;
+    max-height: none;
+  }
+}
+</style>
+
+</head>
+<body>
+
+<nav class="navbar">
+  <div class="navbar-content left">
+    <a href="index.html">taylor jaworski</a>
+  </div>
+  <div class="navbar-content right">
+    <div class="dropdown">
+      <a href="#" class="drop-link" aria-haspopup="true" aria-expanded="false">teaching</a>
+      <ul class="dropdown-menu" role="menu" aria-label="Teaching menu">
+        <li><a href="useconhist.html" role="menuitem">US Economic History (UG)</a></li>
+		<li><a href="eurconhist.html" role="menuitem">European Economic History (UG)</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
 
 <div class="page">
 
+ 
   <div style="padding-top: 5px;">
-    <img class="full-width-img" src="/usbanner.webp" alt="Course Banner">
+    <img class="full-width-img" src="https://jaworskit.github.io/usbanner.webp" alt="Course Banner">
   </div>
 
-  <div class="course-title">
-    <a href="/us_example.pdf" target="_blank">american growth and inequality (econ 4524: economic history of the united states)</a>
-  </div>
-
+    <div class="course-title">
+  <a href="https://jaworskit.github.io/us_example.pdf" target="_blank" style="color: blue; font-weight: bold; text-decoration: none;">american growth and inequality (econ 4524: economic history of the united states) </a>
+</div> 
+  
   <div class="three-column">
     <div class="column">
-
+        
       <div class="column-title">description</div>
+      <!-- <div style="height:25vh;overflow-x:hidden;overflow-y:auto;background-color:white;scrollbar-base-color:gold;margin-top:0px;padding-top:-5px;margin-bottom: 25px;padding-right: 15px;font-size: 14px;font-family: Garamond, Baskerville, Baskerville Old Face, Hoefler Text, Times New Roman, serif">      -->
       <p>
         In his travels to the United States in the 1830s, Alexis de Tocqueville noted the equality of conditions that existed relative to the Old World.
         The historical record suggests that equality of conditions has not always been a feature of the American economic landscape.
@@ -29,304 +319,323 @@ body_class: course-page
         We will cover the application of economic methodologies — including theories of growth and analysis of data — to understand economic and institutional change from the American Revolution through the Civil War, the emergence of the modern economy, and periods of crisis in American history (e.g., the Great Depression and World War II).
         We will consider the benefits and consequences of growth for different social groups as well as reasons for optimism or pessimism about the future of growth and inequality.
       </p>
-
+    <!-- </div> -->
       <div class="column-title">goals</div>
+      <!-- <div style="height:20vh;overflow-x:hidden;overflow-y:auto;background-color:white;scrollbar-base-color:gold;margin-top:0px;padding-top:-5px;margin-bottom: 25px;padding-right: 15px;font-size: 14px;font-family: Garamond, Baskerville, Baskerville Old Face, Hoefler Text, Times New Roman, serif">     -->
       <p>
         Students will (i) apply economic theory to analyze historical events, (ii) use historical data to evaluate causal arguments, (iii) analyze the relationship between economic growth and inequality, and (iv) put current policy issues in historical context.
         At the end of the course, students will have a better understanding of the development of the American economy, determinants of economic growth and distribution, and challenges facing the US economy.
-      </p>
-
+      </p> 
+      <!-- </div> -->
+          
       <div class="column-title">materials</div>
+      <!-- <div style="height:20vh;overflow-x:hidden;overflow-y:auto;background-color:white;scrollbar-base-color:gold;margin-top:0px;padding-top:-5px;margin-bottom: 25px;padding-right: 15px;font-size: 14px;font-family: Garamond, Baskerville, Baskerville Old Face, Hoefler Text, Times New Roman, serif">    -->
       <p>
-        All materials (lectures, required readings, etc) will be available on this page.
-        You should complete readings before we cover the topic in class.
+        All materials (lectures, required readings, etc) will be available on this page. 
+        You should complete readings before we cover the topic in class. 
         I recommend <em>A New Economic View of American History from Colonial Times to 1940</em> by Jeremy Atack and Peter Passell to learn more about US economic history.
-      </p>
+      </p>  
+      <!-- </div>    -->
     </div>
 
-    <div class="column">
-      <div class="column-title">outline</div>
-      <div class="scroll-panel" style="margin-bottom: 25px;">
-        <ul class="topic-list">
-          <li>
-            <span class="topic-title">Can Capitalism and Democracy Coexist?</span>
-            <ul class="custom-list">
-              <li class="star">
-                <a href="https://www.nber.org/papers/w32930" target="_blank">
-                  Lamoreaux &amp; Wallis, "Democracy, Capitalism, and Equality"
-                </a>
-              </li>
-              <li class="note">
-                Jill Lepore on
-                <a href="https://conversationswithtyler.com/episodes/jill-lepore/" target="_blank">
-                  Traveling through Time
-                </a>
-              </li>
-              <li class="bullet">
-                Roger Lowenstein, <a href="https://www.wsj.com/economy/us-capitalism-differences-eaecd208?gaa_at=eafs&gaa_n=ASWzDAg54olU9B1NI3m1XuCLAWVGhzoyxJEvhQSOS-bDQ2tXRQzn3LL4UZPKMgaO44s%3D&gaa_ts=68b6f7f1&gaa_sig=GyDY6BCDB7PzqzGxpRNFgb89BeQ7rLcJCoPXJQ1e3FpuEhClZoNLy3aKC2UlY_mRTT3yl8wHTgKRJTZ5vzymCw%3D%3D" target="_blank">
-                  "How-and Why-US Capitalism Is Unlike Any Other"
-                </a>
-              </li>
-            </ul>
-          </li>
+<div class="column">
+  <div class="column-title">outline</div>
+  <div class="scroll-panel" style="margin-bottom:25px;">
+  <ul class="topic-list">
+    <li>
+      <span class="topic-title">Can Capitalism and Democracy Coexist?</span>
+      <ul class="custom-list">
+        <li class="star">
+          <a href="https://www.nber.org/papers/w32930" target="_blank" style="color: blue;">
+            Lamoreaux & Wallis, "Democracy, Capitalism, and Equality"
+          </a>
+        </li>
+          <li class="note">
+          Jill Lepore on   
+          <a href="https://conversationswithtyler.com/episodes/jill-lepore/" target="_blank" style="color: blue;">
+            Traveling through Time
+          </a>
+        </li>
+        <li class="bullet">
+          Roger Lowenstein, <a href="https://www.wsj.com/economy/us-capitalism-differences-eaecd208?gaa_at=eafs&gaa_n=ASWzDAg54olU9B1NI3m1XuCLAWVGhzoyxJEvhQSOS-bDQ2tXRQzn3LL4UZPKMgaO44s%3D&gaa_ts=68b6f7f1&gaa_sig=GyDY6BCDB7PzqzGxpRNFgb89BeQ7rLcJCoPXJQ1e3FpuEhClZoNLy3aKC2UlY_mRTT3yl8wHTgKRJTZ5vzymCw%3D%3D" target="_blank" style="color: blue;">
+            "How-and Why-US Capitalism Is Unlike Any Other"
+          </a>
+        </li>
+      </ul>
+    </li>
 
-          <li>
-            <span class="topic-title">Production Functions</span>
-            <ul class="custom-list">
-              <li class="bullet">
-                <a href="https://www.aeaweb.org/articles?id=10.1257/aer.104.5.44" target="_blank">
-                  Fernald &amp; Jones, "The Future of US Economic Growth"
-                </a>
-              </li>
-            </ul>
-          </li>
+    <li>
+      <span class="topic-title">Production Functions</span>
+      <ul class="custom-list">
+        <li class="bullet">
+          <a href="https://www.aeaweb.org/articles?id=10.1257/aer.104.5.44" target="_blank" style="color: blue;">
+            Fernald & Jones, "The Future of US Economic Growth"
+          </a>
+        </li>
+      </ul>
+    </li>
+	
+    <li>
+      <span class="topic-title">The Americas Before and After Columbus</span>
+      <ul class="custom-list">
+        <li class="star">
+          <a href="https://doi.org/10.1017/S0022050722000080" target="_blank" style="color: blue;">
+            Carlos, Feir, & Redish, "Indigenous Nations and the Development of the US Economy"
+          </a>
+        </li>
+      </ul>
+    </li>
 
-          <li>
-            <span class="topic-title">The Americas Before and After Columbus</span>
-            <ul class="custom-list">
-              <li class="star">
-                <a href="https://doi.org/10.1017/S0022050722000080" target="_blank">
-                  Carlos, Feir, &amp; Redish, "Indigenous Nations and the Development of the US Economy"
-                </a>
-              </li>
-            </ul>
-          </li>
+    <li>
+      <span class="topic-title">The Colonial Economy</span>
+      <ul class="custom-list">
+        <li class="star">
+          <a href="https://doi.org/10.1017/CHOL9780521394420.005" target="_blank" style="color: blue;">
+            Galenson, "The Settlement and Growth of the Colonies"
+          </a>
+        </li>
+      </ul>
+    </li>
 
-          <li>
-            <span class="topic-title">The Colonial Economy</span>
-            <ul class="custom-list">
-              <li class="star">
-                <a href="https://doi.org/10.1017/CHOL9780521394420.005" target="_blank">
-                  Galenson, "The Settlement and Growth of the Colonies"
-                </a>
-              </li>
-            </ul>
-          </li>
+    <li>
+      <span class="topic-title">The American Revolution</span>
+      <ul class="custom-list">
+        <li class="star">
+          Irwin, <em>Clashing Over Commerce</em>, chapters 1 and 2
+        </li>
+        <li class="star">
+          <a href="https://www.archives.gov/founding-docs/declaration-transcript" target="_blank" style="color: blue;">
+            Declaration of Independence,
+          </a>
+          <a href="https://www.archives.gov/founding-docs/constitution-transcript" target="_blank" style="color: blue;">
+            US Constitution,
+          </a> and
+          <a href="https://www.archives.gov/founding-docs/bill-of-rights-transcript" target="_blank" style="color: blue;">
+            Bill of Rights
+          </a>
+        </li>
+ 
+        <li class="note">
+          Joanne Freeman on
+          <a href="https://www.youtube.com/watch?v=sbwOop46Dag" target="_blank" style="color: blue;">
+            Outraged Colonials: The Stamp Act Crisis
+          </a>
+        </li>
+      </ul>
+    </li>
 
-          <li>
-            <span class="topic-title">The American Revolution</span>
-            <ul class="custom-list">
-              <li class="star">
-                Irwin, <em>Clashing Over Commerce</em>, chapters 1 and 2
-              </li>
-              <li class="star">
-                <a href="https://www.archives.gov/founding-docs/declaration-transcript" target="_blank">
-                  Declaration of Independence,
-                </a>
-                <a href="https://www.archives.gov/founding-docs/constitution-transcript" target="_blank">
-                  US Constitution,
-                </a> and
-                <a href="https://www.archives.gov/founding-docs/bill-of-rights-transcript" target="_blank">
-                  Bill of Rights
-                </a>
-              </li>
-              <li class="note">
-                Joanne Freeman on
-                <a href="https://www.youtube.com/watch?v=sbwOop46Dag" target="_blank">
-                  Outraged Colonials: The Stamp Act Crisis
-                </a>
-              </li>
-            </ul>
-          </li>
+    <li>
+      <span class="topic-title">The Early Republic</span>
+      <ul class="custom-list">
+        <li class="star">
+          <a href="https://www.jstor.org/stable/24739337" target="_blank" style="color: blue;">
+            Jalil, "A New History of Banking Panics in the United States, 1825–1929"
+          </a>
+        </li>
+        </li>
+          <li class="note">
+          Douglas Irwin on   
+          <a href="https://www.youtube.com/watch?v=9R27s5ibMfg" target="_blank" style="color: blue;">
+            Economics of Tariffs and Trade
+          </a>
+        </li>
+        
+      </ul>
+    </li>
 
-          <li>
-            <span class="topic-title">The Early Republic</span>
-            <ul class="custom-list">
-              <li class="star">
-                <a href="https://www.jstor.org/stable/24739337" target="_blank">
-                  Jalil, "A New History of Banking Panics in the United States, 1825–1929"
-                </a>
-              </li>
-              <li class="note">
-                Douglas Irwin on
-                <a href="https://www.youtube.com/watch?v=9R27s5ibMfg" target="_blank">
-                  Economics of Tariffs and Trade
-                </a>
-              </li>
-            </ul>
-          </li>
+    <li>
+      <span class="topic-title">Slavery and the Civil War</span>
+      <ul class="custom-list">
+        <li class="star">
+          <a href="https://www.nber.org/papers/w31758" target="_blank" style="color: blue;">
+            Hornbeck & Logan, "One Giant Leap"
+          </a>
+        </li>
+        <li class="note">
+          David Blight on
+          <a href="https://youtu.be/zJeyeIPNEiU" target="_blank" style="color: blue;">
+            Slavery and State Rights, Economies and Ways of Life: What Caused the Civil War?
+          </a>
+        </li>
+        <li class="note">
+          Eric Hilt on 
+          <a href="https://www.mercatus.org/macro-musings/eric-hilt-debates-economic-history-and-cliometric-revolution" target="_blank" style="color: blue;">
+            Debates in Economic History and the Cliometric Revolution
+          </a>
+        </li>
+      </ul>
+    </li>
 
-          <li>
-            <span class="topic-title">Slavery and the Civil War</span>
-            <ul class="custom-list">
-              <li class="star">
-                <a href="https://www.nber.org/papers/w31758" target="_blank">
-                  Hornbeck &amp; Logan, "One Giant Leap"
-                </a>
-              </li>
-              <li class="note">
-                David Blight on
-                <a href="https://youtu.be/zJeyeIPNEiU" target="_blank">
-                  Slavery and State Rights, Economies and Ways of Life: What Caused the Civil War?
-                </a>
-              </li>
-              <li class="note">
-                Eric Hilt on
-                <a href="https://www.mercatus.org/macro-musings/eric-hilt-debates-economic-history-and-cliometric-revolution" target="_blank">
-                  Debates in Economic History and the Cliometric Revolution
-                </a>
-              </li>
-            </ul>
-          </li>
+    <li>
+      <span class="topic-title">The Development of American Agriculture</span>
+      <ul class="custom-list">
+        <li class="star">
+          <a href="https://www.jstor.org/stable/2138675" target="_blank" style="color: blue;">
+            Olmstead & Rhode, "Induced Innovation in American Agriculture"
+          </a>
+        </li>
+      </ul>
+    </li>
 
-          <li>
-            <span class="topic-title">The Development of American Agriculture</span>
-            <ul class="custom-list">
-              <li class="star">
-                <a href="https://www.jstor.org/stable/2138675" target="_blank">
-                  Olmstead &amp; Rhode, "Induced Innovation in American Agriculture"
-                </a>
-              </li>
-            </ul>
-          </li>
+    <li>
+      <span class="topic-title">The Market Revolution</span>
+      <ul class="custom-list">
+        <li class="star">
+          <a href="https://doi.org/10.1093/qje/qjw002" target="_blank" style="color: blue;">
+            Donaldson & Hornbeck, "Railroads and American Economic Growth"
+          </a>
+        </li>
+        <li class="bullet">
+          <a href="https://www.newyorker.com/magazine/2007/10/29/vast-designs" target="_blank" style="color: blue;">
+            Jill Lepore, "Vast Designs," <em>The New Yorker</em>
+          </a>
+        </li>
+      </ul>
+    </li>
 
-          <li>
-            <span class="topic-title">The Market Revolution</span>
-            <ul class="custom-list">
-              <li class="star">
-                <a href="https://doi.org/10.1093/qje/qjw002" target="_blank">
-                  Donaldson &amp; Hornbeck, "Railroads and American Economic Growth"
-                </a>
-              </li>
-              <li class="bullet">
-                <a href="https://www.newyorker.com/magazine/2007/10/29/vast-designs" target="_blank">
-                  Jill Lepore, "Vast Designs," <em>The New Yorker</em>
-                </a>
-              </li>
-            </ul>
-          </li>
+    <li>
+      <span class="topic-title">From Industrialization to Big Business</span>
+      <ul class="custom-list">
+        <li class="star">
+          <a href="https://www.aeaweb.org/articles?id=10.1257/jep.33.2.51" target="_blank" style="color: blue;">
+            Atack, Rhode, & Margo, "Automation of Manufacturing in the Late Nineteenth Century"
+          </a>
+        </li>
+         <li class="note">
+          Richard White on
+          <a href="https://wondery.com/shows/tides-of-history/episode/5629-the-civil-war-reconstruction-and-the-gilded-age-an-interview-with-stanfords-professor-richard/" target="_blank" style="color: blue;">
+            The Civil War, Reconstruction, and the Gilded Age
+          </a>
+        </li>
+      </ul>
+    </li>
 
-          <li>
-            <span class="topic-title">From Industrialization to Big Business</span>
-            <ul class="custom-list">
-              <li class="star">
-                <a href="https://www.aeaweb.org/articles?id=10.1257/jep.33.2.51" target="_blank">
-                  Atack, Rhode, &amp; Margo, "Automation of Manufacturing in the Late Nineteenth Century"
-                </a>
-              </li>
-              <li class="note">
-                Richard White on
-                <a href="https://wondery.com/shows/tides-of-history/episode/5629-the-civil-war-reconstruction-and-the-gilded-age-an-interview-with-stanfords-professor-richard/" target="_blank">
-                  The Civil War, Reconstruction, and the Gilded Age
-                </a>
-              </li>
-            </ul>
-          </li>
+    <li>
+      <span class="topic-title">The Age of Mass Migration</span>
+      <ul class="custom-list">
+        <li class="star">
+          <a href="https://doi.org/10.1086/675805" target="_blank" style="color: blue;">
+            Abramitzky, Boustan, & Eriksson, "A Nation of Immigrants"
+          </a>
+        </li>
+      </ul>
+    </li>
 
-          <li>
-            <span class="topic-title">The Age of Mass Migration</span>
-            <ul class="custom-list">
-              <li class="star">
-                <a href="https://doi.org/10.1086/675805" target="_blank">
-                  Abramitzky, Boustan, &amp; Eriksson, "A Nation of Immigrants"
-                </a>
-              </li>
-            </ul>
-          </li>
+    <li>
+      <span class="topic-title">The Great Depression and World War II</span>
+      <ul class="custom-list">
+        <li class="star">
+          <a href="https://www.aeaweb.org/articles?id=10.1257/jep.7.2.19" target="_blank" style="color: blue;">
+            Romer, "The Nation in Depression"
+          </a>
+        </li>
+        <li class="note">
+          <em>This American Life</em>,
+          <a href="https://www.thisamericanlife.org/355/transcript" target="_blank" style="color: blue;">
+             "The Giant Pool of Money"
+          </a>
+          and 
+          <a href="https://www.thisamericanlife.org/390/transcript" target="_blank" style="color: blue;">
+             "Return to The Giant Pool of Money"
+          </a>
+        </li>
+        <li class="note">
+          George Hall on the
+          <a href="https://macromusings.libsyn.com/george-hall-on-the-history-of-the-us-national-debt-and-government-financing" target="_blank" style="color: blue;">
+             History of the U.S. National Debt and Government Financing
+          </a>
+          and 
+          <a href="https://macromusings.libsyn.com/bonus-george-hall-on-financing-world-war-ii-and-managing-post-war-debt" target="_blank" style="color: blue;">
+             Financing World War II and Managing Post-War Debt
+          </a>
+        </li>
+      </ul>
+    </li>
 
-          <li>
-            <span class="topic-title">The Great Depression and World War II</span>
-            <ul class="custom-list">
-              <li class="star">
-                <a href="https://www.aeaweb.org/articles?id=10.1257/jep.7.2.19" target="_blank">
-                  Romer, "The Nation in Depression"
-                </a>
-              </li>
-              <li class="note">
-                <em>This American Life</em>,
-                <a href="https://www.thisamericanlife.org/355/transcript" target="_blank">
-                  "The Giant Pool of Money"
-                </a>
-                and
-                <a href="https://www.thisamericanlife.org/390/transcript" target="_blank">
-                  "Return to The Giant Pool of Money"
-                </a>
-              </li>
-              <li class="note">
-                George Hall on the
-                <a href="https://macromusings.libsyn.com/george-hall-on-the-history-of-the-us-national-debt-and-government-financing" target="_blank">
-                  History of the U.S. National Debt and Government Financing
-                </a>
-                and
-                <a href="https://macromusings.libsyn.com/bonus-george-hall-on-financing-world-war-ii-and-managing-post-war-debt" target="_blank">
-                  Financing World War II and Managing Post-War Debt
-                </a>
-              </li>
-            </ul>
-          </li>
+    <li>
+      <span class="topic-title">Education, Skills, and the Evolution of Work</span>
+      <ul class="custom-list">
+        <li class="star">
+          <a href="https://doi.org/10.1086/250104" target="_blank" style="color: blue;">
+            Goldin, "Egalitarianism and the Returns to Education"
+          </a>
+        </li>
+        <li class="note">
+          Claudia Goldin on
+          <a href="https://youtu.be/-lcgyCG-olg" target="_blank" style="color: blue;">
+            An Evolving Economic Force
+          </a>
+        </li>
+      </ul>
+    </li>
 
-          <li>
-            <span class="topic-title">Education, Skills, and the Evolution of Work</span>
-            <ul class="custom-list">
-              <li class="star">
-                <a href="https://doi.org/10.1086/250104" target="_blank">
-                  Goldin, "Egalitarianism and the Returns to Education"
-                </a>
-              </li>
-              <li class="note">
-                Claudia Goldin on
-                <a href="https://youtu.be/-lcgyCG-olg" target="_blank">
-                  An Evolving Economic Force
-                </a>
-              </li>
-            </ul>
-          </li>
+    <li>
+      <span class="topic-title">The Future of US Growth and Inequality</span>
+      <ul class="custom-list">
+        <li class="star">
+          <a href="https://doi.org/10.1257/jep.29.3.31" target="_blank" style="color: blue;">
+            Mokyr, Vickers, & Ziebarth, "The History of Technological Anxiety"
+          </a>
+        </li>
+        <li class="star">
+          <a href="https://www.aeaweb.org/articles?id=10.1257/jep.29.1.3" target="_blank" style="color: blue;">
+            Acemoglu & Robinson, "The Rise and Decline of General Laws of Capitalism"
+          </a>
+        </li>  
+        <li class="note">
+          <a href="https://www.youtube.com/watch?v=jMWPm2pRv7Q" target="_blank" style="color: blue;">
+            Steve Jobs on Computers as Bicycles of the Mind
+          </a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+  </div>
+</div>
 
-          <li>
-            <span class="topic-title">The Future of US Growth and Inequality</span>
-            <ul class="custom-list">
-              <li class="star">
-                <a href="https://doi.org/10.1257/jep.29.3.31" target="_blank">
-                  Mokyr, Vickers, &amp; Ziebarth, "The History of Technological Anxiety"
-                </a>
-              </li>
-              <li class="star">
-                <a href="https://www.aeaweb.org/articles?id=10.1257/jep.29.1.3" target="_blank">
-                  Acemoglu &amp; Robinson, "The Rise and Decline of General Laws of Capitalism"
-                </a>
-              </li>
-              <li class="note">
-                <a href="https://www.youtube.com/watch?v=jMWPm2pRv7Q" target="_blank">
-                  Steve Jobs on Computers as Bicycles of the Mind
-                </a>
-              </li>
-            </ul>
-          </li>
-        </ul>
-      </div>
-    </div>
+
 
     <div class="column">
 
       <div class="column-title">grading</div>
+      <!-- <div style="height:50vh;overflow-x:hidden;overflow-y:auto;background-color:white;scrollbar-base-color:gold;margin-top:0px;padding-top:-5px;margin-bottom: 25px;padding-right: 15px;font-size: 14px;font-family: Garamond, Baskerville, Baskerville Old Face, Hoefler Text, Times New Roman, serif">      -->
       <p>
-        <em>attendance</em>: Attendance is required. Missing more than three classes will result in a full letter grade reduction of your final grade (e.g., an "A" becomes a "B").
+        <em>attendance</em>: Attendance is required. Missing more than three classes will result in a full letter grade reduction of your final grade (e.g., an "A" becomes a "B"). 
         Each additional three classes missed will result in a further letter grade reduction of your final grade.
+
       </p>
       <p>
         <em>literature review</em> (10%): Students are required to find a research article published in the <em>Journal of Economic History</em>, <em>Explorations in Economic History</em>, or <em>Economic History Review</em> for each topic.
         Students must identify table or figure from the article, give a brief description of the table or figure, and provide a proper citation.
       </p>
+
       <p>
-        <em>government document</em> (15%): Students are required to find and describe a government document related to US economic history in Norlin Library.
+        <em>government document</em> (15%): Students are required to find and describe a government document related to US economic history in Norlin Library. 
         Students must provide evidence that they came into physical contact with the document in the library, describe the document, and discuss why it is useful for understanding an aspect of US economic history.
       </p>
+
       <p>
-        <em>analysis</em> (15%): Students are required to propose a question or hypothesis and then use the <a href="https://hsus.cambridge.org/HSUSWeb/toc/showTable.do?id=Ba652-1032" target="_blank"><em>Historical Statistics of the United States</em></a> to answer the question or test the hypothesis.
+        <em>analysis</em> (15%): Students are required to propose a question or hypothesis and then use the <a href="https://hsus.cambridge.org/HSUSWeb/toc/showTable.do?id=Ba652-1032" target="_blank" style="color: blue;"><em>Historical Statistics of the United States</em></a> to answer the question or test the hypothesis.
         Students must download a data series, construct a figure or table, and discuss how it is useful for addressing their question or hypothesis.
       </p>
+
       <p>
         <em>exams</em> (60% total = 25% midterm + 35% final): There will be one in-class midterm exam and a final exam on the date and time set by the University.
         All exams are cumulative.
       </p>
-
+      <!-- </div> -->
+        
       <div class="column-title">office hours and email</div>
+      <!-- <div style="height:25vh;overflow-x:hidden;overflow-y:auto;background-color:white;scrollbar-base-color:gold;margin-top:0px;padding-top:-5px;margin-bottom: 25px;padding-right: 15px;font-size: 14px;font-family: Garamond, Baskerville, Baskerville Old Face, Hoefler Text, Times New Roman, serif">      -->
       <p>
-        I encourage you to attend office hours or to setup a time to meet outside of office hours.
-        You should come to office hours prepared with questions or ready to discuss course material.
-        Office hours are the appropriate forum for addressing questions about course material or policies.
+        I encourage you to attend office hours or to setup a time to meet outside of office hours. 
+        You should come to office hours prepared with questions or ready to discuss course material. 
+        Office hours are the appropriate forum for addressing questions about course material or policies. 
         Use email to setup a time to meet outside of office hours, if necessary.
-      </p>
+      </p> 
+      <!-- </div> -->
     </div>
   </div>
 </div>
+</body>
+</html>
