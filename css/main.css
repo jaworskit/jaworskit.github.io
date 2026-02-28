@@ -125,8 +125,6 @@ p {
   box-sizing: border-box;
   padding: 10px 10px 0 10px;
   min-width: 0;
-  display: flex;
-  flex-direction: column;
 }
 
 /* Homepage: narrower bio column, wider publications */
@@ -213,8 +211,6 @@ p {
 
 /* ── Scrollable panels (course outlines) ──────────── */
 .scroll-panel {
-  flex: 1;
-  min-height: 0;
   overflow-y: auto;
   overflow-x: hidden;
   background-color: white;
@@ -318,9 +314,7 @@ p {
   .profile-img { width: 55%; }
 
   .scroll-panel {
-    flex: none;
-    height: auto;
-    max-height: none;
+    max-height: none !important;
     margin-bottom: 5px;
   }
 }

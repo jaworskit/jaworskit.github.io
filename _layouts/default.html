@@ -21,5 +21,39 @@
 
 {% include footer.html %}
 
+<script>
+(function() {
+  function sizeScrollPanels() {
+    document.querySelectorAll('.three-column').forEach(function(row) {
+      var cols = row.querySelectorAll(':scope > .column');
+      var panel = row.querySelector('.scroll-panel');
+      if (!panel || cols.length < 3) return;
+
+      // On mobile (stacked columns), don't constrain
+      if (window.innerWidth <= 768) {
+        panel.style.maxHeight = '';
+        return;
+      }
+
+      // Measure the side columns (first and last)
+      var sideHeight = Math.max(cols[0].scrollHeight, cols[cols.length - 1].scrollHeight);
+
+      // Subtract the height of elements above the scroll panel in its column
+      var panelCol = panel.closest('.column');
+      var offset = 0;
+      for (var i = 0; i < panelCol.children.length; i++) {
+        if (panelCol.children[i] === panel) break;
+        offset += panelCol.children[i].offsetHeight;
+      }
+
+      panel.style.maxHeight = Math.max(200, sideHeight - offset) + 'px';
+    });
+  }
+
+  window.addEventListener('DOMContentLoaded', sizeScrollPanels);
+  window.addEventListener('resize', sizeScrollPanels);
+})();
+</script>
+
 </body>
 </html>
