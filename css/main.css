@@ -18,8 +18,8 @@ a { color: blue; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 p {
-  line-height: 18px;
-  font-size: 13px;
+  line-height: 1.5;
+  font-size: 14px;
   text-align: justify;
   margin: 0 0 12px 0;
 }
@@ -42,6 +42,7 @@ p {
 .navbar-content {
   display: flex;
   align-items: center;
+  gap: 30px;
 }
 
 .navbar a {
@@ -126,11 +127,20 @@ p {
   min-width: 0;
 }
 
+/* Homepage: narrower bio column, wider publications */
+.home-page .column:first-child  { flex: 0.8; }
+.home-page .column:nth-child(2) { flex: 1.2; }
+.home-page .column:last-child   { flex: 1; }
+
 .column-title {
   text-align: left;
   font-size: 16px;
   font-weight: bold;
-  margin: 0 0 6px 0;
+  margin: 20px 0 6px 0;
+}
+
+.column-title:first-child {
+  margin-top: 0;
 }
 
 /* ── Publication / WIP lists ──────────────────────── */
@@ -157,7 +167,7 @@ p {
 .custom-list li {
   position: relative;
   padding-left: 1.4em;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.25em;
   margin-bottom: 0.25em;
   text-align: left;
@@ -174,16 +184,16 @@ p {
   content: "";
 }
 
-.custom-list li.star::before   { content: "\2605"; }
-.custom-list li.note::before   { content: "\1F3B6"; left: 0; }
-.custom-list li.bullet::before { content: "\2022"; font-size: 125%; }
-.custom-list li.book::before   { content: "\1F4D6"; font-size: 60%; }
+.custom-list li.star::before   { content: "★"; }
+.custom-list li.note::before   { content: "🎶"; left: 0; }
+.custom-list li.bullet::before { content: "•"; font-size: 125%; }
+.custom-list li.book::before   { content: "📖"; font-size: 60%; }
 
 /* ── Topic lists (course pages) ───────────────────── */
 .topic-list { list-style: none; padding-left: 0; font-size: 14px; margin: 0; }
 .topic-list li { margin-bottom: 15px; }
 .topic-title { font-style: italic; display: block; margin-bottom: 6px; }
-.reading-item { padding-left: 20px; margin-bottom: 4px; text-align: justify; font-size: 13px; }
+.reading-item { padding-left: 20px; margin-bottom: 4px; text-align: justify; font-size: 14px; }
 .reading-item em { font-style: italic; }
 
 /* ── Course title ─────────────────────────────────── */
@@ -197,9 +207,9 @@ p {
 
 /* ── Images ───────────────────────────────────────── */
 .full-width-img { width: 100%; height: auto; display: block; margin: 0 0 12px 0; }
-.profile-img { border-radius: 2.5%; margin: 10px 0; width: 65%; }
+.profile-img { border-radius: 2.5%; margin: 10px 0; width: 85%; }
 
-/* ── Scrollable panels ────────────────────────────── */
+/* ── Scrollable panels (course outlines) ──────────── */
 .scroll-panel {
   height: calc(100svh - var(--nav-h) - 80px);
   overflow-y: auto;
@@ -210,6 +220,21 @@ p {
   font-family: inherit;
   scrollbar-color: auto;
 }
+
+/* ── Footer ───────────────────────────────────────── */
+.site-footer {
+  max-width: var(--page-max);
+  margin: 40px auto 20px;
+  padding: 12px var(--pad-x);
+  border-top: 1px solid #ddd;
+  font-size: 12px;
+  color: #999;
+  text-align: center;
+}
+
+/* ── Course page overrides ────────────────────────── */
+.course-page .page { padding: 10px var(--pad-x); }
+.course-page .scroll-panel { height: calc(100svh - var(--nav-h) - 140px); }
 
 /* ── Mobile ───────────────────────────────────────── */
 @media (max-width: 768px) {
@@ -277,7 +302,16 @@ p {
     margin-bottom: 5px;
   }
 
+  /* Reset homepage column flex on mobile */
+  .home-page .column:first-child,
+  .home-page .column:nth-child(2),
+  .home-page .column:last-child {
+    flex: 1;
+  }
+
   .column-title { margin-bottom: 5px; }
+
+  .home-page .column-title:nth-of-type(2) { margin-top: 25px; }
 
   .profile-img { width: 55%; }
 
