@@ -35,8 +35,18 @@
         return;
       }
 
-      // Measure the side columns (first and last)
-      var sideHeight = Math.max(cols[0].scrollHeight, cols[cols.length - 1].scrollHeight);
+      // Temporarily pull side columns out of flex stretch
+      // so we can measure their natural content height
+      var left = cols[0];
+      var right = cols[cols.length - 1];
+      left.style.alignSelf = 'flex-start';
+      right.style.alignSelf = 'flex-start';
+
+      var sideHeight = Math.max(left.offsetHeight, right.offsetHeight);
+
+      // Reset
+      left.style.alignSelf = '';
+      right.style.alignSelf = '';
 
       // Subtract the height of elements above the scroll panel in its column
       var panelCol = panel.closest('.column');
