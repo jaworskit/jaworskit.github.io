@@ -14,12 +14,12 @@ body {
   overflow-x: hidden;
 }
 
-a { color: blue; text-decoration: none; }
+a { color: #1a4a8a; text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 p {
   line-height: 1.5;
-  font-size: 14px;
+  font-size: 15px;
   text-align: justify;
   margin: 0 0 12px 0;
 }
@@ -32,6 +32,7 @@ p {
   width: 100%;
   background-color: white;
   z-index: 100;
+  border-bottom: 1px solid #eee;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -137,6 +138,8 @@ p {
   font-size: 16px;
   font-weight: bold;
   margin: 20px 0 6px 0;
+  padding-bottom: 4px;
+  border-bottom: 1px solid #ddd;
 }
 
 .column-title:first-child {
@@ -200,14 +203,14 @@ p {
 .course-title {
   margin: 0 0 8px 0;
   font-size: 18px;
-  color: blue;
+  color: #1a4a8a;
   font-family: inherit;
   font-weight: bold;
 }
 
 /* ── Images ───────────────────────────────────────── */
 .full-width-img { width: 100%; height: auto; display: block; margin: 0 0 12px 0; }
-.profile-img { border-radius: 2.5%; margin: 10px 0; width: 85%; }
+.profile-img { border-radius: 6%; margin: 10px 0; width: 85%; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
 
 /* ── Scrollable panels (course outlines) ──────────── */
 .scroll-panel {
@@ -311,7 +314,7 @@ p {
 
   .home-page .column-title:nth-of-type(2) { margin-top: 25px; }
 
-  .profile-img { width: 55%; }
+  .profile-img { width: 45%; }
 
   .scroll-panel {
     max-height: none !important;
