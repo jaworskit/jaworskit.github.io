@@ -1,0 +1,6 @@
+name = "course-chat"
+main = "worker.js"
+compatibility_date = "2024-01-01"
+
+[vars]
+ALLOWED_ORIGIN = "https://jaworskit.github.io"

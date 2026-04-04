@@ -1,0 +1,567 @@
+/* ── Smooth scroll for anchor links ──────────── */
+html:has(body.gen-book) {
+  scroll-behavior: smooth;
+}
+
+.gen-book .navbar {
+  border-bottom: none;
+}
+
+/* ── Hero ────────────────────────────────────── */
+.gb-hero {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  min-height: 460px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gb-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(20, 30, 48, 0.6),
+    rgba(20, 30, 48, 0.75)
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gb-hero-content {
+  position: relative;
+  text-align: center;
+  color: #fff;
+  padding: 60px 20px;
+  max-width: 780px;
+}
+
+.gb-hero-label {
+  font-family: 'Oswald', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  opacity: 0.75;
+  margin: 0 0 16px 0;
+}
+
+.gb-hero-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 52px;
+  font-weight: 600;
+  line-height: 1.15;
+  margin: 0 0 12px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.gb-hero-subtitle {
+  font-family: 'Source Serif 4', 'Source Serif Pro', serif;
+  font-size: 20px;
+  font-style: italic;
+  opacity: 0.85;
+  margin: 0 0 28px 0;
+  line-height: 1.4;
+}
+
+.gb-hero-tagline {
+  font-family: 'Source Serif 4', 'Source Serif Pro', serif;
+  font-size: 17px;
+  line-height: 1.65;
+  opacity: 0.8;
+  max-width: 600px;
+  margin: 0 auto 36px;
+  text-align: center;
+}
+
+.gb-hero-cta {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ── Buttons ─────────────────────────────────── */
+.gb-btn {
+  font-family: 'Oswald', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 12px 32px;
+  border-radius: 9999px;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  display: inline-block;
+}
+
+.gb-btn-primary {
+  background-color: #1a4a8a;
+  color: #fff;
+}
+
+.gb-btn-primary:hover {
+  background-color: #15396d;
+  text-decoration: none;
+  color: #fff;
+}
+
+.gb-btn-secondary {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+}
+
+.gb-btn-secondary:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+  border-color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  color: #fff;
+}
+
+/* ── Sections ────────────────────────────────── */
+.gb-section {
+  padding: 72px 20px;
+}
+
+.gb-section-alt {
+  background-color: #f3f0ea;
+}
+
+.gb-container {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.gb-section-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 30px;
+  font-weight: 500;
+  color: #272f38;
+  margin: 0 0 28px 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ── Prose ────────────────────────────────────── */
+.gb-prose {
+  font-family: 'Source Serif 4', 'Source Serif Pro', serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: #3a3a3a;
+}
+
+.gb-prose p {
+  margin: 0 0 18px 0;
+  font-size: inherit;
+  line-height: inherit;
+  text-align: left;
+}
+
+.gb-prose a {
+  color: #1a4a8a;
+  text-decoration: none;
+}
+
+.gb-prose a:hover {
+  text-decoration: underline;
+}
+
+/* ── Feature cards (learning goals) ──────────── */
+.gb-features {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin: 36px 0;
+}
+
+.gb-feature {
+  background: #fff;
+  border-radius: 8px;
+  padding: 24px 28px;
+  border: 1px solid #e5e1da;
+}
+
+.gb-feature h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+  color: #272f38;
+  margin: 0 0 6px 0;
+}
+
+.gb-feature p {
+  font-family: 'Source Serif 4', 'Source Serif Pro', serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: #555;
+  margin: 0;
+  text-align: left;
+}
+
+/* ── Reading legend ──────────────────────────── */
+.gb-legend {
+  font-family: 'Source Serif 4', 'Source Serif Pro', serif;
+  font-size: 14px;
+  color: #888;
+  margin-bottom: 28px;
+  letter-spacing: 0.3px;
+}
+
+.gb-legend span {
+  margin-right: 18px;
+  white-space: nowrap;
+}
+
+/* ── Topic cards ─────────────────────────────── */
+.gb-topic {
+  background: #fff;
+  border-radius: 8px;
+  padding: 22px 26px;
+  margin-bottom: 14px;
+  border: 1px solid #e5e1da;
+  border-left: 4px solid #1a4a8a;
+}
+
+.gb-topic-title {
+  font-family: 'Oswald', sans-serif;
+  font-size: 19px;
+  font-weight: 500;
+  color: #272f38;
+  margin: 0 0 10px 0;
+}
+
+.gb-topic ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.gb-topic li {
+  position: relative;
+  padding-left: 1.5em;
+  font-family: 'Source Serif 4', 'Source Serif Pro', serif;
+  font-size: 15px;
+  line-height: 1.4;
+  margin-bottom: 5px;
+  color: #3a3a3a;
+}
+
+.gb-topic li::before {
+  position: absolute;
+  left: 0.15em;
+  top: 0.1em;
+  font-size: 90%;
+}
+
+.gb-topic li.star::before   { content: "\2605"; color: #1a4a8a; }
+.gb-topic li.note::before   { content: "\1F3B6"; left: 0; font-size: 75%; }
+.gb-topic li.bullet::before { content: "\2022"; font-size: 130%; color: #999; }
+.gb-topic li.book::before   { content: "\1F4D6"; font-size: 65%; }
+
+.gb-topic a {
+  color: #1a4a8a;
+  text-decoration: none;
+}
+
+.gb-topic a:hover {
+  text-decoration: underline;
+}
+
+/* ── Grading items ───────────────────────────── */
+.gb-grading-item {
+  margin-bottom: 24px;
+}
+
+.gb-grading-item:last-child {
+  margin-bottom: 0;
+}
+
+.gb-grading-item h3 {
+  font-family: 'Oswald', sans-serif;
+  font-size: 17px;
+  font-weight: 500;
+  color: #272f38;
+  margin: 0 0 6px 0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.gb-grading-item p {
+  font-family: 'Source Serif 4', 'Source Serif Pro', serif;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #3a3a3a;
+  margin: 0;
+  text-align: left;
+}
+
+.gb-grading-item a {
+  color: #1a4a8a;
+  text-decoration: none;
+}
+
+.gb-grading-item a:hover {
+  text-decoration: underline;
+}
+
+/* ── Week labels on topic cards ──────────────── */
+.gb-week {
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #999;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  float: right;
+  margin-top: 4px;
+}
+
+/* ── Chat widget ─────────────────────────────── */
+.chat-toggle {
+  position: fixed;
+  bottom: 28px;
+  right: 28px;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #1a4a8a;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s, transform 0.2s;
+  z-index: 1000;
+}
+
+.chat-toggle:hover {
+  background-color: #15396d;
+  transform: scale(1.05);
+}
+
+.chat-toggle svg {
+  width: 26px;
+  height: 26px;
+  fill: #fff;
+}
+
+.chat-panel {
+  position: fixed;
+  bottom: 96px;
+  right: 28px;
+  width: 380px;
+  max-height: 520px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  display: none;
+  flex-direction: column;
+  z-index: 1001;
+  overflow: hidden;
+}
+
+.chat-panel.open {
+  display: flex;
+}
+
+.chat-header {
+  font-family: 'Oswald', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  color: #fff;
+  background-color: #1a4a8a;
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.chat-header-close {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  opacity: 0.7;
+  padding: 0;
+  line-height: 1;
+}
+
+.chat-header-close:hover {
+  opacity: 1;
+}
+
+.chat-messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  min-height: 280px;
+  max-height: 360px;
+  background-color: #faf9f6;
+}
+
+.chat-msg {
+  margin-bottom: 14px;
+  max-width: 85%;
+}
+
+.chat-msg-user {
+  margin-left: auto;
+}
+
+.chat-msg-assistant {
+  margin-right: auto;
+}
+
+.chat-msg-bubble {
+  font-family: 'Source Serif 4', 'Source Serif Pro', serif;
+  font-size: 14px;
+  line-height: 1.5;
+  padding: 10px 14px;
+  border-radius: 10px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+.chat-msg-user .chat-msg-bubble {
+  background-color: #1a4a8a;
+  color: #fff;
+  border-bottom-right-radius: 3px;
+}
+
+.chat-msg-assistant .chat-msg-bubble {
+  background-color: #eae7e1;
+  color: #272f38;
+  border-bottom-left-radius: 3px;
+}
+
+.chat-msg-assistant .chat-msg-bubble a {
+  color: #1a4a8a;
+}
+
+.chat-input-area {
+  display: flex;
+  border-top: 1px solid #e5e1da;
+  background: #fff;
+}
+
+.chat-input {
+  flex: 1;
+  border: none;
+  padding: 14px 16px;
+  font-family: 'Source Serif 4', 'Source Serif Pro', serif;
+  font-size: 14px;
+  outline: none;
+  background: transparent;
+}
+
+.chat-input::placeholder {
+  color: #aaa;
+}
+
+.chat-send {
+  background: none;
+  border: none;
+  color: #1a4a8a;
+  font-family: 'Oswald', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 14px 16px;
+  cursor: pointer;
+}
+
+.chat-send:hover {
+  color: #15396d;
+}
+
+.chat-send:disabled {
+  color: #ccc;
+  cursor: default;
+}
+
+.chat-typing {
+  font-family: 'Source Serif 4', 'Source Serif Pro', serif;
+  font-size: 13px;
+  color: #999;
+  font-style: italic;
+  padding: 4px 16px 8px;
+}
+
+/* ── Mobile ──────────────────────────────────── */
+@media (max-width: 768px) {
+  .gb-hero {
+    min-height: 380px;
+  }
+
+  .gb-hero-content {
+    padding: 40px 16px;
+  }
+
+  .gb-hero-title {
+    font-size: 34px;
+  }
+
+  .gb-hero-subtitle {
+    font-size: 17px;
+  }
+
+  .gb-hero-tagline {
+    font-size: 15px;
+  }
+
+  .gb-section {
+    padding: 48px 16px;
+  }
+
+  .gb-section-title {
+    font-size: 24px;
+  }
+
+  .gb-features {
+    grid-template-columns: 1fr;
+  }
+
+  .gb-prose {
+    font-size: 16px;
+  }
+
+  .gb-topic {
+    padding: 18px 20px;
+  }
+
+  .gb-topic-title {
+    font-size: 17px;
+  }
+
+  .gb-topic li {
+    font-size: 14px;
+  }
+
+  .gb-grading-item p {
+    font-size: 15px;
+  }
+
+  .chat-panel {
+    right: 12px;
+    bottom: 84px;
+    width: calc(100vw - 24px);
+    max-height: 70vh;
+  }
+
+  .chat-toggle {
+    bottom: 18px;
+    right: 18px;
+    width: 50px;
+    height: 50px;
+  }
+}
