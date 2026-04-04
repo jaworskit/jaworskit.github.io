@@ -217,7 +217,7 @@ html:has(body.gen-book) {
   white-space: nowrap;
 }
 
-/* ── Topic cards ─────────────────────────────── */
+/* ── Topic cards (expandable) ────────────────── */
 .gb-topic {
   background: #fff;
   border-radius: 8px;
@@ -225,6 +225,42 @@ html:has(body.gen-book) {
   margin-bottom: 14px;
   border: 1px solid #e5e1da;
   border-left: 4px solid #1a4a8a;
+}
+
+.gb-topic-header {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.gb-topic-header::-webkit-details-marker { display: none; }
+
+.gb-topic-header .gb-topic-title {
+  flex: 1;
+  margin: 0;
+}
+
+.gb-topic-header .gb-week {
+  float: none;
+  flex-shrink: 0;
+}
+
+.gb-topic-header::after {
+  content: '';
+  display: block;
+  width: 7px;
+  height: 7px;
+  border-right: 2px solid #aaa;
+  border-bottom: 2px solid #aaa;
+  transform: rotate(45deg);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+.gb-topic[open] .gb-topic-header::after {
+  transform: rotate(-135deg);
 }
 
 .gb-topic-title {
@@ -238,7 +274,7 @@ html:has(body.gen-book) {
 .gb-topic ul {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 12px 0 0 0;
 }
 
 .gb-topic li {
