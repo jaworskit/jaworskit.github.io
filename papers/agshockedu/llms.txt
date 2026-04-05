@@ -57,9 +57,3 @@ This paper studies how a large, temporary commodity price boom during World War 
 - **For robustness:** Appendix A contains alternative samples (farm owners vs. renters, same-state movers, off-farm residents), alternative linking methods (Census Linking Project), influenza controls, IV estimates, birth order heterogeneity, and the dynamic complementarity results by subgroup.
 - **For the calibration exercise:** Appendix B derives implied discount factors following Bau (2020) and reports results under alternative assumptions.
 - **Key tables:** Table 1 (main results, opportunity cost channel), Table 2 (young children, dynamic complementarities). Key figures: Figure 1 (agricultural prices and wages), Figure 3 (enrollment and attendance trends).
-
-## Publication status
-
-Working paper. Authors: Taylor Jaworski, Carl T. Kitchens, Luke P. Rodgers.
-
-Contact: taylor.jaworski@colorado.edu
