@@ -98,20 +98,6 @@ description: "An LLM-readable orientation file for Jaworski, Kitchens, and Rodge
       </ol>
 
       <figure class="llm-figure">
-        <figcaption>Figure 3: Enrollment and Average Daily Attendance, 1910-1930</figcaption>
-        <div class="llm-figure-panels">
-          <div>
-            <span class="llm-panel-label">Panel A: Enrollment</span>
-            <img src="figures/enroll_trends_norm.png" alt="Enrollment trends, 1910-1930">
-          </div>
-          <div>
-            <span class="llm-panel-label">Panel B: Average Daily Attendance</span>
-            <img src="figures/ada_trends_norm.png" alt="Average daily attendance trends, 1910-1930">
-          </div>
-        </div>
-      </figure>
-
-      <figure class="llm-figure">
         <figcaption>Table 1: The Effect of Exposure to World War I Agricultural Boom</figcaption>
         <div class="llm-table-wrap">
           <table class="llm-results-table">
@@ -162,9 +148,21 @@ description: "An LLM-readable orientation file for Jaworski, Kitchens, and Rodge
               </tr>
             </tbody>
             <tfoot>
-              <tr class="controls-row"><td>Cohort &amp; county FE</td><td colspan="6">All columns</td></tr>
-              <tr class="controls-row"><td>Parental controls</td><td></td><td colspan="2">Cols 2-3</td><td></td><td colspan="2">Cols 5-6</td></tr>
-              <tr class="controls-row"><td>Additional controls</td><td></td><td></td><td>Col 3</td><td></td><td></td><td>Col 6</td></tr>
+              <tr class="controls-row">
+                <td>Cohort &amp; county FE</td>
+                <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+                <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
+              </tr>
+              <tr class="controls-row">
+                <td>Parental controls</td>
+                <td></td><td>&#10003;</td><td>&#10003;</td>
+                <td></td><td>&#10003;</td><td>&#10003;</td>
+              </tr>
+              <tr class="controls-row">
+                <td>Additional controls</td>
+                <td></td><td></td><td>&#10003;</td>
+                <td></td><td></td><td>&#10003;</td>
+              </tr>
             </tfoot>
           </table>
         </div>
