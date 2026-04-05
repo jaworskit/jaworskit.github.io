@@ -32,7 +32,7 @@ description: "An LLM-readable orientation file for Jaworski, Kitchens, and Rodge
     <section id="about" class="llm-section">
       <h2>What is this paper about?</h2>
       <p>
-        This paper studies how a large, temporary commodity price boom during World War I affected human capital accumulation in the United States. The central contribution is identifying two channels through which the boom reduced completed schooling: (1) an opportunity cost channel, where higher farm wages pulled teenagers out of school, and (2) a dynamic complementarity channel, where the interaction between early childhood resources and local child labor intensity determined whether younger children gained or lost schooling. The paper shows that the negative aggregate effect on younger children is driven entirely by child labor intensity, not by the resource shock itself.
+        This paper studies how the commodity price boom during World War I affected human capital accumulation in the United States. The central contribution is identifying two channels through which the boom reduced completed schooling: (1) an opportunity cost channel, where higher farm wages pulled teenagers out of school, and (2) a dynamic complementarity channel, where the interaction between early childhood resources and local child labor intensity determined whether younger children gained or lost schooling. The paper shows that the negative aggregate effect on younger children is driven entirely by child labor intensity, not by the resource shock.
       </p>
     </section>
 
@@ -42,7 +42,7 @@ description: "An LLM-readable orientation file for Jaworski, Kitchens, and Rodge
         <li>The paper contributes to the literature on skill formation and dynamic complementarities (Cunha and Heckman 2007, Heckman 2007), extending these models to a historical agricultural setting where child labor mediates the effect of income shocks.</li>
         <li>It is distinct from papers that study commodity booms and schooling in developing countries (e.g., Bau 2020 on India). The US setting features a well-developed school system during the early high school movement, so the tradeoff is between attending high school (not just primary school) and farm work.</li>
         <li>The paper builds a new county-level panel of school enrollment and average daily attendance for 26 states, 1910 to 1930, drawn from state board of education reports. This dataset did not previously exist.</li>
-        <li>Linked census data come from the Census Tree and the Census Linking Project, connecting children observed in 1910 or 1920 to their 1940 outcomes. Results are robust across both linking methods.</li>
+        <li>Linked census data come from the Census Tree and the Census Linking Project, connecting children observed in 1910 or 1920 to 1940 outcomes. Results are robust across linking methods.</li>
         <li>The crop revenue index holds crop acreage fixed at 1910 shares and varies only prices, isolating price exposure from endogenous planting decisions. An IV strategy using crop suitability provides additional identification.</li>
       </ul>
     </section>
@@ -54,7 +54,7 @@ description: "An LLM-readable orientation file for Jaworski, Kitchens, and Rodge
       <ul>
         <li>County-level enrollment and average daily attendance, 1910 to 1930 (newly constructed from state education reports)</li>
         <li>Census complete count data: 1910, 1920, and 1940 (linked via Census Tree and Census Linking Project)</li>
-        <li>USDA crop price and production data for constructing the crop revenue index</li>
+        <li>Crop price and production data for constructing the crop revenue index</li>
         <li>Controls for compulsory schooling laws, WWI draft exposure, boll weevil infestation, hookworm, malaria, Rosenwald schools, county health organizations, and 1918 influenza mortality</li>
       </ul>
 
@@ -63,7 +63,6 @@ description: "An LLM-readable orientation file for Jaworski, Kitchens, and Rodge
         <li>The crop revenue index measures county-level exposure to the wartime price boom based on pre-war crop composition (1910 shares multiplied by annual national prices)</li>
         <li>Difference-in-differences for county-level enrollment/attendance outcomes</li>
         <li>Individual-level regressions with county and birth-cohort fixed effects, parental controls, and interactions with child labor intensity for linked census outcomes</li>
-        <li>IV using predicted crop shares from soil suitability data (following Kitchens 2023)</li>
       </ul>
 
       <h3>Key specifications</h3>
@@ -79,8 +78,8 @@ description: "An LLM-readable orientation file for Jaworski, Kitchens, and Rodge
         <li>Enrollment and average daily attendance fell sharply at the peak of the boom (1919 to 1920), with larger declines in high-exposure counties.</li>
         <li>Greater exposure during teenage years reduced completed schooling by 0.27 to 0.47 years, with effects concentrated at the high school margin.</li>
         <li>Effects are larger for men than women, and present for both white and Black individuals.</li>
-        <li>For children exposed during early childhood (ages 0 to 4), the net effect depends on local child labor intensity. Once child labor is accounted for, the direct effect of early exposure on boys' schooling is approximately zero. In high child labor counties, the interaction drives the negative effect. For girls, the direct effect is weakly positive, consistent with lower opportunity costs in agricultural labor markets.</li>
-        <li>A calibration exercise yields implied discount factors between 0.95 and 0.99, consistent with forward-looking household optimization.</li>
+        <li>For children exposed during early childhood (ages 0 to 4), the net effect depends on local child labor intensity. Once child labor is accounted for, the direct effect of early exposure on boys' schooling is close to zero. In high child labor counties, the interaction drives the negative effect. For girls, the direct effect is weakly positive, consistent with lower opportunity costs in agricultural labor markets.</li>
+        <li>A calibration exercise yields implied discount factors between 0.95 and 0.99, consistent with forward-looking households.</li>
       </ol>
     </section>
 
