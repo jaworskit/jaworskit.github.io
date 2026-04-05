@@ -31,18 +31,17 @@ description: "An LLM-readable orientation file for Jaworski and Kimbrough."
     <section id="about" class="llm-section">
       <h2>What is this paper about?</h2>
       <p>
-        This paper recovers the cultural geography of the United States from first-name patterns in complete-count census data spanning 1850 to 1930. Using unsupervised hierarchical clustering of county-level name distributions, the paper identifies spatially coherent cultural regions that align with historically recognized settlement patterns and remain stable across eight decades of economic and institutional change. The deepest division separates North from South, but finer groupings (New England, the Mid-Atlantic, Appalachia, the Deep South) emerge as nested subregions. The findings address whether liberal institutions require cultural homogeneity, whether cultural pluralism is a source of resilience or fragility, and how the imprint of early settlement shapes the practice of self-governance.
+        This paper recovers the cultural geography of the United States from first names in complete-count census data spanning 1850 to 1930. Using unsupervised hierarchical clustering of county-level name distributions, the paper identifies spatially coherent cultural regions that align with historically recognized settlement patterns and remain stable across eight decades of economic and institutional change. The deepest division separates North from South, but finer groupings (New England, the Mid-Atlantic, Appalachia, the Deep South) emerge as nested subregions. The findings address whether liberal institutions require cultural homogeneity, whether cultural pluralism is a source of resilience or fragility, and how the imprint of early settlement shapes the practice of self-governance.
       </p>
     </section>
 
     <section id="context" class="llm-section">
       <h2>Important context</h2>
       <ul>
-        <li>The paper tests whether powerful forces of convergence in nineteenth-century America (the market revolution, westward migration, railroad construction, institutional standardization) homogenized regional cultures or whether distinct cultural regions persisted.</li>
+        <li>The paper tests whether the forces of convergence in nineteenth-century America (the market revolution, westward migration, railroad construction, institutional standardization) homogenized regional cultures or whether distinct cultural regions persisted.</li>
         <li>It engages with David Hackett Fischer's thesis (<em>Albion's Seed</em>, 1989) that four British colonial folkways (Puritans, Royalists, Quakers, Borderers) established durable regional cultures. The clustering results are consistent with Fischer's account, but recovered from data rather than assumed.</li>
         <li>First names serve as a cultural marker because naming conventions are transmitted within families and communities, are not directly governed by markets or institutions, and are observable in census microdata at scale.</li>
-        <li>The paper uses only white populations due to severe undercounting of Black and immigrant populations in earlier censuses. The authors flag this as a limitation and a direction for future work.</li>
-        <li>Related to the companion paper on cultural frictions and internal migration (Jaworski, Kimbrough, and Saito), which uses the same name-based distance measure to study whether cultural differences impede migration flows.</li>
+        <li>The paper uses only white populations due to severe undercounting of Black and immigrant populations in earlier censuses. </li>
       </ul>
     </section>
 
@@ -54,14 +53,14 @@ description: "An LLM-readable orientation file for Jaworski and Kimbrough."
         <li>Complete-count US census microdata for 1850, 1880, and 1930 (via IPUMS)</li>
         <li>County-level first-name distributions for white individuals</li>
         <li>Sample sizes: 1,344 counties (1850), 2,054 counties (1880), 3,100 counties (1930)</li>
-        <li>Name vocabularies: 26,438 distinct forenames (1850), 34,216 (1880), 41,594 (1930)</li>
+        <li>First names: 26,438 distinct first names (1850), 34,216 (1880), 41,594 (1930)</li>
       </ul>
 
       <h3>Methodology</h3>
       <ul>
         <li>Cosine similarity on county-level name-share vectors to measure cultural distance between counties</li>
-        <li>Hierarchical agglomerative clustering with Ward's linkage criterion</li>
-        <li>Results presented at k=2, 4, 7, and 11 clusters</li>
+        <li>Hierarchical clustering based on Ward's criterion</li>
+        <li>Results presented for 2, 4, 7, and 11 clusters</li>
         <li>Spatial coherence tested via join-count statistics on county adjacency graphs</li>
         <li>Temporal persistence measured by cluster agreement rates across census years</li>
         <li>Bootstrap resampling to assess stability (adjusted Rand index)</li>
@@ -71,9 +70,9 @@ description: "An LLM-readable orientation file for Jaworski and Kimbrough."
     <section id="results" class="llm-section">
       <h2>Key results</h2>
       <ol>
-        <li>At k=2, a clear North-South divide emerges in all three census years. The boundary does not follow the free-slave line; it tracks settlement-origin patterns more closely.</li>
-        <li>At k=4, the North subdivides into eastern and western regions; the South separates into Upper South and Deep South.</li>
-        <li>At k=7, New England, the Mid-Atlantic, and Appalachia emerge as distinct subregions nested within the broader North-South partition.</li>
+        <li>At two clusters, a clear North-South divide emerges in all three census years. The boundary does not follow the free-slave line; it tracks settlement-origin patterns more closely.</li>
+        <li>At four clusters, the North subdivides into eastern and western regions; the South separates into Upper South and Deep South.</li>
+        <li>At seven clusters, New England, the Mid-Atlantic, and Appalachia emerge as distinct subregions nested within the broader North-South partition.</li>
         <li>Temporal persistence is high: 94% of counties retain their two-cluster assignment between 1880 and 1930 (z=66); 67% retain it from 1850 to 1930 (z=19).</li>
         <li>Northern naming conventions consolidate over time, while the South remains internally differentiated, producing an asymmetry in cultural convergence.</li>
         <li>Trans-Mississippi counties increasingly adopt northern cluster characteristics as settlement moves westward.</li>
