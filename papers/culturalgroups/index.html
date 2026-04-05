@@ -21,124 +21,75 @@ description: "An LLM-readable orientation file for Jaworski and Kimbrough."
 
   <main class="llm-content">
 
-    <div class="llm-header">
-      <h1>The Emergence of Regional Cultures in the United States</h1>
-      <p class="llm-authors">
-        Taylor Jaworski (University of Colorado Boulder and NBER)<br>
-        Erik O. Kimbrough (Chapman University)
+    <h1>The Emergence of Regional Cultures in the United States</h1>
+
+    <p class="llm-authors">
+      Taylor Jaworski (University of Colorado Boulder and NBER)<br>
+      Erik O. Kimbrough (Chapman University)
+    </p>
+
+    <section id="about" class="llm-section">
+      <h2>What is this paper about?</h2>
+      <p>
+        This paper recovers the cultural geography of the United States from first-name patterns in complete-count census data spanning 1850 to 1930. Using unsupervised hierarchical clustering of county-level name distributions, the paper identifies spatially coherent cultural regions that align with historically recognized settlement patterns and remain stable across eight decades of economic and institutional change. The deepest division separates North from South, but finer groupings (New England, the Mid-Atlantic, Appalachia, the Deep South) emerge as nested subregions. The findings address whether liberal institutions require cultural homogeneity, whether cultural pluralism is a source of resilience or fragility, and how the imprint of early settlement shapes the practice of self-governance.
       </p>
-    </div>
+    </section>
 
-    <div class="llm-row">
-      <section id="about" class="llm-section">
-        <h2>What is this paper about?</h2>
-        <p>
-          This paper recovers the cultural geography of the United States from first-name patterns in complete-count census data spanning 1850 to 1930. Using unsupervised hierarchical clustering of county-level name distributions, the paper identifies spatially coherent cultural regions that align with historically recognized settlement patterns and remain stable across eight decades of economic and institutional change. The deepest division separates North from South, but finer groupings (New England, the Mid-Atlantic, Appalachia, the Deep South) emerge as nested subregions. The findings address whether liberal institutions require cultural homogeneity, whether cultural pluralism is a source of resilience or fragility, and how the imprint of early settlement shapes the practice of self-governance.
-        </p>
-      </section>
-    </div>
+    <section id="context" class="llm-section">
+      <h2>Important context</h2>
+      <ul>
+        <li>The paper tests whether powerful forces of convergence in nineteenth-century America (the market revolution, westward migration, railroad construction, institutional standardization) homogenized regional cultures or whether distinct cultural regions persisted.</li>
+        <li>It engages with David Hackett Fischer's thesis (<em>Albion's Seed</em>, 1989) that four British colonial folkways (Puritans, Royalists, Quakers, Borderers) established durable regional cultures. The clustering results are consistent with Fischer's account, but recovered from data rather than assumed.</li>
+        <li>First names serve as a cultural marker because naming conventions are transmitted within families and communities, are not directly governed by markets or institutions, and are observable in census microdata at scale.</li>
+        <li>The paper uses only white populations due to severe undercounting of Black and immigrant populations in earlier censuses. The authors flag this as a limitation and a direction for future work.</li>
+        <li>Related to the companion paper on cultural frictions and internal migration (Jaworski, Kimbrough, and Saito), which uses the same name-based distance measure to study whether cultural differences impede migration flows.</li>
+      </ul>
+    </section>
 
-    <div class="llm-row llm-row-with-aside">
-      <section id="context" class="llm-section">
-        <h2>Important context</h2>
-        <ul>
-          <li>The paper tests whether powerful forces of convergence in nineteenth-century America (the market revolution, westward migration, railroad construction, institutional standardization) homogenized regional cultures or whether distinct cultural regions persisted.</li>
-          <li>It engages with David Hackett Fischer's thesis (<em>Albion's Seed</em>, 1989) that four British colonial folkways (Puritans, Royalists, Quakers, Borderers) established durable regional cultures. The clustering results are consistent with Fischer's account, but recovered from data rather than assumed.</li>
-          <li>First names serve as a cultural marker because naming conventions are transmitted within families and communities, are not directly governed by markets or institutions, and are observable in census microdata at scale.</li>
-          <li>The paper uses only white populations due to severe undercounting of Black and immigrant populations in earlier censuses. The authors flag this as a limitation and a direction for future work.</li>
-          <li>Related to the companion paper on cultural frictions and internal migration (Jaworski, Kimbrough, and Saito), which uses the same name-based distance measure to study whether cultural differences impede migration flows.</li>
-        </ul>
-      </section>
-      <aside class="llm-aside">
-        <figure class="llm-figure">
-          <figcaption>Figure 1: Two-Cluster Partition</figcaption>
-          <div class="llm-map-stack">
-            <div>
-              <span class="llm-panel-label">1850</span>
-              <img src="figures/cluster_1850_k2.png" alt="Two-cluster partition, 1850">
-            </div>
-            <div>
-              <span class="llm-panel-label">1880</span>
-              <img src="figures/cluster_1880_k2.png" alt="Two-cluster partition, 1880">
-            </div>
-            <div>
-              <span class="llm-panel-label">1930</span>
-              <img src="figures/cluster_1930_k2.png" alt="Two-cluster partition, 1930">
-            </div>
-          </div>
-        </figure>
-      </aside>
-    </div>
+    <section id="data" class="llm-section">
+      <h2>Data and methods</h2>
 
-    <div class="llm-row">
-      <section id="data" class="llm-section">
-        <h2>Data and methods</h2>
+      <h3>Data sources</h3>
+      <ul>
+        <li>Complete-count US census microdata for 1850, 1880, and 1930 (via IPUMS)</li>
+        <li>County-level first-name distributions for white individuals</li>
+        <li>Sample sizes: 1,344 counties (1850), 2,054 counties (1880), 3,100 counties (1930)</li>
+        <li>Name vocabularies: 26,438 distinct forenames (1850), 34,216 (1880), 41,594 (1930)</li>
+      </ul>
 
-        <h3>Data sources</h3>
-        <ul>
-          <li>Complete-count US census microdata for 1850, 1880, and 1930 (via IPUMS)</li>
-          <li>County-level first-name distributions for white individuals</li>
-          <li>Sample sizes: 1,344 counties (1850), 2,054 counties (1880), 3,100 counties (1930)</li>
-          <li>Name vocabularies: 26,438 distinct forenames (1850), 34,216 (1880), 41,594 (1930)</li>
-        </ul>
+      <h3>Methodology</h3>
+      <ul>
+        <li>Cosine similarity on county-level name-share vectors to measure cultural distance between counties</li>
+        <li>Hierarchical agglomerative clustering with Ward's linkage criterion</li>
+        <li>Results presented at k=2, 4, 7, and 11 clusters</li>
+        <li>Spatial coherence tested via join-count statistics on county adjacency graphs</li>
+        <li>Temporal persistence measured by cluster agreement rates across census years</li>
+        <li>Bootstrap resampling to assess stability (adjusted Rand index)</li>
+      </ul>
+    </section>
 
-        <h3>Methodology</h3>
-        <ul>
-          <li>Cosine similarity on county-level name-share vectors to measure cultural distance between counties</li>
-          <li>Hierarchical agglomerative clustering with Ward's linkage criterion</li>
-          <li>Results presented at k=2, 4, 7, and 11 clusters</li>
-          <li>Spatial coherence tested via join-count statistics on county adjacency graphs</li>
-          <li>Temporal persistence measured by cluster agreement rates across census years</li>
-          <li>Bootstrap resampling to assess stability (adjusted Rand index)</li>
-        </ul>
-      </section>
-    </div>
+    <section id="results" class="llm-section">
+      <h2>Key results</h2>
+      <ol>
+        <li>At k=2, a clear North-South divide emerges in all three census years. The boundary does not follow the free-slave line; it tracks settlement-origin patterns more closely.</li>
+        <li>At k=4, the North subdivides into eastern and western regions; the South separates into Upper South and Deep South.</li>
+        <li>At k=7, New England, the Mid-Atlantic, and Appalachia emerge as distinct subregions nested within the broader North-South partition.</li>
+        <li>Temporal persistence is high: 94% of counties retain their two-cluster assignment between 1880 and 1930 (z=66); 67% retain it from 1850 to 1930 (z=19).</li>
+        <li>Northern naming conventions consolidate over time, while the South remains internally differentiated, producing an asymmetry in cultural convergence.</li>
+        <li>Trans-Mississippi counties increasingly adopt northern cluster characteristics as settlement moves westward.</li>
+        <li>All cluster partitions are spatially contiguous (join-count z-scores of 18 to 146, all p&lt;0.001) and robust to bootstrap resampling.</li>
+      </ol>
+    </section>
 
-    <div class="llm-row llm-row-with-aside">
-      <section id="results" class="llm-section">
-        <h2>Key results</h2>
-        <ol>
-          <li>At k=2, a clear North-South divide emerges in all three census years. The boundary does not follow the free-slave line; it tracks settlement-origin patterns more closely.</li>
-          <li>At k=4, the North subdivides into eastern and western regions; the South separates into Upper South and Deep South.</li>
-          <li>At k=7, New England, the Mid-Atlantic, and Appalachia emerge as distinct subregions nested within the broader North-South partition.</li>
-          <li>Temporal persistence is high: 94% of counties retain their two-cluster assignment between 1880 and 1930 (z=66); 67% retain it from 1850 to 1930 (z=19).</li>
-          <li>Northern naming conventions consolidate over time, while the South remains internally differentiated, producing an asymmetry in cultural convergence.</li>
-          <li>Trans-Mississippi counties increasingly adopt northern cluster characteristics as settlement moves westward.</li>
-          <li>All cluster partitions are spatially contiguous (join-count z-scores of 18 to 146, all p&lt;0.001) and robust to bootstrap resampling.</li>
-        </ol>
-      </section>
-      <aside class="llm-aside">
-        <figure class="llm-figure">
-          <figcaption>Figure 3: Seven-Cluster Partition</figcaption>
-          <div class="llm-map-stack">
-            <div>
-              <span class="llm-panel-label">1850</span>
-              <img src="figures/cluster_1850_k7.png" alt="Seven-cluster partition, 1850">
-            </div>
-            <div>
-              <span class="llm-panel-label">1880</span>
-              <img src="figures/cluster_1880_k7.png" alt="Seven-cluster partition, 1880">
-            </div>
-            <div>
-              <span class="llm-panel-label">1930</span>
-              <img src="figures/cluster_1930_k7.png" alt="Seven-cluster partition, 1930">
-            </div>
-          </div>
-        </figure>
-      </aside>
-    </div>
-
-    <div class="llm-row">
-      <section id="guide" class="llm-section">
-        <h2>Navigation guide</h2>
-        <ul>
-          <li><strong>For the main argument:</strong> Read the Introduction and Conclusion for the framing around voluntary association, liberal institutions, and cultural persistence.</li>
-          <li><strong>For historical background:</strong> Section 2 (Forces of Convergence) documents the economic and institutional changes that should have homogenized culture. Section 3 (The Fischer Thesis) reviews the cultural explanation the paper tests.</li>
-          <li><strong>For the empirical methodology and results:</strong> Section 4 (Clustering Regional Cultures) contains the data description, clustering method, maps, and all formal tests of spatial coherence, temporal persistence, and bootstrap stability.</li>
-          <li><strong>Key figures:</strong> Figure 1 (two-cluster maps, 1850/1880/1930), Figure 2 (four-cluster maps), Figure 3 (seven-cluster maps).</li>
-        </ul>
-      </section>
-    </div>
+    <section id="guide" class="llm-section">
+      <h2>Navigation guide</h2>
+      <ul>
+        <li><strong>For the main argument:</strong> Read the Introduction and Conclusion for the framing around voluntary association, liberal institutions, and cultural persistence.</li>
+        <li><strong>For historical background:</strong> Section 2 (Forces of Convergence) documents the economic and institutional changes that should have homogenized culture. Section 3 (The Fischer Thesis) reviews the cultural explanation the paper tests.</li>
+        <li><strong>For the empirical methodology and results:</strong> Section 4 (Clustering Regional Cultures) contains the data description, clustering method, maps, and all formal tests of spatial coherence, temporal persistence, and bootstrap stability.</li>
+        <li><strong>Key figures:</strong> Figure 1 (two-cluster maps, 1850/1880/1930), Figure 2 (four-cluster maps), Figure 3 (seven-cluster maps).</li>
+      </ul>
+    </section>
 
   </main>
 
@@ -147,13 +98,13 @@ description: "An LLM-readable orientation file for Jaworski and Kimbrough."
 <style>
   .llm-page {
     display: flex;
-    max-width: 1200px;
+    max-width: 960px;
     margin: 0 auto;
     padding: 30px 20px 40px;
     gap: 36px;
   }
 
-  /* ── Sidebar (left) ── */
+  /* ── Sidebar ── */
   .llm-sidebar {
     position: sticky;
     top: 76px;
@@ -204,7 +155,7 @@ description: "An LLM-readable orientation file for Jaworski and Kimbrough."
     text-decoration: none;
   }
 
-  /* ── Content (middle) ── */
+  /* ── Content ── */
   .llm-content {
     flex: 1;
     min-width: 0;
@@ -221,26 +172,8 @@ description: "An LLM-readable orientation file for Jaworski and Kimbrough."
     font-size: 14px;
     color: #555;
     text-align: left;
-    margin: 0;
+    margin: 0 0 28px 0;
     line-height: 1.5;
-  }
-  .llm-header {
-    margin-bottom: 28px;
-  }
-
-  /* ── Rows: text + optional aside ── */
-  .llm-row {
-    display: flex;
-    gap: 28px;
-    margin-bottom: 4px;
-  }
-  .llm-row > .llm-section {
-    flex: 1;
-    min-width: 0;
-  }
-  .llm-row > .llm-aside {
-    flex: 0 0 340px;
-    min-width: 0;
   }
 
   /* ── Sections ── */
@@ -281,42 +214,6 @@ description: "An LLM-readable orientation file for Jaworski and Kimbrough."
     text-align: left;
   }
 
-  /* ── Figures (right aside) ── */
-  .llm-figure {
-    padding: 14px 16px;
-    background: #fff;
-    border: 1px solid #e8e4de;
-    border-radius: 4px;
-    margin-bottom: 16px;
-  }
-  .llm-figure figcaption {
-    font-family: 'Oswald', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-    color: #272f38;
-    margin-bottom: 10px;
-  }
-  .llm-map-stack > div {
-    margin-bottom: 10px;
-  }
-  .llm-map-stack > div:last-child {
-    margin-bottom: 0;
-  }
-  .llm-panel-label {
-    display: block;
-    font-family: 'Source Serif 4', serif;
-    font-size: 12px;
-    color: #777;
-    margin-bottom: 4px;
-  }
-  .llm-figure img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 2px;
-  }
-
   /* ── Mobile ── */
   @media (max-width: 768px) {
     .llm-page {
@@ -354,14 +251,6 @@ description: "An LLM-readable orientation file for Jaworski and Kimbrough."
     }
     .llm-sidebar-files a {
       padding: 4px 8px;
-    }
-    .llm-row {
-      flex-direction: column;
-      gap: 0;
-    }
-    .llm-row > .llm-aside {
-      flex: none;
-      width: 100%;
     }
   }
 </style>

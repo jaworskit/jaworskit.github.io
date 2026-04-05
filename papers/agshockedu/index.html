@@ -21,176 +21,79 @@ description: "An LLM-readable orientation file for Jaworski, Kitchens, and Rodge
 
   <main class="llm-content">
 
-    <div class="llm-header">
-      <h1>Skill Formation, Child Labor, and the Schooling Consequences of the World War I Agricultural Boom</h1>
-      <p class="llm-authors">
-        Taylor Jaworski (University of Colorado Boulder and NBER)<br>
-        Carl T. Kitchens (Florida State University and NBER)<br>
-        Luke P. Rodgers (Florida State University)
+    <h1>Skill Formation, Child Labor, and the Schooling Consequences of the World War I Agricultural Boom</h1>
+
+    <p class="llm-authors">
+      Taylor Jaworski (University of Colorado Boulder and NBER)<br>
+      Carl T. Kitchens (Florida State University and NBER)<br>
+      Luke P. Rodgers (Florida State University)
+    </p>
+
+    <section id="about" class="llm-section">
+      <h2>What is this paper about?</h2>
+      <p>
+        This paper studies how a large, temporary commodity price boom during World War I affected human capital accumulation in the United States. The central contribution is identifying two channels through which the boom reduced completed schooling: (1) an opportunity cost channel, where higher farm wages pulled teenagers out of school, and (2) a dynamic complementarity channel, where the interaction between early childhood resources and local child labor intensity determined whether younger children gained or lost schooling. The paper shows that the negative aggregate effect on younger children is driven entirely by child labor intensity, not by the resource shock itself.
       </p>
-    </div>
+    </section>
 
-    <div class="llm-row">
-      <section id="about" class="llm-section">
-        <h2>What is this paper about?</h2>
-        <p>
-          This paper studies how a large, temporary commodity price boom during World War I affected human capital accumulation in the United States. The central contribution is identifying two channels through which the boom reduced completed schooling: (1) an opportunity cost channel, where higher farm wages pulled teenagers out of school, and (2) a dynamic complementarity channel, where the interaction between early childhood resources and local child labor intensity determined whether younger children gained or lost schooling. The paper shows that the negative aggregate effect on younger children is driven entirely by child labor intensity, not by the resource shock itself.
-        </p>
-      </section>
-    </div>
+    <section id="context" class="llm-section">
+      <h2>Important context</h2>
+      <ul>
+        <li>The paper contributes to the literature on skill formation and dynamic complementarities (Cunha and Heckman 2007, Heckman 2007), extending these models to a historical agricultural setting where child labor mediates the effect of income shocks.</li>
+        <li>It is distinct from papers that study commodity booms and schooling in developing countries (e.g., Bau 2020 on India). The US setting features a well-developed school system during the early high school movement, so the tradeoff is between attending high school (not just primary school) and farm work.</li>
+        <li>The paper builds a new county-level panel of school enrollment and average daily attendance for 26 states, 1910 to 1930, drawn from state board of education reports. This dataset did not previously exist.</li>
+        <li>Linked census data come from the Census Tree and the Census Linking Project, connecting children observed in 1910 or 1920 to their 1940 outcomes. Results are robust across both linking methods.</li>
+        <li>The crop revenue index holds crop acreage fixed at 1910 shares and varies only prices, isolating price exposure from endogenous planting decisions. An IV strategy using crop suitability provides additional identification.</li>
+      </ul>
+    </section>
 
-    <div class="llm-row llm-row-with-aside">
-      <section id="context" class="llm-section">
-        <h2>Important context</h2>
-        <ul>
-          <li>The paper contributes to the literature on skill formation and dynamic complementarities (Cunha and Heckman 2007, Heckman 2007), extending these models to a historical agricultural setting where child labor mediates the effect of income shocks.</li>
-          <li>It is distinct from papers that study commodity booms and schooling in developing countries (e.g., Bau 2020 on India). The US setting features a well-developed school system during the early high school movement, so the tradeoff is between attending high school (not just primary school) and farm work.</li>
-          <li>The paper builds a new county-level panel of school enrollment and average daily attendance for 26 states, 1910 to 1930, drawn from state board of education reports. This dataset did not previously exist.</li>
-          <li>Linked census data come from the Census Tree and the Census Linking Project, connecting children observed in 1910 or 1920 to their 1940 outcomes. Results are robust across both linking methods.</li>
-          <li>The crop revenue index holds crop acreage fixed at 1910 shares and varies only prices, isolating price exposure from endogenous planting decisions. An IV strategy using crop suitability provides additional identification.</li>
-        </ul>
-      </section>
-      <aside class="llm-aside">
-        <figure class="llm-figure">
-          <figcaption>Figure 1: Agricultural Prices and Wages, 1910-1930</figcaption>
-          <div>
-            <span class="llm-panel-label">Panel A: Agricultural Commodity Prices</span>
-            <img src="figures/individual_crop_price_trends.png" alt="Agricultural commodity prices, 1910-1930">
-          </div>
-          <div style="margin-top:12px;">
-            <span class="llm-panel-label">Panel B: Crop Revenue Index and Farm Wage Index</span>
-            <img src="figures/panel_A_index_vs_wages.png" alt="Crop revenue index and farm wage index, 1910-1930">
-          </div>
-        </figure>
-      </aside>
-    </div>
+    <section id="data" class="llm-section">
+      <h2>Data and methods</h2>
 
-    <div class="llm-row">
-      <section id="data" class="llm-section">
-        <h2>Data and methods</h2>
+      <h3>Data sources</h3>
+      <ul>
+        <li>County-level enrollment and average daily attendance, 1910 to 1930 (newly constructed from state education reports)</li>
+        <li>Census complete count data: 1910, 1920, and 1940 (linked via Census Tree and Census Linking Project)</li>
+        <li>USDA crop price and production data for constructing the crop revenue index</li>
+        <li>Controls for compulsory schooling laws, WWI draft exposure, boll weevil infestation, hookworm, malaria, Rosenwald schools, county health organizations, and 1918 influenza mortality</li>
+      </ul>
 
-        <h3>Data sources</h3>
-        <ul>
-          <li>County-level enrollment and average daily attendance, 1910 to 1930 (newly constructed from state education reports)</li>
-          <li>Census complete count data: 1910, 1920, and 1940 (linked via Census Tree and Census Linking Project)</li>
-          <li>USDA crop price and production data for constructing the crop revenue index</li>
-          <li>Controls for compulsory schooling laws, WWI draft exposure, boll weevil infestation, hookworm, malaria, Rosenwald schools, county health organizations, and 1918 influenza mortality</li>
-        </ul>
+      <h3>Identification</h3>
+      <ul>
+        <li>The crop revenue index measures county-level exposure to the wartime price boom based on pre-war crop composition (1910 shares multiplied by annual national prices)</li>
+        <li>Difference-in-differences for county-level enrollment/attendance outcomes</li>
+        <li>Individual-level regressions with county and birth-cohort fixed effects, parental controls, and interactions with child labor intensity for linked census outcomes</li>
+        <li>IV using predicted crop shares from soil suitability data (following Kitchens 2023)</li>
+      </ul>
 
-        <h3>Identification</h3>
-        <ul>
-          <li>The crop revenue index measures county-level exposure to the wartime price boom based on pre-war crop composition (1910 shares multiplied by annual national prices)</li>
-          <li>Difference-in-differences for county-level enrollment/attendance outcomes</li>
-          <li>Individual-level regressions with county and birth-cohort fixed effects, parental controls, and interactions with child labor intensity for linked census outcomes</li>
-          <li>IV using predicted crop shares from soil suitability data (following Kitchens 2023)</li>
-        </ul>
+      <h3>Key specifications</h3>
+      <ul>
+        <li>Opportunity cost channel: effect of cumulative exposure during ages 10 to 17 on years of completed schooling</li>
+        <li>Dynamic complementarity channel: effect of exposure during ages 0 to 4, interacted with county-level child labor intensity (fraction of children 10 to 14 working in 1910)</li>
+      </ul>
+    </section>
 
-        <h3>Key specifications</h3>
-        <ul>
-          <li>Opportunity cost channel: effect of cumulative exposure during ages 10 to 17 on years of completed schooling</li>
-          <li>Dynamic complementarity channel: effect of exposure during ages 0 to 4, interacted with county-level child labor intensity (fraction of children 10 to 14 working in 1910)</li>
-        </ul>
-      </section>
-    </div>
+    <section id="results" class="llm-section">
+      <h2>Key results</h2>
+      <ol>
+        <li>Enrollment and average daily attendance fell sharply at the peak of the boom (1919 to 1920), with larger declines in high-exposure counties.</li>
+        <li>Greater exposure during teenage years reduced completed schooling by 0.27 to 0.47 years, with effects concentrated at the high school margin.</li>
+        <li>Effects are larger for men than women, and present for both white and Black individuals.</li>
+        <li>For children exposed during early childhood (ages 0 to 4), the net effect depends on local child labor intensity. Once child labor is accounted for, the direct effect of early exposure on boys' schooling is approximately zero. In high child labor counties, the interaction drives the negative effect. For girls, the direct effect is weakly positive, consistent with lower opportunity costs in agricultural labor markets.</li>
+        <li>A calibration exercise yields implied discount factors between 0.95 and 0.99, consistent with forward-looking household optimization.</li>
+      </ol>
+    </section>
 
-    <div class="llm-row llm-row-with-aside">
-      <section id="results" class="llm-section">
-        <h2>Key results</h2>
-        <ol>
-          <li>Enrollment and average daily attendance fell sharply at the peak of the boom (1919 to 1920), with larger declines in high-exposure counties.</li>
-          <li>Greater exposure during teenage years reduced completed schooling by 0.27 to 0.47 years, with effects concentrated at the high school margin.</li>
-          <li>Effects are larger for men than women, and present for both white and Black individuals.</li>
-          <li>For children exposed during early childhood (ages 0 to 4), the net effect depends on local child labor intensity. Once child labor is accounted for, the direct effect of early exposure on boys' schooling is approximately zero. In high child labor counties, the interaction drives the negative effect. For girls, the direct effect is weakly positive, consistent with lower opportunity costs in agricultural labor markets.</li>
-          <li>A calibration exercise yields implied discount factors between 0.95 and 0.99, consistent with forward-looking household optimization.</li>
-        </ol>
-      </section>
-      <aside class="llm-aside">
-        <figure class="llm-figure">
-          <figcaption>Table 1: The Effect of Exposure to World War I Agricultural Boom</figcaption>
-          <div class="llm-table-wrap">
-            <table class="llm-results-table">
-              <thead>
-                <tr>
-                  <th></th>
-                  <th colspan="3">Men</th>
-                  <th colspan="3">Women</th>
-                </tr>
-                <tr>
-                  <th></th>
-                  <th>(1)</th><th>(2)</th><th>(3)</th>
-                  <th>(4)</th><th>(5)</th><th>(6)</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="panel-header"><td colspan="7"><em>Panel A: White</em></td></tr>
-                <tr>
-                  <td>Exposure</td>
-                  <td>-0.436</td><td>-0.397</td><td>-0.404</td>
-                  <td>-0.223</td><td>-0.254</td><td>-0.274</td>
-                </tr>
-                <tr class="se-row">
-                  <td></td>
-                  <td>(0.130)</td><td>(0.130)</td><td>(0.089)</td>
-                  <td>(0.093)</td><td>(0.092)</td><td>(0.074)</td>
-                </tr>
-                <tr class="obs-row">
-                  <td>Obs.</td>
-                  <td>4,228,438</td><td>3,888,223</td><td>3,888,223</td>
-                  <td>3,033,169</td><td>2,760,954</td><td>2,760,954</td>
-                </tr>
-                <tr class="panel-header"><td colspan="7"><em>Panel B: Black</em></td></tr>
-                <tr>
-                  <td>Exposure</td>
-                  <td>-0.558</td><td>-0.512</td><td>-0.466</td>
-                  <td>-0.425</td><td>-0.238</td><td>-0.316</td>
-                </tr>
-                <tr class="se-row">
-                  <td></td>
-                  <td>(0.149)</td><td>(0.158)</td><td>(0.116)</td>
-                  <td>(0.147)</td><td>(0.184)</td><td>(0.157)</td>
-                </tr>
-                <tr class="obs-row">
-                  <td>Obs.</td>
-                  <td>429,755</td><td>354,673</td><td>354,673</td>
-                  <td>108,726</td><td>80,402</td><td>80,402</td>
-                </tr>
-              </tbody>
-              <tfoot>
-                <tr class="controls-row">
-                  <td>Cohort &amp; county FE</td>
-                  <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
-                  <td>&#10003;</td><td>&#10003;</td><td>&#10003;</td>
-                </tr>
-                <tr class="controls-row">
-                  <td>Parental controls</td>
-                  <td></td><td>&#10003;</td><td>&#10003;</td>
-                  <td></td><td>&#10003;</td><td>&#10003;</td>
-                </tr>
-                <tr class="controls-row">
-                  <td>Additional controls</td>
-                  <td></td><td></td><td>&#10003;</td>
-                  <td></td><td></td><td>&#10003;</td>
-                </tr>
-              </tfoot>
-            </table>
-          </div>
-          <p class="llm-table-note"><em>Notes:</em> Dependent variable is years of schooling in 1940. Exposure is cumulated over ages 11 to 14. Standard errors clustered at the state level.</p>
-        </figure>
-      </aside>
-    </div>
-
-    <div class="llm-row">
-      <section id="guide" class="llm-section">
-        <h2>Navigation guide</h2>
-        <ul>
-          <li><strong>For the main argument:</strong> Read Sections 1 (Introduction) and 2 (Investing in Human Capital) for the theoretical framework, then Section 5 (Empirical Analysis) for the core results.</li>
-          <li><strong>For the data construction:</strong> Section 4 describes the crop revenue index, linked census data, and county-level enrollment panel. Section 3 provides historical background on the WWI agricultural boom.</li>
-          <li><strong>For robustness:</strong> Appendix A contains alternative samples (farm owners vs. renters, same-state movers, off-farm residents), alternative linking methods (Census Linking Project), influenza controls, IV estimates, birth order heterogeneity, and the dynamic complementarity results by subgroup.</li>
-          <li><strong>For the calibration exercise:</strong> Appendix B derives implied discount factors following Bau (2020) and reports results under alternative assumptions.</li>
-          <li><strong>Key tables:</strong> Table 1 (main results, opportunity cost channel), Table 2 (young children, dynamic complementarities). Key figures: Figure 1 (agricultural prices and wages), Figure 3 (enrollment and attendance trends).</li>
-        </ul>
-      </section>
-    </div>
+    <section id="guide" class="llm-section">
+      <h2>Navigation guide</h2>
+      <ul>
+        <li><strong>For the main argument:</strong> Read Sections 1 (Introduction) and 2 (Investing in Human Capital) for the theoretical framework, then Section 5 (Empirical Analysis) for the core results.</li>
+        <li><strong>For the data construction:</strong> Section 4 describes the crop revenue index, linked census data, and county-level enrollment panel. Section 3 provides historical background on the WWI agricultural boom.</li>
+        <li><strong>For robustness:</strong> Appendix A contains alternative samples (farm owners vs. renters, same-state movers, off-farm residents), alternative linking methods (Census Linking Project), influenza controls, IV estimates, birth order heterogeneity, and the dynamic complementarity results by subgroup.</li>
+        <li><strong>For the calibration exercise:</strong> Appendix B derives implied discount factors following Bau (2020) and reports results under alternative assumptions.</li>
+        <li><strong>Key tables:</strong> Table 1 (main results, opportunity cost channel), Table 2 (young children, dynamic complementarities). Key figures: Figure 1 (agricultural prices and wages), Figure 3 (enrollment and attendance trends).</li>
+      </ul>
+    </section>
 
   </main>
 
@@ -199,13 +102,13 @@ description: "An LLM-readable orientation file for Jaworski, Kitchens, and Rodge
 <style>
   .llm-page {
     display: flex;
-    max-width: 1200px;
+    max-width: 960px;
     margin: 0 auto;
     padding: 30px 20px 40px;
     gap: 36px;
   }
 
-  /* ── Sidebar (left) ── */
+  /* ── Sidebar ── */
   .llm-sidebar {
     position: sticky;
     top: 76px;
@@ -256,7 +159,7 @@ description: "An LLM-readable orientation file for Jaworski, Kitchens, and Rodge
     text-decoration: none;
   }
 
-  /* ── Content (middle) ── */
+  /* ── Content ── */
   .llm-content {
     flex: 1;
     min-width: 0;
@@ -273,26 +176,8 @@ description: "An LLM-readable orientation file for Jaworski, Kitchens, and Rodge
     font-size: 14px;
     color: #555;
     text-align: left;
-    margin: 0;
+    margin: 0 0 28px 0;
     line-height: 1.5;
-  }
-  .llm-header {
-    margin-bottom: 28px;
-  }
-
-  /* ── Rows: text + optional aside ── */
-  .llm-row {
-    display: flex;
-    gap: 28px;
-    margin-bottom: 4px;
-  }
-  .llm-row > .llm-section {
-    flex: 1;
-    min-width: 0;
-  }
-  .llm-row > .llm-aside {
-    flex: 0 0 340px;
-    min-width: 0;
   }
 
   /* ── Sections ── */
@@ -333,104 +218,6 @@ description: "An LLM-readable orientation file for Jaworski, Kitchens, and Rodge
     text-align: left;
   }
 
-  /* ── Figures (right aside) ── */
-  .llm-figure {
-    padding: 14px 16px;
-    background: #fff;
-    border: 1px solid #e8e4de;
-    border-radius: 4px;
-    margin-bottom: 16px;
-  }
-  .llm-figure figcaption {
-    font-family: 'Oswald', sans-serif;
-    font-size: 13px;
-    font-weight: 500;
-    letter-spacing: 0.3px;
-    color: #272f38;
-    margin-bottom: 10px;
-  }
-  .llm-panel-label {
-    display: block;
-    font-family: 'Source Serif 4', serif;
-    font-size: 12px;
-    color: #777;
-    margin-bottom: 4px;
-  }
-  .llm-figure img {
-    width: 100%;
-    height: auto;
-    display: block;
-    border-radius: 2px;
-  }
-
-  /* ── Table ── */
-  .llm-table-wrap {
-    overflow-x: auto;
-  }
-  .llm-results-table {
-    width: 100%;
-    border-collapse: collapse;
-    font-size: 12px;
-    font-family: 'Source Serif 4', serif;
-    text-align: center;
-  }
-  .llm-results-table thead tr:first-child th {
-    border-bottom: none;
-    padding: 3px 4px 0;
-    font-weight: 600;
-    font-size: 11px;
-    color: #272f38;
-  }
-  .llm-results-table thead tr:last-child th {
-    padding: 0 4px 4px;
-    font-weight: 400;
-    font-size: 10px;
-    color: #888;
-    border-bottom: 2px solid #272f38;
-  }
-  .llm-results-table th:first-child,
-  .llm-results-table td:first-child {
-    text-align: left;
-    padding-left: 0;
-  }
-  .llm-results-table td {
-    padding: 2px 4px;
-    white-space: nowrap;
-  }
-  .llm-results-table .panel-header td {
-    padding-top: 8px;
-    padding-bottom: 2px;
-    font-size: 11px;
-    border-bottom: none;
-  }
-  .llm-results-table .se-row td {
-    color: #777;
-    font-size: 11px;
-    padding-top: 0;
-  }
-  .llm-results-table .obs-row td {
-    font-size: 10px;
-    color: #999;
-    padding-top: 1px;
-    padding-bottom: 6px;
-  }
-  .llm-results-table tfoot td {
-    font-size: 10px;
-    color: #888;
-    padding: 2px 4px;
-    border-top: 1px solid #ddd;
-  }
-  .llm-results-table .controls-row:first-child td {
-    padding-top: 4px;
-  }
-  .llm-table-note {
-    font-size: 11px;
-    color: #888;
-    margin: 8px 0 0;
-    line-height: 1.4;
-    text-align: left;
-  }
-
   /* ── Mobile ── */
   @media (max-width: 768px) {
     .llm-page {
@@ -468,14 +255,6 @@ description: "An LLM-readable orientation file for Jaworski, Kitchens, and Rodge
     }
     .llm-sidebar-files a {
       padding: 4px 8px;
-    }
-    .llm-row {
-      flex-direction: column;
-      gap: 0;
-    }
-    .llm-row > .llm-aside {
-      flex: none;
-      width: 100%;
     }
   }
 </style>
