@@ -1,0 +1,49 @@
+# The Emergence of Regional Cultures in the United States
+
+> Taylor Jaworski (University of Colorado Boulder), Erik O. Kimbrough (Chapman University)
+
+## What is this paper about?
+
+This paper recovers the cultural geography of the United States from first-name patterns in complete-count census data spanning 1850 to 1930. Using unsupervised hierarchical clustering of county-level name distributions, the paper identifies spatially coherent cultural regions that align with historically recognized settlement patterns and remain stable across eight decades of economic and institutional change. The deepest division separates North from South, but finer groupings (New England, the Mid-Atlantic, Appalachia, the Deep South) emerge as nested subregions. The findings address whether liberal institutions require cultural homogeneity, whether cultural pluralism is a source of resilience or fragility, and how the imprint of early settlement shapes the practice of self-governance.
+
+## Important context
+
+- The paper tests whether powerful forces of convergence in nineteenth-century America (the market revolution, westward migration, railroad construction, institutional standardization) homogenized regional cultures or whether distinct cultural regions persisted.
+- It engages with David Hackett Fischer's thesis (Albion's Seed, 1989) that four British colonial folkways (Puritans, Royalists, Quakers, Borderers) established durable regional cultures. The clustering results are consistent with Fischer's account, but recovered from data rather than assumed.
+- First names serve as a cultural marker because naming conventions are transmitted within families and communities, are not directly governed by markets or institutions, and are observable in census microdata at scale.
+- The paper uses only white populations due to severe undercounting of Black and immigrant populations in earlier censuses. The authors flag this as a limitation and note it as a direction for future work.
+- Related to the companion paper on cultural frictions and internal migration (Jaworski, Kimbrough, and Saito), which uses the same name-based distance measure to study whether cultural differences impede migration flows.
+
+## Data and methods
+
+**Data sources:**
+- Complete-count US census microdata for 1850, 1880, and 1930 (via IPUMS)
+- County-level first-name distributions for white individuals
+- Sample sizes: 1,344 counties (1850), 2,054 counties (1880), 3,100 counties (1930)
+- Name vocabularies: 26,438 distinct forenames (1850), 34,216 (1880), 41,594 (1930)
+
+**Methodology:**
+- Cosine similarity on county-level name-share vectors to measure cultural distance between counties
+- Hierarchical agglomerative clustering with Ward's linkage criterion
+- Results presented at k=2, 4, 7, and 11 clusters
+- Spatial coherence tested via join-count statistics on county adjacency graphs
+- Temporal persistence measured by cluster agreement rates across census years
+- Bootstrap resampling to assess stability (adjusted Rand index)
+- Silhouette scores to evaluate cluster quality
+
+## Key results
+
+1. At k=2, a clear North-South divide emerges in all three census years. The boundary does not follow the free-slave line; it tracks settlement-origin patterns more closely.
+2. At k=4, the North subdivides into eastern and western regions; the South separates into Upper South and Deep South.
+3. At k=7, New England, the Mid-Atlantic, and Appalachia emerge as distinct subregions nested within the broader North-South partition.
+4. Temporal persistence is high: 94% of counties retain their two-cluster assignment between 1880 and 1930 (z=66); 67% retain it from 1850 to 1930 (z=19).
+5. Northern naming conventions consolidate over time, while the South remains internally differentiated, producing an asymmetry in cultural convergence.
+6. Trans-Mississippi counties increasingly adopt northern cluster characteristics as settlement moves westward.
+7. All cluster partitions are spatially contiguous (join-count z-scores of 18 to 146, all p<0.001) and robust to bootstrap resampling.
+
+## Navigation guide
+
+- **For the main argument:** Read the Introduction and Conclusion for the framing around voluntary association, liberal institutions, and cultural persistence.
+- **For historical background:** Section 2 (Forces of Convergence) documents the economic and institutional changes that should have homogenized culture. Section 3 (The Fischer Thesis) reviews the cultural explanation the paper tests.
+- **For the empirical methodology and results:** Section 4 (Clustering Regional Cultures) contains the data description, clustering method, maps, and all formal tests of spatial coherence, temporal persistence, and bootstrap stability.
+- **Key figures:** Figure 1 (two-cluster maps, 1850/1880/1930), Figure 2 (four-cluster maps), Figure 3 (seven-cluster maps).
