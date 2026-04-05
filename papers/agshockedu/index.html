@@ -24,7 +24,9 @@ description: "An LLM-readable orientation file for Jaworski, Kitchens, and Rodge
     <h1>Skill Formation, Child Labor, and the Schooling Consequences of the World War I Agricultural Boom</h1>
 
     <p class="llm-authors">
-      Taylor Jaworski (University of Colorado Boulder and NBER), Carl T. Kitchens (Florida State University and NBER), Luke P. Rodgers (Florida State University)
+      Taylor Jaworski (University of Colorado Boulder and NBER)<br>
+      Carl T. Kitchens (Florida State University and NBER)<br>
+      Luke P. Rodgers (Florida State University)
     </p>
 
     <section id="about" class="llm-section">
@@ -43,6 +45,20 @@ description: "An LLM-readable orientation file for Jaworski, Kitchens, and Rodge
         <li>Linked census data come from the Census Tree and the Census Linking Project, connecting children observed in 1910 or 1920 to their 1940 outcomes. Results are robust across both linking methods.</li>
         <li>The crop revenue index holds crop acreage fixed at 1910 shares and varies only prices, isolating price exposure from endogenous planting decisions. An IV strategy using crop suitability provides additional identification.</li>
       </ul>
+
+      <figure class="llm-figure">
+        <figcaption>Figure 1: Agricultural Prices and Wages, 1910-1930</figcaption>
+        <div class="llm-figure-panels">
+          <div>
+            <span class="llm-panel-label">Panel A: Agricultural Commodity Prices</span>
+            <img src="figures/individual_crop_price_trends.png" alt="Agricultural commodity prices, 1910-1930">
+          </div>
+          <div>
+            <span class="llm-panel-label">Panel B: Crop Revenue Index and Farm Wage Index</span>
+            <img src="figures/panel_A_index_vs_wages.png" alt="Crop revenue index and farm wage index, 1910-1930">
+          </div>
+        </div>
+      </figure>
     </section>
 
     <section id="data" class="llm-section">
@@ -80,6 +96,80 @@ description: "An LLM-readable orientation file for Jaworski, Kitchens, and Rodge
         <li>For children exposed during early childhood (ages 0 to 4), the net effect depends on local child labor intensity. Once child labor is accounted for, the direct effect of early exposure on boys' schooling is approximately zero. In high child labor counties, the interaction drives the negative effect. For girls, the direct effect is weakly positive, consistent with lower opportunity costs in agricultural labor markets.</li>
         <li>A calibration exercise yields implied discount factors between 0.95 and 0.99, consistent with forward-looking household optimization.</li>
       </ol>
+
+      <figure class="llm-figure">
+        <figcaption>Figure 3: Enrollment and Average Daily Attendance, 1910-1930</figcaption>
+        <div class="llm-figure-panels">
+          <div>
+            <span class="llm-panel-label">Panel A: Enrollment</span>
+            <img src="figures/enroll_trends_norm.png" alt="Enrollment trends, 1910-1930">
+          </div>
+          <div>
+            <span class="llm-panel-label">Panel B: Average Daily Attendance</span>
+            <img src="figures/ada_trends_norm.png" alt="Average daily attendance trends, 1910-1930">
+          </div>
+        </div>
+      </figure>
+
+      <figure class="llm-figure">
+        <figcaption>Table 1: The Effect of Exposure to World War I Agricultural Boom</figcaption>
+        <div class="llm-table-wrap">
+          <table class="llm-results-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th colspan="3">Men</th>
+                <th colspan="3">Women</th>
+              </tr>
+              <tr>
+                <th></th>
+                <th>(1)</th><th>(2)</th><th>(3)</th>
+                <th>(4)</th><th>(5)</th><th>(6)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="panel-header"><td colspan="7"><em>Panel A: White</em></td></tr>
+              <tr>
+                <td>Exposure</td>
+                <td>-0.436</td><td>-0.397</td><td>-0.404</td>
+                <td>-0.223</td><td>-0.254</td><td>-0.274</td>
+              </tr>
+              <tr class="se-row">
+                <td></td>
+                <td>(0.130)</td><td>(0.130)</td><td>(0.089)</td>
+                <td>(0.093)</td><td>(0.092)</td><td>(0.074)</td>
+              </tr>
+              <tr class="obs-row">
+                <td>Observations</td>
+                <td>4,228,438</td><td>3,888,223</td><td>3,888,223</td>
+                <td>3,033,169</td><td>2,760,954</td><td>2,760,954</td>
+              </tr>
+              <tr class="panel-header"><td colspan="7"><em>Panel B: Black</em></td></tr>
+              <tr>
+                <td>Exposure</td>
+                <td>-0.558</td><td>-0.512</td><td>-0.466</td>
+                <td>-0.425</td><td>-0.238</td><td>-0.316</td>
+              </tr>
+              <tr class="se-row">
+                <td></td>
+                <td>(0.149)</td><td>(0.158)</td><td>(0.116)</td>
+                <td>(0.147)</td><td>(0.184)</td><td>(0.157)</td>
+              </tr>
+              <tr class="obs-row">
+                <td>Observations</td>
+                <td>429,755</td><td>354,673</td><td>354,673</td>
+                <td>108,726</td><td>80,402</td><td>80,402</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr class="controls-row"><td>Cohort &amp; county FE</td><td colspan="6">All columns</td></tr>
+              <tr class="controls-row"><td>Parental controls</td><td></td><td colspan="2">Cols 2-3</td><td></td><td colspan="2">Cols 5-6</td></tr>
+              <tr class="controls-row"><td>Additional controls</td><td></td><td></td><td>Col 3</td><td></td><td></td><td>Col 6</td></tr>
+            </tfoot>
+          </table>
+        </div>
+        <p class="llm-table-note"><em>Notes:</em> Dependent variable is years of schooling in 1940. Exposure is cumulated over ages 11 to 14. Standard errors clustered at the state level in parentheses.</p>
+      </figure>
     </section>
 
     <section id="guide" class="llm-section">
@@ -216,6 +306,112 @@ description: "An LLM-readable orientation file for Jaworski, Kitchens, and Rodge
     text-align: left;
   }
 
+  /* ── Figures ── */
+  .llm-figure {
+    margin: 20px 0 8px;
+    padding: 16px 18px;
+    background: #fff;
+    border: 1px solid #e8e4de;
+    border-radius: 4px;
+  }
+  .llm-figure figcaption {
+    font-family: 'Oswald', sans-serif;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.3px;
+    color: #272f38;
+    margin-bottom: 12px;
+  }
+  .llm-figure-panels {
+    display: flex;
+    gap: 16px;
+  }
+  .llm-figure-panels > div {
+    flex: 1;
+    min-width: 0;
+  }
+  .llm-panel-label {
+    display: block;
+    font-family: 'Source Serif 4', serif;
+    font-size: 13px;
+    color: #777;
+    margin-bottom: 6px;
+  }
+  .llm-figure img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 2px;
+  }
+
+  /* ── Table ── */
+  .llm-table-wrap {
+    overflow-x: auto;
+  }
+  .llm-results-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    font-family: 'Source Serif 4', serif;
+    text-align: center;
+  }
+  .llm-results-table thead tr:first-child th {
+    border-bottom: none;
+    padding: 4px 6px 0;
+    font-weight: 600;
+    font-size: 13px;
+    color: #272f38;
+  }
+  .llm-results-table thead tr:last-child th {
+    padding: 0 6px 6px;
+    font-weight: 400;
+    font-size: 12px;
+    color: #888;
+    border-bottom: 2px solid #272f38;
+  }
+  .llm-results-table th:first-child,
+  .llm-results-table td:first-child {
+    text-align: left;
+    padding-left: 0;
+  }
+  .llm-results-table td {
+    padding: 3px 6px;
+    white-space: nowrap;
+  }
+  .llm-results-table .panel-header td {
+    padding-top: 10px;
+    padding-bottom: 2px;
+    font-size: 13px;
+    border-bottom: none;
+  }
+  .llm-results-table .se-row td {
+    color: #777;
+    font-size: 13px;
+    padding-top: 0;
+  }
+  .llm-results-table .obs-row td {
+    font-size: 12px;
+    color: #999;
+    padding-top: 2px;
+    padding-bottom: 8px;
+  }
+  .llm-results-table tfoot td {
+    font-size: 12px;
+    color: #888;
+    padding: 2px 6px;
+    border-top: 1px solid #ddd;
+  }
+  .llm-results-table .controls-row:first-child td {
+    padding-top: 6px;
+  }
+  .llm-table-note {
+    font-size: 12px;
+    color: #888;
+    margin: 10px 0 0;
+    line-height: 1.45;
+    text-align: left;
+  }
+
   /* ── Mobile: collapse sidebar ── */
   @media (max-width: 768px) {
     .llm-page {
@@ -253,6 +449,9 @@ description: "An LLM-readable orientation file for Jaworski, Kitchens, and Rodge
     }
     .llm-sidebar-files a {
       padding: 4px 8px;
+    }
+    .llm-figure-panels {
+      flex-direction: column;
     }
   }
 </style>
