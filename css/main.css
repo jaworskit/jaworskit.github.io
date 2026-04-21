@@ -1,10 +1,18 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&display=swap');
 
 /* ── Base ─────────────────────────────────────────── */
 :root {
   --page-max: 1200px;
   --pad-x: 20px;
-  --nav-h: 56px;
+  --nav-h: auto;
+  --bg: #F4EFE1;
+  --text: #2C2416;
+  --accent: #6B1D1D;
+  --accent-hover: #4F1616;
+  --rule-dark: #2C2416;
+  --rule-light: #B8A88A;
+  --secondary: #7A6E5D;
+  --parchment: #F4EFE1;
 }
 
 html, body { height: 100%; }
@@ -13,11 +21,12 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Source Serif 4', 'Source Serif Pro', Garamond, Baskerville, serif;
-  background-color: #FCF9F5;
+  background-color: var(--bg);
+  color: var(--text);
   overflow-x: hidden;
 }
 
-a { color: #1a4a8a; text-decoration: none; }
+a { color: var(--accent); text-decoration: none; }
 a:hover { text-decoration: underline; }
 
 p {
@@ -25,43 +34,113 @@ p {
   font-size: 15px;
   text-align: justify;
   margin: 0 0 12px 0;
+  color: var(--text);
 }
 
-/* ── Navbar ───────────────────────────────────────── */
+/* ── Masthead ────────────────────────────────────── */
 .navbar {
-  position: sticky;
-  top: 0;
-  left: 0;
+  position: relative;
   width: 100%;
-  background-color: white;
+  background-color: var(--bg);
   z-index: 100;
-  border-bottom: 1px solid #eee;
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
   align-items: center;
-  padding: 10px 20px;
-  gap: 30px;
+  padding: 0 20px;
 }
 
-.navbar-content {
-  display: flex;
-  align-items: center;
-  gap: 30px;
+/* Thick-thin rule above masthead */
+.navbar::before {
+  content: '';
+  display: block;
+  width: 100%;
+  max-width: var(--page-max);
+  border-top: 3px solid var(--rule-dark);
+  border-bottom: 1px solid var(--rule-dark);
+  padding-top: 3px;
+  margin-top: 0;
 }
 
-.navbar a {
+.masthead-name {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 42px;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 6px;
+  color: var(--text);
   text-decoration: none;
-  font-size: 22px;
-  font-weight: 500;
-  font-family: 'Oswald', sans-serif;
-  color: #272f38;
-  letter-spacing: 0.5px;
+  padding: 18px 0 10px;
+  text-align: center;
 }
 
-.navbar a:hover { text-decoration: underline; }
+.masthead-name:hover { text-decoration: none; }
+
+/* Ornamental rule between name and nav */
+.masthead-rule {
+  width: 100%;
+  max-width: var(--page-max);
+  position: relative;
+  border: none;
+  border-top: 1px solid var(--rule-light);
+  margin: 0;
+}
+
+.masthead-rule::after {
+  content: '\2766';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg);
+  padding: 0 12px;
+  color: var(--rule-light);
+  font-size: 16px;
+  line-height: 1;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  padding: 8px 0 10px;
+}
+
+.navbar-links a,
+.navbar-links .drop-link {
+  text-decoration: none;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 13px;
+  font-weight: 400;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  letter-spacing: 1.5px;
+  color: var(--text);
+}
+
+.navbar-links a:hover,
+.navbar-links .drop-link:hover { text-decoration: underline; }
+
+/* Middot separator between nav items */
+.navbar-links .nav-sep {
+  color: var(--rule-light);
+  font-size: 14px;
+  margin: 0 14px;
+  user-select: none;
+}
+
+/* Thick-thin rule below nav */
+.navbar-bottom-rule {
+  width: 100%;
+  max-width: var(--page-max);
+  border-top: 1px solid var(--rule-dark);
+  border-bottom: 3px solid var(--rule-dark);
+  padding-top: 3px;
+  margin: 0;
+}
 
 /* ── Dropdown ─────────────────────────────────────── */
-.dropdown { position: relative; }
+.dropdown { position: relative; display: inline-block; }
 .drop-link { display: inline-block; }
 
 .dropdown-menu {
@@ -74,7 +153,8 @@ p {
   margin-bottom: 0;
   padding: 6px 0;
   list-style: none;
-  background: #fff;
+  background: var(--bg);
+  border: 1px solid var(--rule-light);
   min-width: 0;
   white-space: nowrap;
   box-shadow: none;
@@ -85,19 +165,21 @@ p {
 
 .dropdown-menu a {
   display: block;
-  padding: 6px 12px;
+  padding: 6px 14px;
   text-decoration: none;
-  font-family: 'Oswald', sans-serif;
-  font-size: 15px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 13px;
   font-weight: 400;
-  letter-spacing: 0.5px;
-  color: #272f38;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  color: var(--text);
   margin: 0;
 }
 
 .dropdown-menu a:hover {
   text-decoration: underline;
-  background: #f9f9f9;
+  background: rgba(184, 168, 138, 0.15);
 }
 
 .dropdown:hover .dropdown-menu,
@@ -107,7 +189,7 @@ p {
 
 .drop-link:focus,
 .dropdown-menu a:focus {
-  outline: 2px solid #999;
+  outline: 2px solid var(--secondary);
   outline-offset: 2px;
 }
 
@@ -123,15 +205,20 @@ p {
   display: flex;
   justify-content: space-between;
   flex-wrap: nowrap;
-  gap: 20px;
+  gap: 0;
   margin-top: 0;
 }
 
 .column {
   flex: 1;
   box-sizing: border-box;
-  padding: 10px 10px 0 10px;
+  padding: 10px 18px 0 18px;
   min-width: 0;
+}
+
+/* Column rules (vertical borders between columns) */
+.column + .column {
+  border-left: 1px solid var(--rule-light);
 }
 
 /* Homepage: narrower bio column, wider publications */
@@ -140,15 +227,27 @@ p {
 .home-page .column:last-child   { flex: 1; }
 
 .column-title {
-  text-align: left;
-  font-family: 'Oswald', sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
+  text-align: center;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 14px;
+  font-weight: 400;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  letter-spacing: 2px;
+  color: var(--text);
   margin: 20px 0 6px 0;
-  padding-bottom: 4px;
-  border-bottom: 1px solid #ddd;
+  padding-bottom: 8px;
+  border-bottom: none;
+  position: relative;
+}
+
+/* Ornamental underline for column titles */
+.column-title::after {
+  content: '';
+  display: block;
+  width: 60%;
+  margin: 6px auto 0;
+  border-top: 1px solid var(--rule-light);
 }
 
 .column-title:first-child {
@@ -191,15 +290,15 @@ p {
   top: .15em;
   line-height: 1;
   font-size: 85%;
-  color: black;
+  color: var(--text);
   transform: translateY(0);
   content: "";
 }
 
-.custom-list li.star::before   { content: "★"; }
-.custom-list li.note::before   { content: "🎶"; left: 0; }
-.custom-list li.bullet::before { content: "•"; font-size: 125%; }
-.custom-list li.book::before   { content: "📖"; font-size: 60%; }
+.custom-list li.star::before   { content: "\2605"; color: var(--accent); }
+.custom-list li.note::before   { content: "\1F3B6"; left: 0; }
+.custom-list li.bullet::before { content: "\2022"; font-size: 125%; }
+.custom-list li.book::before   { content: "\1F4D6"; font-size: 60%; }
 
 /* ── Topic lists (course pages) ───────────────────── */
 .topic-list { list-style: none; padding-left: 0; font-size: 14px; margin: 0; }
@@ -212,20 +311,26 @@ p {
 .course-title {
   margin: 0 0 8px 0;
   font-size: 18px;
-  color: #1a4a8a;
-  font-family: inherit;
+  color: var(--accent);
+  font-family: 'Playfair Display', Georgia, serif;
   font-weight: bold;
 }
 
 /* ── Images ───────────────────────────────────────── */
 .full-width-img { width: 100%; height: auto; display: block; margin: 0 0 12px 0; }
-.profile-img { border-radius: 6%; margin: 10px 0; width: 85%; box-shadow: 0 2px 8px rgba(0,0,0,0.12); }
+.profile-img {
+  border-radius: 6%;
+  margin: 10px 0;
+  width: 85%;
+  box-shadow: none;
+  border: 2px solid var(--rule-light);
+}
 
 /* ── Scrollable panels (course outlines) ──────────── */
 .scroll-panel {
   overflow-y: auto;
   overflow-x: hidden;
-  background-color: white;
+  background-color: transparent;
   padding-right: 15px;
   font-size: 14px;
   font-family: inherit;
@@ -236,22 +341,61 @@ p {
 .site-footer {
   max-width: var(--page-max);
   margin: 40px auto 20px;
-  padding: 12px var(--pad-x);
-  border-top: 1px solid #ddd;
+  padding: 0 var(--pad-x) 12px;
+  border-top: none;
+  font-family: 'Playfair Display', Georgia, serif;
   font-size: 12px;
-  color: #999;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  color: var(--secondary);
   text-align: center;
 }
+
+/* Ornamental footer rule */
+.footer-rule {
+  max-width: var(--page-max);
+  margin: 0 auto;
+  border: none;
+  border-top: 1px solid var(--rule-light);
+  position: relative;
+}
+
+.footer-rule::after {
+  content: '\2766';
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--bg);
+  padding: 0 12px;
+  color: var(--rule-light);
+  font-size: 14px;
+  line-height: 1;
+}
+
+/* ── Inline style overrides for contact ──────────── */
+/* (catches inline color: #555 on the contact block) */
 
 /* ── Course page overrides ────────────────────────── */
 .course-page .page { padding: 10px var(--pad-x); }
 
 /* ── Mobile ───────────────────────────────────────── */
 @media (max-width: 768px) {
-  .navbar {
+  .masthead-name {
+    font-size: 28px;
+    letter-spacing: 3px;
+    padding: 14px 0 8px;
+  }
+
+  .navbar-links {
     flex-wrap: wrap;
-    gap: 10px;
-    padding: 12px 16px;
+    gap: 0;
+    padding: 6px 0 8px;
+  }
+
+  .navbar-links .nav-sep {
+    margin: 0 8px;
   }
 
   .dropdown-menu {
@@ -260,9 +404,7 @@ p {
     margin: 6px 0 0 0;
     padding: 0;
     width: 100%;
-    box-shadow: none;
     border: none;
-    border-radius: 0;
     white-space: nowrap;
     overflow-x: auto;
   }
@@ -271,32 +413,8 @@ p {
 
   .dropdown-menu a {
     display: block;
-    font-size: 14px;
-    padding: 12px 14px;
-  }
-
-  .navbar,
-  .navbar a,
-  .dropdown .drop-link,
-  .dropdown-menu a {
-    font-family: 'Oswald', sans-serif;
-    color: #272f38;
-    text-decoration: none;
-  }
-
-  .navbar-content.left,
-  .navbar-content.right {
-    width: 100%;
-    align-items: center;
-  }
-  .navbar-content.left { justify-content: flex-start; }
-  .navbar-content.right { justify-content: flex-start; }
-
-  .drop-link {
-    display: inline-block;
-    font-size: 22px;
-    line-height: 1.2;
-    padding: 4px 0;
+    font-size: 13px;
+    padding: 10px 14px;
   }
 
   .dropdown:focus-within .dropdown-menu { display: block; }
@@ -310,6 +428,11 @@ p {
     padding-left: 0;
     padding-right: 0;
     margin-bottom: 5px;
+  }
+
+  /* Remove column rules on mobile */
+  .column + .column {
+    border-left: none;
   }
 
   /* Reset homepage column flex on mobile */
