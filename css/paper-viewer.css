@@ -271,6 +271,39 @@
   font-style: italic;
 }
 
+.pv-figure-zoom-hint {
+  font-size: 11px;
+  color: #999;
+  text-align: right;
+  margin-top: 2px;
+  font-style: italic;
+}
+
+/* ── Expand All bar ─────────────────────────────── */
+.pv-expand-bar {
+  margin-bottom: 8px;
+  text-align: right;
+}
+
+.pv-expand-btn {
+  font-family: 'Oswald', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+  color: var(--accent, #6B1D1D);
+  background: none;
+  border: 1px solid var(--rule-light, #B8A88A);
+  border-radius: 3px;
+  padding: 4px 10px;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+
+.pv-expand-btn:hover {
+  background: var(--parchment, #F4EFE1);
+}
+
 /* ── Footnotes section ──────────────────────────── */
 .pv-fn-preamble {
   font-size: 13px;

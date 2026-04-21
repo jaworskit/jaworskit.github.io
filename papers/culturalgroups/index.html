@@ -270,6 +270,7 @@ extra_css: /css/paper-viewer.css
             </div>
           </div>
           <div class="pv-figure-notes"><em>Notes:</em> Counties are clustered into four groups in each census year using hierarchical agglomerative clustering with Ward's minimum-variance method applied to cosine-normalized first-name share vectors. Clustering is conducted separately by year. The sample includes white individuals. Colors indicate cluster membership and do not impose any geographic structure. Spatial contiguity reflects similarity in naming distributions rather than administrative boundaries.</div>
+          <div class="pv-figure-zoom-hint">Click any panel to enlarge</div>
         </div>
 
         <p>At higher levels of disaggregation, the algorithm identifies persistent subregions whose boundaries are spatially contiguous and historically plausible (<a class="pv-cite" href="#ref-fischer1989">Fischer 1989</a>; <a class="pv-cite" href="#ref-garreau1981">Garreau 1981</a>). New England separates from the broader North in ways consistent with its early emphasis on congregational governance and literacy; the Mid-Atlantic reflects its pluralistic and commercial heritage; Appalachia exhibits patterns consistent with backcountry settlement and evangelical traditions; and the Deep South retains distinctive profiles associated with plantation society.<sup><a class="pv-fn-ref" href="#fn-12" id="fn-ref-12">12</a></sup></p>
@@ -292,6 +293,7 @@ extra_css: /css/paper-viewer.css
             </div>
           </div>
           <div class="pv-figure-notes"><em>Notes:</em> Counties are clustered into seven groups in each census year using hierarchical agglomerative clustering with Ward's minimum-variance method applied to cosine-normalized first-name share vectors. Clustering is conducted separately by year. The sample includes white individuals. Colors indicate cluster membership; the seven clusters reflect a higher level of disaggregation. Spatial coherence emerges from similarity in naming distributions rather than imposed geographic boundaries.</div>
+          <div class="pv-figure-zoom-hint">Click any panel to enlarge</div>
         </div>
 
         <p>Matching cluster centroids across census years shows that the cultural signatures of major regions remain recognizable between 1850 and 1930, even as their geographic footprint evolves. For two clusters, 428 of 1,344 matched counties (32 percent) shift cluster membership between 1850 and 1880, but only 114 of 2,052 matched counties (6 percent) shift between 1880 and 1930. The declining rate of boundary movement is consistent with a cultural geography that consolidated over time rather than dissolving. Counties that do shift membership are disproportionately located along historically recognized borderlands: the Ohio Valley, Kentucky, Missouri, and parts of Maryland and West Virginia, where mixed settlement from both northern and southern migration streams made cultural boundaries fluid. These borderland counties exhibit lower silhouette scores than interior counties, indicating weaker attachment to either cluster, which is precisely what one would expect in zones of overlapping cultural influence. Borderlands function as areas of interaction, where competing groups coexist and adaptation is more likely. Cultural boundaries thus appear durable but permeable: they channel development without rendering change impossible.</p>
@@ -476,13 +478,9 @@ extra_css: /css/paper-viewer.css
 (function() {
   'use strict';
 
-  // ── Section toggle ──────────────────────────────
-  document.querySelectorAll('.pv-toggle').forEach(function(btn) {
-    btn.addEventListener('click', function() {
-      var expanded = btn.getAttribute('aria-expanded') === 'true';
-      toggleSection(btn, !expanded);
-    });
-  });
+  var SCROLL_OFFSET = 16;
+
+  // ── Helpers ─────────────────────────────────────
 
   function toggleSection(btn, open) {
     var bodyId = btn.getAttribute('aria-controls');
@@ -490,7 +488,7 @@ extra_css: /css/paper-viewer.css
     if (!body) return;
     btn.setAttribute('aria-expanded', open);
     var icon = btn.querySelector('.pv-toggle-icon');
-    if (icon) icon.innerHTML = open ? '&#9660;' : '&#9654;';
+    if (icon) icon.innerHTML = open ? '\u25BC' : '\u25B6';
     if (open) {
       body.removeAttribute('hidden');
     } else {
@@ -498,7 +496,61 @@ extra_css: /css/paper-viewer.css
     }
   }
 
+  function expandSectionContaining(el) {
+    var section = el.closest('.pv-section');
+    if (section) {
+      var btn = section.querySelector('.pv-toggle');
+      if (btn && btn.getAttribute('aria-expanded') !== 'true') {
+        toggleSection(btn, true);
+      }
+    }
+  }
+
+  function scrollTo(el, block) {
+    block = block || 'start';
+    setTimeout(function() {
+      var y = el.getBoundingClientRect().top + window.pageYOffset - SCROLL_OFFSET;
+      if (block === 'center') {
+        y = el.getBoundingClientRect().top + window.pageYOffset
+            - window.innerHeight / 2 + el.offsetHeight / 2;
+      }
+      window.scrollTo({ top: y, behavior: 'smooth' });
+    }, 60);
+  }
+
+  function pushHash(hash) {
+    if (history.pushState) {
+      history.pushState(null, '', hash);
+    }
+  }
+
+  // ── Section toggle buttons ──────────────────────
+
+  document.querySelectorAll('.pv-toggle').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      toggleSection(btn, !expanded);
+    });
+  });
+
+  // ── Expand All / Collapse All ───────────────────
+
+  var expandBtn = document.getElementById('pv-expand-all');
+  if (expandBtn) {
+    expandBtn.addEventListener('click', function() {
+      var allExpanded = true;
+      document.querySelectorAll('.pv-toggle').forEach(function(btn) {
+        if (btn.getAttribute('aria-expanded') !== 'true') allExpanded = false;
+      });
+      document.querySelectorAll('.pv-toggle').forEach(function(btn) {
+        toggleSection(btn, !allExpanded);
+      });
+      expandBtn.textContent = allExpanded ? 'Expand all sections' : 'Collapse all sections';
+    });
+  }
+
   // ── TOC click-to-expand & scroll ────────────────
+
   document.querySelectorAll('.pv-toc-link').forEach(function(link) {
     link.addEventListener('click', function(e) {
       e.preventDefault();
@@ -506,23 +558,21 @@ extra_css: /css/paper-viewer.css
       var section = document.getElementById(targetId);
       if (!section) return;
 
-      // Expand if collapsed
       var btn = section.querySelector('.pv-toggle');
       if (btn && btn.getAttribute('aria-expanded') !== 'true') {
         toggleSection(btn, true);
       }
-
-      // Smooth scroll
-      setTimeout(function() {
-        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-      }, 50);
+      pushHash('#' + targetId);
+      scrollTo(section, 'start');
     });
   });
 
-  // ── Footnote links: expand Footnotes section ────
+  // ── Footnote links: expand Footnotes & scroll ───
+
   document.querySelectorAll('.pv-fn-ref').forEach(function(link) {
     link.addEventListener('click', function(e) {
       e.preventDefault();
+      // Expand Footnotes section
       var fnSection = document.getElementById('footnotes');
       if (fnSection) {
         var btn = fnSection.querySelector('.pv-toggle');
@@ -533,14 +583,29 @@ extra_css: /css/paper-viewer.css
       var targetId = link.getAttribute('href').slice(1);
       var target = document.getElementById(targetId);
       if (target) {
-        setTimeout(function() {
-          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        }, 100);
+        pushHash('#' + targetId);
+        scrollTo(target, 'center');
       }
     });
   });
 
-  // ── Citation links: expand References section ───
+  // ── Footnote back-links: expand parent section ──
+
+  document.querySelectorAll('.pv-fn-back').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      var targetId = link.getAttribute('href').slice(1);
+      var target = document.getElementById(targetId);
+      if (target) {
+        expandSectionContaining(target);
+        pushHash('#' + targetId);
+        scrollTo(target, 'center');
+      }
+    });
+  });
+
+  // ── Citation links: expand References & scroll ──
+
   document.querySelectorAll('.pv-cite').forEach(function(link) {
     var href = link.getAttribute('href');
     if (href && href.startsWith('#ref-')) {
@@ -556,46 +621,61 @@ extra_css: /css/paper-viewer.css
         var targetId = href.slice(1);
         var target = document.getElementById(targetId);
         if (target) {
-          setTimeout(function() {
-            target.scrollIntoView({ behavior: 'smooth', block: 'center' });
-          }, 100);
+          pushHash('#' + targetId);
+          scrollTo(target, 'center');
         }
       });
     }
   });
 
-  // ── IntersectionObserver: TOC active state ──────
+  // ── Browser back/forward: expand target section ─
+
+  window.addEventListener('popstate', function() {
+    var hash = window.location.hash;
+    if (!hash) return;
+    var target = document.getElementById(hash.slice(1));
+    if (target) {
+      expandSectionContaining(target);
+      scrollTo(target, 'center');
+    }
+  });
+
+  // ── TOC active state (scroll-based) ─────────────
+
   var tocLinks = document.querySelectorAll('.pv-toc-link');
-  var sections = [];
+  var sectionEls = [];
   tocLinks.forEach(function(link) {
     var id = link.getAttribute('href').slice(1);
     var el = document.getElementById(id);
-    if (el) sections.push({ id: id, el: el, link: link });
+    if (el) sectionEls.push({ el: el, link: link });
   });
 
-  if ('IntersectionObserver' in window && sections.length) {
-    var observer = new IntersectionObserver(function(entries) {
-      entries.forEach(function(entry) {
-        var match = sections.find(function(s) { return s.el === entry.target; });
-        if (match) {
-          match.visible = entry.isIntersecting;
-        }
-      });
-      // Activate the first visible section
-      var active = sections.find(function(s) { return s.visible; });
-      if (active) {
-        tocLinks.forEach(function(l) { l.classList.remove('pv-toc-active'); });
-        active.link.classList.add('pv-toc-active');
+  function updateTocActive() {
+    var current = null;
+    var scrollY = window.pageYOffset + SCROLL_OFFSET + 60;
+    for (var i = sectionEls.length - 1; i >= 0; i--) {
+      if (sectionEls[i].el.offsetTop <= scrollY) {
+        current = sectionEls[i];
+        break;
       }
-    }, {
-      rootMargin: '-20% 0px -60% 0px',
-      threshold: 0
-    });
-
-    sections.forEach(function(s) { observer.observe(s.el); });
+    }
+    if (current) {
+      tocLinks.forEach(function(l) { l.classList.remove('pv-toc-active'); });
+      current.link.classList.add('pv-toc-active');
+    }
   }
 
+  var ticking = false;
+  window.addEventListener('scroll', function() {
+    if (!ticking) {
+      requestAnimationFrame(function() { updateTocActive(); ticking = false; });
+      ticking = true;
+    }
+  });
+  updateTocActive();
+
   // ── Lightbox ────────────────────────────────────
+
   var lightbox = document.getElementById('pv-lightbox');
   var lightboxImg = lightbox ? lightbox.querySelector('img') : null;
 
@@ -606,9 +686,18 @@ extra_css: /css/paper-viewer.css
         lightboxImg.alt = img.alt;
         lightbox.classList.add('pv-lightbox-open');
         lightbox.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
       }
     });
   });
+
+  function closeLightbox() {
+    if (lightbox) {
+      lightbox.classList.remove('pv-lightbox-open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+  }
 
   if (lightbox) {
     lightbox.addEventListener('click', closeLightbox);
@@ -619,13 +708,6 @@ extra_css: /css/paper-viewer.css
   document.addEventListener('keydown', function(e) {
     if (e.key === 'Escape') closeLightbox();
   });
-
-  function closeLightbox() {
-    if (lightbox) {
-      lightbox.classList.remove('pv-lightbox-open');
-      lightbox.setAttribute('aria-hidden', 'true');
-    }
-  }
 
 })();
 </script>
