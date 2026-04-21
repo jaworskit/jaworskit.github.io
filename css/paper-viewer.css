@@ -214,8 +214,8 @@
 
 /* ── Figures ────────────────────────────────────── */
 .pv-figure {
-  margin: 24px 0 24px -22px;   /* break out of .pv-body left padding */
-  width: calc(100% + 22px);    /* reclaim full content column width  */
+  margin: 24px auto;
+  max-width: 540px;            /* keep the 3-panel rows compact      */
 }
 
 .pv-figure-caption {
@@ -454,8 +454,7 @@
   }
 
   .pv-figure {
-    margin-left: 0;
-    width: 100%;
+    max-width: 100%;
   }
 
   .pv-figure-row {
