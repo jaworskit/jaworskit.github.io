@@ -1,255 +1,629 @@
 ---
 title: "The Emergence of Regional Cultures in the United States"
-description: "An LLM-readable orientation file for Jaworski and Kimbrough."
+description: "Interactive paper viewer for Jaworski and Kimbrough."
+extra_css: /css/paper-viewer.css
 ---
 
-<div class="llm-page">
+<div class="pv-page">
 
-  <aside class="llm-sidebar">
-    <nav>
-      <a href="#about">About</a>
-      <a href="#context">Context</a>
-      <a href="#data">Data &amp; Methods</a>
-      <a href="#results">Results</a>
-      <a href="#guide">Navigation Guide</a>
+  <!-- ── Sidebar TOC ──────────────────────────────── -->
+  <aside class="pv-sidebar">
+    <nav class="pv-toc">
+      <a href="#quick-read" class="pv-toc-link pv-toc-active">Quick Read</a>
+      <a href="#introduction" class="pv-toc-link">Introduction</a>
+      <a href="#convergence" class="pv-toc-link">Forces of Convergence</a>
+      <a href="#fischer" class="pv-toc-link">The Fischer Thesis</a>
+      <a href="#clustering" class="pv-toc-link">Clustering</a>
+      <a href="#conclusion" class="pv-toc-link">Conclusion</a>
+      <a href="#footnotes" class="pv-toc-link">Footnotes</a>
+      <a href="#references" class="pv-toc-link">References</a>
     </nav>
-    <div class="llm-sidebar-files">
-      <a href="llms.txt">Machine-readable</a>
-      <a href="paper.md">Markdown version</a>
+    <div class="pv-sidebar-files">
+      <a href="paper.md">Markdown</a>
+      <a href="llms.txt">llms.txt</a>
     </div>
   </aside>
 
-  <main class="llm-content">
+  <!-- ── Main content ─────────────────────────────── -->
+  <main class="pv-content">
 
-    <h1>The Emergence of Regional Cultures in the United States</h1>
-
-    <p class="llm-authors">
-      Taylor Jaworski (University of Colorado Boulder and NBER)<br>
-      Erik O. Kimbrough (Chapman University)
-    </p>
-
-    <section id="about" class="llm-section">
-      <h2>What is this paper about?</h2>
-      <p>
-        This paper recovers the cultural geography of the United States from first names in complete-count census data spanning 1850 to 1930. Using unsupervised hierarchical clustering of county-level name distributions, the paper identifies spatially coherent cultural regions that align with historically recognized settlement patterns and remain stable across eight decades of economic and institutional change. The deepest division separates North from South, but finer groupings (New England, the Mid-Atlantic, Appalachia, the Deep South) emerge as nested subregions. The findings address whether liberal institutions require cultural homogeneity, whether cultural pluralism is a source of resilience or fragility, and how the imprint of early settlement shapes the practice of self-governance.
+    <!-- Header -->
+    <header class="pv-header">
+      <h1>The Emergence of Regional Cultures in the United States</h1>
+      <p class="pv-authors">
+        Taylor Jaworski (University of Colorado Boulder and NBER)<br>
+        Erik O. Kimbrough (Chapman University)
       </p>
+      <div class="pv-header-links">
+        <a href="paper.md">Paper (Markdown)</a>
+        <a href="llms.txt">llms.txt</a>
+      </div>
+    </header>
+
+    <!-- ════════════════════════════════════════════ -->
+    <!-- QUICK READ (expanded by default)            -->
+    <!-- ════════════════════════════════════════════ -->
+    <section id="quick-read" class="pv-section">
+      <button class="pv-toggle" aria-expanded="true" aria-controls="quick-read-body">
+        <span class="pv-toggle-icon">&#9660;</span> Quick Read
+      </button>
+      <div id="quick-read-body" class="pv-body pv-quick-read">
+
+        <p>This paper recovers the cultural geography of the United States from first names in complete-count census data spanning 1850 to 1930. Using unsupervised hierarchical clustering of county-level name distributions, the paper identifies spatially coherent cultural regions that align with historically recognized settlement patterns and remain stable across eight decades of economic and institutional change. The deepest division separates North from South, but finer groupings (New England, the Mid-Atlantic, Appalachia, the Deep South) emerge as nested subregions.</p>
+
+        <h3>Important context</h3>
+        <ul>
+          <li>The paper tests whether the forces of convergence in nineteenth-century America (the market revolution, westward migration, railroad construction, institutional standardization) homogenized regional cultures or whether distinct cultural regions persisted.</li>
+          <li>It engages with David Hackett Fischer's thesis (<em>Albion's Seed</em>, 1989) that four British colonial folkways (Puritans, Royalists, Quakers, Borderers) established durable regional cultures. The clustering results are consistent with Fischer's account, but recovered from data rather than assumed.</li>
+          <li>First names serve as a cultural marker because naming conventions are transmitted within families and communities, are not directly governed by markets or institutions, and are observable in census microdata at scale.</li>
+          <li>The paper uses only white populations due to severe undercounting of Black and immigrant populations in earlier censuses.</li>
+        </ul>
+
+        <h3>Data and methods</h3>
+        <ul>
+          <li>Complete-count US census microdata for 1850, 1880, and 1930 (via IPUMS)</li>
+          <li>County-level first-name distributions for white individuals</li>
+          <li>Cosine similarity on county-level name-share vectors to measure cultural distance</li>
+          <li>Hierarchical clustering based on Ward's criterion</li>
+          <li>Results presented for 2, 4, and 7 clusters</li>
+        </ul>
+
+        <h3>Key results</h3>
+        <ol>
+          <li>At two clusters, a clear North-South divide emerges in all three census years. The boundary does not follow the free-slave line; it tracks settlement-origin patterns more closely.</li>
+          <li>At four clusters, the North subdivides into eastern and western regions; the South separates into Upper South and Deep South.</li>
+          <li>At seven clusters, New England, the Mid-Atlantic, and Appalachia emerge as distinct subregions nested within the broader North-South partition.</li>
+          <li>Temporal persistence is high: 94% of counties retain their two-cluster assignment between 1880 and 1930; 67% retain it from 1850 to 1930.</li>
+          <li>Northern naming conventions consolidate over time, while the South remains internally differentiated.</li>
+        </ol>
+
+      </div>
     </section>
 
-    <section id="context" class="llm-section">
-      <h2>Important context</h2>
-      <ul>
-        <li>The paper tests whether the forces of convergence in nineteenth-century America (the market revolution, westward migration, railroad construction, institutional standardization) homogenized regional cultures or whether distinct cultural regions persisted.</li>
-        <li>It engages with David Hackett Fischer's thesis (<em>Albion's Seed</em>, 1989) that four British colonial folkways (Puritans, Royalists, Quakers, Borderers) established durable regional cultures. The clustering results are consistent with Fischer's account, but recovered from data rather than assumed.</li>
-        <li>First names serve as a cultural marker because naming conventions are transmitted within families and communities, are not directly governed by markets or institutions, and are observable in census microdata at scale.</li>
-        <li>The paper uses only white populations due to severe undercounting of Black and immigrant populations in earlier censuses. </li>
-      </ul>
+    <!-- ════════════════════════════════════════════ -->
+    <!-- INTRODUCTION                                -->
+    <!-- ════════════════════════════════════════════ -->
+    <section id="introduction" class="pv-section">
+      <button class="pv-toggle" aria-expanded="false" aria-controls="introduction-body">
+        <span class="pv-toggle-icon">&#9654;</span> Introduction
+      </button>
+      <div id="introduction-body" class="pv-body" hidden>
+
+        <p>Economic development in the United States has unfolded within distinctive cultural contexts that played a central role in shaping regional trajectories of growth, institutional development, and social organization. Rather than being byproducts of material forces, culture, norms, and shared beliefs influence how markets function, which forms of commerce thrive, and what kinds of cooperation are sustainable (<a class="pv-cite" href="#ref-guiso2006culture">Guiso et al. 2006</a>; <a class="pv-cite" href="#ref-bisin2011culture">Bisin and Verdier 2011</a>; <a class="pv-cite" href="#ref-nunn2012culture">Nunn 2012</a>; <a class="pv-cite" href="#ref-tabellini2010culture">Tabellini 2010</a>; <a class="pv-cite" href="#ref-alesina2015culture">Alesina and Giuliano 2015</a>; <a class="pv-cite" href="#ref-greif2006institutions">Greif 2006</a>). This perspective challenges explanations that reduce economic change to technology, geography, or factor endowments alone. Instead, culture both constrains and enables economic transformation, providing durable social foundations that persist even as material conditions evolve.</p>
+
+        <p>A distinctive feature of American development is the breadth of social life organized through voluntary association. Churches, civic organizations, political parties, reform movements, mutual aid societies, and commercial partnerships have long operated through consent rather than coercion. Tocqueville (<a class="pv-cite" href="#ref-tocqueville2004">2004</a> [1835/1840]) famously described this propensity as a defining characteristic of American democracy.<sup><a class="pv-fn-ref" href="#fn-4" id="fn-ref-4">4</a></sup> Subsequent scholarship has linked associational life to social capital, trust, and institutional performance (<a class="pv-cite" href="#ref-putnam1993">Putnam 1993</a>; <a class="pv-cite" href="#ref-putnam2000">Putnam 2000</a>). The United States became a society of organizations: political mobilization, moral reform, mutual aid, and community governance were frequently pursued through membership-based associations rather than centralized administration. In the nineteenth century, this encompassed both elite-oriented societies and mass-membership organizations, from national reform networks to local lodges and benevolent associations that provided insurance, identity, and channels for collective action in rapidly changing communities (<a class="pv-cite" href="#ref-skocpol2003">Skocpol 2003</a>).</p>
+
+        <p>At the same time, American economic and institutional change has been regional. Patterns of industrialization and urbanization differed sharply between New England mill towns, Midwestern market centers, and the plantation South; religious adherence and revival traditions exhibited persistent geographic structure; and common-school reforms diffused unevenly across states and localities. Political competition likewise varied in organization and intensity across regions, even when operating under shared constitutional rules. If voluntary association is central to American development, then identifying the regional cultures that shape association is essential for understanding both persistence and change. In this paper, "regional culture" refers to locally shared practices that are reproduced through socialization and reinforced by community institutions. These cultures need not be immutable to matter; they can evolve while remaining regionally recognizable.</p>
+
+        <p>The origins of this voluntary society remain contested. One view emphasizes the transplantation of distinct colonial folkways that had to coexist in order to form a nation (<a class="pv-cite" href="#ref-fischer1989">Fischer 1989</a>; <a class="pv-cite" href="#ref-woodard2011">Woodard 2011</a>). A related tradition identifies coherent cultural regions that persist into the present, organized around shared economic orientations, social attitudes, and political identities (<a class="pv-cite" href="#ref-garreau1981">Garreau 1981</a>; <a class="pv-cite" href="#ref-zelinsky1992">Zelinsky 1992</a>). Another highlights frontier conditions and abundant land as the source of American individualism and associational forms (<a class="pv-cite" href="#ref-turner1893significance">Turner 1893</a>; <a class="pv-cite" href="#ref-bazzi2020frontier">Bazzi et al. 2020</a>). Institutional accounts stress constitutional design, federalism, and the diffusion of impersonal organizational forms (<a class="pv-cite" href="#ref-north1990">North 1990</a>; <a class="pv-cite" href="#ref-lamoreaux2021">Lamoreaux and Wallis 2021</a>). A further perspective attributes associational expansion to structural transformation and market integration during the nineteenth century (<a class="pv-cite" href="#ref-sellers1991">Sellers 1991</a>; <a class="pv-cite" href="#ref-howe2007">Howe 2007</a>; <a class="pv-cite" href="#ref-larson2009">Larson 2009</a>). Each account implies a distinct geography and timeline of convergence. If markets and standardized institutions dominate, regional cultural differences should attenuate over time. If early-settler folkways establish durable baselines that are reproduced through churches, schools, and local governance, regional distinctions should remain legible well into the modern era.</p>
+
+        <p>These different perspectives have distinctive empirical implications. If modernization operated primarily through mobility, standardization, and national networks, the cultural map should flatten: counties should increasingly resemble one another in everyday social practices. If early cultural endowments mattered, the spatial imprint of those baselines should persist, perhaps adapting at the margins but remaining organized into coherent regions. In this sense, the question of regional cultural persistence is not merely descriptive; it bears directly on debates about path dependence, institutional complementarity, and the long-run effects of historical shocks (<a class="pv-cite" href="#ref-arthur1989competing">Arthur 1989</a>; <a class="pv-cite" href="#ref-acemoglu2001colonial">Acemoglu et al. 2001</a>). For our purposes, path dependence means that early settlement and institutional conditions may have resulted in novel "cultural equilibria" (see also <a class="pv-cite" href="#ref-acemoglu2019narrow">Acemoglu and Robinson 2019</a>). Institutional convergence can coexist with cultural persistence if shared legal forms are adopted and interpreted through locally durable norms.</p>
+
+        <p>This paper tests these competing claims. We define a "voluntary society" as the domain of social life organized through choice rather than coercion, including economic exchange, civic associations such as churches and reform societies, mutual aid and fraternal orders, and political participation through parties and elections. A voluntary society is not free of hierarchy, but it relies on consent, negotiation, and association rather than inherited status or centralized command. In what follows, we use naming-based cultural clusters as a measure of regional culture and ask whether coherent, durable cultural regions can be recovered from the historical record. The hypothesis we test is that cultural geography is empirically salient: that it can be detected in an everyday behavior, that it exhibits spatial coherence and temporal persistence, and that it survives the convergence forces of the nineteenth and early twentieth centuries. Establishing this foundation is a prerequisite for subsequent investigation of whether cultural regions organize variation in the institutions and associations that constitute a voluntary society.</p>
+
+        <p>To operationalize culture, we follow <a class="pv-cite" href="#ref-zelinsky1970">Zelinsky (1970)</a> and focus on naming practices between 1850 and 1930. Names have several advantages as cultural indicators. They are parent-chosen, stable over the life cycle, and often reflect religious, ethnic, and familial traditions. They are also consistently recorded in census sources at fine geographic levels. Naming has been shown to encode both cultural continuity and assimilation pressures (<a class="pv-cite" href="#ref-smith1985">Smith 1985</a>; <a class="pv-cite" href="#ref-watkins1994personal">Watkins and London 1994</a>; <a class="pv-cite" href="#ref-smith1994">Smith 1994</a>; <a class="pv-cite" href="#ref-main1996">Main 1996</a>; <a class="pv-cite" href="#ref-lieberson2000matter">Lieberson 2000</a>; <a class="pv-cite" href="#ref-abramitzky2020">Abramitzky et al. 2020</a>). We treat each county's distribution of first names as a cultural "fingerprint" and use unsupervised clustering to group counties that are similar. The intuition is straightforward: counties sharing similar cultural environments should have more similar first-name distributions than counties anchored in different repertoires.</p>
+
+        <p>This approach serves three purposes. First, it provides a transparent and scalable measure of cultural similarity across U.S. counties using a consistently recorded behavior. Second, it allows us to test whether cultural regions were already present by 1850 and whether they persisted through 1930. This period spans the pre-Civil War decades when sectional identities and internal migration were already salient, the postbellum era of emancipation and rapid industrial expansion, and the peak decades of mass immigration and deepening national integration in the early twentieth century. Third, it establishes a framework that can be connected to independent markers of civic and institutional organization central to a voluntary society. If naming-based clusters recover meaningful cultural regions, those regions may also help organize variation in associational density, religious and civic institutions, and political participation, a question we return to in the conclusion.</p>
+
+        <p>The next two sections outline the major transformations (structural change, market integration, and the diffusion of impersonal institutions) that could have produced cultural convergence, and the competing thesis that early-settler folkways established durable baselines despite these forces.</p>
+
+      </div>
     </section>
 
-    <section id="data" class="llm-section">
-      <h2>Data and methods</h2>
+    <!-- ════════════════════════════════════════════ -->
+    <!-- FORCES OF CONVERGENCE                       -->
+    <!-- ════════════════════════════════════════════ -->
+    <section id="convergence" class="pv-section">
+      <button class="pv-toggle" aria-expanded="false" aria-controls="convergence-body">
+        <span class="pv-toggle-icon">&#9654;</span> Forces of Convergence
+      </button>
+      <div id="convergence-body" class="pv-body" hidden>
 
-      <h3>Data sources</h3>
-      <ul>
-        <li>Complete-count US census microdata for 1850, 1880, and 1930 (via IPUMS)</li>
-        <li>County-level first-name distributions for white individuals</li>
-        <li>Sample sizes: 1,344 counties (1850), 2,054 counties (1880), 3,100 counties (1930)</li>
-        <li>First names: 26,438 distinct first names (1850), 34,216 (1880), 41,594 (1930)</li>
-      </ul>
+        <p>Over the nineteenth and early twentieth centuries, three sets of forces worked to reshape the social foundations of American society: structural change in the economy, the market revolution, and the diffusion of impersonal institutions. Together, they increased geographic mobility, widened interregional exchange, and exposed individuals to common organizational frameworks. At the same time, these forces operated unevenly across a society divided by slavery. The plantation system organized economic and social life in the South along fundamentally different lines, and its abolition restructured but did not erase the regional cultural patterns it had sustained. If convergence forces dominated, inherited regional cultures should have attenuated. This is an empirical question.</p>
 
-      <h3>Methodology</h3>
-      <ul>
-        <li>Cosine similarity on county-level name-share vectors to measure cultural distance between counties</li>
-        <li>Hierarchical clustering based on Ward's criterion</li>
-        <li>Results presented for 2, 4, 7, and 11 clusters</li>
-        <li>Spatial coherence tested via join-count statistics on county adjacency graphs</li>
-        <li>Temporal persistence measured by cluster agreement rates across census years</li>
-        <li>Bootstrap resampling to assess stability (adjusted Rand index)</li>
-      </ul>
+        <p>The scale of structural change was vast. In 1800, more than 70 percent of the labor force worked in agriculture; by 1900 this share had fallen below 40 percent, and by 1950 it was less than 15 percent (<a class="pv-cite" href="#ref-goldin1982">Goldin and Sokoloff 1982</a>; <a class="pv-cite" href="#ref-hsus">Carter et al. 2006</a>). In the Early Republic, economic life was organized around households, kin networks, and congregations. Farm households coordinated labor internally and relied on extended family ties and neighborhood reciprocity to smooth risk (<a class="pv-cite" href="#ref-henretta1978families">Henretta 1978</a>). Exchange was embedded in personal relationships, where reputation and communal oversight substituted for formal enforcement (<a class="pv-cite" href="#ref-clark1990social">Clark 1990</a>). The postal network, which expanded rapidly in this period, provided an early infrastructure for long-distance communication that connected even remote communities to wider circuits of news and commerce (<a class="pv-cite" href="#ref-blevins2021paper">Blevins 2021</a>). Voluntary association took localized forms rooted in face-to-face interaction and shared norms.</p>
+
+        <p>Industrialization and urbanization altered this arrangement. As wage labor expanded and populations concentrated in cities, new organizational forms supplanted traditional kin-based networks: labor unions, mutual aid societies, fraternal organizations, and reform societies proliferated (<a class="pv-cite" href="#ref-skocpol2003">Skocpol 2003</a>; <a class="pv-cite" href="#ref-beito2000mutual">Beito 2000</a>). These membership-based organizations provided insurance, structured social identity, and linked individuals to broader civic movements (<a class="pv-cite" href="#ref-beito2000mutual">Beito 2000</a>; <a class="pv-cite" href="#ref-clemens1997peoples">Clemens 1997</a>). Many operated under standardized constitutions, dues systems, and governance rules replicated across regions. The common-school movement diffused graded classrooms and standardized curricula (<a class="pv-cite" href="#ref-kaestle1983">Kaestle 1983</a>; <a class="pv-cite" href="#ref-tyack1974onebest">Tyack 1974</a>), the high school movement linked educational expansion to the rising demand for skilled labor (<a class="pv-cite" href="#ref-goldin1998highschool">Goldin 1998</a>), and professional societies codified credentials and licensing requirements (<a class="pv-cite" href="#ref-abbott1988system">Abbott 1988</a>). Through these developments, Americans were increasingly socialized into similar institutional forms even when residing in different regions.</p>
+
+        <p>These structural shifts coincided with a market revolution, which reoriented the economy between roughly 1815 and the Civil War from local exchange toward impersonal, long-distance markets (<a class="pv-cite" href="#ref-sellers1991">Sellers 1991</a>; <a class="pv-cite" href="#ref-howe2007">Howe 2007</a>; <a class="pv-cite" href="#ref-larson2009">Larson 2009</a>). Technological innovations dramatically reduced transportation and communication costs. Canals linked interior regions to Atlantic ports; railroads created a national commercial network; and the telegraph enabled rapid communication across space (<a class="pv-cite" href="#ref-fogel1964">Fogel 1964</a>; <a class="pv-cite" href="#ref-fishlow1965">Fishlow 1965</a>; <a class="pv-cite" href="#ref-atack2013gis">Atack 2013</a>; <a class="pv-cite" href="#ref-donaldson2016railroads">Donaldson and Hornbeck 2016</a>; <a class="pv-cite" href="#ref-rhode2021">Rhode 2021</a>). The postal network transmitted political news, religious tracts, and commercial information across vast distances (<a class="pv-cite" href="#ref-john1995">John 1995</a>). Participation in national markets exposed individuals to common price signals, contractual norms, and commercial practices, potentially encouraging convergence in expectations and everyday behavior.</p>
+
+        <p>Market integration interacted with migration regimes that reshaped population geography. Falling transport costs facilitated large-scale internal migration from New England and the Mid-Atlantic into the Old Northwest and, later, the Great Plains and Pacific Coast. Yankee migrants carried town-based institutions, schooling traditions, and religious forms that were often replicated in new settlements. Upland migrants from the Appalachian South moved into the Ohio Valley and lower Midwest, transmitting distinctive evangelical traditions and kin-based social structures across state lines. Westward expansion thus frequently involved the transplantation of established regional cultures rather than their dissolution.</p>
+
+        <p>Between 1850 and 1930, millions of European immigrants introduced new folkways into local contexts. In some settings, immigrant communities maintained distinct practices for generations; in others, assimilation into prevailing regional norms proceeded rapidly. New cultural layers were added to existing structures rather than uniformly replacing them. Moreover, the same communication networks that facilitated national reform movements (temperance, abolition, and religious revival) also accelerated sectional conflict over slavery. Market integration expanded the spatial reach of voluntary association while providing new arenas in which regional identities could be articulated. Structural change therefore does not mechanically imply homogenization; its cultural consequences depend on how mobility, market participation, and assimilation interact with inherited norms.</p>
+
+        <p>Institutional development reinforced these tendencies. The Constitution established a national framework of predictable rules: federalism constrained arbitrary authority, protections for property and contract facilitated exchange, and the Bill of Rights guaranteed freedoms of speech, press, religion, and assembly, providing legal foundations for civic association (<a class="pv-cite" href="#ref-north1990">North 1990</a>; <a class="pv-cite" href="#ref-wood2009empire">Wood 2009</a>). Over the nineteenth century, institutional change moved broadly toward impersonal access and standardized rules. One of the most consequential transformations was the spread of general incorporation laws, which replaced particularistic legislative charters with open access to the corporate form (<a class="pv-cite" href="#ref-lamoreaux2021">Lamoreaux and Wallis 2021</a>; <a class="pv-cite" href="#ref-hilt2008">Hilt 2008</a>). By lowering the costs of collective action and standardizing governance structures, general incorporation expanded both the scale and durability of voluntary associations. Churches incorporated trustees to hold property; mutual aid societies adopted constitutions modeled on statutory templates. The corporate form provided a common organizational technology that functioned similarly across states.</p>
+
+        <p>Financial and political institutions evolved along comparable lines. Early banks were chartered by state legislatures and embedded in personal networks (<a class="pv-cite" href="#ref-lamoreaux1994">Lamoreaux 1994</a>). Free banking laws in the antebellum period expanded entry, and the National Banking System promoted more uniform regulatory oversight across states (<a class="pv-cite" href="#ref-sylla1969">Sylla 1969</a>). As credit markets deepened and capital became more mobile, economic actors operated within financial frameworks that extended beyond purely local trust networks. The emergence of durable mass political parties linked local communities into national coalitions (<a class="pv-cite" href="#ref-aldrich1995whyparties">Aldrich 1995</a>; <a class="pv-cite" href="#ref-wilentz2005rise">Wilentz 2005</a>).</p>
+
+        <p>Through newspapers, conventions, and committee structures, counties were connected to state and national leadership, and by the late nineteenth century party organization was deeply embedded in civic life (<a class="pv-cite" href="#ref-white2017republic">White 2017</a>). Even when conflict followed regional lines, party structures operated under common constitutional rules. Denominational networks linked congregations across regions, creating hierarchical organizational structures that transcended local boundaries while preserving theological variation. Together, these developments supplied organizational templates that extended across the country.</p>
+
+        <p>However, institutional convergence did not imply uniform experience. Participation in voluntary society was constrained by race, gender, and legal status. Enslaved people were denied basic freedoms of association; indigenous nations were excluded from constitutional protections; and women's political rights were limited well into the nineteenth century. Even where formal rules converged, local enforcement and informal norms varied substantially. The same incorporation statute could underpin different patterns of church governance; the same party structure could operate within distinct regional political cultures. Shared institutions provided common frameworks, but those frameworks were embedded in, and interpreted through, existing regional cultures.</p>
+
+        <p>The cumulative force of these transformations was enormous. Mobility, standardized economic incentives, impersonal exchange institutions, national media, professionalized organizational forms, and common legal structures all worked in the direction of convergence. If modernization operated primarily through these channels, regional cultural differences should have attenuated during the nineteenth and early twentieth centuries. The empirical question is whether structural change, market integration, and institutional diffusion produced convergence in everyday social practice, or whether regional cultures remained visible despite these forces.</p>
+
+      </div>
     </section>
 
-    <section id="results" class="llm-section">
-      <h2>Key results</h2>
-      <ol>
-        <li>At two clusters, a clear North-South divide emerges in all three census years. The boundary does not follow the free-slave line; it tracks settlement-origin patterns more closely.</li>
-        <li>At four clusters, the North subdivides into eastern and western regions; the South separates into Upper South and Deep South.</li>
-        <li>At seven clusters, New England, the Mid-Atlantic, and Appalachia emerge as distinct subregions nested within the broader North-South partition.</li>
-        <li>Temporal persistence is high: 94% of counties retain their two-cluster assignment between 1880 and 1930 (z=66); 67% retain it from 1850 to 1930 (z=19).</li>
-        <li>Northern naming conventions consolidate over time, while the South remains internally differentiated, producing an asymmetry in cultural convergence.</li>
-        <li>Trans-Mississippi counties increasingly adopt northern cluster characteristics as settlement moves westward.</li>
-        <li>All cluster partitions are spatially contiguous (join-count z-scores of 18 to 146, all p&lt;0.001) and robust to bootstrap resampling.</li>
-      </ol>
+    <!-- ════════════════════════════════════════════ -->
+    <!-- THE FISCHER THESIS                          -->
+    <!-- ════════════════════════════════════════════ -->
+    <section id="fischer" class="pv-section">
+      <button class="pv-toggle" aria-expanded="false" aria-controls="fischer-body">
+        <span class="pv-toggle-icon">&#9654;</span> The Fischer Thesis
+      </button>
+      <div id="fischer-body" class="pv-body" hidden>
+
+        <p>A prominent explanation for persistent regional differences in the United States is the cultural thesis advanced by <a class="pv-cite" href="#ref-fischer1989">Fischer (1989)</a>. In broad outline, the argument holds that migrants from different regions of the British Isles transplanted coherent packages of norms and practices (religious observance, family structure, attitudes toward hierarchy, education, work, and law) to North America during the seventeenth and eighteenth centuries. These "folkways" structured everyday life and institutional development, establishing durable regional cultures that long outlived the original settlers. In this account, regional culture is not an epiphenomenon of later economic specialization; it is a foundational layer that shapes how subsequent institutions are adopted, interpreted, and reproduced.</p>
+
+        <p>Fischer identifies four groups. Puritans from East Anglia settled New England, emphasizing congregational self-government, literacy, covenant theology, and communal moral discipline. Royalist migrants from southern and western England dominated the Chesapeake, transplanting hierarchical social relations, Anglican religious forms, and gentry-led political culture. Quakers from the English Midlands shaped the Delaware Valley, privileging toleration, pluralism, pacifism, and commercial pragmatism. Borderers from the Anglo-Scottish frontier spread through the Appalachian backcountry, valorizing independence, local autonomy, evangelical religion, and codes of personal honor (<a class="pv-cite" href="#ref-fischer1989">Fischer 1989</a>). Across domains ranging from church governance and inheritance practices to naming conventions, patterns of violence, and political organization, each group generated distinctive and internally coherent cultural profiles. The claim is not that these cultures were static, but that they supplied durable folkways that influenced subsequent development.</p>
+
+        <p>This perspective provides a mechanism for cultural persistence. Early settlers embedded norms within durable institutional arrangements: town meetings and congregational churches in New England; plantation hierarchies and Anglican parishes in the Chesapeake; pluralistic assemblies and commercial networks in the Delaware Valley; decentralized county structures and kin-based settlement in the backcountry. These institutions shaped patterns of landholding, schooling, dispute resolution, and elite formation. Cultural traits could persist not because they were immutable, but because they were reinforced by institutional complementarities. Norms supportive of literacy were complemented by school systems; hierarchical social expectations were reinforced by plantation economies; traditions of local autonomy were embedded in decentralized political structures. Through intergenerational transmission, selective migration, marriage patterns, and institutional reproduction, regional cultures could remain stable even as economic circumstances changed.</p>
+
+        <p>In this framework, persistence operates through feedback between norms and institutions. Once a region is organized around particular church polities, schooling systems, inheritance rules, and elite recruitment patterns, these institutions reward behaviors consistent with prevailing norms and discourage deviations. Such complementarities can generate what <a class="pv-cite" href="#ref-arthur1989competing">Arthur (1989)</a> describes as path-dependent equilibria: early institutional-cultural configurations channel subsequent development along distinct trajectories. Regional divergence is therefore not merely an artifact of initial conditions but the outcome of self-reinforcing dynamics.</p>
+
+        <p>The thesis has testable implications. Communities founded by different settlement groups should display recognizable continuities in measurable behaviors generations later. If attitudes toward authority, trust, education, honor, and association are embedded in regional folkways, variation in civic organization, political mobilization, religious participation, violence, and everyday social practice should reflect these deep cultural baselines. Even if economic structures converge, cultural regions should remain legible in domains of family behavior, naming, and associational life.</p>
+
+        <p>There are complementary accounts in the literature. <a class="pv-cite" href="#ref-garreau1981">Garreau (1981)</a> argues that North America divides into nine coherent "nations" defined by shared economic interests, cultural attitudes, and political orientations, from the resource-extractive "Empty Quarter" of the interior West to the industrial "Foundry" of the Great Lakes and the agrarian-traditionalist "Dixie" of the Southeast. Although Garreau's regions are drawn from contemporary observation rather than historical settlement, their boundaries often align with Fischer's folkway zones, suggesting that the cultural imprints of early settlement remained visible in late-twentieth-century social and economic life.</p>
+
+        <p><a class="pv-cite" href="#ref-woodard2011">Woodard (2011)</a> extends this tradition, arguing that North America comprises a wider mosaic of enduring cultural regions extending beyond the four British folkways, incorporating French, Dutch, Spanish, and later settlement layers. <a class="pv-cite" href="#ref-zelinsky1970">Zelinsky (1970)</a> and <a class="pv-cite" href="#ref-zelinsky1992">Zelinsky (1992)</a> document persistent spatial patterns in naming, dialects, and religious adherence well into the twentieth century, suggesting that cultural geography can be empirically recovered from everyday behavior. Together, this literature implies that first-settler cultures may cast long shadows even amid migration, industrialization, and market integration. Cultural layers accumulate rather than disappear, producing nested regional identities.</p>
+
+        <p>At the same time, important critiques caution against cultural determinism (<a class="pv-cite" href="#ref-appleby1992liberalism">Appleby 1992</a>). Settlement was not random; migrants selected destinations compatible with their economic interests, religious commitments, and institutional preferences. Cultural traits may therefore reflect endogenous sorting as much as transplantation. A more fundamental objection is that observed regional differences may reflect geography and economics rather than culture per se.</p>
+
+        <p>The South is distinguished by climate, soil, and the plantation complex; the North by temperate agriculture and early industrialization. If naming patterns correlate with agricultural systems, urbanization, or labor market structure, clustering might recover economic regions rather than cultural ones. This concern cannot be fully resolved with naming data alone, but two features of our results bear on it: cluster boundaries do not align with state lines or the free-slave border (counties in free states cluster with the South when their settlement history warrants it), and the hierarchical structure of the clusters (New England distinct from the Mid-Atlantic, Appalachia from the Deep South) crosscuts simple economic geography. Moreover, culture co-evolved with material conditions. Plantation slavery in the South was not simply an inherited British folkway but a system that reshaped social hierarchy, law, and everyday norms over generations. Indigenous displacement, frontier violence, and federal land policy altered the institutional environment in which regional cultures developed. Later waves of immigration, from Ireland and Germany in the mid-nineteenth century to southern and eastern Europe in the late nineteenth and early twentieth centuries, introduced new religious traditions, naming practices, and associational forms that interacted with existing regional baselines. Regional development was therefore the product of cultural and institutional interactions rather than a simple transplantation of British origins.</p>
+
+        <p>These considerations suggest two competing but not mutually exclusive possibilities. One is that early-settler folkways established durable macro-regional baselines that structured subsequent adaptation, even as new groups and institutions layered onto them. Another is that structural transformation, emancipation, mass migration, and institutional convergence reshaped local norms sufficiently to attenuate colonial-era distinctions. The empirical question is not whether culture changes, but whether the spatial organization of cultural groups persists in ways that are consistent with early settlement.</p>
+
+        <p>Naming practices provide a tractable domain in which to test these claims. <a class="pv-cite" href="#ref-zelinsky1970">Zelinsky (1970)</a> documents systematic regional variation in first names in the eastern United States, and subsequent research shows that naming responds to cultural continuity and assimilation pressures (<a class="pv-cite" href="#ref-main1996">Main 1996</a>; <a class="pv-cite" href="#ref-smith1985">Smith 1985</a>; <a class="pv-cite" href="#ref-smith1994">Smith 1994</a>; <a class="pv-cite" href="#ref-abramitzky2020">Abramitzky et al. 2020</a>). Names are parent-chosen signals that encode religious affiliation, ethnic background, and familial traditions; they are consistently recorded in census data; and they can be aggregated at fine geographic scales. Because naming decisions occur within families yet reflect broader social influences, they provide a window into locally shared identities. If counties share common cultural baselines transmitted across generations, their naming distributions should align. Alternatively, if regional distinctions dissolved under the pressures of migration and modernization, naming patterns should converge.</p>
+
+        <p>Our empirical strategy builds on this insight. Using complete-count census data from 1850, 1880, and 1930 (<a class="pv-cite" href="#ref-ruggles2024ipums">Ruggles et al. 2024</a>), we construct county-level first-name distributions and cluster counties according to the similarity of their name shares. The Fischer thesis implies that recovered clusters should correspond, at least in broad outline, to historical settlement patterns and remain recognizable over time, even as their geographic footprint expands or contracts (<a class="pv-cite" href="#ref-fischer1989">Fischer 1989</a>; <a class="pv-cite" href="#ref-garreau1981">Garreau 1981</a>; <a class="pv-cite" href="#ref-zelinsky1970">Zelinsky 1970</a>; <a class="pv-cite" href="#ref-zelinsky1992">Zelinsky 1992</a>). If modernization instead produced convergence, regional clustering in naming practices should weaken across decades, and spatial boundaries should blur.</p>
+
+        <p>The clustering analysis therefore provides a test of cultural persistence. By examining whether spatially coherent naming regions emerge and remain stable despite structural transformation, emancipation, institutional convergence, and mass migration, we provide a window into whether the cultural groups defined by early settlement continued to shape the United States across subsequent generations.</p>
+
+      </div>
     </section>
 
-    <section id="guide" class="llm-section">
-      <h2>Navigation guide</h2>
-      <ul>
-        <li><strong>For the main argument:</strong> Read the Introduction and Conclusion for the framing around voluntary association, liberal institutions, and cultural persistence.</li>
-        <li><strong>For historical background:</strong> Section 2 (Forces of Convergence) documents the economic and institutional changes that should have homogenized culture. Section 3 (The Fischer Thesis) reviews the cultural explanation the paper tests.</li>
-        <li><strong>For the empirical methodology and results:</strong> Section 4 (Clustering Regional Cultures) contains the data description, clustering method, maps, and all formal tests of spatial coherence, temporal persistence, and bootstrap stability.</li>
-        <li><strong>Key figures:</strong> Figure 1 (two-cluster maps, 1850/1880/1930), Figure 2 (four-cluster maps), Figure 3 (seven-cluster maps).</li>
-      </ul>
+    <!-- ════════════════════════════════════════════ -->
+    <!-- CLUSTERING REGIONAL CULTURES                -->
+    <!-- ════════════════════════════════════════════ -->
+    <section id="clustering" class="pv-section">
+      <button class="pv-toggle" aria-expanded="false" aria-controls="clustering-body">
+        <span class="pv-toggle-icon">&#9654;</span> Clustering Regional Cultures
+      </button>
+      <div id="clustering-body" class="pv-body" hidden>
+
+        <p>To assess whether regional cultures are visible in naming practices, we employ a clustering approach that allows groupings to emerge from the data without imposing <em>ex ante</em> regional boundaries. Our objective is to recover county groups with similar first-name distributions and evaluate whether the resulting clusters correspond to historically meaningful cultural regions. If regional cultures structured everyday social life and voluntary association, they should leave detectable traces in the spatial distribution of names. At the same time, clustering does not presuppose which regions should exist; any spatial coherence that emerges is a property of the data rather than an artifact of predefined categories.</p>
+
+        <p>The data are drawn from complete-count census records (<a class="pv-cite" href="#ref-ruggles2024ipums">Ruggles et al. 2024</a>). After excluding counties where settlement was still frontier in character at the time of each census (<a class="pv-cite" href="#ref-bazzi2020frontier">Bazzi et al. 2020</a>), the sample includes 1,344 counties in 1850, 2,054 in 1880, and 3,100 in 1930, reflecting the westward expansion of settled territory. For each county, we observe the full distribution of white first names recorded in the census. The resulting name vectors are high-dimensional: 26,438 distinct forenames appear in 1850, 34,216 in 1880, and 41,594 in 1930. No minimum frequency threshold is imposed so that all recorded names enter the analysis.</p>
+
+        <p>To start, we construct <em>s<sub>ij</sub></em>, the share of first name <em>i</em> in county <em>j</em>. Using shares rather than counts normalizes for population differences and ensures that comparisons reflect compositional rather than scale differences. Each county is represented by a vector of name shares, <strong>s</strong><sub><em>j</em></sub> = (<em>s</em><sub>1<em>j</em></sub>, <em>s</em><sub>2<em>j</em></sub>, &hellip;, <em>s</em><sub><em>nj</em></sub>), where <em>n</em> denotes the number of distinct forenames observed in that census year. Cultural similarity is proxied by similarity in these distributions. Naming is not treated as a comprehensive measure of culture, but as an observable and consistently recorded domain in which locally shared identities are likely to manifest.</p>
+
+        <p>Following <a class="pv-cite" href="#ref-hoberg2016">Hoberg and Phillips (2016)</a>, we measure similarity using cosine similarity. After normalizing each vector to unit length, the cosine similarity between counties <em>j</em> and <em>j&prime;</em> is</p>
+
+        \[\cos \theta_{jj'} = \frac{\sum_{i=1}^n s_{ij}\, s_{ij'}}{\sqrt{\sum_{i=1}^n s_{ij}^2}\;\sqrt{\sum_{i=1}^n s_{ij'}^2}}.\]
+
+        <p>Cosine similarity emphasizes proportional resemblance rather than absolute magnitudes. Because it is a monotonic transformation of Euclidean distance for normalized vectors, clustering on cosine similarity is equivalent to clustering on Euclidean distance after normalization. This approach is well suited to high-dimensional compositional data in which relative frequencies carry the relevant information and in which differences in overall population size are not substantively meaningful.</p>
+
+        <p>We partition counties using agglomerative hierarchical clustering with Ward's minimum variance criterion (<a class="pv-cite" href="#ref-ward1963">Ward 1963</a>). The algorithm begins with each county as its own cluster and iteratively merges the pair that generates the smallest increase in within-cluster sum of squares. The resulting dendrogram provides a nested representation of similarity across counties. Intuitively, the procedure measures how alike two counties' naming patterns are, then groups the most similar counties together, building up from pairs to larger groupings. Because the algorithm receives no information about geography, any spatial coherence in the resulting clusters reflects underlying cultural similarity rather than mechanical smoothing. If clusters align along contiguous geographic lines, that alignment is evidence that naming practices were regionally distinctive. We discuss results for two, four, and seven clusters.<sup><a class="pv-fn-ref" href="#fn-5" id="fn-ref-5">5</a></sup></p>
+
+        <p>Our sample is restricted to white individuals. In 1850, we begin with counties in the settled core of the United States and expand westward in later decades as settlement spreads.<sup><a class="pv-fn-ref" href="#fn-6" id="fn-ref-6">6</a></sup> Restricting attention to established counties reduces distortions from frontier demographic imbalance, while focusing on whites mitigates the large compositional break introduced by emancipation and the post-Civil War enumeration of formerly enslaved individuals. This restriction allows clearer intertemporal comparison of naming patterns within a relatively stable population, though it necessarily abstracts from the profound cultural contributions of Black and Indigenous communities. Clustering is performed separately for each census year, allowing us to trace the evolution of regional cultural structure through slavery, emancipation, industrialization, westward expansion, and the age of mass migration.</p>
+
+        <p>This approach provides a direct test of competing hypotheses. If early settlement patterns established durable cultural baselines, geographically coherent clusters should be present by the middle of the nineteenth century and remain recognizable despite economic transformation and institutional convergence. If market integration, emancipation, internal migration, and mass immigration homogenized everyday practice, regional distinctions should weaken over time, cluster boundaries should blur, and spatial coherence should diminish. The clustering results can be evaluated against these predictions using formal tests of spatial coherence, temporal persistence, and cluster stability.</p>
+
+        <p>Clustering counties into two groups in 1850 reveals a striking and spatially contiguous division. As shown in <a href="#fig-twoclusters">Figure 1</a>, a broad cultural boundary separates New England and much of the northern tier from the South and parts of the lower Midwest. This spatial coherence is not an artifact of visual impression.<sup><a class="pv-fn-ref" href="#fn-7" id="fn-ref-7">7</a></sup> Beyond local adjacency, the clusters form large contiguous blocks: for two clusters in 1930, over 98 percent of each cluster's counties belong to a single connected component. Even in 1850, when county coverage is more limited, observed clusters contain fewer spatially disconnected fragments than would arise under random labeling. The geographic structure of naming patterns is not merely statistically detectable; it organizes the landscape into coherent cultural regions.</p>
+
+        <!-- ── Figure 1: Two clusters ── -->
+        <div class="pv-figure" id="fig-twoclusters">
+          <p class="pv-figure-caption">Figure 1. Two-cluster maps, 1850/1880/1930</p>
+          <div class="pv-figure-row">
+            <div class="pv-figure-panel">
+              <img src="figures/cluster_1850_k2.png" alt="Two-cluster map, 1850">
+              <div class="pv-figure-panel-label">1850</div>
+            </div>
+            <div class="pv-figure-panel">
+              <img src="figures/cluster_1880_k2.png" alt="Two-cluster map, 1880">
+              <div class="pv-figure-panel-label">1880</div>
+            </div>
+            <div class="pv-figure-panel">
+              <img src="figures/cluster_1930_k2.png" alt="Two-cluster map, 1930">
+              <div class="pv-figure-panel-label">1930</div>
+            </div>
+          </div>
+          <div class="pv-figure-notes"><em>Notes:</em> Counties are clustered into two groups in each census year using hierarchical agglomerative clustering with Ward's minimum-variance method applied to cosine-normalized first-name share vectors. Clustering is performed separately for each year. The sample includes white individuals. Colors indicate cluster membership and do not impose any geographic structure. Spatial contiguity reflects similarity in naming distributions rather than administrative boundaries.</div>
+        </div>
+
+        <p>Importantly, the 1850 boundary does not coincide mechanically with the free-slave political line. Counties in southern Ohio, Indiana, Illinois, and western Pennsylvania cluster with the South, despite being located in free states. These counties were heavily influenced by upland migration from the Appalachian backcountry, carrying evangelical religious traditions and kin-based social structures across formal state boundaries. Naming practices therefore appear to track settlement corridors and cultural transmission more closely than contemporaneous legal status.</p>
+
+        <p>The presence of a coherent regional division prior to the Civil War is noteworthy. It indicates that cultural structure was already spatially organized before the institutional rupture of emancipation and before the peak of industrialization and national market integration. In other words, the baseline cultural geography predates many of the forces typically associated with convergence. The North-South cleavage visible in naming distributions aligns broadly with historically recognized macro-regions, suggesting that first-settler patterns left measurable imprints on everyday social practice.</p>
+
+        <p>Extending the analysis to 1880 and 1930 reveals both persistence and asymmetry. The North-South cleavage sharpens and remains spatially coherent<sup><a class="pv-fn-ref" href="#fn-8" id="fn-ref-8">8</a></sup> despite emancipation, Reconstruction, rapid industrial growth, and substantial declines in transportation and communication costs. By 1880, counties across the Midwest and western frontier increasingly align with the northern cluster, while the Southeast and lower Mississippi Valley retain a coherent southern grouping. By 1930, most counties outside the South fall within a single northern bloc, whereas the South continues to exhibit a distinct naming regime. We measure this persistence formally by matching counties across census years and computing the fraction that retain the same cluster assignment, using optimal label alignment to account for arbitrary labeling differences across independently clustered years.<sup><a class="pv-fn-ref" href="#fn-9" id="fn-ref-9">9</a></sup></p>
+
+        <p>The persistence of a cluster in the South after emancipation is striking. The end of slavery transformed the legal and economic foundations of southern society. Yet the cultural boundary identified in 1850 remains visible decades later. Because our baseline sample focuses on whites, this persistence reflects continuity within the white population despite sweeping institutional change. Cultural characteristics embedded in churches, schools, and local networks appear to have adjusted more slowly than formal legal rules. Institutional convergence, in other words, did not immediately dissolve inherited regional baselines (see also <a class="pv-cite" href="#ref-ager2021intergenerational">Ager et al. 2021</a>).</p>
+
+        <p>The consolidation is asymmetric. Northern counties increasingly converge toward a relatively homogeneous naming regime by 1930, while the South retains visible internal differentiation, particularly across Appalachia, the Upper South, and the Deep South plantation belt. Upland counties shaped by Scots-Irish migration remain distinguishable from lowland plantation regions associated with Tidewater settlement patterns (<a class="pv-cite" href="#ref-fischer1989">Fischer 1989</a>). Appalachia, characterized historically by decentralized settlement and evangelical religious forms, appears distinct from the plantation-dominated Deep South, where hierarchical social structures were reinforced by slavery. The internal structure of the South thus remains legible in naming practices even as northern counties exhibit convergence.</p>
+
+        <p>This asymmetry aligns with differing historical trajectories. The North experienced rapid industrialization, dense urbanization, mass public schooling, and large inflows of European immigrants between 1880 and 1920. Northern cities drew migrants from multiple origins into shared labor markets, neighborhoods, and public institutions. Common schools socialized children of diverse backgrounds into uniform curricula; intermarriage across ethnic lines accelerated after the first generation; and nationally circulating media, standardized credentials, and intercity labor markets plausibly promoted cultural mixing, encouraging convergence across formerly distinct subregions.</p>
+
+        <p>By 1930, the naming distributions of counties in New England, the Mid-Atlantic, and the Upper Midwest had converged sufficiently to fall within a single broad cluster, despite the substantial ethnic heterogeneity of these areas. By contrast, the South's postbellum development remained more regionally segmented. Racial hierarchy structured social interaction across counties. Agriculture persisted as the dominant sector longer than in the North, maintaining the local kin-based networks that may have sustained distinctive naming traditions. Foreign immigration to the South was comparatively low, reducing the assimilative pressures that might have disrupted inherited naming patterns. The result was a region in which Appalachian, Upper South, and Deep South subcultures remained distinguishable from one another in ways that the northern subregions did not. Modernization did not operate symmetrically across regions.</p>
+
+        <p>The age of mass migration provides a particularly stringent test of cultural persistence. Between 1880 and 1920, millions of immigrants from southern and eastern Europe settled in northern cities. If immigration had fundamentally restructured local cultural baselines, one would expect fragmentation or reconfiguration of northern naming clusters by 1930. Instead, northern counties consolidate into a broadly coherent regional regime. This pattern is consistent with rapid assimilation into prevailing regional cultural groups or with the interpretation that clustering captures deeper structural similarities that persist even as ethnic composition changes. Cultural regions appear capable of absorbing new layers without losing their overall structure.</p>
+
+        <p>Counties in the trans-Mississippi West progressively align with the northern cluster. Although western counties appear more fragmented in 1850, reflecting frontier turnover and demographic imbalance, by 1880 and especially 1930 they largely integrate into the northern naming regime. Settlement corridors, railroad expansion, and federal land policy facilitated the transplantation of institutional forms and social networks from the Northeast and Midwest into the Great Plains and Pacific Coast. Migration from New England and the Mid-Atlantic into the Upper Midwest transmitted established naming practices westward (<a class="pv-cite" href="#ref-turner1893significance">Turner 1893</a>). Westward expansion thus appears to extend existing cultural regions geographically rather than generate an entirely new western regime. Cultural geography spreads through migration rather than dissolving at the frontier.</p>
+
+        <p>Allowing the number of clusters to increase reveals that the North-South divide constitutes the primary axis of variation in naming distributions. As the number of clusters rises, the initial partition remains intact and serves as the backbone for finer subregional distinctions. In <a href="#fig-fourclusters">Figure 2</a>, for four clusters, the North subdivides into broadly recognizable eastern and western components while the South separates along Upper South and Deep South lines.<sup><a class="pv-fn-ref" href="#fn-10" id="fn-ref-10">10</a></sup><sup><a class="pv-fn-ref" href="#fn-11" id="fn-ref-11">11</a></sup> From <a href="#fig-sevenclusters">Figure 3</a>, for seven clusters, New England, the Mid-Atlantic, and Appalachia emerge as distinct groupings nested within the earlier macro-regions. This hierarchical nesting, in which large regions subdivide along intuitive historical lines rather than fragmenting arbitrarily, is consistent with a model of cultural development in which broad settlement patterns establish macro-regional baselines that later differentiate into coherent subcultures (<a class="pv-cite" href="#ref-arthur1989competing">Arthur 1989</a>).</p>
+
+        <!-- ── Figure 2: Four clusters ── -->
+        <div class="pv-figure" id="fig-fourclusters">
+          <p class="pv-figure-caption">Figure 2. Four-cluster maps, 1850/1880/1930</p>
+          <div class="pv-figure-row">
+            <div class="pv-figure-panel">
+              <img src="figures/cluster_1850_k4.png" alt="Four-cluster map, 1850">
+              <div class="pv-figure-panel-label">1850</div>
+            </div>
+            <div class="pv-figure-panel">
+              <img src="figures/cluster_1880_k4.png" alt="Four-cluster map, 1880">
+              <div class="pv-figure-panel-label">1880</div>
+            </div>
+            <div class="pv-figure-panel">
+              <img src="figures/cluster_1930_k4.png" alt="Four-cluster map, 1930">
+              <div class="pv-figure-panel-label">1930</div>
+            </div>
+          </div>
+          <div class="pv-figure-notes"><em>Notes:</em> Counties are clustered into four groups in each census year using hierarchical agglomerative clustering with Ward's minimum-variance method applied to cosine-normalized first-name share vectors. Clustering is conducted separately by year. The sample includes white individuals. Colors indicate cluster membership and do not impose any geographic structure. Spatial contiguity reflects similarity in naming distributions rather than administrative boundaries.</div>
+        </div>
+
+        <p>At higher levels of disaggregation, the algorithm identifies persistent subregions whose boundaries are spatially contiguous and historically plausible (<a class="pv-cite" href="#ref-fischer1989">Fischer 1989</a>; <a class="pv-cite" href="#ref-garreau1981">Garreau 1981</a>). New England separates from the broader North in ways consistent with its early emphasis on congregational governance and literacy; the Mid-Atlantic reflects its pluralistic and commercial heritage; Appalachia exhibits patterns consistent with backcountry settlement and evangelical traditions; and the Deep South retains distinctive profiles associated with plantation society.<sup><a class="pv-fn-ref" href="#fn-12" id="fn-ref-12">12</a></sup></p>
+
+        <!-- ── Figure 3: Seven clusters ── -->
+        <div class="pv-figure" id="fig-sevenclusters">
+          <p class="pv-figure-caption">Figure 3. Seven-cluster maps, 1850/1880/1930</p>
+          <div class="pv-figure-row">
+            <div class="pv-figure-panel">
+              <img src="figures/cluster_1850_k7.png" alt="Seven-cluster map, 1850">
+              <div class="pv-figure-panel-label">1850</div>
+            </div>
+            <div class="pv-figure-panel">
+              <img src="figures/cluster_1880_k7.png" alt="Seven-cluster map, 1880">
+              <div class="pv-figure-panel-label">1880</div>
+            </div>
+            <div class="pv-figure-panel">
+              <img src="figures/cluster_1930_k7.png" alt="Seven-cluster map, 1930">
+              <div class="pv-figure-panel-label">1930</div>
+            </div>
+          </div>
+          <div class="pv-figure-notes"><em>Notes:</em> Counties are clustered into seven groups in each census year using hierarchical agglomerative clustering with Ward's minimum-variance method applied to cosine-normalized first-name share vectors. Clustering is conducted separately by year. The sample includes white individuals. Colors indicate cluster membership; the seven clusters reflect a higher level of disaggregation. Spatial coherence emerges from similarity in naming distributions rather than imposed geographic boundaries.</div>
+        </div>
+
+        <p>Matching cluster centroids across census years shows that the cultural signatures of major regions remain recognizable between 1850 and 1930, even as their geographic footprint evolves. For two clusters, 428 of 1,344 matched counties (32 percent) shift cluster membership between 1850 and 1880, but only 114 of 2,052 matched counties (6 percent) shift between 1880 and 1930. The declining rate of boundary movement is consistent with a cultural geography that consolidated over time rather than dissolving. Counties that do shift membership are disproportionately located along historically recognized borderlands: the Ohio Valley, Kentucky, Missouri, and parts of Maryland and West Virginia, where mixed settlement from both northern and southern migration streams made cultural boundaries fluid. These borderland counties exhibit lower silhouette scores than interior counties, indicating weaker attachment to either cluster, which is precisely what one would expect in zones of overlapping cultural influence. Borderlands function as areas of interaction, where competing groups coexist and adaptation is more likely. Cultural boundaries thus appear durable but permeable: they channel development without rendering change impossible.</p>
+
+        <p>These results indicate that regional cultures were legible in mid-nineteenth-century naming practices and remained detectable nearly a century later. Strong geographic structure is evident in 1850, prior to the Civil War and large-scale industrialization, and persists through emancipation, Reconstruction, mass immigration, and national market integration. Our formal tests confirm that the recovered clusters are spatially coherent, temporally persistent, and robust to resampling, while the hierarchical organization of the dendrogram yields historically interpretable subregions at multiple resolutions. The stability, spatial coherence, and hierarchical organization of the recovered clusters are consistent with a framework in which early settlement patterns established durable cultural baselines that continued to shape social identity and voluntary association across generations.</p>
+
+        <p>The results also provide a bridge to the broader question motivating this paper. If naming-based cultural regions are not only statistically recoverable but historically interpretable, they raise the question of whether cultural geography organizes variation in civic and institutional outcomes. Do counties embedded in distinct cultural regions differ systematically in associational density, political organization, or educational development? The clustering framework developed here provides the foundation for investigating these questions: having established that coherent, stable, and hierarchically organized cultural regions can be recovered from naming data, subsequent work can link these regions to measures of voluntary association and institutional life.</p>
+
+      </div>
     </section>
 
-  </main>
+    <!-- ════════════════════════════════════════════ -->
+    <!-- CONCLUSION                                  -->
+    <!-- ════════════════════════════════════════════ -->
+    <section id="conclusion" class="pv-section">
+      <button class="pv-toggle" aria-expanded="false" aria-controls="conclusion-body">
+        <span class="pv-toggle-icon">&#9654;</span> Conclusion
+      </button>
+      <div id="conclusion-body" class="pv-body" hidden>
 
+        <p>This paper provides evidence that regional cultures in the United States were both apparent in everyday social practice and persisted across generations. Using detailed data on first-name distributions and a clustering algorithm, we recover spatially coherent cultural regions as early as 1850. These regions align closely with historically recognized settlement patterns, remain prominent through 1930, and display a hierarchical internal structure consistent with layered cultural development. The temporal stability of their underlying name-share profiles indicates that cultural groups can endure even as economic and political institutions evolve.</p>
+
+        <p>The persistence of these cultural regions is not uniform. Northern counties converge into a relatively homogeneous cluster by the early twentieth century, likely reflecting industrialization, urbanization, mass schooling, and national media. The South, by contrast, retains internal differentiation rooted in distinct settlement histories and social organization. Counties in the trans-Mississippi West increasingly align with preexisting northern cultural groups, suggesting that migration replicated established naming conventions rather than generating entirely new regional identities. Modernization reshapes regional cultures but does not erase their spatial organization.</p>
+
+        <p>These findings speak to a broader debate in economic history and development about the durability of cultural traits. Markets, standardized institutions, and national communication networks are powerful forces for convergence. Yet the evidence here indicates that such forces did not fully homogenize everyday social practice. Instead, institutional convergence coexisted with persistent regional structure. The recovered clusters align broadly with cultural regions identified through independent methods, from <a class="pv-cite" href="#ref-fischer1989">Fischer's (1989)</a> colonial folkways to <a class="pv-cite" href="#ref-garreau1981">Garreau's (1981)</a> late-twentieth-century "nine nations" and <a class="pv-cite" href="#ref-woodard2011">Woodard's (2011)</a> eleven rival regional cultures, suggesting that naming-based clusters capture real and durable features of American cultural geography. The results are consistent with models of path dependence in which early settlement and institutional configurations shape long-run trajectories of social organization, voluntary association, and institutional adaptation.</p>
+
+        <p>These findings have implications for understanding changes in the twenty-first century. A defining feature of liberal and democratic societies is the coexistence of shared formal institutions with diverse local practices, what Tocqueville recognized as the interplay between national law and local association. The cultural regions we recover illustrate this coexistence concretely. Between 1850 and 1930, Americans adopted common constitutional rules, participated in national markets, and organized through standardized corporate and political forms. Yet underneath this institutional convergence, regionally distinctive patterns of everyday social practice persisted. The same legal framework supported different forms of community organization, religious observance, and civic life in New England and the Deep South. Shared rules did not produce shared culture. This finding is relevant to contemporary debates about whether liberal institutions require cultural homogeneity to function, or whether they can sustain, and even depend upon, cultural pluralism. The American experience suggests the latter: a voluntary society operated across deep cultural divisions, precisely because its institutional architecture accommodated regional variation.</p>
+
+        <p>At the same time, the asymmetry we document, northern convergence alongside persistent southern distinctiveness, raises questions about the conditions under which cultural pluralism becomes politically destabilizing. If regional cultures are durable enough to survive industrialization, mass migration, and institutional reform, they are also durable enough to sustain divergent political identities. The sectional tensions visible in antebellum naming patterns did not dissolve after the Civil War; they reorganized. The persistence of regional cultural structure may therefore illuminate not only the resilience of free societies but also their vulnerabilities, insofar as durable cultural divisions can be mobilized for political conflict as readily as for local self-governance.</p>
+
+        <p>The findings also suggest that cultural geography is a meaningful dimension of economic analysis. Regional differences in norms, identity, and social networks persist alongside formal institutional convergence, potentially influencing patterns of human capital accumulation, political behavior, and economic exchange. By demonstrating that cultural regions are empirically recoverable from naming practices, we provide one approach to integrating cultural persistence into the study of long-run development.</p>
+
+        <p>Our analysis leaves an opening for future work. Our focus on whites facilitates intertemporal comparison but necessarily abstracts from the central role of Black, Indigenous, and immigrant communities in shaping American cultural life. The exclusion is particularly consequential for a study framed around voluntary society: the most fundamental violation of voluntary association in American history was the enslavement of millions of Black Americans, and the cultural geography of the South cannot be fully understood without accounting for the interactions between white and Black naming traditions, religious practices, and community institutions. Black naming practices were themselves regionally structured, shaped by the conditions of enslavement, the influence of slaveholders' naming conventions, and the distinctive religious and kinship networks that developed within enslaved communities.</p>
+
+        <p>After emancipation, the naming choices of former slaves and their descendants often diverged sharply from white patterns, as families adopted surnames and given names that asserted autonomy and memorialized kin ties severed by slavery (<a class="pv-cite" href="#ref-gutman1976black">Gutman 1976</a>). Including Black populations in the clustering analysis would likely alter the recovered cultural geography of the South, potentially revealing a more complex pattern in which white and Black cultural regions overlap geographically but differ in internal structure. Whether inclusion would reinforce the North-South divide (because Black naming traditions in the South differed from both white northern and white southern patterns) or crosscut it (because Black naming practices shared features across the South regardless of subregional white variation) remains an open question.</p>
+
+        <p>Naming is, moreover, an observable proxy for cultural groups, not a complete measure of values or beliefs. County boundaries and demographic composition also evolve over time. Future work can build on this approach by incorporating additional populations, alternative cultural indicators, and finer measures of institutional outcomes. A particularly important avenue is to better understand the factors that link cultural clusters across time: because each year is clustered independently, identifying which forces cause a region's cultural profile to persist, converge, or diverge across decades remains an open empirical question. Linking cultural clustering more directly to educational attainment, associational density, political participation, and intergenerational mobility would further clarify the mechanisms through which early settlement patterns continue to shape economic and social outcomes.</p>
+
+        <p>Taken together, the evidence suggests that culture is neither epiphenomenal nor static. It evolves, adapts, and absorbs new influences, yet retains spatial structure that reflects historical origins. Understanding how such durable cultural geographies interact with markets, institutions, and the practice of self-governance remains central to explaining not only long-run patterns of American development but also the conditions under which free societies cohere.</p>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════ -->
+    <!-- FOOTNOTES                                   -->
+    <!-- ════════════════════════════════════════════ -->
+    <section id="footnotes" class="pv-section">
+      <button class="pv-toggle" aria-expanded="false" aria-controls="footnotes-body">
+        <span class="pv-toggle-icon">&#9654;</span> Footnotes
+      </button>
+      <div id="footnotes-body" class="pv-body" hidden>
+
+        <!-- Affiliations & acknowledgments preamble -->
+        <div class="pv-fn-preamble">
+          <p><sup>1</sup> Department of Economics, University of Colorado, Boulder. tjaworski@gmail.com</p>
+          <p><sup>2</sup> Smith Institute for Political Economy and Philosophy, Chapman University. ekimbrough@gmail.com</p>
+          <p><sup>3</sup> The authors thank the Kay Family Foundation for funding. We thank Allison Ma, Pranit Nanda, Manav Chakravarthy, Emma Kochenderfer, and Anna Pasnau for excellent research assistance. We have benefited from feedback from Derek Amlicke, Jonathan Hersh, Christopher Kitchens, Michael Makowsky, Steve Pittz, Mikhail Poyker, Tzachi Raz, Nicole Saito, Constantine Vassiliou, and participants at the 2018 meetings of the Association for the Study of Religion, Economics and Culture and the 2025 conference on Free Societies in Crisis at the University of Texas at Austin's School of Civic Leadership.</p>
+        </div>
+
+        <!-- Substantive footnotes 4–12 -->
+        <ol class="pv-fn-list" start="4">
+          <li id="fn-4">The contrast to the voluntary characteristics emphasized by Tocqueville is slavery and the freedoms of association, mobility, and contract denied to millions of people. Tocqueville himself recognized this tension, observing that slavery undermined the habits of industry, enterprise, and self-governance that characterized free society, and that the institution produced distinct social and economic patterns across the South that set it apart from the North. Recent work by <a class="pv-cite" href="#ref-bleakley2023">Bleakley and Rhode (2023)</a> examines Tocqueville's observations more formally, using population movements to reveal how slavery shaped institutional preferences and contributed to the durable divergence between Southern and Northern developmental paths. <a class="pv-fn-back" href="#fn-ref-4" title="Back to text">&uarr;</a></li>
+
+          <li id="fn-5">Silhouette analysis for between two and twenty clusters confirms that these values span the range of well-supported groupings. The silhouette score for each county measures how similar it is to its own cluster relative to the nearest alternative, ranging from &minus;1 for a poor fit to 1 for a strong fit; the mean across counties summarizes overall cluster quality. Mean silhouette scores are highest between two and four clusters across all three years (0.27&ndash;0.34), declining at higher numbers of clusters as finer partitions begin to split genuinely similar counties. Rather than identifying an optimal number of clusters, the silhouette profile supports interpreting the data at multiple resolutions, from a primary macro-regional divide to finer subregional distinctions. <a class="pv-fn-back" href="#fn-ref-5" title="Back to text">&uarr;</a></li>
+
+          <li id="fn-6">We define frontier counties using the 100-kilometer frontier boundary from <a class="pv-cite" href="#ref-bazzi2020frontier">Bazzi et al. (2020)</a>. Counties classified as within this frontier zone are excluded, and the remaining settled interior forms the analysis sample. This provides a systematic, county-level criterion for distinguishing established settlement from frontier areas, rather than relying on state-level exclusion decisions. Indian Territory is also excluded in 1880. By 1930, the frontier had closed; only Alaska and Hawaii are excluded. <a class="pv-fn-back" href="#fn-ref-6" title="Back to text">&uarr;</a></li>
+
+          <li id="fn-7">A permutation-based join count test, which compares the number of same-cluster neighboring county pairs to a null distribution generated by randomly reassigning cluster labels, rejects random spatial assignment at every year and cluster resolution we examine (<em>z</em>-scores ranging from 18 to over 146; <em>p</em>&lt;0.001 in all cases). <a class="pv-fn-back" href="#fn-ref-7" title="Back to text">&uarr;</a></li>
+
+          <li id="fn-8">The two-cluster partition yields consistent mean silhouette scores across all three years: 0.27 in 1850, 0.29 in 1880, and 0.34 in 1930. Bootstrap resampling confirms that the binary North-South divide is well-defined, with mean adjusted Rand indices of 0.55 in 1850, 0.82 in 1880, and 0.81 in 1930, indicating that the partition is substantially more stable in later years. <a class="pv-fn-back" href="#fn-ref-8" title="Back to text">&uarr;</a></li>
+
+          <li id="fn-9">For two clusters, 94 percent of counties retain the same assignment between 1880 and 1930, far exceeding the 50 percent expected under random reassignment (<em>z</em>=66, <em>p</em>&lt;0.001). Across the entire period we consider from 1850 to 1930, persistence remains significant at 67 percent (<em>z</em>=19, <em>p</em>&lt;0.001). Persistence is statistically significant across all year-pairs and the number of clusters we examine, though it declines at finer resolutions, where boundary counties are more likely to shift between adjacent subregions. <a class="pv-fn-back" href="#fn-ref-9" title="Back to text">&uarr;</a></li>
+
+          <li id="fn-10">To assign consistent colors across years, we match clusters using a hierarchical procedure that exploits the nested structure. Because cluster centroids are high-dimensional name-share vectors dominated by nationally common names, pairwise cosine similarities between clusters are compressed in a narrow range, making direct similarity-based matching unreliable. Instead, we first match the coarsest partition (two clusters) across years, then match finer partitions (four, seven clusters) subject to a penalty for assignments that violate this nesting. This procedure anchors finer matches to the well-identified coarse structure. Colors across years are therefore approximately but not perfectly aligned: the clustering itself identifies distinctive groups at each resolution, but linking those groups across independently clustered years remains inherently difficult when name distributions overlap substantially. <a class="pv-fn-back" href="#fn-ref-10" title="Back to text">&uarr;</a></li>
+
+          <li id="fn-11">In 1850, the most internally cohesive cluster (677 counties) achieves a mean silhouette score of 0.38, while the remaining clusters, which include borderland and transitional counties, score lower (&minus;0.02 to 0.30), consistent with the expectation that boundary regions are less sharply defined. By 1930, the four-cluster partition stabilizes: three of the four clusters achieve silhouette scores of 0.27 to 0.49 (with the fourth, a transitional grouping, scoring 0.10), and the Deep South cluster remains the most internally cohesive (0.49, 140 counties). <a class="pv-fn-back" href="#fn-ref-11" title="Back to text">&uarr;</a></li>
+
+          <li id="fn-12">Bootstrap resampling provides a check on the robustness of these groupings: resampling counties with replacement and re-clustering 500 times yields mean adjusted Rand indices of 0.50 to 0.63 at four and seven clusters, where the adjusted Rand index measures the agreement between two partitions on a scale from 0 (no better than random) to 1 (identical), indicating that the broad regional structure is consistently recoverable regardless of which particular counties are included. With eleven clusters, stability declines (mean adjusted Rand index 0.45 to 0.50), suggesting that the finest subregional distinctions are more sensitive to sample composition and should be interpreted with appropriate caution. <a class="pv-fn-back" href="#fn-ref-12" title="Back to text">&uarr;</a></li>
+        </ol>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════ -->
+    <!-- REFERENCES                                  -->
+    <!-- ════════════════════════════════════════════ -->
+    <section id="references" class="pv-section">
+      <button class="pv-toggle" aria-expanded="false" aria-controls="references-body">
+        <span class="pv-toggle-icon">&#9654;</span> References
+      </button>
+      <div id="references-body" class="pv-body" hidden>
+
+        <ul class="pv-ref-list">
+          <li id="ref-abbott1988system">Abbott, Andrew. 1988. <em>The System of Professions: An Essay on the Division of Expert Labor</em>. Chicago, IL: University of Chicago Press.</li>
+          <li id="ref-abramitzky2020">Abramitzky, Ran, Leah Boustan, and Katherine Eriksson. 2020. "Do Immigrants Assimilate More Slowly Today than in the Past?" <em>American Economic Review: Insights</em> 2 (1): 125&ndash;141.</li>
+          <li id="ref-acemoglu2019narrow">Acemoglu, Daron, and James A. Robinson. 2019. <em>The Narrow Corridor: States, Societies, and the Fate of Liberty</em>. New York: Penguin Press.</li>
+          <li id="ref-acemoglu2001colonial">Acemoglu, Daron, Simon Johnson, and James A. Robinson. 2001. "The Colonial Origins of Comparative Development: An Empirical Investigation." <em>American Economic Review</em> 91 (5): 1369&ndash;1401.</li>
+          <li id="ref-ager2021intergenerational">Ager, Philipp, Leah Platt Boustan, and Katherine Eriksson. 2021. "The Intergenerational Effects of a Large Wealth Shock: White Southerners after the Civil War." <em>American Economic Review</em> 111 (11): 3767&ndash;3794.</li>
+          <li id="ref-aldrich1995whyparties">Aldrich, John H. 1995. <em>Why Parties?: The Origin and Transformation of Political Parties in America</em>. Chicago, IL: University of Chicago Press.</li>
+          <li id="ref-alesina2015culture">Alesina, Alberto, and Paola Giuliano. 2015. "Culture and Institutions." <em>Journal of Economic Literature</em> 53 (4): 898&ndash;944.</li>
+          <li id="ref-appleby1992liberalism">Appleby, Joyce. 1992. <em>Liberalism and Republicanism in the Historical Imagination</em>. Cambridge, MA: Harvard University Press.</li>
+          <li id="ref-arthur1989competing">Arthur, W. Brian. 1989. "Competing Technologies, Increasing Returns, and Lock-In by Historical Events." <em>The Economic Journal</em> 99 (394): 116&ndash;131.</li>
+          <li id="ref-atack2013gis">Atack, Jeremy. 2013. "On the Use of Geographic Information Systems in Economic History: The American Transportation Revolution Revisited." <em>Journal of Economic History</em> 73 (2): 313&ndash;338.</li>
+          <li id="ref-bazzi2020frontier">Bazzi, Samuel, Martin Fiszbein, and Mesay Gebresilasse. 2020. "Frontier Culture: The Roots and Persistence of 'Rugged Individualism' in the United States." <em>Econometrica</em> 88 (6): 2329&ndash;2368.</li>
+          <li id="ref-beito2000mutual">Beito, David T. 2000. <em>From Mutual Aid to the Welfare State: Fraternal Societies and Social Services, 1890&ndash;1967</em>. Chapel Hill, NC: University of North Carolina Press.</li>
+          <li id="ref-bisin2011culture">Bisin, Alberto, and Thierry Verdier. 2011. "The Economics of Cultural Transmission and Socialization." In <em>Handbook of Social Economics</em>, vol. 1A, edited by Jess Benhabib, Alberto Bisin, and Matthew O. Jackson, 339&ndash;416. Elsevier.</li>
+          <li id="ref-bleakley2023">Bleakley, Hoyt, and Paul W. Rhode. 2023. "De Tocqueville, Population Movements, and Revealed Institutional Preferences." <em>Journal of Historical Political Economy</em> 3 (2): 179&ndash;210.</li>
+          <li id="ref-blevins2021paper">Blevins, Cameron. 2021. <em>Paper Trails: The US Post and the Making of the American West</em>. New York: Oxford University Press.</li>
+          <li id="ref-hsus">Carter, Susan B., Scott Sigmund Gartner, Michael R. Haines, Alan L. Olmstead, Richard Sutch, and Gavin Wright. 2006. <em>Historical Statistics of the United States: Earliest Times to the Present</em>. New York: Cambridge University Press.</li>
+          <li id="ref-clark1990social">Clark, Christopher. 1990. <em>The Roots of Rural Capitalism: Western Massachusetts, 1780&ndash;1860</em>. Ithaca, NY: Cornell University Press.</li>
+          <li id="ref-clemens1997peoples">Clemens, Elisabeth S. 1997. <em>The People's Lobby: Organizational Innovation and the Rise of Interest Group Politics in the United States, 1890&ndash;1925</em>. Chicago, IL: University of Chicago Press.</li>
+          <li id="ref-donaldson2016railroads">Donaldson, Dave, and Richard Hornbeck. 2016. "Railroads and American Economic Growth: A 'Market Access' Approach." <em>Quarterly Journal of Economics</em> 131 (2): 799&ndash;858.</li>
+          <li id="ref-fischer1989">Fischer, David Hackett. 1989. <em>Albion's Seed: Four British Folkways in America</em>. New York: Oxford University Press.</li>
+          <li id="ref-fishlow1965">Fishlow, Albert. 1965. <em>American Railroads and the Transformation of the Ante-Bellum Economy</em>. Cambridge, MA: Harvard University Press.</li>
+          <li id="ref-fogel1964">Fogel, Robert William. 1964. <em>Railroads and American Economic Growth: Essays in Econometric History</em>. Baltimore: Johns Hopkins University Press.</li>
+          <li id="ref-garreau1981">Garreau, Joel. 1981. <em>The Nine Nations of North America</em>. Boston: Houghton Mifflin.</li>
+          <li id="ref-goldin1998highschool">Goldin, Claudia. 1998. "America's Graduation from High School: The Evolution and Spread of Secondary Schooling in the Twentieth Century." <em>Journal of Economic History</em> 58 (2): 345&ndash;374.</li>
+          <li id="ref-goldin1982">Goldin, Claudia, and Kenneth Sokoloff. 1982. "Women, Children, and Industrialization in the Early Republic: Evidence from the Manufacturing Censuses." <em>Journal of Economic History</em> 42 (4): 741&ndash;774.</li>
+          <li id="ref-greif2006institutions">Greif, Avner. 2006. <em>Institutions and the Path to the Modern Economy: Lessons from Medieval Trade</em>. Cambridge: Cambridge University Press.</li>
+          <li id="ref-guiso2006culture">Guiso, Luigi, Paola Sapienza, and Luigi Zingales. 2006. "Does Culture Affect Economic Outcomes?" <em>Journal of Economic Perspectives</em> 20 (2): 23&ndash;48.</li>
+          <li id="ref-gutman1976black">Gutman, Herbert G. 1976. <em>The Black Family in Slavery and Freedom, 1750&ndash;1925</em>. New York: Pantheon Books.</li>
+          <li id="ref-henretta1978families">Henretta, James A. 1978. "Families and Farms: Mentalit&eacute; in Pre-Industrial America." <em>William and Mary Quarterly</em> 35 (1): 3&ndash;32.</li>
+          <li id="ref-hilt2008">Hilt, Eric. 2008. "When Did Ownership Separate from Control? Corporate Governance in the Early Nineteenth Century." <em>Journal of Economic History</em> 68 (3): 645&ndash;685.</li>
+          <li id="ref-hoberg2016">Hoberg, Gerard, and Gordon Phillips. 2016. "Text-Based Network Industries and Endogenous Product Differentiation." <em>Journal of Political Economy</em> 124 (5): 1423&ndash;1465.</li>
+          <li id="ref-howe2007">Howe, Daniel Walker. 2007. <em>What Hath God Wrought: The Transformation of America, 1815&ndash;1848</em>. New York: Oxford University Press.</li>
+          <li id="ref-john1995">John, Richard R. 1995. <em>Spreading the News: The American Postal System from Franklin to Morse</em>. Cambridge, MA: Harvard University Press.</li>
+          <li id="ref-kaestle1983">Kaestle, Carl F. 1983. <em>Pillars of the Republic: Common Schools and American Society, 1780&ndash;1860</em>. New York: Hill and Wang.</li>
+          <li id="ref-lamoreaux1994">Lamoreaux, Naomi R. 1994. <em>Insider Lending: Banks, Personal Connections, and Economic Development in Industrial New England</em>. Cambridge: Cambridge University Press.</li>
+          <li id="ref-lamoreaux2021">Lamoreaux, Naomi R., and John Joseph Wallis. 2021. "Economic Crisis, General Laws, and the Mid-Nineteenth-Century Transformation of American Political Economy." <em>Journal of the Early Republic</em> 41 (3): 403&ndash;433.</li>
+          <li id="ref-larson2009">Larson, John Lauritz. 2009. <em>The Market Revolution in America: Liberty, Ambition, and the Eclipse of the Common Good</em>. Cambridge: Cambridge University Press.</li>
+          <li id="ref-lieberson2000matter">Lieberson, Stanley. 2000. <em>A Matter of Taste: How Names, Fashions, and Culture Change</em>. New Haven, CT: Yale University Press.</li>
+          <li id="ref-main1996">Main, Gloria L. 1996. "Naming Children in Early New England." <em>Journal of Interdisciplinary History</em> 27 (1): 1&ndash;27.</li>
+          <li id="ref-north1990">North, Douglass C. 1990. <em>Institutions, Institutional Change and Economic Performance</em>. Cambridge: Cambridge University Press.</li>
+          <li id="ref-nunn2012culture">Nunn, Nathan. 2012. "Culture and the Historical Process." <em>Economic History of Developing Regions</em> 27 (S1): S108&ndash;S126.</li>
+          <li id="ref-putnam1993">Putnam, Robert D. 1993. <em>Making Democracy Work: Civic Traditions in Modern Italy</em>. Princeton, NJ: Princeton University Press.</li>
+          <li id="ref-putnam2000">Putnam, Robert D. 2000. <em>Bowling Alone: The Collapse and Revival of American Community</em>. New York: Simon &amp; Schuster.</li>
+          <li id="ref-rhode2021">Rhode, Paul. 2021. "North America: The Rise of US Technological and Economic Leadership." In <em>The Cambridge Economic History of the Modern World</em>, vol. 2, edited by Stephen Broadberry and Kyoji Fukao, 21&ndash;47. Cambridge: Cambridge University Press.</li>
+          <li id="ref-ruggles2024ipums">Ruggles, Steven, Matt A. Nelson, Matthew Sobek, Catherine A. Fitch, Ronald Goeken, J. David Hacker, Evan Roberts, and J. Robert Warren. 2024. <em>IPUMS Ancestry Full Count Restricted Data: Version 4.0R</em>. Minneapolis, MN: IPUMS.</li>
+          <li id="ref-sellers1991">Sellers, Charles. 1991. <em>The Market Revolution: Jacksonian America, 1815&ndash;1846</em>. New York: Oxford University Press.</li>
+          <li id="ref-skocpol2003">Skocpol, Theda. 2003. <em>Diminished Democracy: From Membership to Management in American Civic Life</em>. Norman, OK: University of Oklahoma Press.</li>
+          <li id="ref-smith1985">Smith, Daniel Scott. 1985. "Child-Naming Practices, Kinship Ties, and Change in Family Attitudes in Hingham, Massachusetts, 1641 to 1880." <em>Journal of Social History</em> 18 (4): 541&ndash;566.</li>
+          <li id="ref-smith1994">Smith, Daniel Scott. 1994. "Continuity and Discontinuity in Puritan Naming: Massachusetts, 1771." <em>William and Mary Quarterly</em> 51 (1): 67&ndash;91.</li>
+          <li id="ref-sylla1969">Sylla, Richard. 1969. "Federal Policy, Banking Market Structure, and Capital Mobilization in the United States, 1863&ndash;1913." <em>Journal of Economic History</em> 29 (4): 657&ndash;686.</li>
+          <li id="ref-tabellini2010culture">Tabellini, Guido. 2010. "Culture and Institutions: Economic Development in the Regions of Europe." <em>Journal of the European Economic Association</em> 8 (4): 677&ndash;716.</li>
+          <li id="ref-tocqueville2004">Tocqueville, Alexis de. 2004. <em>Democracy in America</em>. Translated by Arthur Goldhammer. Edited by Olivier Zunz. New York: Library of America.</li>
+          <li id="ref-turner1893significance">Turner, Frederick Jackson. 1893. "The Significance of the Frontier in American History." <em>Annual Report of the American Historical Association</em>, 197&ndash;227.</li>
+          <li id="ref-tyack1974onebest">Tyack, David B. 1974. <em>The One Best System: A History of American Urban Education</em>. Cambridge, MA: Harvard University Press.</li>
+          <li id="ref-ward1963">Ward, Joe H. 1963. "Hierarchical Grouping to Optimize an Objective Function." <em>Journal of the American Statistical Association</em> 58 (301): 236&ndash;244.</li>
+          <li id="ref-watkins1994personal">Watkins, Susan Cotts, and Andrew S. London. 1994. "Personal Names and Cultural Change: A Study of the Naming Patterns of Italians and Jews in the United States in 1910." <em>Social Science History</em> 18 (2): 169&ndash;209.</li>
+          <li id="ref-white2017republic">White, Richard. 2017. <em>The Republic for Which It Stands: The United States during Reconstruction and the Gilded Age, 1865&ndash;1896</em>. New York: Oxford University Press.</li>
+          <li id="ref-wilentz2005rise">Wilentz, Sean. 2005. <em>The Rise of American Democracy: Jefferson to Lincoln</em>. New York: W. W. Norton.</li>
+          <li id="ref-wood2009empire">Wood, Gordon S. 2009. <em>Empire of Liberty: A History of the Early Republic, 1789&ndash;1815</em>. New York: Oxford University Press.</li>
+          <li id="ref-zelinsky1970">Zelinsky, Wilbur. 1970. "Cultural Variation in Personal Name Patterns in the Eastern United States." <em>Annals of the Association of American Geographers</em> 60 (4): 743&ndash;769.</li>
+          <li id="ref-zelinsky1992">Zelinsky, Wilbur. 1992. <em>The Cultural Geography of the United States</em>. Englewood Cliffs, NJ: Prentice Hall.</li>
+        </ul>
+
+      </div>
+    </section>
+
+  </main><!-- .pv-content -->
+
+</div><!-- .pv-page -->
+
+<!-- Lightbox overlay -->
+<div class="pv-lightbox" id="pv-lightbox" aria-hidden="true">
+  <button class="pv-lightbox-close" aria-label="Close">&times;</button>
+  <img src="" alt="">
 </div>
 
-<style>
-  .llm-page {
-    display: flex;
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 30px 20px 40px;
-    gap: 36px;
+<!-- MathJax -->
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['$','$']], displayMath: [['\\[','\\]']] },
+    options: { skipHtmlTags: ['script','noscript','style','textarea'] }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>
+
+<!-- Interactive JS -->
+<script>
+(function() {
+  'use strict';
+
+  // ── Section toggle ──────────────────────────────
+  document.querySelectorAll('.pv-toggle').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      var expanded = btn.getAttribute('aria-expanded') === 'true';
+      toggleSection(btn, !expanded);
+    });
+  });
+
+  function toggleSection(btn, open) {
+    var bodyId = btn.getAttribute('aria-controls');
+    var body = document.getElementById(bodyId);
+    if (!body) return;
+    btn.setAttribute('aria-expanded', open);
+    var icon = btn.querySelector('.pv-toggle-icon');
+    if (icon) icon.innerHTML = open ? '&#9660;' : '&#9654;';
+    if (open) {
+      body.removeAttribute('hidden');
+    } else {
+      body.setAttribute('hidden', '');
+    }
   }
 
-  /* ── Sidebar ── */
-  .llm-sidebar {
-    position: sticky;
-    top: 76px;
-    align-self: flex-start;
-    width: 150px;
-    flex-shrink: 0;
-  }
-  .llm-sidebar nav {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-  .llm-sidebar nav a {
-    font-family: 'Oswald', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 0.3px;
-    color: #555;
-    text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    transition: background 0.15s, color 0.15s;
-  }
-  .llm-sidebar nav a:hover {
-    background: #f0ece6;
-    color: #1a4a8a;
-    text-decoration: none;
-  }
-  .llm-sidebar-files {
-    margin-top: 20px;
-    padding-top: 14px;
-    border-top: 1px solid #ddd;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-  .llm-sidebar-files a {
-    font-family: 'Source Serif 4', serif;
-    font-size: 13px;
-    color: #1a4a8a;
-    text-decoration: none;
-    padding: 4px 10px;
-    border-radius: 4px;
-    transition: background 0.15s;
-  }
-  .llm-sidebar-files a:hover {
-    background: #f0ece6;
-    text-decoration: none;
+  // ── TOC click-to-expand & scroll ────────────────
+  document.querySelectorAll('.pv-toc-link').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      var targetId = link.getAttribute('href').slice(1);
+      var section = document.getElementById(targetId);
+      if (!section) return;
+
+      // Expand if collapsed
+      var btn = section.querySelector('.pv-toggle');
+      if (btn && btn.getAttribute('aria-expanded') !== 'true') {
+        toggleSection(btn, true);
+      }
+
+      // Smooth scroll
+      setTimeout(function() {
+        section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }, 50);
+    });
+  });
+
+  // ── Footnote links: expand Footnotes section ────
+  document.querySelectorAll('.pv-fn-ref').forEach(function(link) {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      var fnSection = document.getElementById('footnotes');
+      if (fnSection) {
+        var btn = fnSection.querySelector('.pv-toggle');
+        if (btn && btn.getAttribute('aria-expanded') !== 'true') {
+          toggleSection(btn, true);
+        }
+      }
+      var targetId = link.getAttribute('href').slice(1);
+      var target = document.getElementById(targetId);
+      if (target) {
+        setTimeout(function() {
+          target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 100);
+      }
+    });
+  });
+
+  // ── Citation links: expand References section ───
+  document.querySelectorAll('.pv-cite').forEach(function(link) {
+    var href = link.getAttribute('href');
+    if (href && href.startsWith('#ref-')) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        var refSection = document.getElementById('references');
+        if (refSection) {
+          var btn = refSection.querySelector('.pv-toggle');
+          if (btn && btn.getAttribute('aria-expanded') !== 'true') {
+            toggleSection(btn, true);
+          }
+        }
+        var targetId = href.slice(1);
+        var target = document.getElementById(targetId);
+        if (target) {
+          setTimeout(function() {
+            target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          }, 100);
+        }
+      });
+    }
+  });
+
+  // ── IntersectionObserver: TOC active state ──────
+  var tocLinks = document.querySelectorAll('.pv-toc-link');
+  var sections = [];
+  tocLinks.forEach(function(link) {
+    var id = link.getAttribute('href').slice(1);
+    var el = document.getElementById(id);
+    if (el) sections.push({ id: id, el: el, link: link });
+  });
+
+  if ('IntersectionObserver' in window && sections.length) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        var match = sections.find(function(s) { return s.el === entry.target; });
+        if (match) {
+          match.visible = entry.isIntersecting;
+        }
+      });
+      // Activate the first visible section
+      var active = sections.find(function(s) { return s.visible; });
+      if (active) {
+        tocLinks.forEach(function(l) { l.classList.remove('pv-toc-active'); });
+        active.link.classList.add('pv-toc-active');
+      }
+    }, {
+      rootMargin: '-20% 0px -60% 0px',
+      threshold: 0
+    });
+
+    sections.forEach(function(s) { observer.observe(s.el); });
   }
 
-  /* ── Content ── */
-  .llm-content {
-    flex: 1;
-    min-width: 0;
-  }
-  .llm-content h1 {
-    font-family: 'Source Serif 4', serif;
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 1.3;
-    color: #272f38;
-    margin: 0 0 8px 0;
-  }
-  .llm-authors {
-    font-size: 14px;
-    color: #555;
-    text-align: left;
-    margin: 0 0 28px 0;
-    line-height: 1.5;
+  // ── Lightbox ────────────────────────────────────
+  var lightbox = document.getElementById('pv-lightbox');
+  var lightboxImg = lightbox ? lightbox.querySelector('img') : null;
+
+  document.querySelectorAll('.pv-figure-panel img').forEach(function(img) {
+    img.addEventListener('click', function() {
+      if (lightbox && lightboxImg) {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.add('pv-lightbox-open');
+        lightbox.setAttribute('aria-hidden', 'false');
+      }
+    });
+  });
+
+  if (lightbox) {
+    lightbox.addEventListener('click', closeLightbox);
+    var closeBtn = lightbox.querySelector('.pv-lightbox-close');
+    if (closeBtn) closeBtn.addEventListener('click', closeLightbox);
   }
 
-  /* ── Sections ── */
-  .llm-section {
-    margin-bottom: 30px;
-  }
-  .llm-section h2 {
-    font-family: 'Oswald', sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: #272f38;
-    margin: 0 0 10px 0;
-    padding-bottom: 5px;
-    border-bottom: 1px solid #ddd;
-  }
-  .llm-section h3 {
-    font-family: 'Source Serif 4', serif;
-    font-size: 15px;
-    font-weight: 600;
-    color: #272f38;
-    margin: 16px 0 4px 0;
-  }
-  .llm-section p {
-    text-align: left;
-    font-size: 15px;
-    line-height: 1.6;
-  }
-  .llm-section ul, .llm-section ol {
-    padding-left: 22px;
-    margin: 0 0 8px 0;
-  }
-  .llm-section li {
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 6px;
-    text-align: left;
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') closeLightbox();
+  });
+
+  function closeLightbox() {
+    if (lightbox) {
+      lightbox.classList.remove('pv-lightbox-open');
+      lightbox.setAttribute('aria-hidden', 'true');
+    }
   }
 
-  /* ── Mobile ── */
-  @media (max-width: 768px) {
-    .llm-page {
-      flex-direction: column;
-      gap: 0;
-      padding-top: 16px;
-    }
-    .llm-sidebar {
-      position: static;
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 4px 0;
-      margin-bottom: 20px;
-      padding-bottom: 14px;
-      border-bottom: 1px solid #ddd;
-    }
-    .llm-sidebar nav {
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 0;
-    }
-    .llm-sidebar nav a {
-      padding: 4px 8px;
-      font-size: 13px;
-    }
-    .llm-sidebar-files {
-      margin-top: 0;
-      padding-top: 0;
-      border-top: none;
-      flex-direction: row;
-      gap: 0;
-      margin-left: auto;
-    }
-    .llm-sidebar-files a {
-      padding: 4px 8px;
-    }
-  }
-</style>
+})();
+</script>
