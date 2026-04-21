@@ -214,7 +214,8 @@
 
 /* ── Figures ────────────────────────────────────── */
 .pv-figure {
-  margin: 24px 0;
+  margin: 24px 0 24px -22px;   /* break out of .pv-body left padding */
+  width: calc(100% + 22px);    /* reclaim full content column width  */
 }
 
 .pv-figure-caption {
@@ -229,18 +230,20 @@
 .pv-figure-row {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 8px;
+  gap: 6px;
   margin-bottom: 6px;
 }
 
 .pv-figure-panel {
   text-align: center;
   cursor: pointer;
+  overflow: hidden;
 }
 
 .pv-figure-panel img {
   width: 100%;
   height: auto;
+  display: block;
   border: 1px solid #ddd;
   border-radius: 2px;
   transition: box-shadow 0.15s;
@@ -448,6 +451,11 @@
 
   .pv-body {
     padding-left: 0;
+  }
+
+  .pv-figure {
+    margin-left: 0;
+    width: 100%;
   }
 
   .pv-figure-row {
