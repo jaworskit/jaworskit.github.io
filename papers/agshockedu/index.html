@@ -1,259 +1,622 @@
 ---
 title: "Skill Formation, Child Labor, and the WWI Agricultural Boom"
-description: "An LLM-readable orientation file for Jaworski, Kitchens, and Rodgers."
+description: "Interactive paper viewer for Jaworski, Kitchens, and Rodgers."
+extra_css: /css/paper-viewer.css
+extra_js: /js/paper-viewer.js
 ---
 
-<div class="llm-page">
+<div class="pv-page">
 
-  <aside class="llm-sidebar">
-    <nav>
-      <a href="#about">About</a>
-      <a href="#context">Context</a>
-      <a href="#data">Data &amp; Methods</a>
-      <a href="#results">Results</a>
-      <a href="#guide">Navigation Guide</a>
+  <!-- ── Sidebar TOC ──────────────────────────────── -->
+  <aside class="pv-sidebar">
+    <nav class="pv-toc">
+      <a href="#quick-read" class="pv-toc-link pv-toc-active">Quick Read</a>
+      <a href="#introduction" class="pv-toc-link">Introduction</a>
+      <a href="#theory" class="pv-toc-link">Human Capital Model</a>
+      <a href="#background" class="pv-toc-link">WWI Ag Boom</a>
+      <a href="#data" class="pv-toc-link">Data</a>
+      <a href="#empirics" class="pv-toc-link">Empirical Analysis</a>
+      <a href="#conclusion" class="pv-toc-link">Conclusion</a>
+      <a href="#footnotes" class="pv-toc-link">Footnotes</a>
+      <a href="#references" class="pv-toc-link">References</a>
     </nav>
-    <div class="llm-sidebar-files">
-      <a href="llms.txt">Machine-readable</a>
-      <a href="paper.md">Markdown version</a>
+    <div class="pv-sidebar-files">
+      <a href="paper.md">Markdown</a>
+      <a href="llms.txt">llms.txt</a>
     </div>
   </aside>
 
-  <main class="llm-content">
+  <!-- ── Main content ─────────────────────────────── -->
+  <main class="pv-content">
 
-    <h1>Skill Formation, Child Labor, and the Schooling Consequences of the World War I Agricultural Boom</h1>
-
-    <p class="llm-authors">
-      Taylor Jaworski (University of Colorado Boulder and NBER)<br>
-      Carl T. Kitchens (Florida State University and NBER)<br>
-      Luke P. Rodgers (Florida State University)
-    </p>
-
-    <section id="about" class="llm-section">
-      <h2>What is this paper about?</h2>
-      <p>
-        This paper studies how the commodity price boom during World War I affected human capital accumulation in the United States. The central contribution is identifying two channels through which the boom reduced completed schooling: (1) an opportunity cost channel, where higher farm wages pulled teenagers out of school, and (2) a dynamic complementarity channel, where the interaction between early childhood resources and local child labor intensity determined whether younger children gained or lost schooling. The paper shows that the negative aggregate effect on younger children is driven entirely by child labor intensity, not by the resource shock.
+    <!-- Header -->
+    <header class="pv-header">
+      <h1>Skill Formation, Child Labor, and the Schooling Consequences of the World War I Agricultural Boom</h1>
+      <p class="pv-authors">
+        Taylor Jaworski (University of Colorado Boulder and NBER)<br>
+        Carl T. Kitchens (Florida State University and NBER)<br>
+        Luke P. Rodgers (Florida State University)
       </p>
+    </header>
+
+    <div class="pv-expand-bar">
+      <button id="pv-expand-all" class="pv-expand-btn">Expand all sections</button>
+    </div>
+
+    <!-- ════════════════════════════════════════════ -->
+    <!-- QUICK READ (expanded by default)            -->
+    <!-- ════════════════════════════════════════════ -->
+    <section id="quick-read" class="pv-section">
+      <button class="pv-toggle" aria-expanded="true" aria-controls="quick-read-body">
+        <span class="pv-toggle-icon">&#9660;</span> Quick Read
+      </button>
+      <div id="quick-read-body" class="pv-body pv-quick-read">
+
+        <p>This paper studies how the World War I agricultural commodity price boom affected human capital accumulation in the United States. The boom generated large, temporary increases in crop revenues, with the largest gains concentrated in the cotton and tobacco South. The paper identifies two channels through which the boom reduced completed schooling: (1) an opportunity cost channel, where higher farm wages pulled teenagers out of school, and (2) a dynamic complementarity channel, where the interaction between early childhood resources and local child labor intensity determined whether younger children gained or lost schooling.</p>
+
+        <h3>Key findings</h3>
+        <ol>
+          <li>At the peak of the boom (1919), enrollment and average daily attendance fell sharply, reversing several years of growth associated with the high school movement.</li>
+          <li>Greater exposure during teenage years (ages 11 to 14) reduced completed schooling by 0.27 to 0.47 years, with effects concentrated at the high school margin and larger for Black men.</li>
+          <li>For children exposed during early childhood (ages 0 to 4), the net effect depends on local child labor intensity. Once child labor is accounted for, the direct effect on boys' schooling is approximately zero; the negative overall effect is driven by high child labor counties.</li>
+          <li>For girls, the direct effect of early exposure is weakly positive, consistent with lower opportunity costs in agricultural labor markets.</li>
+        </ol>
+
+        <h3>Data and methods</h3>
+        <ul>
+          <li>County-level crop revenue index combining pre-WWI output shares (1910 Census of Agriculture) with annual international commodity prices</li>
+          <li>Newly constructed county-level panel of enrollment and average daily attendance for 26 states, 1910 to 1930</li>
+          <li>Individual-level linked census data (1910/1920 to 1940) via Census Tree</li>
+          <li>Difference-in-differences exploiting variation in exposure across counties and birth cohorts</li>
+        </ul>
+
+      </div>
     </section>
 
-    <section id="context" class="llm-section">
-      <h2>Important context</h2>
-      <ul>
-        <li>The paper contributes to the literature on skill formation and dynamic complementarities (Cunha and Heckman 2007, Heckman 2007), extending these models to a historical agricultural setting where child labor mediates the effect of income shocks.</li>
-        <li>It is distinct from papers that study commodity booms and schooling in developing countries (e.g., Bau 2020 on India). The US setting features a well-developed school system during the early high school movement, so the tradeoff is between attending high school (not just primary school) and farm work.</li>
-        <li>The paper builds a new county-level panel of school enrollment and average daily attendance for 26 states, 1910 to 1930, drawn from state board of education reports. This dataset did not previously exist.</li>
-        <li>Linked census data come from the Census Tree and the Census Linking Project, connecting children observed in 1910 or 1920 to 1940 outcomes. Results are robust across linking methods.</li>
-        <li>The crop revenue index holds crop acreage fixed at 1910 shares and varies only prices, isolating price exposure from endogenous planting decisions. An IV strategy using crop suitability provides additional identification.</li>
-      </ul>
+    <!-- ════════════════════════════════════════════ -->
+    <!-- INTRODUCTION                                -->
+    <!-- ════════════════════════════════════════════ -->
+    <section id="introduction" class="pv-section">
+      <button class="pv-toggle" aria-expanded="false" aria-controls="introduction-body">
+        <span class="pv-toggle-icon">&#9654;</span> Introduction
+      </button>
+      <div id="introduction-body" class="pv-body" hidden>
+
+        <p>Changes in local labor market conditions alter both the opportunity cost of schooling and the resources available for early-life investment, making the net effect on human capital theoretically ambiguous. A large literature documents the link between economic conditions and educational attainment: exposure to better employment opportunities tends to reduce schooling for students at the margin between completing an additional year of education and entering the labor force in the context of industry growth (<a class="pv-cite" href="#ref-charles2015housing">Charles et al. 2015</a>; <a class="pv-cite" href="#ref-atkin2016endogenous">Atkin 2016</a>), natural resource booms (<a class="pv-cite" href="#ref-black2005tight">Black et al. 2005</a>; <a class="pv-cite" href="#ref-emery2012long">Emery et al. 2012</a>; <a class="pv-cite" href="#ref-cascio2022needs">Cascio and Narayan 2022</a>; <a class="pv-cite" href="#ref-kovalenko2023natural">Kovalenko 2023</a>), and manpower shortages (<a class="pv-cite" href="#ref-jaworski2014you">Jaworski 2014</a>).<sup><a class="pv-fn-ref" href="#fn-1" id="fn-ref-1">1</a></sup></p>
+
+        <p>Yet improved labor market conditions also increase parental wages and household resources, potentially raising early-life investments (<a class="pv-cite" href="#ref-shah2017drought">Shah and Steinberg 2017</a>; <a class="pv-cite" href="#ref-shah2021workfare">Shah and Steinberg 2021</a>). In the presence of dynamic complementarities in skill formation, early investments increase the returns to subsequent educational inputs (<a class="pv-cite" href="#ref-cunha2007technology">Cunha and Heckman 2007</a>; <a class="pv-cite" href="#ref-heckman2007economics">Heckman 2007</a>; <a class="pv-cite" href="#ref-caucutt2020early">Caucutt and Lochner 2020</a>; <a class="pv-cite" href="#ref-johnson2019reducing">Johnson and Jackson 2019</a>). Where child labor is prevalent, however, early investments that raise a child's productivity may increase the marginal return to work and ultimately reduce lifetime schooling (<a class="pv-cite" href="#ref-edmonds2005child">Edmonds and Pavcnik 2005</a>; <a class="pv-cite" href="#ref-bau2020human">Bau et al. 2020</a>; <a class="pv-cite" href="#ref-malpede2025dark">Malpede 2025</a>). Which mechanism dominates depends on the child's age and productivity, and the structure of local labor markets. We exploit the large agricultural commodity boom triggered by World War I to trace how labor market shocks at different points in childhood shaped human capital accumulation over the subsequent three decades.</p>
+
+        <p>The agricultural boom of the 1910s was driven by global disruptions to production and trade caused by World War I. At the 1919 peak, cotton prices were 300 percent above their prewar average and farm wages had more than doubled. Regions differed in their exposure depending on prewar crop specialization and agro-climatic conditions. Following <a class="pv-cite" href="#ref-jaremski2020banking">Jaremski and Wheelock (2020)</a>, <a class="pv-cite" href="#ref-kitchens2023impact">Kitchens and Rodgers (2023)</a>, and <a class="pv-cite" href="#ref-rajan2015anatomy">Rajan and Ramcharan (2015)</a>, we construct a county-level index of crop revenue that combines pre-World War I output shares from the 1910 Census of Agriculture (<a class="pv-cite" href="#ref-hainesAg">Haines et al. 2018</a>) with annual international commodity prices (<a class="pv-cite" href="#ref-carterHSUS">Carter et al. 2006</a>). Because quantities are fixed at prewar levels, the index captures variation in local revenue driven by global price movements rather than endogenous changes in local production.</p>
+
+        <p>We first document the short-run effects of the boom on schooling. To do this, we construct new county-level data on enrollment and average daily attendance for more than 20 states between 1910 and 1930, building on recent work documenting access to schooling in this period (<a class="pv-cite" href="#ref-carruthers2017separate">Carruthers and Wanamaker 2017</a>; <a class="pv-cite" href="#ref-card2022intergenerational">Card et al. 2022</a>). At the peak of the boom in 1919 and 1920, enrollment and average daily attendance reversed several years of growth associated with the high school movement.</p>
+
+        <p>We then examine long-run human capital outcomes using linked census data between 1910 and 1940 (<a class="pv-cite" href="#ref-price2021combining">Price et al. 2021</a>). For older children residing on farms in 1910 (with exposure averaged over ages 11 to 14), a doubling of the crop revenue index reduced completed schooling by 0.40 years for white men, 0.47 years for Black men, 0.27 years for white women, and 0.32 years for Black women, with effects concentrated in high school. For children aged 0 to 4 at exposure, the net effect of increased household resources on completed schooling depends on local child labor intensity. In 1910, child labor participation was substantial: approximately 18 percent of 10 to 14 year-olds reported a gainful occupation nationally, with shares considerably higher in agricultural counties. For boys, the direct effect of higher parental resources on completed schooling is statistically indistinguishable from zero once we account for child labor intensity, and the negative overall effect is driven by counties with high child labor. For girls, the direct effect is weakly positive and less sensitive to local child labor demand, consistent with lower opportunity costs for girls in agricultural labor markets.</p>
+
+        <p>Taken together, our estimates are consistent with a model in which higher wages raise the opportunity cost of schooling for older children, while for younger children, the interaction between increased household resources and child labor intensity determines whether early-life resource gains translate into higher completed schooling (<a class="pv-cite" href="#ref-shah2017drought">Shah and Steinberg 2017</a>; <a class="pv-cite" href="#ref-bau2020human">Bau et al. 2020</a>).<sup><a class="pv-fn-ref" href="#fn-2" id="fn-ref-2">2</a></sup> Even temporary labor demand expansions during periods of structural change can permanently reshape the distribution of human capital across cohorts and regions.</p>
+
+        <p>Our paper makes four contributions. First, we provide new evidence on the effects of local labor demand shocks on human capital accumulation during a period of rapid structural transformation (<a class="pv-cite" href="#ref-goldin1998america">Goldin 1998</a>; <a class="pv-cite" href="#ref-goldin1999egalitarianism">Goldin 1999</a>; <a class="pv-cite" href="#ref-fiszbein2022agricultural">Fiszbein 2022</a>). The agricultural setting connects our work to research linking shocks to Southern agriculture with educational attainment (<a class="pv-cite" href="#ref-baker2015field">Baker 2015</a>; <a class="pv-cite" href="#ref-baker2020long">Baker et al. 2020</a>). The heterogeneity in our estimates, with larger responses for Black men and women, highlights how differences in opportunity costs and labor market access shaped long-run educational attainment.</p>
+
+        <p>Second, we contribute to the development economics literature on agricultural shocks and child labor (<a class="pv-cite" href="#ref-bau2020human">Bau et al. 2020</a>; <a class="pv-cite" href="#ref-beegle2006child">Beegle et al. 2006</a>; <a class="pv-cite" href="#ref-kruger2007coffee">Kruger 2007</a>; <a class="pv-cite" href="#ref-duryea2007effects">Duryea et al. 2007</a>). While prior work focuses primarily on contemporaneous schooling and labor supply responses, we link early-life exposure to completed educational attainment decades later. In the spirit of <a class="pv-cite" href="#ref-bau2020human">Bau et al. (2020)</a>, our results provide evidence that local child labor intensity can attenuate or reverse the gains from additional household resources.</p>
+
+        <p>Third, we extend the literature on the domestic consequences of the world wars. Prior work has examined marriage and fertility (<a class="pv-cite" href="#ref-abramitzky2011marrying">Abramitzky et al. 2011</a>; <a class="pv-cite" href="#ref-vandenbroucke2014fertility">Vandenbroucke 2014</a>; <a class="pv-cite" href="#ref-kitchens2023impact">Kitchens and Rodgers 2023</a>), labor force participation (<a class="pv-cite" href="#ref-boehnke2022missing">Boehnke and Gay 2022</a>; <a class="pv-cite" href="#ref-gay2023intergenerational">Gay 2023</a>), and discrimination (<a class="pv-cite" href="#ref-ferrara2024discrimination">Ferrara and Fishback 2024</a>; <a class="pv-cite" href="#ref-ang2026vanguard">Ang and Chinoy 2026</a>), but relatively little attention has been paid to educational attainment in the United States. Our findings complement research on World War II mobilization and skill upgrading (<a class="pv-cite" href="#ref-jaworski2014you">Jaworski 2014</a>; <a class="pv-cite" href="#ref-goldin1991role">Goldin 1991</a>; <a class="pv-cite" href="#ref-goldin2013shocking">Goldin and Olivetti 2013</a>; <a class="pv-cite" href="#ref-carrRosie2019">Carr and Rettenmaier 2019</a>; <a class="pv-cite" href="#ref-lennon2023women">Lennon 2023</a>; <a class="pv-cite" href="#ref-ferrara2022world">Ferrara 2022</a>).</p>
+
+        <p>Finally, we contribute new data on the early twentieth-century expansion of American schooling. We construct a county-level panel of enrollment and average daily attendance from state education reports for more than 20 states between 1910 and 1930. These data reveal a sharp decline in enrollment and attendance at the peak of the boom in 1919 and 1920 that has not been previously documented. The decline reversed several years of sustained growth in enrollment associated with the high school movement, complementing previous work on this period (<a class="pv-cite" href="#ref-goldin1998america">Goldin 1998</a>; <a class="pv-cite" href="#ref-carruthers2017separate">Carruthers and Wanamaker 2017</a>; <a class="pv-cite" href="#ref-card2022intergenerational">Card et al. 2022</a>; <a class="pv-cite" href="#ref-bleemer2025changes">Bleemer and Quincy 2025</a>; <a class="pv-cite" href="#ref-doxey2022democratization">Doxey et al. 2022</a>).</p>
+
+      </div>
     </section>
 
-    <section id="data" class="llm-section">
-      <h2>Data and methods</h2>
+    <!-- ════════════════════════════════════════════ -->
+    <!-- INVESTING IN HUMAN CAPITAL                  -->
+    <!-- ════════════════════════════════════════════ -->
+    <section id="theory" class="pv-section">
+      <button class="pv-toggle" aria-expanded="false" aria-controls="theory-body">
+        <span class="pv-toggle-icon">&#9654;</span> Investing in Human Capital
+      </button>
+      <div id="theory-body" class="pv-body" hidden>
 
-      <h3>Data sources</h3>
-      <ul>
-        <li>County-level enrollment and average daily attendance, 1910 to 1930 (newly constructed from state education reports)</li>
-        <li>Census complete count data: 1910, 1920, and 1940 (linked via Census Tree and Census Linking Project)</li>
-        <li>Crop price and production data for constructing the crop revenue index</li>
-        <li>Controls for compulsory schooling laws, WWI draft exposure, boll weevil infestation, hookworm, malaria, Rosenwald schools, county health organizations, and 1918 influenza mortality</li>
-      </ul>
+        <p>In this section, we describe a simple household model of human capital investment, drawing on <a class="pv-cite" href="#ref-shah2017drought">Shah and Steinberg (2017)</a>, that guides our empirical analysis of the World War I agricultural boom. The model highlights how wage shocks at different points in childhood generate competing effects on schooling. Then, following <a class="pv-cite" href="#ref-bau2020human">Bau et al. (2020)</a>, we extend the framework to incorporate child labor, showing how the local intensity of child labor mediates these effects.</p>
 
-      <h3>Identification</h3>
-      <ul>
-        <li>The crop revenue index measures county-level exposure to the wartime price boom based on pre-war crop composition (1910 shares multiplied by annual national prices)</li>
-        <li>Difference-in-differences for county-level enrollment/attendance outcomes</li>
-        <li>Individual-level regressions with county and birth-cohort fixed effects, parental controls, and interactions with child labor intensity for linked census outcomes</li>
-      </ul>
+        <p>Households consist of one parent and one child. The parent makes consumption and investment decisions to maximize the lifetime utility of the family.<sup><a class="pv-fn-ref" href="#fn-3" id="fn-ref-3">3</a></sup> Children live for three periods: in the first period, the child only consumes resources; in the second period, the child consumes resources and has time to either attend school or work; in the third period, the child works and receives a wage determined by their level of human capital. Household utility depends on consumption in the first two periods and on the child's terminal human capital:</p>
 
-      <h3>Key specifications</h3>
-      <ul>
-        <li>Opportunity cost channel: effect of cumulative exposure during ages 10 to 17 on years of completed schooling</li>
-        <li>Dynamic complementarity channel: effect of exposure during ages 0 to 4, interacted with county-level child labor intensity (fraction of children 10 to 14 working in 1910)</li>
-      </ul>
+        <div class="pv-math-block">
+        \[U(c_1,c_2,e_3) = u_1(c_1)+\beta u_2(c_2)+\beta^2 e_3\]
+        </div>
+
+        <p>where $c_t$ is consumption, $e_t$ is the child's human capital in period $t$, and $\beta$ is a discount factor.</p>
+
+        <p>Income is determined by an exogenously given wage in each period, $w_t$, human capital of the parent, $h$, and human capital of the child in each period, $e_t$. In the first period, household income equals parent earnings, $w_1 h$, and households spend all income on consumption, $c_1 = w_1 h$. In the second period, the child spends $s_2$ time in school and the remainder of their time working. This means that income in the second period is $w_2[h+(1-s_2)e_2]$, which is available for consumption. The child's human capital evolves as follows: in the first period, $e_1=0$; in the second period, human capital depends on early-life consumption, $e_2=f_2(c_1)$; and in the third period, human capital depends on prior human capital, consumption, and schooling, $e_3=f_3(e_2, c_2, s_2)$. The link between $c_1$ and $e_2$ captures the idea that household resources during early childhood raise the child's later productivity. We assume that $f_2$ and $f_3$ are increasing and concave in each argument.</p>
+
+        <p>Since there are no choice variables in the first period, we consider the parent's problem starting in period 2. Substituting the budget constraint and the human capital production function into the objective yields:</p>
+
+        <div class="pv-math-block">
+        \[\max\limits_{s_2\in[0,1]}u_2(c_2)+\beta f_3(e_2, c_2, s_2) \text{ s.t. } c_2\leq w_2[h+(1-s_2)e_2].\]
+        </div>
+
+        <p>At an interior solution ($c_2^*, s_2^*$), parents equate the marginal cost of schooling (forgone child earnings) with the discounted marginal benefit of additional human capital:<sup><a class="pv-fn-ref" href="#fn-4" id="fn-ref-4">4</a></sup></p>
+
+        <div class="pv-math-block">
+        \[w_2 e_2 \frac{\partial u_2}{\partial c_2} = \beta \underbrace{\left(\frac{\partial f_3}{\partial s_2}-w_2 e_2 \frac{\partial f_3}{\partial c_2} \right )}_{\Theta(w_2, e_2, c_2^*, s_2^*)}.\]
+        </div>
+
+        <p>Our interest is in how the optimal schooling level, $s_2^*$, changes in response to wage increases at different points over the life cycle. Taking the total derivative of the first-order condition and solving for $\frac{\partial s_2^*}{\partial w_2}$:</p>
+
+        <div class="pv-math-block">
+        \[\frac{\partial s_2^*}{\partial w_2} \propto
+    \underbrace{-e_2 \left(\frac{\partial u_2}{\partial c_2}+\beta \frac{\partial f_3}{\partial c_2} \right)}_\text{Substitution Effect (-)}
+    - \underbrace{(h+ (1-s_2^*)e_2) w_2 e_2 \frac{\partial^2u_2}{\partial c_2^2}}_\text{Income Effect (+)}
+    + \underbrace{(h+ (1-s_2^*)e_2) \beta \frac{\partial \Theta}{\partial c_2}}_\text{Net Effect of $c_2$ on Schooling}\]
+        </div>
+
+        <p>The net effect of higher wages on schooling for working-age children is ambiguous. Higher wages raise the opportunity cost of time in school (substitution effect), but they also increase household income, which reduces the marginal utility of consumption and makes forgone child earnings less costly (income effect). The third term is assumed to be positive if, as consumption increases and the marginal utility of consumption falls, schooling becomes a more productive way to generate human capital. Ultimately, the sign of $\frac{\partial s_2^*}{\partial w_2}$, and therefore the effect on lifetime human capital, depends on which channels dominate.</p>
+
+        <p>For young children, an increase in the period 1 wage unambiguously raises human capital in period 2, since $e_2 = f_2(c_1)$ and $c_1 = w_1 h$ ($\frac{\partial e_2^*}{\partial w_1}=h \frac{\partial f_2}{\partial c_1} > 0$). The question is how this early human capital gain affects the schooling decision in period 2. The effect of $w_1$ on $s_2^*$ operates through $\frac{\partial s_2^*}{\partial e_2}$: children with more human capital are more productive, which raises the return to work (substitution effect), but higher productivity also increases household income and may raise the return to further schooling through dynamic complementarities (<a class="pv-cite" href="#ref-cunha2007technology">Cunha and Heckman 2007</a>; <a class="pv-cite" href="#ref-heckman2007economics">Heckman 2007</a>; <a class="pv-cite" href="#ref-caucutt2020early">Caucutt and Lochner 2020</a>). Formally,</p>
+
+        <div class="pv-math-block">
+        \[\frac{\partial s_2^*}{\partial w_1} = h\frac{\partial f_2}{\partial c_1} \frac{\partial s_2^*}{\partial e_2}\]
+        </div>
+
+        <div class="pv-math-block">
+        \[\text{where}\hspace{.1in} \frac{\partial s_2^*}{\partial e_2}  \propto
+    \underbrace{-w_2 \frac{\partial u_2}{\partial c_2}}_\text{Substitution Effect (-)}
+          - \underbrace{w_2^2 e_2 (1-s_2^*) \frac{\partial^2 u_2}{\partial c_2^2}}_\text{Income Effect (+)}
+    + \beta \underbrace{\left[\frac{\partial \Theta}{\partial e_2} + w_2(1-s_2^*)\frac{\partial \Theta}{\partial c_2}\right]}_{\text{Net effect of $e_2$ on } \Theta}.\]
+        </div>
+
+        <p>Increased human capital affects the optimal choice of schooling by making children more productive in the labor market. In settings where children are especially productive, such as in the cultivation of cacao and coffee (<a class="pv-cite" href="#ref-dammert2008child">Dammert 2008</a>; <a class="pv-cite" href="#ref-bai2020returns">Bai and Wang 2020</a>), the literature has shown that the substitution effect is more likely to dominate. At the same time, higher human capital increases income, resulting in higher consumption, which reduces the marginal utility of consumption (income effect). Finally, higher human capital could make children better learners via dynamic complementarities, or through increased consumption at younger ages. Ex ante, these different channels lead to an ambiguous prediction. In our context, children in the early twentieth-century American South were similarly productive in cotton cultivation and other labor-intensive crops, making this a natural setting to test these predictions. Our empirical framework estimates $\frac{\partial s_2^*}{\partial w_1}$ and $\frac{\partial s_2^*}{\partial w_2}$ using variation in exposure to crop revenue shocks due to World War I.</p>
+
+        <p><a class="pv-cite" href="#ref-bau2020human">Bau et al. (2020)</a> extend this framework by allowing the return to child labor to vary across locations. In areas with high child labor intensity, the child's increased productivity from early human capital investment ($e_2$) translates more directly into higher child labor earnings, amplifying the substitution effect within $\frac{\partial s_2^*}{\partial e_2}$. This generates a testable prediction: in high-child-labor locations, the substitution effect is more likely to dominate the income and dynamic complementarity effects, so that early resource shocks reduce completed schooling. In low-child-labor locations, where children cannot easily convert higher productivity into labor market earnings, the income effect and dynamic complementarities are more likely to prevail, and early resource shocks should weakly increase schooling.</p>
+
+      </div>
     </section>
 
-    <section id="results" class="llm-section">
-      <h2>Key results</h2>
-      <ol>
-        <li>Enrollment and average daily attendance fell sharply at the peak of the boom (1919 to 1920), with larger declines in high-exposure counties.</li>
-        <li>Greater exposure during teenage years reduced completed schooling by 0.27 to 0.47 years, with effects concentrated at the high school margin.</li>
-        <li>Effects are larger for men than women, and present for both white and Black individuals.</li>
-        <li>For children exposed during early childhood (ages 0 to 4), the net effect depends on local child labor intensity. Once child labor is accounted for, the direct effect of early exposure on boys' schooling is close to zero. In high child labor counties, the interaction drives the negative effect. For girls, the direct effect is weakly positive, consistent with lower opportunity costs in agricultural labor markets.</li>
-        <li>A calibration exercise yields implied discount factors between 0.95 and 0.99, consistent with forward-looking households.</li>
-      </ol>
+    <!-- ════════════════════════════════════════════ -->
+    <!-- WWI AND AGRICULTURAL BOOM                   -->
+    <!-- ════════════════════════════════════════════ -->
+    <section id="background" class="pv-section">
+      <button class="pv-toggle" aria-expanded="false" aria-controls="background-body">
+        <span class="pv-toggle-icon">&#9654;</span> World War I and Agricultural Boom
+      </button>
+      <div id="background-body" class="pv-body" hidden>
+
+        <p>Following the assassination of Archduke Franz Ferdinand on June 28, 1914, World War I escalated with fighting that destroyed agricultural production in Europe, reallocated labor from farms to the battlefield, depleted inventories, and disrupted international trade flows (<a class="pv-cite" href="#ref-hibbard1919effects">Hibbard 1919</a>; <a class="pv-cite" href="#ref-nourse1924american">Nourse 1924</a>; <a class="pv-cite" href="#ref-tinley1942behavior">Tinley 1942</a>). As a result, the United States and Canada supplied much of the allies' foodstuffs rather than traditional trading partners such as Argentina, Australia, and Russia (<a class="pv-cite" href="#ref-nourse1924american">Nourse 1924</a>). These forces led to large increases in the price of agricultural commodities. For example, cotton prices, at their 1919 peak, were 300 percent higher than the prewar average, while wheat prices were 260 percent higher than before the war.</p>
+
+        <!-- Figure 1 -->
+        <div class="pv-figure">
+          <p class="pv-figure-caption">Figure 1: Agricultural Prices and Wages, 1910-1930</p>
+          <div class="pv-figure-tabs">
+            <button class="pv-figure-tab pv-tab-active" data-panel="0">Crop Prices</button>
+            <button class="pv-figure-tab" data-panel="1">Index vs. Wages</button>
+          </div>
+          <div class="pv-figure-panels">
+            <div class="pv-figure-panel pv-panel-active">
+              <img src="figures/individual_crop_price_trends.png" alt="Agricultural commodity prices 1910-1930">
+            </div>
+            <div class="pv-figure-panel">
+              <img src="figures/panel_A_index_vs_wages.png" alt="Crop revenue index and farm wage index">
+            </div>
+          </div>
+          <p class="pv-figure-notes"><em>Notes:</em> Panel A shows national prices for 12 crops used to construct the crop revenue index, relative to their 1908-1914 average. Panel B shows the crop revenue index and a farm wage index.</p>
+        </div>
+
+        <p>Figure 1 shows prices for twelve agricultural commodities between 1910 and 1930, normalized to their 1908-1914 average. The second panel plots the crop revenue index alongside a national farm wage index, confirming that wages closely tracked crop revenues over this period. The spike in agricultural prices also led to a substantial expansion of production: during the war, up to 50 million acres were brought into cultivation (<a class="pv-cite" href="#ref-carterHSUS">Carter et al. 2006</a>; <a class="pv-cite" href="#ref-nourse1924american">Nourse 1924</a>). Wheat exports increased by approximately 30 percent by 1918; barley exports increased by over 350 percent. The boom increased demand for agricultural labor at all levels, including children, who were widely employed in cotton picking, tobacco cultivation, and other labor-intensive tasks.</p>
+
+        <p>Contemporary newspapers documented the connection between bumper crops, high prices, and labor scarcity. The <em>Birmingham Age-Herald</em> reported in January 1918 that "Bumper crops were produced in 1917 and Alabama's prosperity today is due in great measure to the large harvests and the high prices which the farmers received for their products. With still further increase in production the labor problem will become more acute" (<a class="pv-cite" href="#ref-birminghamageherald1918">Birmingham Age-Herald 1918</a>). The <em>Public Ledger</em> of Maysville, Kentucky similarly noted that "in 1917 there was an advance of farm wages over the figures of 1916 of an average of 24.2 per cent," attributing the increase to "the demand for labor and, of course, to high prices for farm products" (<a class="pv-cite" href="#ref-publicledger1918">Public Ledger 1918</a>).</p>
+
+        <p>Systematic county-level wage data do not exist for this period, so we construct indices of agricultural revenues to proxy for changes in local labor market conditions. At the peak of the boom in 1919, agricultural wages were 2.3 times their prewar level. Following the war, wages fell but remained elevated. <a class="pv-cite" href="#ref-kitchens2023impact">Kitchens and Rodgers (2023)</a> provide additional evidence that agricultural crop revenues track national wages and county-level retail sales.</p>
+
+      </div>
     </section>
 
-    <section id="guide" class="llm-section">
-      <h2>Navigation guide</h2>
-      <ul>
-        <li><strong>For the main argument:</strong> Read Sections 1 (Introduction) and 2 (Investing in Human Capital) for the theoretical framework, then Section 5 (Empirical Analysis) for the core results.</li>
-        <li><strong>For the data construction:</strong> Section 4 describes the crop revenue index, linked census data, and county-level enrollment panel. Section 3 provides historical background on the WWI agricultural boom.</li>
-        <li><strong>For robustness:</strong> Appendix A contains alternative samples (farm owners vs. renters, same-state movers, off-farm residents), alternative linking methods (Census Linking Project), influenza controls, IV estimates, birth order heterogeneity, and the dynamic complementarity results by subgroup.</li>
-        <li><strong>For the calibration exercise:</strong> Appendix B derives implied discount factors following Bau (2020) and reports results under alternative assumptions.</li>
-        <li><strong>Key tables:</strong> Table 1 (main results, opportunity cost channel), Table 2 (young children, dynamic complementarities). Key figures: Figure 1 (agricultural prices and wages), Figure 3 (enrollment and attendance trends).</li>
-      </ul>
+    <!-- ════════════════════════════════════════════ -->
+    <!-- DATA                                        -->
+    <!-- ════════════════════════════════════════════ -->
+    <section id="data" class="pv-section">
+      <button class="pv-toggle" aria-expanded="false" aria-controls="data-body">
+        <span class="pv-toggle-icon">&#9654;</span> Data
+      </button>
+      <div id="data-body" class="pv-body" hidden>
+
+        <p>Our analysis draws on three main sources of data. First, we use county-level agricultural output data and national commodity prices to construct the measures of exposure to the agricultural boom. Second, we use individual-level data from complete count censuses of population linked across decades. Third, we construct a new county-level panel of school enrollment and average daily attendance from state education reports.</p>
+
+        <h3>Agricultural Revenue and Exposure Index</h3>
+
+        <p>The crop revenue index and exposure index rely on two primary data sources. County-level output for twelve crops comes from the 1910 Census of Agriculture (<a class="pv-cite" href="#ref-hainesAg">Haines et al. 2018</a>), and annual national prices for each commodity come from <a class="pv-cite" href="#ref-carterHSUS">Carter et al. (2006)</a>. The index is normalized by the average revenue calculated using prices from 1908 to 1914.<sup><a class="pv-fn-ref" href="#fn-5" id="fn-ref-5">5</a></sup> Formally, the index is defined as:</p>
+
+        <div class="pv-math-block">
+        \[R_{ct} = \frac{\sum_{i=1}^{12} Q_{i,c,1910} \times P_{i,t}}{\sum_{i=1}^{12} Q_{i,c,1910} \times \overline{P_{i}}}\]
+        </div>
+
+        <p>where $R_{ct}$ is the crop revenue index for county $c$ in year $t$, $Q_{i,c,1910}$ is the output of crop $i$ in county $c$ in 1910, and $P_{i,t}$ is the price of crop $i$ in year $t$. The index has several useful properties. First, by fixing output at 1910 levels, we prevent endogenous changes in crop patterns from entering the index. Second, prices are determined in international commodity markets and therefore do not reflect local economic conditions.<sup><a class="pv-fn-ref" href="#fn-6" id="fn-ref-6">6</a></sup></p>
+
+        <!-- Figure 2 -->
+        <div class="pv-figure">
+          <p class="pv-figure-caption">Figure 2: Crop Revenue Index by County, 1914-1929</p>
+          <div class="pv-figure-tabs">
+            <button class="pv-figure-tab pv-tab-active" data-panel="0">1914</button>
+            <button class="pv-figure-tab" data-panel="1">1919</button>
+            <button class="pv-figure-tab" data-panel="2">1924</button>
+            <button class="pv-figure-tab" data-panel="3">1929</button>
+          </div>
+          <div class="pv-figure-panels">
+            <div class="pv-figure-panel pv-panel-active">
+              <img src="figures/figure4_index_14.png" alt="Crop revenue index 1914">
+            </div>
+            <div class="pv-figure-panel">
+              <img src="figures/figure4_index_19.png" alt="Crop revenue index 1919">
+            </div>
+            <div class="pv-figure-panel">
+              <img src="figures/figure4_index_24.png" alt="Crop revenue index 1924">
+            </div>
+            <div class="pv-figure-panel">
+              <img src="figures/figure4_index_29.png" alt="Crop revenue index 1929">
+            </div>
+          </div>
+          <p class="pv-figure-notes"><em>Notes:</em> The figure shows four snapshots of the geographic variation in the crop index over a 15-year period. Darker shades indicate higher values of the crop revenue index.</p>
+        </div>
+
+        <p>Figure 2 shows the variation over time and across counties in our crop revenue index. For example, the South (specialized in cotton and tobacco) experienced larger increases in the crop index at the peak in 1919 relative to the Midwest (specialized in wheat and oats) and the Great Plains (focused on livestock production). The regions most exposed to the boom, particularly the cotton South, were also home to the largest Black populations and had among the highest rates of child labor in the country. After the war, in both 1924 and 1929, the cross-county variation in the index diminishes.</p>
+
+        <p>Because the boom was temporary and regions differed in their crop specialization, individuals born in different years and living in different counties experienced distinct local economic conditions during childhood. We measure differential exposure of each cohort by averaging the agricultural index over a window of $T$ years starting at age $z$. Formally, the exposure index is:</p>
+
+        <div class="pv-math-block">
+        \[E_{hc} = \frac{1}{T} \sum_{\tau=0}^{T-1} R_{c,h+z+\tau}\]
+        </div>
+
+        <p>The exposure index, $E_{hc}$, varies across counties through differences in prewar crop specialization and across cohorts through the timing of the wartime price spike.<sup><a class="pv-fn-ref" href="#fn-7" id="fn-ref-7">7</a></sup></p>
+
+        <h3>Linked Census Data</h3>
+
+        <p>Outcome data are derived from the 1940 complete count of the Census of Population (<a class="pv-cite" href="#ref-ruggles2024ipums">Ruggles et al. 2024</a>). The 1940 census only provides information on previous location based on state-of-birth. In order to better reflect exposure to local economic conditions during the World War I agricultural commodity price boom, we use information from <a class="pv-cite" href="#ref-price2021combining">Price et al. (2021)</a> to link individuals from the 1940 Census back to earlier census years when we can observe county-of-residence and therefore the probable location of exposure. Our empirical tests focus on two sets of cohorts that were living on farms when first observed. First, we focus on cohorts born between 1890 and 1910, using their 1910 Census record linked to 1940. Second, we focus on cohorts born 1900 to 1920, linking their 1910 or 1920 Census record to 1940.</p>
+
+        <h3>County-Level Enrollment and Attendance Data</h3>
+
+        <p>For this project we collected and digitized annual and biennial state-level education reports for each state in the contiguous United States between 1910 and 1930, building on prior data collection efforts by <a class="pv-cite" href="#ref-carruthers2017separate">Carruthers and Wanamaker (2017)</a> and <a class="pv-cite" href="#ref-card2022intergenerational">Card et al. (2022)</a>.</p>
+
+        <h3>Additional Data</h3>
+
+        <p>To further isolate the effect of the World War I agricultural boom from other factors, we draw on a variety of datasets to control for the role of potential confounds. Importantly, we use information on compulsory schooling laws and work restrictions specific to each cohort. As noted by <a class="pv-cite" href="#ref-goldin2008mass">Goldin and Katz (2008)</a>, work restrictions and compulsory schooling reinforce one another. We also include information on conscription during World War I (<a class="pv-cite" href="#ref-kitchens2023impact">Kitchens and Rodgers 2023</a>). We control for the arrival date of the boll weevil (<a class="pv-cite" href="#ref-bloome2017tenancy">Bloome et al. 2017</a>; <a class="pv-cite" href="#ref-baker2015field">Baker 2015</a>; <a class="pv-cite" href="#ref-baker2020long">Baker et al. 2020</a>), hookworm and malaria rates (<a class="pv-cite" href="#ref-bleakley2007disease">Bleakley 2007</a>; <a class="pv-cite" href="#ref-bleakley2009economic">Bleakley 2009</a>; <a class="pv-cite" href="#ref-hoehn2021long">Hoehn-Velasco 2021</a>), exposure to the Spanish flu (<a class="pv-cite" href="#ref-kitchens2023impact">Kitchens and Rodgers 2023</a>), and access to Rosenwald schools (<a class="pv-cite" href="#ref-aaronson2011impact">Aaronson and Mazumder 2011</a>; <a class="pv-cite" href="#ref-aaronson2014fertility">Aaronson et al. 2014</a>).</p>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════ -->
+    <!-- EMPIRICAL ANALYSIS                          -->
+    <!-- ════════════════════════════════════════════ -->
+    <section id="empirics" class="pv-section">
+      <button class="pv-toggle" aria-expanded="false" aria-controls="empirics-body">
+        <span class="pv-toggle-icon">&#9654;</span> Empirical Analysis
+      </button>
+      <div id="empirics-body" class="pv-body" hidden>
+
+        <p>Our empirical strategy exploits variation in the exposure index across counties and birth cohorts to estimate the effect of the World War I agricultural boom on educational attainment. We focus on two samples of individuals linked to the 1940 Census, where we observe completed years of schooling. The first sample links cohorts born 1890 to 1910 from the 1910 Census to 1940, capturing individuals who were of school age during the boom. The second links cohorts born 1900 to 1920 from the 1910 or 1920 Census to 1940, capturing individuals who experienced the boom during early childhood.</p>
+
+        <h3>Trends in Enrollment and Attendance</h3>
+
+        <p>We first examine aggregate patterns in county-level enrollment and attendance to motivate the regression analysis that follows.</p>
+
+        <!-- Figure 3 -->
+        <div class="pv-figure">
+          <p class="pv-figure-caption">Figure 3: Enrollment and Attendance Trends by Boom Quartile</p>
+          <div class="pv-figure-tabs">
+            <button class="pv-figure-tab pv-tab-active" data-panel="0">Enrollment</button>
+            <button class="pv-figure-tab" data-panel="1">Attendance</button>
+          </div>
+          <div class="pv-figure-panels">
+            <div class="pv-figure-panel pv-panel-active">
+              <img src="figures/enroll_trends_norm.png" alt="Enrollment trends by boom quartile">
+            </div>
+            <div class="pv-figure-panel">
+              <img src="figures/ada_trends_norm.png" alt="Average daily attendance trends by boom quartile">
+            </div>
+          </div>
+          <p class="pv-figure-notes"><em>Notes:</em> Panels A and B show average county-level enrollment and average daily attendance, normalized to 1913, across four groups based on the maximum of the 1919 agricultural boom.</p>
+        </div>
+
+        <p>Throughout the sample period, both enrollment and average daily attendance grew rapidly, consistent with prior evidence (<a class="pv-cite" href="#ref-goldin1998america">Goldin 1998</a>). By 1930, enrollment grew by approximately 0.10 to 0.23 log points and attendance by 0.20 to 0.43 log points relative to 1913. In 1919 and 1920, at the peak of the agricultural boom, enrollment and average daily attendance fell by approximately 0.05 to 0.08 log points below the 1913 baseline. The <em>St. Tammany Farmer</em> of Covington, Louisiana reported in 1916 that "the authorities are giving leave for boys of eleven years old to be taken out of school and put to farm work" (<a class="pv-cite" href="#ref-sttammanyfarmer1916">St. Tammany Farmer 1916</a>). Similarly, the <em>Edgefield Advertiser</em> in South Carolina urged that "another session should not be lost to many boys and girls who have attained the school age and yet are kept out of school" (<a class="pv-cite" href="#ref-edgefieldadvertiser1916">Edgefield Advertiser 1916</a>).</p>
+
+        <h3>Opportunity Cost Channel</h3>
+
+        <p>The theoretical model predicts that higher agricultural wages raise the opportunity cost of schooling for teenagers, reducing completed education. Formally, the estimating equation is:</p>
+
+        <div class="pv-math-block">
+        \[Y_{ihc} = \beta E_{hc} + \mathbf{X}'_{ihc}\boldsymbol{\delta} + \mathbf{Z}'_c\boldsymbol{\lambda}_h + \alpha_c + \phi_h + \varepsilon_{ihc}\]
+        </div>
+
+        <p>where $Y_{ihc}$ is years of schooling in 1940 for individual $i$ in birth cohort $h$ and county $c$, $E_{hc}$ is the exposure index, $\mathbf{X}_{ihc}$ is a vector of parental characteristics measured in 1910, $\mathbf{Z}_c$ is a vector of county characteristics, $\alpha_c$ and $\phi_h$ are county and cohort fixed effects.<sup><a class="pv-fn-ref" href="#fn-8" id="fn-ref-8">8</a></sup> Standard errors are clustered at the state level (<a class="pv-cite" href="#ref-conley2025standard">Conley and Kelly 2025</a>).</p>
+
+        <!-- Table 1 -->
+        <div class="pv-table-wrap">
+          <p class="pv-table-caption">Table 1: The Effect of Exposure to World War I Agricultural Boom</p>
+          <table class="pv-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th colspan="3">Men</th>
+                <th colspan="3">Women</th>
+              </tr>
+              <tr>
+                <th></th>
+                <th>(1)</th><th>(2)</th><th>(3)</th>
+                <th>(4)</th><th>(5)</th><th>(6)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="pv-panel-header"><td colspan="7">Panel A: White</td></tr>
+              <tr><td>Exposure</td><td>&minus;0.436</td><td>&minus;0.397</td><td>&minus;0.404</td><td>&minus;0.223</td><td>&minus;0.254</td><td>&minus;0.274</td></tr>
+              <tr class="pv-se"><td></td><td>(0.130)</td><td>(0.130)</td><td>(0.089)</td><td>(0.093)</td><td>(0.092)</td><td>(0.074)</td></tr>
+              <tr><td>Observations</td><td>4,228,438</td><td>3,888,223</td><td>3,888,223</td><td>3,033,169</td><td>2,760,954</td><td>2,760,954</td></tr>
+
+              <tr class="pv-panel-header"><td colspan="7">Panel B: Black</td></tr>
+              <tr><td>Exposure</td><td>&minus;0.558</td><td>&minus;0.512</td><td>&minus;0.466</td><td>&minus;0.425</td><td>&minus;0.238</td><td>&minus;0.316</td></tr>
+              <tr class="pv-se"><td></td><td>(0.149)</td><td>(0.158)</td><td>(0.116)</td><td>(0.147)</td><td>(0.184)</td><td>(0.157)</td></tr>
+              <tr><td>Observations</td><td>429,755</td><td>354,673</td><td>354,673</td><td>108,726</td><td>80,402</td><td>80,402</td></tr>
+
+              <tr class="pv-rule-bottom pv-controls"><td>Cohort &amp; county FE</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td></tr>
+              <tr class="pv-controls"><td>Parental controls</td><td></td><td>&#10003;</td><td>&#10003;</td><td></td><td>&#10003;</td><td>&#10003;</td></tr>
+              <tr class="pv-controls"><td>Additional controls</td><td></td><td></td><td>&#10003;</td><td></td><td></td><td>&#10003;</td></tr>
+            </tbody>
+          </table>
+          <p class="pv-table-notes"><em>Notes:</em> The dependent variable is years of schooling. Panels A and B include whites and Blacks, respectively, with men in columns 1 through 3 and women in columns 4 through 6. Columns 1 and 4 include cohort and county fixed effects. Columns 2 and 5 add parental controls measured in 1910 (father's occupational score, father's birthplace, mother's birthplace, father illiteracy, mother illiteracy, maternal labor force participation, and home ownership). Columns 3 and 6 add interactions between birth cohort and WWI inductions, County Health Organization presence, hookworm infection, malaria death rate, Rosenwald School presence, Boll Weevil infestation, and Prohibition. Standard errors in parentheses are clustered at the state level.</p>
+        </div>
+
+        <p>In Table 1, we report our baseline estimates. For white men (Panel A, column 1), doubling the exposure index reduces educational attainment by 0.436 years of schooling, statistically significant at the 1 percent level. Adding parental characteristics (column 2) reduces the estimate to 0.397. Including potential confounds (column 3), we estimate a 0.404 reduction in years of schooling.</p>
+
+        <p>Moving to Panel B, for Black men we estimate that doubling exposure reduces educational attainment by 0.558 years (column 1), about 25 percent larger than for white males. Including controls reduces the estimates to 0.512 and 0.466 (columns 2 and 3). The stronger response is consistent with lower returns to additional schooling for Black men in this period.<sup><a class="pv-fn-ref" href="#fn-9" id="fn-ref-9">9</a></sup></p>
+
+        <p>In columns 4 through 6, we estimate effects for women. For white women, we estimate a 0.223 reduction in years of schooling (column 4). The smaller estimates for women are consistent with lower opportunity costs in agricultural labor markets.<sup><a class="pv-fn-ref" href="#fn-10" id="fn-ref-10">10</a></sup></p>
+
+        <!-- Table 2 -->
+        <div class="pv-table-wrap">
+          <p class="pv-table-caption">Table 2: Robustness of Effect of Exposure to World War I Agricultural Boom</p>
+          <table class="pv-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th></th>
+                <th>Same</th><th>Owns</th><th>Rents</th><th>Spanish</th><th>Off</th>
+              </tr>
+              <tr>
+                <th></th>
+                <th>Baseline</th><th>state</th><th>Farm</th><th>Farm</th><th>Flu</th><th>Farm</th>
+              </tr>
+              <tr>
+                <th></th>
+                <th>(1)</th><th>(2)</th><th>(3)</th><th>(4)</th><th>(5)</th><th>(6)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="pv-panel-header"><td colspan="7">White Men</td></tr>
+              <tr><td>Exposure</td><td>&minus;0.404</td><td>&minus;0.450</td><td>&minus;0.356</td><td>&minus;0.348</td><td>&minus;0.339</td><td>0.021</td></tr>
+              <tr class="pv-se"><td></td><td>(0.089)</td><td>(0.095)</td><td>(0.079)</td><td>(0.131)</td><td>(0.079)</td><td>(0.140)</td></tr>
+              <tr><td>Observations</td><td>3,888,223</td><td>2,936,473</td><td>2,665,847</td><td>1,222,356</td><td>2,455,720</td><td>5,863,396</td></tr>
+
+              <tr class="pv-panel-header"><td colspan="7">Black Men</td></tr>
+              <tr><td>Exposure</td><td>&minus;0.466</td><td>&minus;0.564</td><td>&minus;0.457</td><td>&minus;0.436</td><td>&minus;0.398</td><td>&minus;0.286</td></tr>
+              <tr class="pv-se"><td></td><td>(0.116)</td><td>(0.117)</td><td>(0.248)</td><td>(0.149)</td><td>(0.146)</td><td>(0.102)</td></tr>
+              <tr><td>Observations</td><td>354,673</td><td>236,919</td><td>104,027</td><td>250,483</td><td>200,390</td><td>253,088</td></tr>
+
+              <tr class="pv-panel-header"><td colspan="7">White Women</td></tr>
+              <tr><td>Exposure</td><td>&minus;0.274</td><td>&minus;0.320</td><td>&minus;0.167</td><td>&minus;0.196</td><td>&minus;0.198</td><td>&minus;0.046</td></tr>
+              <tr class="pv-se"><td></td><td>(0.074)</td><td>(0.077)</td><td>(0.070)</td><td>(0.100)</td><td>(0.073)</td><td>(0.066)</td></tr>
+              <tr><td>Observations</td><td>2,760,954</td><td>2,162,191</td><td>1,919,290</td><td>841,627</td><td>1,758,782</td><td>3,674,080</td></tr>
+
+              <tr class="pv-panel-header"><td colspan="7">Black Women</td></tr>
+              <tr><td>Exposure</td><td>&minus;0.316</td><td>&minus;0.491</td><td>0.121</td><td>&minus;0.632</td><td>&minus;0.308</td><td>&minus;0.043</td></tr>
+              <tr class="pv-se"><td></td><td>(0.157)</td><td>(0.153)</td><td>(0.356)</td><td>(0.226)</td><td>(0.238)</td><td>(0.227)</td></tr>
+              <tr><td>Observations</td><td>80,402</td><td>63,215</td><td>28,109</td><td>52,071</td><td>49,219</td><td>69,022</td></tr>
+
+              <tr class="pv-rule-bottom pv-controls"><td>FEs and Controls</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td></tr>
+            </tbody>
+          </table>
+          <p class="pv-table-notes"><em>Notes:</em> Each panel focuses on a different combination of race and gender. Column 1 reproduces the baseline. Column 2 restricts to individuals living in their birth state. Columns 3 and 4 split by farm ownership. Column 5 adds interactions with 1918 Influenza mortality. Column 6 restricts to those not living on farms. Standard errors in parentheses are clustered at the state level.<sup><a class="pv-fn-ref" href="#fn-11" id="fn-ref-11">11</a></sup></p>
+        </div>
+
+        <p>In Table 2, the baseline estimates are robust to restricting the sample to those living in their birth state (column 2), splitting by farm ownership (columns 3 and 4), controlling for the 1918 Influenza (column 5), and restricting to off-farm residents (column 6). For those off the farm (column 6), the point estimates are close to zero for white men and women, confirming that the effects are concentrated among farm households.</p>
+
+        <p>The overall average effect masks differences across the distribution of years of schooling. The decrease is concentrated in the high school grades: a doubling of the exposure index reduces the probability of completing grades 9 through 12 by approximately 10 percentage points for males and 6 to 8 percentage points for women.<sup><a class="pv-fn-ref" href="#fn-12" id="fn-ref-12">12</a></sup></p>
+
+        <h3>Early Childhood Investment Channel</h3>
+
+        <p>We now turn to our analysis of young children, ages 0 to 4. Following <a class="pv-cite" href="#ref-bau2020human">Bau et al. (2020)</a>, we include an interaction term between the childhood local labor demand shock and the intensity of child labor force participation. We measure child labor force participation, $CL_c$, at the county level in 1910 as the share of 10 to 14 year-olds that list an occupation in the Census. The estimating equation is:</p>
+
+        <div class="pv-math-block">
+        \[Y_{ihc} = \beta_1 E_{hc} + \beta_2 (CL_c \times E_{hc}) + \mathbf{X}'_{ihc}\boldsymbol{\delta} + \mathbf{Z}'_c\boldsymbol{\lambda}_h + \alpha_c + \phi_h + \varepsilon_{ihc}\]
+        </div>
+
+        <p>Intuitively, in places where child labor is low or non-existent, the estimate of $\beta_{1}$ captures the net effect of increased household resources on human capital. The interaction term, $\beta_{2}$, captures the extent to which the opportunity cost of child labor offsets these gains. If $\beta_1$ is non-negative and $\beta_2$ is negative, the overall negative effect is attributable to child labor intensity rather than to the resource shock itself.</p>
+
+        <!-- Table 3 -->
+        <div class="pv-table-wrap">
+          <p class="pv-table-caption">Table 3: The Effect of Exposure to World War I Agricultural Boom During Youth</p>
+          <table class="pv-table">
+            <thead>
+              <tr>
+                <th></th>
+                <th colspan="3">Men</th>
+                <th colspan="3">Women</th>
+              </tr>
+              <tr>
+                <th></th>
+                <th>(1)</th><th>(2)</th><th>(3)</th>
+                <th>(4)</th><th>(5)</th><th>(6)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="pv-panel-header"><td colspan="7">Panel A: White</td></tr>
+              <tr><td>Exposure Young</td><td>&minus;0.517</td><td>&minus;0.050</td><td>&minus;0.224</td><td>0.004</td><td>0.084</td><td>0.080</td></tr>
+              <tr class="pv-se"><td></td><td>(0.133)</td><td>(0.135)</td><td>(0.132)</td><td>(0.114)</td><td>(0.112)</td><td>(0.103)</td></tr>
+              <tr><td>Exp. &times; Fract. Child Work</td><td></td><td>&minus;0.701</td><td></td><td></td><td>&minus;0.120</td><td></td></tr>
+              <tr class="pv-se"><td></td><td></td><td>(0.171)</td><td></td><td></td><td>(0.201)</td><td></td></tr>
+              <tr><td>Exp. &times; Q4 Child Work</td><td></td><td></td><td>&minus;0.244</td><td></td><td></td><td>&minus;0.063</td></tr>
+              <tr class="pv-se"><td></td><td></td><td></td><td>(0.071)</td><td></td><td></td><td>(0.075)</td></tr>
+              <tr><td>Observations</td><td>4,404,689</td><td>4,404,542</td><td>4,404,689</td><td>3,049,826</td><td>3,049,718</td><td>3,049,826</td></tr>
+
+              <tr class="pv-panel-header"><td colspan="7">Panel B: Black</td></tr>
+              <tr><td>Exposure Young</td><td>&minus;0.547</td><td>&minus;0.079</td><td>&minus;0.301</td><td>0.012</td><td>0.242</td><td>&minus;0.170</td></tr>
+              <tr class="pv-se"><td></td><td>(0.157)</td><td>(0.180)</td><td>(0.203)</td><td>(0.149)</td><td>(0.232)</td><td>(0.185)</td></tr>
+              <tr><td>Exp. &times; Fract. Child Work</td><td></td><td>&minus;0.555</td><td></td><td></td><td>&minus;0.278</td><td></td></tr>
+              <tr class="pv-se"><td></td><td></td><td>(0.123)</td><td></td><td></td><td>(0.195)</td><td></td></tr>
+              <tr><td>Exp. &times; Q4 Child Work</td><td></td><td></td><td>&minus;0.148</td><td></td><td></td><td>0.111</td></tr>
+              <tr class="pv-se"><td></td><td></td><td></td><td>(0.081)</td><td></td><td></td><td>(0.096)</td></tr>
+              <tr><td>Observations</td><td>470,282</td><td>470,282</td><td>470,282</td><td>152,550</td><td>152,550</td><td>152,550</td></tr>
+
+              <tr class="pv-rule-bottom pv-controls"><td>FEs and controls</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td><td>&#10003;</td></tr>
+            </tbody>
+          </table>
+          <p class="pv-table-notes"><em>Notes:</em> The dependent variable is years of schooling in 1940. $E_{hc}$ is the exposure index cumulated over ages 0 to 4. $CL_c$ is the fraction of children aged 10 to 14 in the 1910 census working in a county. Q4 Child Work is an indicator for whether the county was in the top quartile of child labor intensity in the 1910 census. Standard errors in parentheses are clustered at the state level.</p>
+        </div>
+
+        <p>In Table 3, column 1 (Panel A) reports the estimated relationship excluding child labor controls for white men: a doubling of the exposure index reduces schooling by 0.517 years. However, column 2 shows that the effect is driven by returns to child labor in locations with high levels of child labor. Using the continuous child labor measure, the direct effect of the agricultural index on schooling is statistically indistinguishable from zero, and there is a negative and statistically significant coefficient on the interaction term. For Black males (Panel B), column 2 tells a similar story: the direct effect is close to zero once we account for the interaction.</p>
+
+        <p>For women (columns 4 to 6), the direct effect ($\beta_1$) is weakly positive once we account for child labor, while the interaction term ($\beta_2$) is negative but imprecisely estimated, consistent with lower opportunity costs for girls in agricultural labor markets.</p>
+
+        <p>Taken together, the results show that the negative effect of early-life exposure on completed schooling operates through child labor intensity. For boys, the direct effect of early resources ($\beta_1$) is indistinguishable from zero, and the negative overall effect is driven entirely by the interaction with child labor ($\beta_2$). For girls, the direct effect is weakly positive in some specifications, consistent with dynamic complementarities, but the interaction with child labor is smaller and less precisely estimated.<sup><a class="pv-fn-ref" href="#fn-13" id="fn-ref-13">13</a></sup></p>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════ -->
+    <!-- CONCLUSION                                  -->
+    <!-- ════════════════════════════════════════════ -->
+    <section id="conclusion" class="pv-section">
+      <button class="pv-toggle" aria-expanded="false" aria-controls="conclusion-body">
+        <span class="pv-toggle-icon">&#9654;</span> Conclusion
+      </button>
+      <div id="conclusion-body" class="pv-body" hidden>
+
+        <p>The World War I agricultural boom generated large, temporary increases in crop revenues across the United States, with the largest gains concentrated in the cotton and tobacco South. We use this episode to study how changes in local economic conditions affected human capital accumulation during the early decades of the high school movement. Our analysis yields three main findings.</p>
+
+        <p>First, the boom reduced education for teenagers on the farm. Using newly constructed county-level data, we document a decrease in enrollment and average daily attendance at the peak of the boom. Second, linked census data confirm that these short-run disruptions translated into permanent reductions in completed schooling and that these effects are concentrated at the high school grades. Finally, the overall negative effects mask important heterogeneity. For children exposed during early childhood, the overall negative effect on completed schooling is driven by child labor intensity rather than the resource shock itself. Once we account for local child labor, the direct effect of early exposure is approximately zero for boys and weakly positive for girls. In counties with high child labor intensity, the interaction between early resources and child labor demand reduces completed schooling, consistent with <a class="pv-cite" href="#ref-bau2020human">Bau et al. (2020)</a>. These results underscore the role of local labor markets in determining whether resource windfalls translate into lasting human capital gains and are consistent with dynamic complementarities whose effects on lifetime schooling are mediated by the opportunity cost of child labor (<a class="pv-cite" href="#ref-cunha2007technology">Cunha and Heckman 2007</a>; <a class="pv-cite" href="#ref-heckman2007economics">Heckman 2007</a>).</p>
+
+        <p>The income channel through which the boom affected schooling operated primarily through crop composition: counties that grew cotton and tobacco experienced the largest revenue gains because these commodities saw the largest wartime price increases. These same counties had high rates of child labor, reflecting the labor intensity of cotton and tobacco cultivation. The high school movement was one of the defining features of American economic development in the early twentieth century (<a class="pv-cite" href="#ref-goldin1998america">Goldin 1998</a>; <a class="pv-cite" href="#ref-goldin1999egalitarianism">Goldin 1999</a>). Our results show that even a temporary commodity boom can interrupt this type of transformation, with effects that persisted for decades and are experienced unevenly across demographic groups and regions.</p>
+
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════ -->
+    <!-- FOOTNOTES                                   -->
+    <!-- ════════════════════════════════════════════ -->
+    <section id="footnotes" class="pv-section">
+      <button class="pv-toggle" aria-expanded="false" aria-controls="footnotes-body">
+        <span class="pv-toggle-icon">&#9654;</span> Footnotes
+      </button>
+      <div id="footnotes-body" class="pv-body" hidden>
+        <ol class="pv-fn-list">
+          <li id="fn-1">It has also been well documented that recessions can increase schooling and that graduation during a recession can have a scarring effect. See, for example, <a class="pv-cite" href="#ref-barr2015stemming">Barr and Turner (2015)</a>, <a class="pv-cite" href="#ref-goodman2025labor">Goodman and Winkelman (2025)</a>, and <a class="pv-cite" href="#ref-rothstein2023when">Rothstein (2023)</a>. <a class="pv-fn-back" href="#fn-ref-1">&#8617;</a></li>
+          <li id="fn-2">Using our estimates, we recover discount rates required to rationalize our findings with forward-looking decisions regarding the tradeoff between foregone earnings and completed schooling. The range of discount rates we find is consistent with estimates reported in the macroeconomics and public finance literature (<a class="pv-cite" href="#ref-arrow2014should">Arrow et al. 2014</a>). Our estimates also closely correspond to contemporary interest rates and bond yields (<a class="pv-cite" href="#ref-fred_m13026">NBER 2024</a>). <a class="pv-fn-back" href="#fn-ref-2">&#8617;</a></li>
+          <li id="fn-3">The model abstracts away from the endogenous decisions of how many children to have, how to allocate investments across children, and spousal matching choices. <a class="pv-fn-back" href="#fn-ref-3">&#8617;</a></li>
+          <li id="fn-4"><a class="pv-cite" href="#ref-shah2017drought">Shah and Steinberg (2017)</a> place additional assumptions on the second-order derivatives to ensure a globally concave objective function with a unique maximum. <a class="pv-fn-back" href="#fn-ref-4">&#8617;</a></li>
+          <li id="fn-5">The index in <a class="pv-cite" href="#ref-kitchens2023impact">Kitchens and Rodgers (2023)</a> is similar to one utilized by <a class="pv-cite" href="#ref-rajan2015anatomy">Rajan and Ramcharan (2015)</a> and <a class="pv-cite" href="#ref-jaremski2020banking">Jaremski and Wheelock (2020)</a>, however, it adds additional crops to represent forage crops as inputs to livestock output. <a class="pv-fn-back" href="#fn-ref-5">&#8617;</a></li>
+          <li id="fn-6">The index is constructed in the spirit of a shift-share instrument. A recent concern regarding these types of measures is that the weights may be endogenous (<a class="pv-cite" href="#ref-goldsmith2020bartik">Goldsmith-Pinkham et al. 2020</a>). However, given that our shares depend on agro-climatic factors, we have no reason to suspect that our shares are endogenous. As a robustness check, we develop an instrumental variables strategy using potential crop yields rather than observed crop shares. <a class="pv-fn-back" href="#fn-ref-6">&#8617;</a></li>
+          <li id="fn-7">In our regression analysis, we will also estimate the effects for those living off of farms in 1910. <a class="pv-fn-back" href="#fn-ref-7">&#8617;</a></li>
+          <li id="fn-8">Parental characteristics measured in 1910 include father's occupational score, father's birthplace, mother's birthplace, father illiteracy, mother illiteracy, maternal labor force participation, and home ownership. <a class="pv-fn-back" href="#fn-ref-8">&#8617;</a></li>
+          <li id="fn-9">While the estimates for Black men are larger, it is difficult to directly compare the estimates for whites and Blacks given large differences in school resources (<a class="pv-cite" href="#ref-carruthers2017separate">Carruthers and Wanamaker 2017</a>). The lower perceived returns to schooling for Black children are reflected in contemporary accounts. The <em>Dallas Express</em> reported in 1922 that the school board "took this step as an alternative to enforcing the state's compulsory school attendance law. Members of the board believe the Negroes are needed badly in the cotton fields" (<a class="pv-cite" href="#ref-dallasexpress1922">Dallas Express 1922</a>). <a class="pv-fn-back" href="#fn-ref-9">&#8617;</a></li>
+          <li id="fn-10">Women entered agriculture to help with the harvest, as epitomized by the Women's Land Army, organized by the USDA. <a class="pv-fn-back" href="#fn-ref-10">&#8617;</a></li>
+          <li id="fn-11">The exception is Black women, for whom the owner and renter estimates diverge, though both are imprecisely estimated given the small sample size. <a class="pv-fn-back" href="#fn-ref-11">&#8617;</a></li>
+          <li id="fn-12">The grade completion figure for men based on Census Linking Project links shows a similar pattern. <a class="pv-fn-back" href="#fn-ref-12">&#8617;</a></li>
+          <li id="fn-13">Our calibration uses per-farm crop revenue as a proxy for household consumption. Using our estimates, we find discount factors between 0.95 and 0.99, consistent with forward-looking households and with estimates reported in the macroeconomics and public finance literature. <a class="pv-fn-back" href="#fn-ref-13">&#8617;</a></li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ════════════════════════════════════════════ -->
+    <!-- REFERENCES                                  -->
+    <!-- ════════════════════════════════════════════ -->
+    <section id="references" class="pv-section">
+      <button class="pv-toggle" aria-expanded="false" aria-controls="references-body">
+        <span class="pv-toggle-icon">&#9654;</span> References
+      </button>
+      <div id="references-body" class="pv-body" hidden>
+        <ul class="pv-ref-list">
+          <li id="ref-aaronson2011impact">Aaronson, Daniel, and Bhashkar Mazumder. 2011. "The Impact of Rosenwald Schools on Black Achievement." <em>Journal of Political Economy</em> 119(5): 821-888.</li>
+          <li id="ref-aaronson2014fertility">Aaronson, Daniel, Fabian Lange, and Bhashkar Mazumder. 2014. "Fertility Transitions Along the Extensive and Intensive Margins." <em>American Economic Review</em> 104(11): 3701-3724.</li>
+          <li id="ref-abramitzky2011marrying">Abramitzky, Ran, Adeline Delavande, and Luis Vasconcelos. 2011. "Marrying Up: The Role of Sex Ratio in Assortative Matching." <em>American Economic Journal: Applied Economics</em> 3(3): 124-157.</li>
+          <li id="ref-ang2026vanguard">Ang, Desmond, and Sahil Chinoy. 2026. "Vanguard: Black Veterans and Civil Rights after World War I." <em>Quarterly Journal of Economics</em> 141(1): 795-844.</li>
+          <li id="ref-arrow2014should">Arrow, Kenneth J., et al. 2014. "Should Governments Use a Declining Discount Rate in Project Analysis?" <em>Review of Environmental Economics and Policy</em> 8(2): 145-163.</li>
+          <li id="ref-atkin2016endogenous">Atkin, David. 2016. "Endogenous Skill Acquisition and Export Manufacturing in Mexico." <em>American Economic Review</em> 106(8): 2046-2085.</li>
+          <li id="ref-bai2020returns">Bai, Jie, and Yukun Wang. 2020. "Returns to Work, Child Labor and Schooling: The Income vs. Price Effects." <em>Journal of Development Economics</em> 145: 102466.</li>
+          <li id="ref-baker2015field">Baker, Richard B. 2015. "From the Field to the Classroom: The Boll Weevil's Impact on Education in Rural Georgia." <em>Journal of Economic History</em> 75(4): 1128-1160.</li>
+          <li id="ref-baker2020long">Baker, Richard B., John Blanchette, and Katherine Eriksson. 2020. "Long-Run Impacts of Agricultural Shocks on Educational Attainment: Evidence from the Boll Weevil." <em>Journal of Economic History</em> 80(1): 136-174.</li>
+          <li id="ref-barr2015stemming">Barr, Andrew, and Sarah E. Turner. 2015. "Stemming the Tide: How Did Draft Deferments During the Vietnam War Affect College Completion?" <em>Journal of Public Economics</em> 130: 26-44.</li>
+          <li id="ref-bau2020human">Bau, Natalie, Martin Rotemberg, Manisha Shah, and Bryce Steinberg. 2020. "Human Capital Investment in the Presence of Child Labor." NBER Working Paper.</li>
+          <li id="ref-beegle2006child">Beegle, Kathleen, Rajeev H. Dehejia, and Roberta Gatti. 2006. "Child Labor and Agricultural Shocks." <em>Journal of Development Economics</em> 81(1): 80-96.</li>
+          <li id="ref-birminghamageherald1918">Birmingham Age-Herald. 1918. "Bumper Crops Were Produced in 1917." January 20.</li>
+          <li id="ref-black2005tight">Black, Dan A., Terra G. McKinnish, and Seth G. Sanders. 2005. "Tight Labor Markets and the Demand for Education: Evidence from the Coal Boom and Bust." <em>Industrial Labor Relations Review</em> 59(1): 3-16.</li>
+          <li id="ref-bleakley2007disease">Bleakley, Hoyt. 2007. "Disease and Development: Evidence from Hookworm Eradication in the American South." <em>Quarterly Journal of Economics</em> 122(1): 73-117.</li>
+          <li id="ref-bleakley2009economic">Bleakley, Hoyt. 2009. "Economic Effects of Childhood Exposure to Tropical Disease." <em>American Economic Review</em> 99(2): 218-223.</li>
+          <li id="ref-bleemer2025changes">Bleemer, Zachary, and Sarah Quincy. 2025. "Changes in the College Mobility Pipeline since 1900." NBER Working Paper 33797.</li>
+          <li id="ref-bloome2017tenancy">Bloome, Deirdre, James Feigenbaum, and Christopher Muller. 2017. "Tenancy, Marriage, and the Boll Weevil Infestation, 1892-1930." <em>Demography</em> 54(3): 1029-1049.</li>
+          <li id="ref-boehnke2022missing">Boehnke, Jorn, and Victor Gay. 2022. "The Missing Men: World War I and Female Labor Force Participation." <em>Journal of Human Resources</em> 57(4): 1209-1241.</li>
+          <li id="ref-card2022intergenerational">Card, David, Ciprian Domnisoru, and Lowell Taylor. 2022. "The Intergenerational Transmission of Human Capital: Evidence from the Golden Age of Upward Mobility." <em>Journal of Labor Economics</em> 40(S1): S39-S95.</li>
+          <li id="ref-carrRosie2019">Carr, Jillian, and Andrew Rettenmaier. 2019. "What Happened to Rosie?" PERC Working Paper.</li>
+          <li id="ref-carruthers2017separate">Carruthers, Celeste K., and Marianne H. Wanamaker. 2017. "Separate and Unequal in the Labor Market: Human Capital and the Jim Crow Wage Gap." <em>Journal of Labor Economics</em> 35(3): 655-696.</li>
+          <li id="ref-carterHSUS">Carter, Susan B., et al. 2006. <em>Historical Statistics of the United States: Millennial Edition</em>. Cambridge University Press.</li>
+          <li id="ref-cascio2022needs">Cascio, Elizabeth U., and Ayushi Narayan. 2022. "Who Needs a Fracking Education? The Educational Response to Low-Skill-Biased Technological Change." <em>ILR Review</em> 75(1): 56-89.</li>
+          <li id="ref-caucutt2020early">Caucutt, Elizabeth M., and Lance Lochner. 2020. "Early and Late Human Capital Investments, Borrowing Constraints, and the Family." <em>Journal of Political Economy</em> 128(3): 1065-1147.</li>
+          <li id="ref-charles2015housing">Charles, Kerwin Kofi, Erik Hurst, and Matthew J. Notowidigdo. 2015. "Housing Booms and Busts, Labor Market Opportunities, and College Attendance." NBER Working Paper.</li>
+          <li id="ref-conley2025standard">Conley, Timothy G., and Morgan Kelly. 2025. "The Standard Errors of Persistence." <em>Journal of International Economics</em> 153: 104027.</li>
+          <li id="ref-cunha2007technology">Cunha, Flavio, and James Heckman. 2007. "The Technology of Skill Formation." <em>American Economic Review</em> 97(2): 31-47.</li>
+          <li id="ref-dallasexpress1922">Dallas Express. 1922. "Negroes Needed in the Cotton Fields." September 23.</li>
+          <li id="ref-dammert2008child">Dammert, Ana C. 2008. "Child Labor and Schooling Response to Changes in Coca Production in Rural Peru." <em>Journal of Development Economics</em> 86(1): 164-180.</li>
+          <li id="ref-doxey2022democratization">Doxey, Alison, Ezra Karger, and Peter Nencka. 2022. "The Democratization of Opportunity: The Effects of the US High School Movement." Working Paper.</li>
+          <li id="ref-duryea2007effects">Duryea, Suzanne, David Lam, and Deborah Levison. 2007. "Effects of Economic Shocks on Children's Employment and Schooling in Brazil." <em>Journal of Development Economics</em> 84(1): 188-214.</li>
+          <li id="ref-edmonds2005child">Edmonds, Eric V., and Nina Pavcnik. 2005. "Child Labor in the Global Economy." <em>Journal of Economic Perspectives</em> 19(1): 199-220.</li>
+          <li id="ref-edgefieldadvertiser1916">Edgefield Advertiser. 1916. "Another Session Should Not Be Lost." June 21.</li>
+          <li id="ref-emery2012long">Emery, J.C. Herbert, Ana Ferrer, and David Green. 2012. "Long-Term Consequences of Natural Resource Booms for Human Capital Accumulation." <em>Industrial Labor Relations Review</em> 65(3): 708-734.</li>
+          <li id="ref-ferrara2022world">Ferrara, Andreas. 2022. "World War II and Black Economic Progress." <em>Journal of Labor Economics</em> 40(4): 1053-1091.</li>
+          <li id="ref-ferrara2024discrimination">Ferrara, Andreas, and Price Fishback. 2024. "Discrimination, Migration, and Economic Outcomes: Evidence from World War I." <em>Review of Economics and Statistics</em> 106(5): 1201-1219.</li>
+          <li id="ref-fiszbein2022agricultural">Fiszbein, Martin. 2022. "Agricultural Diversity, Structural Change, and Long-run Development: Evidence from the United States." <em>American Economic Journal: Macroeconomics</em> 14(2): 1-43.</li>
+          <li id="ref-fred_m13026">National Bureau of Economic Research. 2024. "Yield on High Grade Industrial Bonds, Aaa Rating for United States." FRED, Federal Reserve Bank of St. Louis.</li>
+          <li id="ref-gay2023intergenerational">Gay, Victor. 2023. "The Intergenerational Transmission of World War I on Female Labour." <em>Economic Journal</em> 133(654): 2303-2333.</li>
+          <li id="ref-goldin1991role">Goldin, Claudia. 1991. "The Role of World War II in the Rise of Women's Work." <em>American Economic Review</em> 81(4): 741-756.</li>
+          <li id="ref-goldin1998america">Goldin, Claudia. 1998. "America's Graduation from High School: The Evolution and Spread of Secondary Schooling in the Twentieth Century." <em>Journal of Economic History</em> 58(2): 345-374.</li>
+          <li id="ref-goldin1999egalitarianism">Goldin, Claudia. 1999. "Egalitarianism and the Returns to Education during the Great Transformation of American Education." <em>Journal of Political Economy</em> 107(S6): S65-S94.</li>
+          <li id="ref-goldin2008mass">Goldin, Claudia, and Lawrence F. Katz. 2008. "Mass Secondary Schooling and the State: The Role of State Compulsion in the High School Movement." In <em>Understanding Long-Run Economic Growth</em>. University of Chicago Press.</li>
+          <li id="ref-goldin2013shocking">Goldin, Claudia, and Claudia Olivetti. 2013. "Shocking Labor Supply: A Reassessment of the Role of World War II on Women's Labor Supply." <em>American Economic Review</em> 103(3): 257-262.</li>
+          <li id="ref-goldsmith2020bartik">Goldsmith-Pinkham, Paul, Isaac Sorkin, and Henry Swift. 2020. "Bartik Instruments: What, When, Why, and How." <em>American Economic Review</em> 110(8): 2586-2624.</li>
+          <li id="ref-goodman2025labor">Goodman, Sarena, and Tyler Winkelman. 2025. "Labor Market Returns to Higher Education During Recessions." NBER Working Paper 34498.</li>
+          <li id="ref-hainesAg">Haines, Michael, Price Fishback, and Paul Rhode. 2018. "United States Agriculture Data, 1840-2012." ICPSR 35206.v4.</li>
+          <li id="ref-heckman2007economics">Heckman, James J. 2007. "The Economics, Technology, and Neuroscience of Human Capability Formation." <em>Proceedings of the National Academy of Sciences</em> 104(33): 13250-13255.</li>
+          <li id="ref-hibbard1919effects">Hibbard, Benjamin Horace. 1919. <em>Effects of the Great War upon Agriculture in the United States and Great Britain</em>. Oxford University Press.</li>
+          <li id="ref-hoehn2021long">Hoehn-Velasco, Lauren. 2021. "The Long-Term Impact of Preventative Public Health Programs." <em>Economic Journal</em> 131(634): 797-826.</li>
+          <li id="ref-jaremski2020banking">Jaremski, Matthew, and David C. Wheelock. 2020. "Banking on the Boom, Tripped by the Bust: Banks and the World War I Agricultural Price Shock." <em>Journal of Money, Credit and Banking</em> 52(7): 1719-1754.</li>
+          <li id="ref-jaworski2014you">Jaworski, Taylor. 2014. "'You're in the Army Now:' The Impact of World War II on Women's Education, Work, and Family." <em>Journal of Economic History</em> 74(1): 169-195.</li>
+          <li id="ref-johnson2019reducing">Johnson, Rucker C., and C. Kirabo Jackson. 2019. "Reducing Inequality through Dynamic Complementarity: Evidence from Head Start and Public School Spending." <em>American Economic Journal: Economic Policy</em> 11(4): 310-349.</li>
+          <li id="ref-kitchens2023impact">Kitchens, Carl T., and Luke P. Rodgers. 2023. "The Impact of the WWI Agricultural Boom and Bust on Female Opportunity Cost and Fertility." <em>Economic Journal</em> 133(656): 2978-3006.</li>
+          <li id="ref-kovalenko2023natural">Kovalenko, Alina. 2023. "Natural Resource Booms, Human Capital, and Earnings: Evidence from Linked Education and Employment Records." <em>American Economic Journal: Applied Economics</em> 15(2): 184-217.</li>
+          <li id="ref-kruger2007coffee">Kruger, Diana I. 2007. "Coffee Production Effects on Child Labor and Schooling in Rural Brazil." <em>Journal of Development Economics</em> 82(2): 448-463.</li>
+          <li id="ref-lennon2023women">Lennon, Conor. 2023. "Women's Educational Attainment, Marriage, and Fertility: Evidence from the 1944 GI Bill." <em>Explorations in Economic History</em> 90: 101539.</li>
+          <li id="ref-malpede2025dark">Malpede, Maurizio. 2025. "The Dark Side of Batteries: Cobalt Mining and Children's Education in Sub-Saharan Africa." <em>International Economic Review</em>.</li>
+          <li id="ref-nourse1924american">Nourse, Edwin Griswold. 1924. <em>American Agriculture and the European Market</em>. McGraw-Hill.</li>
+          <li id="ref-price2021combining">Price, Joseph, Kasey Buckles, Jacob Van Leeuwen, and Isaac Riley. 2021. "Combining Family History and Machine Learning to Link Historical Records: The Census Tree Data Set." <em>Explorations in Economic History</em> 80: 101391.</li>
+          <li id="ref-publicledger1918">Public Ledger. 1918. "Farm Wages." Maysville, KY, June 7.</li>
+          <li id="ref-rajan2015anatomy">Rajan, Raghuram, and Rodney Ramcharan. 2015. "The Anatomy of a Credit Crisis: The Boom and Bust in Farm Land Prices in the United States in the 1920s." <em>American Economic Review</em> 105(4): 1439-1477.</li>
+          <li id="ref-rothstein2023when">Rothstein, Jesse. 2023. "When the Safety Net Catches Workers: The Effects of Unemployment Insurance on Labor Market Outcomes and Human Capital." <em>Journal of Human Resources</em> 58(5): 1537-1577.</li>
+          <li id="ref-ruggles2024ipums">Ruggles, Steven, et al. 2024. "IPUMS Ancestry Full Count Data: Version 4.0." Minneapolis, MN.</li>
+          <li id="ref-shah2017drought">Shah, Manisha, and Bryce Millett Steinberg. 2017. "Drought of Opportunities: Contemporaneous and Long-Term Impacts of Rainfall Shocks on Human Capital." <em>Journal of Political Economy</em> 125(2): 527-561.</li>
+          <li id="ref-shah2021workfare">Shah, Manisha, and Bryce Millett Steinberg. 2021. "Workfare and Human Capital Investment: Evidence from India." <em>Journal of Human Resources</em> 56(2): 380-405.</li>
+          <li id="ref-sttammanyfarmer1916">St. Tammany Farmer. 1916. "Boys Taken Out of School for Farm Work." Covington, LA, February 12.</li>
+          <li id="ref-tinley1942behavior">Tinley, J.M. 1942. "Behavior of Prices of Farm Products during World Wars I and II." <em>Journal of Farm Economics</em> 24(1): 157-167.</li>
+          <li id="ref-vandenbroucke2014fertility">Vandenbroucke, Guillaume. 2014. "Fertility and Wars: The Case of World War I in France." <em>American Economic Journal: Macroeconomics</em> 6(2): 108-136.</li>
+        </ul>
+      </div>
     </section>
 
   </main>
 
 </div>
 
-<style>
-  .llm-page {
-    display: flex;
-    max-width: 960px;
-    margin: 0 auto;
-    padding: 30px 20px 40px;
-    gap: 36px;
-  }
+<!-- Lightbox -->
+<div class="pv-lightbox" id="pv-lightbox" aria-hidden="true">
+  <button class="pv-lightbox-close" aria-label="Close">&times;</button>
+  <img src="" alt="">
+</div>
 
-  /* ── Sidebar ── */
-  .llm-sidebar {
-    position: sticky;
-    top: 76px;
-    align-self: flex-start;
-    width: 150px;
-    flex-shrink: 0;
-  }
-  .llm-sidebar nav {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-  .llm-sidebar nav a {
-    font-family: 'Oswald', sans-serif;
-    font-size: 14px;
-    font-weight: 400;
-    letter-spacing: 0.3px;
-    color: #555;
-    text-decoration: none;
-    padding: 5px 10px;
-    border-radius: 4px;
-    transition: background 0.15s, color 0.15s;
-  }
-  .llm-sidebar nav a:hover {
-    background: #f0ece6;
-    color: #1a4a8a;
-    text-decoration: none;
-  }
-  .llm-sidebar-files {
-    margin-top: 20px;
-    padding-top: 14px;
-    border-top: 1px solid #ddd;
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
-  .llm-sidebar-files a {
-    font-family: 'Source Serif 4', serif;
-    font-size: 13px;
-    color: #1a4a8a;
-    text-decoration: none;
-    padding: 4px 10px;
-    border-radius: 4px;
-    transition: background 0.15s;
-  }
-  .llm-sidebar-files a:hover {
-    background: #f0ece6;
-    text-decoration: none;
-  }
-
-  /* ── Content ── */
-  .llm-content {
-    flex: 1;
-    min-width: 0;
-  }
-  .llm-content h1 {
-    font-family: 'Source Serif 4', serif;
-    font-size: 24px;
-    font-weight: 600;
-    line-height: 1.3;
-    color: #272f38;
-    margin: 0 0 8px 0;
-  }
-  .llm-authors {
-    font-size: 14px;
-    color: #555;
-    text-align: left;
-    margin: 0 0 28px 0;
-    line-height: 1.5;
-  }
-
-  /* ── Sections ── */
-  .llm-section {
-    margin-bottom: 30px;
-  }
-  .llm-section h2 {
-    font-family: 'Oswald', sans-serif;
-    font-size: 15px;
-    font-weight: 500;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    color: #272f38;
-    margin: 0 0 10px 0;
-    padding-bottom: 5px;
-    border-bottom: 1px solid #ddd;
-  }
-  .llm-section h3 {
-    font-family: 'Source Serif 4', serif;
-    font-size: 15px;
-    font-weight: 600;
-    color: #272f38;
-    margin: 16px 0 4px 0;
-  }
-  .llm-section p {
-    text-align: left;
-    font-size: 15px;
-    line-height: 1.6;
-  }
-  .llm-section ul, .llm-section ol {
-    padding-left: 22px;
-    margin: 0 0 8px 0;
-  }
-  .llm-section li {
-    font-size: 15px;
-    line-height: 1.6;
-    margin-bottom: 6px;
-    text-align: left;
-  }
-
-  /* ── Mobile ── */
-  @media (max-width: 768px) {
-    .llm-page {
-      flex-direction: column;
-      gap: 0;
-      padding-top: 16px;
-    }
-    .llm-sidebar {
-      position: static;
-      width: 100%;
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 4px 0;
-      margin-bottom: 20px;
-      padding-bottom: 14px;
-      border-bottom: 1px solid #ddd;
-    }
-    .llm-sidebar nav {
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 0;
-    }
-    .llm-sidebar nav a {
-      padding: 4px 8px;
-      font-size: 13px;
-    }
-    .llm-sidebar-files {
-      margin-top: 0;
-      padding-top: 0;
-      border-top: none;
-      flex-direction: row;
-      gap: 0;
-      margin-left: auto;
-    }
-    .llm-sidebar-files a {
-      padding: 4px 8px;
-    }
-  }
-</style>
+<!-- MathJax -->
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['$','$']], displayMath: [['\\[','\\]']] },
+    options: { skipHtmlTags: ['script','noscript','style','textarea'] }
+  };
+</script>
+<script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js" async></script>

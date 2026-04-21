@@ -411,6 +411,87 @@
   text-align: left;
 }
 
+/* ── Tables ─────────────────────────────────────── */
+.pv-table-wrap {
+  margin: 24px 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pv-table-caption {
+  font-family: 'Source Serif 4', serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: #272f38;
+  text-align: left;
+  margin: 0 0 8px;
+}
+
+.pv-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.pv-table th {
+  background: #f5f5f0;
+  font-weight: 600;
+  text-align: center;
+  padding: 6px 10px;
+  border-bottom: 2px solid #bbb;
+  white-space: nowrap;
+}
+
+.pv-table td {
+  text-align: center;
+  padding: 4px 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.pv-table td:first-child {
+  text-align: left;
+  white-space: nowrap;
+}
+
+.pv-table .pv-panel-header td {
+  font-style: italic;
+  text-decoration: underline;
+  text-align: left;
+  padding-top: 10px;
+  border-bottom: none;
+}
+
+.pv-table .pv-se td {
+  color: #777;
+  border-bottom: none;
+  padding-top: 0;
+}
+
+.pv-table .pv-rule-bottom td {
+  border-bottom: 2px solid #bbb;
+}
+
+.pv-table .pv-controls td {
+  font-size: 13px;
+  padding-top: 6px;
+}
+
+.pv-table-notes {
+  font-size: 12px;
+  color: #555;
+  line-height: 1.55;
+  margin-top: 8px;
+  text-align: justify;
+}
+
+/* ── Math blocks ───────────────────────────────── */
+.pv-math-block {
+  margin: 20px 0;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 /* ── Lightbox ───────────────────────────────────── */
 .pv-lightbox {
   display: none;

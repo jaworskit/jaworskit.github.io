@@ -13,6 +13,7 @@
 <title>{{ page.title | default: site.title }}</title>
 <link rel="stylesheet" type="text/css" href="/css/main.css">
 {% if page.extra_css %}<link rel="stylesheet" href="{{ page.extra_css }}">{% endif %}
+{% if page.extra_js %}<script defer src="{{ page.extra_js }}"></script>{% endif %}
 </head>
 <body{% if page.body_class %} class="{{ page.body_class }}"{% endif %}>
 
