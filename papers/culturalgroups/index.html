@@ -213,23 +213,18 @@ extra_css: /css/paper-viewer.css
 
         <!-- ── Figure 1: Two clusters ── -->
         <div class="pv-figure" id="fig-twoclusters">
-          <p class="pv-figure-caption">Figure 1. Two-cluster maps, 1850/1880/1930</p>
-          <div class="pv-figure-row">
-            <div class="pv-figure-panel">
-              <img src="figures/cluster_1850_k2.png" alt="Two-cluster map, 1850">
-              <div class="pv-figure-panel-label">1850</div>
-            </div>
-            <div class="pv-figure-panel">
-              <img src="figures/cluster_1880_k2.png" alt="Two-cluster map, 1880">
-              <div class="pv-figure-panel-label">1880</div>
-            </div>
-            <div class="pv-figure-panel">
-              <img src="figures/cluster_1930_k2.png" alt="Two-cluster map, 1930">
-              <div class="pv-figure-panel-label">1930</div>
-            </div>
+          <p class="pv-figure-caption">Figure 1. Two-cluster maps</p>
+          <div class="pv-figure-tabs">
+            <button class="pv-figure-tab pv-tab-active" data-panel="0">1850</button>
+            <button class="pv-figure-tab" data-panel="1">1880</button>
+            <button class="pv-figure-tab" data-panel="2">1930</button>
           </div>
-          <div class="pv-figure-notes"><em>Notes:</em> Counties are clustered into two groups in each census year using hierarchical agglomerative clustering with Ward's minimum-variance method applied to cosine-normalized first-name share vectors. Clustering is performed separately for each year. The sample includes white individuals. Colors indicate cluster membership and do not impose any geographic structure. Spatial contiguity reflects similarity in naming distributions rather than administrative boundaries.</div>
-          <div class="pv-figure-zoom-hint">Click any panel to enlarge</div>
+          <div class="pv-figure-panels">
+            <div class="pv-figure-panel pv-panel-active"><img src="figures/cluster_1850_k2.png" alt="Two-cluster map, 1850"></div>
+            <div class="pv-figure-panel"><img src="figures/cluster_1880_k2.png" alt="Two-cluster map, 1880"></div>
+            <div class="pv-figure-panel"><img src="figures/cluster_1930_k2.png" alt="Two-cluster map, 1930"></div>
+          </div>
+          <div class="pv-figure-notes"><em>Notes:</em> Counties are clustered into two groups using hierarchical agglomerative clustering with Ward's minimum-variance method applied to cosine-normalized first-name share vectors. Clustering is performed separately for each year. The sample includes white individuals. Colors indicate cluster membership. Spatial contiguity reflects similarity in naming distributions rather than administrative boundaries.</div>
         </div>
 
         <p>Importantly, the 1850 boundary does not coincide mechanically with the free-slave political line. Counties in southern Ohio, Indiana, Illinois, and western Pennsylvania cluster with the South, despite being located in free states. These counties were heavily influenced by upland migration from the Appalachian backcountry, carrying evangelical religious traditions and kin-based social structures across formal state boundaries. Naming practices therefore appear to track settlement corridors and cultural transmission more closely than contemporaneous legal status.</p>
@@ -254,46 +249,36 @@ extra_css: /css/paper-viewer.css
 
         <!-- ── Figure 2: Four clusters ── -->
         <div class="pv-figure" id="fig-fourclusters">
-          <p class="pv-figure-caption">Figure 2. Four-cluster maps, 1850/1880/1930</p>
-          <div class="pv-figure-row">
-            <div class="pv-figure-panel">
-              <img src="figures/cluster_1850_k4.png" alt="Four-cluster map, 1850">
-              <div class="pv-figure-panel-label">1850</div>
-            </div>
-            <div class="pv-figure-panel">
-              <img src="figures/cluster_1880_k4.png" alt="Four-cluster map, 1880">
-              <div class="pv-figure-panel-label">1880</div>
-            </div>
-            <div class="pv-figure-panel">
-              <img src="figures/cluster_1930_k4.png" alt="Four-cluster map, 1930">
-              <div class="pv-figure-panel-label">1930</div>
-            </div>
+          <p class="pv-figure-caption">Figure 2. Four-cluster maps</p>
+          <div class="pv-figure-tabs">
+            <button class="pv-figure-tab pv-tab-active" data-panel="0">1850</button>
+            <button class="pv-figure-tab" data-panel="1">1880</button>
+            <button class="pv-figure-tab" data-panel="2">1930</button>
           </div>
-          <div class="pv-figure-notes"><em>Notes:</em> Counties are clustered into four groups in each census year using hierarchical agglomerative clustering with Ward's minimum-variance method applied to cosine-normalized first-name share vectors. Clustering is conducted separately by year. The sample includes white individuals. Colors indicate cluster membership and do not impose any geographic structure. Spatial contiguity reflects similarity in naming distributions rather than administrative boundaries.</div>
-          <div class="pv-figure-zoom-hint">Click any panel to enlarge</div>
+          <div class="pv-figure-panels">
+            <div class="pv-figure-panel pv-panel-active"><img src="figures/cluster_1850_k4.png" alt="Four-cluster map, 1850"></div>
+            <div class="pv-figure-panel"><img src="figures/cluster_1880_k4.png" alt="Four-cluster map, 1880"></div>
+            <div class="pv-figure-panel"><img src="figures/cluster_1930_k4.png" alt="Four-cluster map, 1930"></div>
+          </div>
+          <div class="pv-figure-notes"><em>Notes:</em> Counties are clustered into four groups using hierarchical agglomerative clustering with Ward's minimum-variance method applied to cosine-normalized first-name share vectors. Clustering is conducted separately by year. The sample includes white individuals. Colors indicate cluster membership. Spatial contiguity reflects similarity in naming distributions rather than administrative boundaries.</div>
         </div>
 
         <p>At higher levels of disaggregation, the algorithm identifies persistent subregions whose boundaries are spatially contiguous and historically plausible (<a class="pv-cite" href="#ref-fischer1989">Fischer 1989</a>; <a class="pv-cite" href="#ref-garreau1981">Garreau 1981</a>). New England separates from the broader North in ways consistent with its early emphasis on congregational governance and literacy; the Mid-Atlantic reflects its pluralistic and commercial heritage; Appalachia exhibits patterns consistent with backcountry settlement and evangelical traditions; and the Deep South retains distinctive profiles associated with plantation society.<sup><a class="pv-fn-ref" href="#fn-12" id="fn-ref-12">12</a></sup></p>
 
         <!-- ── Figure 3: Seven clusters ── -->
         <div class="pv-figure" id="fig-sevenclusters">
-          <p class="pv-figure-caption">Figure 3. Seven-cluster maps, 1850/1880/1930</p>
-          <div class="pv-figure-row">
-            <div class="pv-figure-panel">
-              <img src="figures/cluster_1850_k7.png" alt="Seven-cluster map, 1850">
-              <div class="pv-figure-panel-label">1850</div>
-            </div>
-            <div class="pv-figure-panel">
-              <img src="figures/cluster_1880_k7.png" alt="Seven-cluster map, 1880">
-              <div class="pv-figure-panel-label">1880</div>
-            </div>
-            <div class="pv-figure-panel">
-              <img src="figures/cluster_1930_k7.png" alt="Seven-cluster map, 1930">
-              <div class="pv-figure-panel-label">1930</div>
-            </div>
+          <p class="pv-figure-caption">Figure 3. Seven-cluster maps</p>
+          <div class="pv-figure-tabs">
+            <button class="pv-figure-tab pv-tab-active" data-panel="0">1850</button>
+            <button class="pv-figure-tab" data-panel="1">1880</button>
+            <button class="pv-figure-tab" data-panel="2">1930</button>
           </div>
-          <div class="pv-figure-notes"><em>Notes:</em> Counties are clustered into seven groups in each census year using hierarchical agglomerative clustering with Ward's minimum-variance method applied to cosine-normalized first-name share vectors. Clustering is conducted separately by year. The sample includes white individuals. Colors indicate cluster membership; the seven clusters reflect a higher level of disaggregation. Spatial coherence emerges from similarity in naming distributions rather than imposed geographic boundaries.</div>
-          <div class="pv-figure-zoom-hint">Click any panel to enlarge</div>
+          <div class="pv-figure-panels">
+            <div class="pv-figure-panel pv-panel-active"><img src="figures/cluster_1850_k7.png" alt="Seven-cluster map, 1850"></div>
+            <div class="pv-figure-panel"><img src="figures/cluster_1880_k7.png" alt="Seven-cluster map, 1880"></div>
+            <div class="pv-figure-panel"><img src="figures/cluster_1930_k7.png" alt="Seven-cluster map, 1930"></div>
+          </div>
+          <div class="pv-figure-notes"><em>Notes:</em> Counties are clustered into seven groups using hierarchical agglomerative clustering with Ward's minimum-variance method applied to cosine-normalized first-name share vectors. Clustering is conducted separately by year. The sample includes white individuals. Colors indicate cluster membership; the seven clusters reflect a higher level of disaggregation. Spatial coherence emerges from similarity in naming distributions rather than imposed geographic boundaries.</div>
         </div>
 
         <p>Matching cluster centroids across census years shows that the cultural signatures of major regions remain recognizable between 1850 and 1930, even as their geographic footprint evolves. For two clusters, 428 of 1,344 matched counties (32 percent) shift cluster membership between 1850 and 1880, but only 114 of 2,052 matched counties (6 percent) shift between 1880 and 1930. The declining rate of boundary movement is consistent with a cultural geography that consolidated over time rather than dissolving. Counties that do shift membership are disproportionately located along historically recognized borderlands: the Ohio Valley, Kentucky, Missouri, and parts of Maryland and West Virginia, where mixed settlement from both northern and southern migration streams made cultural boundaries fluid. These borderland counties exhibit lower silhouette scores than interior counties, indicating weaker attachment to either cluster, which is precisely what one would expect in zones of overlapping cultural influence. Borderlands function as areas of interaction, where competing groups coexist and adaptation is more likely. Cultural boundaries thus appear durable but permeable: they channel development without rendering change impossible.</p>
@@ -460,14 +445,14 @@ extra_css: /css/paper-viewer.css
 
 <!-- Inline fallback styles (in case external CSS hasn't loaded) -->
 <style>
-  .pv-figure { margin: 24px auto; max-width: 420px; }
-  .pv-figure-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
-  .pv-figure-panel img { width: 100%; height: auto; display: block; }
+  .pv-figure { text-align: center; margin: 24px 0; }
+  .pv-figure-tabs { display: flex; gap: 4px; margin-bottom: 8px; }
+  .pv-figure-tab { padding: 4px 14px; border: 1px solid #B8A88A; background: transparent; border-radius: 3px; cursor: pointer; font-size: 13px; }
+  .pv-figure-tab.pv-tab-active { background: #6B1D1D; color: #fff; border-color: #6B1D1D; }
+  .pv-figure-panel { display: none; }
+  .pv-figure-panel.pv-panel-active { display: block; }
+  .pv-figure-panel img { display: block; margin: 0 auto; max-width: 100%; max-height: 75vh; }
   .pv-lightbox img { max-width: 90vw; max-height: 90vh; }
-  @media (max-width: 768px) {
-    .pv-figure { max-width: 100%; }
-    .pv-figure-row { grid-template-columns: 1fr; }
-  }
 </style>
 
 <!-- Lightbox overlay -->
@@ -685,6 +670,22 @@ extra_css: /css/paper-viewer.css
     }
   });
   updateTocActive();
+
+  // ── Figure tabs ──────────────────────────────────
+
+  document.querySelectorAll('.pv-figure').forEach(function(fig) {
+    var tabs = fig.querySelectorAll('.pv-figure-tab');
+    var panels = fig.querySelectorAll('.pv-figure-panel');
+    tabs.forEach(function(tab) {
+      tab.addEventListener('click', function() {
+        var idx = parseInt(tab.getAttribute('data-panel'), 10);
+        tabs.forEach(function(t) { t.classList.remove('pv-tab-active'); });
+        panels.forEach(function(p) { p.classList.remove('pv-panel-active'); });
+        tab.classList.add('pv-tab-active');
+        if (panels[idx]) panels[idx].classList.add('pv-panel-active');
+      });
+    });
+  });
 
   // ── Lightbox ────────────────────────────────────
 
