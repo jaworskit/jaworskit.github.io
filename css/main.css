@@ -279,13 +279,22 @@ p {
   margin-bottom: 4px;
 }
 
-/* ── Publication group dividers ───────────────────── */
-.pub-break {
-  list-style: none;
-  margin: 10px 0;
-  padding: 0;
-  border: none;
-  height: 0;
+/* ── Year marginal labels ────────────────────────── */
+.pub-list-years li {
+  position: relative;
+  padding-left: 40px;
+}
+
+.pub-year {
+  position: absolute;
+  left: 0;
+  top: 2px;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--secondary);
+  letter-spacing: 0.5px;
+  line-height: 1;
 }
 
 /* ── CV link ─────────────────────────────────────── */
