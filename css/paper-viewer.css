@@ -215,7 +215,7 @@
 /* ── Figures ────────────────────────────────────── */
 .pv-figure {
   margin: 24px auto;
-  max-width: 540px;            /* keep the 3-panel rows compact      */
+  max-width: 420px;            /* keep the 3-panel rows compact      */
 }
 
 .pv-figure-caption {

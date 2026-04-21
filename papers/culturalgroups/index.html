@@ -458,6 +458,18 @@ extra_css: /css/paper-viewer.css
 
 </div><!-- .pv-page -->
 
+<!-- Inline fallback styles (in case external CSS hasn't loaded) -->
+<style>
+  .pv-figure { margin: 24px auto; max-width: 420px; }
+  .pv-figure-row { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 6px; }
+  .pv-figure-panel img { width: 100%; height: auto; display: block; }
+  .pv-lightbox img { max-width: 90vw; max-height: 90vh; }
+  @media (max-width: 768px) {
+    .pv-figure { max-width: 100%; }
+    .pv-figure-row { grid-template-columns: 1fr; }
+  }
+</style>
+
 <!-- Lightbox overlay -->
 <div class="pv-lightbox" id="pv-lightbox" aria-hidden="true">
   <button class="pv-lightbox-close" aria-label="Close">&times;</button>
