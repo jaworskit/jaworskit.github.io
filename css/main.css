@@ -75,6 +75,17 @@ p {
 
 .masthead-name:hover { text-decoration: none; }
 
+/* Dateline below masthead name */
+.masthead-dateline {
+  font-family: 'Source Serif 4', 'Source Serif Pro', serif;
+  font-size: 13px;
+  font-style: italic;
+  color: var(--secondary);
+  text-align: center;
+  line-height: 1.5;
+  padding-bottom: 10px;
+}
+
 /* Ornamental rule between name and nav */
 .masthead-rule {
   width: 100%;
@@ -268,6 +279,43 @@ p {
   margin-bottom: 4px;
 }
 
+/* ── Publication group dividers ───────────────────── */
+.pub-break {
+  list-style: none;
+  margin: 8px 0;
+  padding: 0;
+  border: none;
+  height: 0;
+  border-top: 1px solid var(--rule-light);
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ── CV link ─────────────────────────────────────── */
+.cv-link {
+  display: block;
+  text-align: center;
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 13px;
+  font-weight: 400;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  letter-spacing: 1.5px;
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 6px 0;
+  margin: 8px 0 12px;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.cv-link:hover {
+  background-color: var(--accent);
+  color: #fff;
+  text-decoration: none;
+}
+
 /* ── Custom-bullet lists ──────────────────────────── */
 .custom-list {
   list-style: none;
@@ -374,8 +422,24 @@ p {
   line-height: 1;
 }
 
-/* ── Inline style overrides for contact ──────────── */
-/* (catches inline color: #555 on the contact block) */
+/* ── Footer contact ──────────────────────────────── */
+.footer-contact {
+  font-family: 'Source Serif 4', 'Source Serif Pro', serif;
+  font-size: 13px;
+  font-variant: normal;
+  text-transform: none;
+  letter-spacing: 0;
+  color: var(--secondary);
+  margin-bottom: 4px;
+}
+
+.footer-contact a {
+  color: var(--accent);
+}
+
+.footer-updated {
+  font-size: 11px;
+}
 
 /* ── Course page overrides ────────────────────────── */
 .course-page .page { padding: 10px var(--pad-x); }
