@@ -41,11 +41,18 @@
   a:hover {
     text-decoration: underline;
   }
+  .header {
+    display: flex;
+    align-items: flex-start;
+    gap: 1.5em;
+  }
+  .header-text {
+    flex: 1;
+  }
   .photo {
     width: 200px;
     height: auto;
-    float: right;
-    margin: 0 0 1em 1.5em;
+    flex-shrink: 0;
   }
   .profile-links {
     margin: 1em 0;
@@ -71,10 +78,11 @@
     color: #555;
   }
   @media (max-width: 600px) {
+    .header {
+      flex-direction: column-reverse;
+      align-items: center;
+    }
     .photo {
-      float: none;
-      display: block;
-      margin: 0 auto 1em auto;
       width: 150px;
     }
   }
@@ -82,14 +90,15 @@
 </head>
 <body>
 
-<img class="photo" src="/profile.webp" alt="Taylor Jaworski">
+<div class="header">
+<div class="header-text">
 
 <h1>Taylor Jaworski</h1>
 <p class="title-line">University of Colorado Boulder<br>
 Associate Professor, Department of Economics<br>
 Interim Faculty Director, Benson Center</p>
 
-<p class="title-line">  
+<p class="title-line">
 Research Associate, National Bureau of Economic Research</p>
 
 <p>
@@ -103,6 +112,10 @@ Research Associate, National Bureau of Economic Research</p>
   <a href="https://www.nber.org/people/taylor_jaworski" target="_blank">NBER</a> |
   <a href="https://www.linkedin.com/in/taylor-jaworski-3a94362/" target="_blank">LinkedIn</a>
 </p>
+
+</div>
+<img class="photo" src="/profile.webp" alt="Taylor Jaworski">
+</div>
 
 
 <h2>Working Papers</h2>
