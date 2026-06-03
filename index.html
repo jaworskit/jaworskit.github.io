@@ -21,7 +21,6 @@
     padding: 20px;
     font-size: 1em;
     line-height: 1.5;
-    position: relative;
   }
   h1, h2 {
     text-decoration: underline;
@@ -41,18 +40,22 @@
   a:hover {
     text-decoration: underline;
   }
-  .header {
-    display: flex;
-    align-items: flex-start;
-    gap: 1.5em;
+  .section {
+    display: grid;
+    grid-template-columns: 70% 30%;
   }
-  .header-text {
-    flex: 1;
+  .section-content {
+    min-width: 0;
+  }
+  .section-side {
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
   .photo {
-    width: 200px;
+    width: 100%;
+    max-width: 200px;
     height: auto;
-    flex-shrink: 0;
   }
   .profile-links {
     margin: 1em 0;
@@ -78,9 +81,18 @@
     color: #555;
   }
   @media (max-width: 600px) {
-    .header {
-      flex-direction: column-reverse;
-      align-items: center;
+    .section {
+      grid-template-columns: 1fr;
+    }
+    .section-side:empty {
+      display: none;
+    }
+    .section-side {
+      justify-content: center;
+      margin-bottom: 1em;
+    }
+    .section-side + .section-content {
+      order: 2;
     }
     .photo {
       width: 150px;
@@ -90,8 +102,8 @@
 </head>
 <body>
 
-<div class="header">
-<div class="header-text">
+<div class="section">
+<div class="section-content">
 
 <h1>Taylor Jaworski</h1>
 <p class="title-line">University of Colorado Boulder<br>
@@ -114,9 +126,14 @@ Research Associate, National Bureau of Economic Research</p>
 </p>
 
 </div>
-<img class="photo" src="/profile.webp" alt="Taylor Jaworski">
+<div class="section-side">
+  <img class="photo" src="/profile.webp" alt="Taylor Jaworski">
+</div>
 </div>
 
+
+<div class="section">
+<div class="section-content">
 
 <h2>Working Papers</h2>
 
@@ -142,6 +159,13 @@ Research Associate, National Bureau of Economic Research</p>
   </li>
 </ul>
 
+</div>
+<div class="section-side"></div>
+</div>
+
+
+<div class="section">
+<div class="section-content">
 
 <h2>Publications</h2>
 
@@ -238,6 +262,13 @@ Research Associate, National Bureau of Economic Research</p>
   </li>
 </ul>
 
+</div>
+<div class="section-side"></div>
+</div>
+
+
+<div class="section">
+<div class="section-content">
 
 <h2>Teaching</h2>
 
@@ -245,6 +276,10 @@ Research Associate, National Bureau of Economic Research</p>
   <li><a href="/useconhist.html">US Economic History</a></li>
   <li><a href="/eureconhist.html">European Economic History</a></li>
 </ul>
+
+</div>
+<div class="section-side"></div>
+</div>
 
 
 <div class="footer">
