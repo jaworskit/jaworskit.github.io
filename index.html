@@ -50,10 +50,19 @@
     grid-template-columns: 3fr 2fr;
     column-gap: 2em;
   }
+  .photo-wrapper {
+    grid-column: 2;
+    grid-row: 1;
+    text-align: center;
+    padding-top: 2em;
+  }
   .section-content {
+    grid-column: 1;
+    grid-row: 1 / span 100;
     min-width: 0;
   }
   .section-side {
+    grid-column: 2;
   }
   .photo {
     display: block;
@@ -91,11 +100,17 @@
     .section-side:empty {
       display: none;
     }
-    .section-side {
-      margin-bottom: 1em;
+    .photo-wrapper {
+      grid-column: 1;
+      grid-row: auto;
+    }
+    .section-content {
+      grid-column: 1;
+      grid-row: auto;
     }
     .section-side {
-      order: -1;
+      grid-column: 1;
+      grid-row: auto;
     }
     .photo {
       width: 150px;
@@ -106,6 +121,9 @@
 <body>
 
 <div class="section">
+<div class="photo-wrapper">
+  <img class="photo" src="/profile.webp" alt="Taylor Jaworski">
+</div>
 <div class="section-content">
 
 <h1>Taylor Jaworski</h1>
@@ -220,10 +238,6 @@ Research Associate, NBER</p>
 
 </div>
 <div class="section-side">
-
-<div style="text-align: center;">
-  <img class="photo" src="/profile.webp" alt="Taylor Jaworski">
-</div>
 
 <h2>Working Papers</h2>
 
